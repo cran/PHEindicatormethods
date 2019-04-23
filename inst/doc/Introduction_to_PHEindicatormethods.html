@@ -12,7 +12,7 @@
 
 <meta name="author" content="Georgina Anderson" />
 
-<meta name="date" content="2019-04-18" />
+<meta name="date" content="2019-04-23" />
 
 <title>Introduction_to_PHEindicatormethods</title>
 
@@ -95,7 +95,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">Introduction_to_PHEindicatormethods</h1>
 <h4 class="author">Georgina Anderson</h4>
-<h4 class="date">2019-04-18</h4>
+<h4 class="date">2019-04-23</h4>
 
 
 
@@ -180,14 +180,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
         <span class="dt">pop =</span> <span class="kw">sample</span>(<span class="dv">100</span><span class="op">:</span><span class="dv">200</span>, <span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="dv">4</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>))
 df
 <span class="co">#&gt;    area year obs pop</span>
-<span class="co">#&gt; 1 Area1 2015  22 118</span>
-<span class="co">#&gt; 2 Area2 2015  54 123</span>
-<span class="co">#&gt; 3 Area3 2015  66 183</span>
-<span class="co">#&gt; 4 Area4 2015  89 117</span>
-<span class="co">#&gt; 5 Area1 2016  62 199</span>
-<span class="co">#&gt; 6 Area2 2016  69 113</span>
-<span class="co">#&gt; 7 Area3 2016 100 145</span>
-<span class="co">#&gt; 8 Area4 2016  22 195</span></code></pre></div>
+<span class="co">#&gt; 1 Area1 2015  90 193</span>
+<span class="co">#&gt; 2 Area2 2015  94 124</span>
+<span class="co">#&gt; 3 Area3 2015  90 137</span>
+<span class="co">#&gt; 4 Area4 2015  34 174</span>
+<span class="co">#&gt; 5 Area1 2016  82 122</span>
+<span class="co">#&gt; 6 Area2 2016  67 198</span>
+<span class="co">#&gt; 7 Area3 2016  96 180</span>
+<span class="co">#&gt; 8 Area4 2016  32 101</span></code></pre></div>
 </div>
 <div id="execute-phe_proportion-and-phe_rate" class="section level4">
 <h4>Execute phe_proportion and phe_rate</h4>
@@ -197,15 +197,15 @@ df
 <p>Here are some example code chunks to demonstrate these two functions and the arguments that can optionally be specified</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># default proportion</span>
 <span class="kw">phe_proportion</span>(df, obs, pop)
-<span class="co">#&gt;    area year obs pop     value    lowercl   uppercl confidence</span>
-<span class="co">#&gt; 1 Area1 2015  22 118 0.1864407 0.12646991 0.2661835        95%</span>
-<span class="co">#&gt; 2 Area2 2015  54 123 0.4390244 0.35448712 0.5272550        95%</span>
-<span class="co">#&gt; 3 Area3 2015  66 183 0.3606557 0.29460770 0.4324336        95%</span>
-<span class="co">#&gt; 4 Area4 2015  89 117 0.7606838 0.67587418 0.8289195        95%</span>
-<span class="co">#&gt; 5 Area1 2016  62 199 0.3115578 0.25129248 0.3789606        95%</span>
-<span class="co">#&gt; 6 Area2 2016  69 113 0.6106195 0.51849360 0.6954715        95%</span>
-<span class="co">#&gt; 7 Area3 2016 100 145 0.6896552 0.61027614 0.7592446        95%</span>
-<span class="co">#&gt; 8 Area4 2016  22 195 0.1128205 0.07569503 0.1649060        95%</span>
+<span class="co">#&gt;    area year obs pop     value   lowercl   uppercl confidence</span>
+<span class="co">#&gt; 1 Area1 2015  90 193 0.4663212 0.3972851 0.5366719        95%</span>
+<span class="co">#&gt; 2 Area2 2015  94 124 0.7580645 0.6756700 0.8249500        95%</span>
+<span class="co">#&gt; 3 Area3 2015  90 137 0.6569343 0.5741342 0.7311736        95%</span>
+<span class="co">#&gt; 4 Area4 2015  34 174 0.1954023 0.1433360 0.2606275        95%</span>
+<span class="co">#&gt; 5 Area1 2016  82 122 0.6721311 0.5846897 0.7490636        95%</span>
+<span class="co">#&gt; 6 Area2 2016  67 198 0.3383838 0.2761117 0.4068077        95%</span>
+<span class="co">#&gt; 7 Area3 2016  96 180 0.5333333 0.4605179 0.6047558        95%</span>
+<span class="co">#&gt; 8 Area4 2016  32 101 0.3168317 0.2342353 0.4128509        95%</span>
 <span class="co">#&gt;         statistic method</span>
 <span class="co">#&gt; 1 proportion of 1 Wilson</span>
 <span class="co">#&gt; 2 proportion of 1 Wilson</span>
@@ -218,15 +218,15 @@ df
 
 <span class="co"># specify confidence level for proportion</span>
 <span class="kw">phe_proportion</span>(df, obs, pop, <span class="dt">confidence=</span><span class="fl">99.8</span>)
-<span class="co">#&gt;    area year obs pop     value    lowercl   uppercl confidence</span>
-<span class="co">#&gt; 1 Area1 2015  22 118 0.1864407 0.10079593 0.3190373      99.8%</span>
-<span class="co">#&gt; 2 Area2 2015  54 123 0.4390244 0.31014063 0.5766941      99.8%</span>
-<span class="co">#&gt; 3 Area3 2015  66 183 0.3606557 0.26040507 0.4747280      99.8%</span>
-<span class="co">#&gt; 4 Area4 2015  89 117 0.7606838 0.62216724 0.8598574      99.8%</span>
-<span class="co">#&gt; 5 Area1 2016  62 199 0.3115578 0.22070803 0.4196652      99.8%</span>
-<span class="co">#&gt; 6 Area2 2016  69 113 0.6106195 0.46561136 0.7383878      99.8%</span>
-<span class="co">#&gt; 7 Area3 2016 100 145 0.6896552 0.56234155 0.7935314      99.8%</span>
-<span class="co">#&gt; 8 Area4 2016  22 195 0.1128205 0.06018842 0.2016041      99.8%</span>
+<span class="co">#&gt;    area year obs pop     value   lowercl   uppercl confidence</span>
+<span class="co">#&gt; 1 Area1 2015  90 193 0.4663212 0.3595776 0.5762406      99.8%</span>
+<span class="co">#&gt; 2 Area2 2015  94 124 0.7580645 0.6236165 0.8556064      99.8%</span>
+<span class="co">#&gt; 3 Area3 2015  90 137 0.6569343 0.5250925 0.7683237      99.8%</span>
+<span class="co">#&gt; 4 Area4 2015  34 174 0.1954023 0.1194300 0.3030692      99.8%</span>
+<span class="co">#&gt; 5 Area1 2016  82 122 0.6721311 0.5325394 0.7867319      99.8%</span>
+<span class="co">#&gt; 6 Area2 2016  67 198 0.3383838 0.2440544 0.4475855      99.8%</span>
+<span class="co">#&gt; 7 Area3 2016  96 180 0.5333333 0.4196635 0.6436445      99.8%</span>
+<span class="co">#&gt; 8 Area4 2016  32 101 0.3168317 0.1950033 0.4703051      99.8%</span>
 <span class="co">#&gt;         statistic method</span>
 <span class="co">#&gt; 1 proportion of 1 Wilson</span>
 <span class="co">#&gt; 2 proportion of 1 Wilson</span>
@@ -239,15 +239,15 @@ df
 
 <span class="co"># specify to output proportions as percentages</span>
 <span class="kw">phe_proportion</span>(df, obs, pop, <span class="dt">multiplier=</span><span class="dv">100</span>)
-<span class="co">#&gt;    area year obs pop    value   lowercl  uppercl confidence  statistic</span>
-<span class="co">#&gt; 1 Area1 2015  22 118 18.64407 12.646991 26.61835        95% percentage</span>
-<span class="co">#&gt; 2 Area2 2015  54 123 43.90244 35.448712 52.72550        95% percentage</span>
-<span class="co">#&gt; 3 Area3 2015  66 183 36.06557 29.460770 43.24336        95% percentage</span>
-<span class="co">#&gt; 4 Area4 2015  89 117 76.06838 67.587418 82.89195        95% percentage</span>
-<span class="co">#&gt; 5 Area1 2016  62 199 31.15578 25.129248 37.89606        95% percentage</span>
-<span class="co">#&gt; 6 Area2 2016  69 113 61.06195 51.849360 69.54715        95% percentage</span>
-<span class="co">#&gt; 7 Area3 2016 100 145 68.96552 61.027614 75.92446        95% percentage</span>
-<span class="co">#&gt; 8 Area4 2016  22 195 11.28205  7.569503 16.49060        95% percentage</span>
+<span class="co">#&gt;    area year obs pop    value  lowercl  uppercl confidence  statistic</span>
+<span class="co">#&gt; 1 Area1 2015  90 193 46.63212 39.72851 53.66719        95% percentage</span>
+<span class="co">#&gt; 2 Area2 2015  94 124 75.80645 67.56700 82.49500        95% percentage</span>
+<span class="co">#&gt; 3 Area3 2015  90 137 65.69343 57.41342 73.11736        95% percentage</span>
+<span class="co">#&gt; 4 Area4 2015  34 174 19.54023 14.33360 26.06275        95% percentage</span>
+<span class="co">#&gt; 5 Area1 2016  82 122 67.21311 58.46897 74.90636        95% percentage</span>
+<span class="co">#&gt; 6 Area2 2016  67 198 33.83838 27.61117 40.68077        95% percentage</span>
+<span class="co">#&gt; 7 Area3 2016  96 180 53.33333 46.05179 60.47558        95% percentage</span>
+<span class="co">#&gt; 8 Area4 2016  32 101 31.68317 23.42353 41.28509        95% percentage</span>
 <span class="co">#&gt;   method</span>
 <span class="co">#&gt; 1 Wilson</span>
 <span class="co">#&gt; 2 Wilson</span>
@@ -260,15 +260,15 @@ df
 
 <span class="co"># specify level of detail to output for proportion</span>
 <span class="kw">phe_proportion</span>(df, obs, pop, <span class="dt">confidence=</span><span class="fl">99.8</span>, <span class="dt">multiplier=</span><span class="dv">100</span>)
-<span class="co">#&gt;    area year obs pop    value   lowercl  uppercl confidence  statistic</span>
-<span class="co">#&gt; 1 Area1 2015  22 118 18.64407 10.079593 31.90373      99.8% percentage</span>
-<span class="co">#&gt; 2 Area2 2015  54 123 43.90244 31.014063 57.66941      99.8% percentage</span>
-<span class="co">#&gt; 3 Area3 2015  66 183 36.06557 26.040507 47.47280      99.8% percentage</span>
-<span class="co">#&gt; 4 Area4 2015  89 117 76.06838 62.216724 85.98574      99.8% percentage</span>
-<span class="co">#&gt; 5 Area1 2016  62 199 31.15578 22.070803 41.96652      99.8% percentage</span>
-<span class="co">#&gt; 6 Area2 2016  69 113 61.06195 46.561136 73.83878      99.8% percentage</span>
-<span class="co">#&gt; 7 Area3 2016 100 145 68.96552 56.234155 79.35314      99.8% percentage</span>
-<span class="co">#&gt; 8 Area4 2016  22 195 11.28205  6.018842 20.16041      99.8% percentage</span>
+<span class="co">#&gt;    area year obs pop    value  lowercl  uppercl confidence  statistic</span>
+<span class="co">#&gt; 1 Area1 2015  90 193 46.63212 35.95776 57.62406      99.8% percentage</span>
+<span class="co">#&gt; 2 Area2 2015  94 124 75.80645 62.36165 85.56064      99.8% percentage</span>
+<span class="co">#&gt; 3 Area3 2015  90 137 65.69343 52.50925 76.83237      99.8% percentage</span>
+<span class="co">#&gt; 4 Area4 2015  34 174 19.54023 11.94300 30.30692      99.8% percentage</span>
+<span class="co">#&gt; 5 Area1 2016  82 122 67.21311 53.25394 78.67319      99.8% percentage</span>
+<span class="co">#&gt; 6 Area2 2016  67 198 33.83838 24.40544 44.75855      99.8% percentage</span>
+<span class="co">#&gt; 7 Area3 2016  96 180 53.33333 41.96635 64.36445      99.8% percentage</span>
+<span class="co">#&gt; 8 Area4 2016  32 101 31.68317 19.50033 47.03051      99.8% percentage</span>
 <span class="co">#&gt;   method</span>
 <span class="co">#&gt; 1 Wilson</span>
 <span class="co">#&gt; 2 Wilson</span>
@@ -281,48 +281,48 @@ df
 
 <span class="co"># specify level of detail to output for proportion and remove metadata columns</span>
 <span class="kw">phe_proportion</span>(df, obs, pop, <span class="dt">confidence=</span><span class="fl">99.8</span>, <span class="dt">multiplier=</span><span class="dv">100</span>, <span class="dt">type=</span><span class="st">&quot;standard&quot;</span>)
-<span class="co">#&gt;    area year obs pop    value   lowercl  uppercl</span>
-<span class="co">#&gt; 1 Area1 2015  22 118 18.64407 10.079593 31.90373</span>
-<span class="co">#&gt; 2 Area2 2015  54 123 43.90244 31.014063 57.66941</span>
-<span class="co">#&gt; 3 Area3 2015  66 183 36.06557 26.040507 47.47280</span>
-<span class="co">#&gt; 4 Area4 2015  89 117 76.06838 62.216724 85.98574</span>
-<span class="co">#&gt; 5 Area1 2016  62 199 31.15578 22.070803 41.96652</span>
-<span class="co">#&gt; 6 Area2 2016  69 113 61.06195 46.561136 73.83878</span>
-<span class="co">#&gt; 7 Area3 2016 100 145 68.96552 56.234155 79.35314</span>
-<span class="co">#&gt; 8 Area4 2016  22 195 11.28205  6.018842 20.16041</span>
+<span class="co">#&gt;    area year obs pop    value  lowercl  uppercl</span>
+<span class="co">#&gt; 1 Area1 2015  90 193 46.63212 35.95776 57.62406</span>
+<span class="co">#&gt; 2 Area2 2015  94 124 75.80645 62.36165 85.56064</span>
+<span class="co">#&gt; 3 Area3 2015  90 137 65.69343 52.50925 76.83237</span>
+<span class="co">#&gt; 4 Area4 2015  34 174 19.54023 11.94300 30.30692</span>
+<span class="co">#&gt; 5 Area1 2016  82 122 67.21311 53.25394 78.67319</span>
+<span class="co">#&gt; 6 Area2 2016  67 198 33.83838 24.40544 44.75855</span>
+<span class="co">#&gt; 7 Area3 2016  96 180 53.33333 41.96635 64.36445</span>
+<span class="co">#&gt; 8 Area4 2016  32 101 31.68317 19.50033 47.03051</span>
 
 <span class="co"># default rate</span>
 <span class="kw">phe_rate</span>(df, obs, pop)
-<span class="co">#&gt;    area year obs pop    value   lowercl  uppercl confidence</span>
-<span class="co">#&gt; 1 Area1 2015  22 118 18644.07 11680.079 28228.63        95%</span>
-<span class="co">#&gt; 2 Area2 2015  54 123 43902.44 32978.643 57284.27        95%</span>
-<span class="co">#&gt; 3 Area3 2015  66 183 36065.57 27891.791 45884.96        95%</span>
-<span class="co">#&gt; 4 Area4 2015  89 117 76068.38 61087.425 93609.70        95%</span>
-<span class="co">#&gt; 5 Area1 2016  62 199 31155.78 23885.695 39940.97        95%</span>
-<span class="co">#&gt; 6 Area2 2016  69 113 61061.95 47507.757 77278.94        95%</span>
-<span class="co">#&gt; 7 Area3 2016 100 145 68965.52 56111.797 83881.34        95%</span>
-<span class="co">#&gt; 8 Area4 2016  22 195 11282.05  7067.945 17081.94        95%</span>
-<span class="co">#&gt;         statistic method</span>
-<span class="co">#&gt; 1 rate per 100000  Byars</span>
-<span class="co">#&gt; 2 rate per 100000  Byars</span>
-<span class="co">#&gt; 3 rate per 100000  Byars</span>
-<span class="co">#&gt; 4 rate per 100000  Byars</span>
-<span class="co">#&gt; 5 rate per 100000  Byars</span>
-<span class="co">#&gt; 6 rate per 100000  Byars</span>
-<span class="co">#&gt; 7 rate per 100000  Byars</span>
-<span class="co">#&gt; 8 rate per 100000  Byars</span>
+<span class="co">#&gt;    area year obs pop    value  lowercl  uppercl confidence       statistic</span>
+<span class="co">#&gt; 1 Area1 2015  90 193 46632.12 37496.69 57319.41        95% rate per 100000</span>
+<span class="co">#&gt; 2 Area2 2015  94 124 75806.45 61257.75 92768.84        95% rate per 100000</span>
+<span class="co">#&gt; 3 Area3 2015  90 137 65693.43 52823.81 80749.24        95% rate per 100000</span>
+<span class="co">#&gt; 4 Area4 2015  34 174 19540.23 13530.09 27306.37        95% rate per 100000</span>
+<span class="co">#&gt; 5 Area1 2016  82 122 67213.11 53454.85 83430.20        95% rate per 100000</span>
+<span class="co">#&gt; 6 Area2 2016  67 198 33838.38 26223.07 42974.20        95% rate per 100000</span>
+<span class="co">#&gt; 7 Area3 2016  96 180 53333.33 43199.10 65129.77        95% rate per 100000</span>
+<span class="co">#&gt; 8 Area4 2016  32 101 31683.17 21667.52 44728.66        95% rate per 100000</span>
+<span class="co">#&gt;   method</span>
+<span class="co">#&gt; 1  Byars</span>
+<span class="co">#&gt; 2  Byars</span>
+<span class="co">#&gt; 3  Byars</span>
+<span class="co">#&gt; 4  Byars</span>
+<span class="co">#&gt; 5  Byars</span>
+<span class="co">#&gt; 6  Byars</span>
+<span class="co">#&gt; 7  Byars</span>
+<span class="co">#&gt; 8  Byars</span>
 
 <span class="co"># specify rate parameters</span>
 <span class="kw">phe_rate</span>(df, obs, pop, <span class="dt">confidence=</span><span class="fl">99.8</span>, <span class="dt">multiplier=</span><span class="dv">100</span>)
-<span class="co">#&gt;    area year obs pop    value   lowercl   uppercl confidence    statistic</span>
-<span class="co">#&gt; 1 Area1 2015  22 118 18.64407  8.689823  34.52658      99.8% rate per 100</span>
-<span class="co">#&gt; 2 Area2 2015  54 123 43.90244 27.707417  65.70466      99.8% rate per 100</span>
-<span class="co">#&gt; 3 Area3 2015  66 183 36.06557 23.874210  52.01610      99.8% rate per 100</span>
-<span class="co">#&gt; 4 Area4 2015  89 117 76.06838 53.546996 104.44933      99.8% rate per 100</span>
-<span class="co">#&gt; 5 Area1 2016  62 199 31.15578 20.331935  45.43921      99.8% rate per 100</span>
-<span class="co">#&gt; 6 Area2 2016  69 113 61.06195 40.820252  87.38821      99.8% rate per 100</span>
-<span class="co">#&gt; 7 Area3 2016 100 145 68.96552 49.588753  93.06457      99.8% rate per 100</span>
-<span class="co">#&gt; 8 Area4 2016  22 195 11.28205  5.258457  20.89301      99.8% rate per 100</span>
+<span class="co">#&gt;    area year obs pop    value  lowercl   uppercl confidence    statistic</span>
+<span class="co">#&gt; 1 Area1 2015  90 193 46.63212 32.89479  63.92121      99.8% rate per 100</span>
+<span class="co">#&gt; 2 Area2 2015  94 124 75.80645 53.90614 103.23233      99.8% rate per 100</span>
+<span class="co">#&gt; 3 Area3 2015  90 137 65.69343 46.34083  90.04959      99.8% rate per 100</span>
+<span class="co">#&gt; 4 Area4 2015  34 174 19.54023 10.77682  32.29409      99.8% rate per 100</span>
+<span class="co">#&gt; 5 Area1 2016  82 122 67.21311 46.57199  93.47871      99.8% rate per 100</span>
+<span class="co">#&gt; 6 Area2 2016  67 198 33.83838 22.47514  48.67537      99.8% rate per 100</span>
+<span class="co">#&gt; 7 Area3 2016  96 180 53.33333 38.07060  72.40174      99.8% rate per 100</span>
+<span class="co">#&gt; 8 Area4 2016  32 101 31.68317 17.11577  53.13188      99.8% rate per 100</span>
 <span class="co">#&gt;   method</span>
 <span class="co">#&gt; 1  Byars</span>
 <span class="co">#&gt; 2  Byars</span>
@@ -335,15 +335,15 @@ df
 
 <span class="co"># specify rate parameters and reduce columns output and remove metadata columns</span>
 <span class="kw">phe_rate</span>(df, obs, pop, <span class="dt">type=</span><span class="st">&quot;standard&quot;</span>, <span class="dt">confidence=</span><span class="fl">99.8</span>, <span class="dt">multiplier=</span><span class="dv">100</span>)
-<span class="co">#&gt;    area year obs pop    value   lowercl   uppercl</span>
-<span class="co">#&gt; 1 Area1 2015  22 118 18.64407  8.689823  34.52658</span>
-<span class="co">#&gt; 2 Area2 2015  54 123 43.90244 27.707417  65.70466</span>
-<span class="co">#&gt; 3 Area3 2015  66 183 36.06557 23.874210  52.01610</span>
-<span class="co">#&gt; 4 Area4 2015  89 117 76.06838 53.546996 104.44933</span>
-<span class="co">#&gt; 5 Area1 2016  62 199 31.15578 20.331935  45.43921</span>
-<span class="co">#&gt; 6 Area2 2016  69 113 61.06195 40.820252  87.38821</span>
-<span class="co">#&gt; 7 Area3 2016 100 145 68.96552 49.588753  93.06457</span>
-<span class="co">#&gt; 8 Area4 2016  22 195 11.28205  5.258457  20.89301</span></code></pre></div>
+<span class="co">#&gt;    area year obs pop    value  lowercl   uppercl</span>
+<span class="co">#&gt; 1 Area1 2015  90 193 46.63212 32.89479  63.92121</span>
+<span class="co">#&gt; 2 Area2 2015  94 124 75.80645 53.90614 103.23233</span>
+<span class="co">#&gt; 3 Area3 2015  90 137 65.69343 46.34083  90.04959</span>
+<span class="co">#&gt; 4 Area4 2015  34 174 19.54023 10.77682  32.29409</span>
+<span class="co">#&gt; 5 Area1 2016  82 122 67.21311 46.57199  93.47871</span>
+<span class="co">#&gt; 6 Area2 2016  67 198 33.83838 22.47514  48.67537</span>
+<span class="co">#&gt; 7 Area3 2016  96 180 53.33333 38.07060  72.40174</span>
+<span class="co">#&gt; 8 Area4 2016  32 101 31.68317 17.11577  53.13188</span></code></pre></div>
 <p>These functions can also return aggregate data if the input dataframes are grouped:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># default proportion - grouped</span>
 df <span class="op">%&gt;%</span>
@@ -352,8 +352,8 @@ df <span class="op">%&gt;%</span>
 <span class="co">#&gt; # A tibble: 2 x 9</span>
 <span class="co">#&gt;    year   obs   pop value lowercl uppercl confidence statistic       method</span>
 <span class="co">#&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;           &lt;chr&gt; </span>
-<span class="co">#&gt; 1  2015   231   541 0.427   0.386   0.469 95%        proportion of 1 Wilson</span>
-<span class="co">#&gt; 2  2016   253   652 0.388   0.351   0.426 95%        proportion of 1 Wilson</span>
+<span class="co">#&gt; 1  2015   308   628 0.490   0.452   0.529 95%        proportion of 1 Wilson</span>
+<span class="co">#&gt; 2  2016   277   601 0.461   0.421   0.501 95%        proportion of 1 Wilson</span>
 
 <span class="co"># default rate - grouped</span>
 df <span class="op">%&gt;%</span>
@@ -362,8 +362,8 @@ df <span class="op">%&gt;%</span>
 <span class="co">#&gt; # A tibble: 2 x 9</span>
 <span class="co">#&gt;    year   obs   pop  value lowercl uppercl confidence statistic      method</span>
 <span class="co">#&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt;  &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;          &lt;chr&gt; </span>
-<span class="co">#&gt; 1  2015   231   541 42699.  37369.  48575. 95%        rate per 1000~ Byars </span>
-<span class="co">#&gt; 2  2016   253   652 38804.  34169.  43892. 95%        rate per 1000~ Byars</span></code></pre></div>
+<span class="co">#&gt; 1  2015   308   628 49045.  43720.  54839. 95%        rate per 1000~ Byars </span>
+<span class="co">#&gt; 2  2016   277   601 46090.  40821.  51850. 95%        rate per 1000~ Byars</span></code></pre></div>
 <p><br /> <br /></p>
 </div>
 </div>
@@ -379,8 +379,8 @@ df <span class="op">%&gt;%</span>
 <p>Here are some example code chunks to demonstrate the phe_mean function and the arguments that can optionally be specified</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># default mean</span>
 <span class="kw">phe_mean</span>(df,obs)
-<span class="co">#&gt;   value_sum value_count    stdev value  lowercl  uppercl confidence</span>
-<span class="co">#&gt; 1       484           8 27.98979  60.5 37.09995 83.90005        95%</span>
+<span class="co">#&gt;   value_sum value_count    stdev  value  lowercl  uppercl confidence</span>
+<span class="co">#&gt; 1       585           8 26.36793 73.125 51.08086 95.16914        95%</span>
 <span class="co">#&gt;   statistic                   method</span>
 <span class="co">#&gt; 1      mean Student's t-distribution</span>
 
@@ -391,8 +391,8 @@ df <span class="op">%&gt;%</span>
 <span class="co">#&gt; # A tibble: 2 x 10</span>
 <span class="co">#&gt;    year value_sum value_count stdev value lowercl uppercl confidence</span>
 <span class="co">#&gt;   &lt;int&gt;     &lt;int&gt;       &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;     </span>
-<span class="co">#&gt; 1  2015       231           4  27.9  57.8   -84.8    200. 99.8%     </span>
-<span class="co">#&gt; 2  2016       253           4  32.1  63.2  -101.     227. 99.8%     </span>
+<span class="co">#&gt; 1  2015       308           4  28.7  77     -69.7    224. 99.8%     </span>
+<span class="co">#&gt; 2  2016       277           4  27.5  69.2   -71.3    210. 99.8%     </span>
 <span class="co">#&gt; # ... with 2 more variables: statistic &lt;chr&gt;, method &lt;chr&gt;</span>
 
 <span class="co"># multiple means in a single execution with 99.8% confidence and data-only output</span>
@@ -402,8 +402,8 @@ df <span class="op">%&gt;%</span>
 <span class="co">#&gt; # A tibble: 2 x 7</span>
 <span class="co">#&gt;    year value_sum value_count stdev value lowercl uppercl</span>
 <span class="co">#&gt;   &lt;int&gt;     &lt;int&gt;       &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span>
-<span class="co">#&gt; 1  2015       231           4  27.9  57.8   -84.8    200.</span>
-<span class="co">#&gt; 2  2016       253           4  32.1  63.2  -101.     227.</span></code></pre></div>
+<span class="co">#&gt; 1  2015       308           4  28.7  77     -69.7    224.</span>
+<span class="co">#&gt; 2  2016       277           4  27.5  69.2   -71.3    210.</span></code></pre></div>
 </div>
 </div>
 <div id="standardised-aggregate-functions" class="section level2">
@@ -421,12 +421,12 @@ df <span class="op">%&gt;%</span>
             <span class="dt">pop =</span> <span class="kw">sample</span>(<span class="dv">10000</span><span class="op">:</span><span class="dv">20000</span>, <span class="dv">19</span> <span class="op">*</span><span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="dv">5</span> <span class="op">*</span><span class="st"> </span><span class="dv">4</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>))
 <span class="kw">head</span>(df_std)
 <span class="co">#&gt;    area year  sex ageband obs   pop</span>
-<span class="co">#&gt; 1 Area1 2006 Male       0 101 15670</span>
-<span class="co">#&gt; 2 Area1 2006 Male       5 165 18259</span>
-<span class="co">#&gt; 3 Area1 2006 Male      10 196 18783</span>
-<span class="co">#&gt; 4 Area1 2006 Male      15 153 12733</span>
-<span class="co">#&gt; 5 Area1 2006 Male      20  96 10731</span>
-<span class="co">#&gt; 6 Area1 2006 Male      25 128 16682</span></code></pre></div>
+<span class="co">#&gt; 1 Area1 2006 Male       0  75 14989</span>
+<span class="co">#&gt; 2 Area1 2006 Male       5  78 17379</span>
+<span class="co">#&gt; 3 Area1 2006 Male      10 179 10718</span>
+<span class="co">#&gt; 4 Area1 2006 Male      15 183 10417</span>
+<span class="co">#&gt; 5 Area1 2006 Male      20 111 17387</span>
+<span class="co">#&gt; 6 Area1 2006 Male      25  21 19406</span></code></pre></div>
 </div>
 <div id="execute-phe_dsr" class="section level4">
 <h4>Execute phe_dsr</h4>
@@ -453,16 +453,16 @@ df_std <span class="op">%&gt;%</span>
 <span class="co">#&gt; # Groups:   area, year [20]</span>
 <span class="co">#&gt;    area   year sex   total_count total_pop value lowercl uppercl confidence</span>
 <span class="co">#&gt;    &lt;fct&gt; &lt;int&gt; &lt;fct&gt;       &lt;int&gt;     &lt;int&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;     </span>
-<span class="co">#&gt;  1 Area1  2006 Fema~        1609    297542  593.    563.    624. 95%       </span>
-<span class="co">#&gt;  2 Area1  2006 Male         2293    292439  823.    788.    859. 95%       </span>
-<span class="co">#&gt;  3 Area1  2007 Fema~        2341    301123  799.    764.    834. 95%       </span>
-<span class="co">#&gt;  4 Area1  2007 Male         1687    295453  572.    543.    602. 95%       </span>
-<span class="co">#&gt;  5 Area1  2008 Fema~        1322    290781  498.    469.    527. 95%       </span>
-<span class="co">#&gt;  6 Area1  2008 Male         1960    305175  670.    638.    703. 95%       </span>
-<span class="co">#&gt;  7 Area1  2009 Fema~        1930    297974  624.    595.    654. 95%       </span>
-<span class="co">#&gt;  8 Area1  2009 Male         2013    288190  761.    726.    796. 95%       </span>
-<span class="co">#&gt;  9 Area1  2010 Fema~        1910    295888  692.    659.    726. 95%       </span>
-<span class="co">#&gt; 10 Area1  2010 Male         1829    280043  654.    623.    687. 95%       </span>
+<span class="co">#&gt;  1 Area1  2006 Fema~        2034    274567  745.    711.    781. 95%       </span>
+<span class="co">#&gt;  2 Area1  2006 Male         1793    294669  649.    617.    682. 95%       </span>
+<span class="co">#&gt;  3 Area1  2007 Fema~        2043    287373  742.    708.    777. 95%       </span>
+<span class="co">#&gt;  4 Area1  2007 Male         2021    290581  678.    647.    710. 95%       </span>
+<span class="co">#&gt;  5 Area1  2008 Fema~        1812    302461  588.    560.    618. 95%       </span>
+<span class="co">#&gt;  6 Area1  2008 Male         1964    292433  668.    638.    700. 95%       </span>
+<span class="co">#&gt;  7 Area1  2009 Fema~        2226    281936  806.    770.    843. 95%       </span>
+<span class="co">#&gt;  8 Area1  2009 Male         1763    284014  606.    575.    637. 95%       </span>
+<span class="co">#&gt;  9 Area1  2010 Fema~        1786    287422  617.    587.    649. 95%       </span>
+<span class="co">#&gt; 10 Area1  2010 Male         2141    292748  766.    733.    801. 95%       </span>
 <span class="co">#&gt; # ... with 30 more rows, and 2 more variables: statistic &lt;chr&gt;,</span>
 <span class="co">#&gt; #   method &lt;chr&gt;</span>
 
@@ -474,16 +474,16 @@ df_std <span class="op">%&gt;%</span>
 <span class="co">#&gt; # Groups:   area, year [20]</span>
 <span class="co">#&gt;    area   year sex    total_count total_pop value lowercl uppercl</span>
 <span class="co">#&gt;    &lt;fct&gt; &lt;int&gt; &lt;fct&gt;        &lt;int&gt;     &lt;int&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 Area1  2006 Female        1609    297542  593.    563.    624.</span>
-<span class="co">#&gt;  2 Area1  2006 Male          2293    292439  823.    788.    859.</span>
-<span class="co">#&gt;  3 Area1  2007 Female        2341    301123  799.    764.    834.</span>
-<span class="co">#&gt;  4 Area1  2007 Male          1687    295453  572.    543.    602.</span>
-<span class="co">#&gt;  5 Area1  2008 Female        1322    290781  498.    469.    527.</span>
-<span class="co">#&gt;  6 Area1  2008 Male          1960    305175  670.    638.    703.</span>
-<span class="co">#&gt;  7 Area1  2009 Female        1930    297974  624.    595.    654.</span>
-<span class="co">#&gt;  8 Area1  2009 Male          2013    288190  761.    726.    796.</span>
-<span class="co">#&gt;  9 Area1  2010 Female        1910    295888  692.    659.    726.</span>
-<span class="co">#&gt; 10 Area1  2010 Male          1829    280043  654.    623.    687.</span>
+<span class="co">#&gt;  1 Area1  2006 Female        2034    274567  745.    711.    781.</span>
+<span class="co">#&gt;  2 Area1  2006 Male          1793    294669  649.    617.    682.</span>
+<span class="co">#&gt;  3 Area1  2007 Female        2043    287373  742.    708.    777.</span>
+<span class="co">#&gt;  4 Area1  2007 Male          2021    290581  678.    647.    710.</span>
+<span class="co">#&gt;  5 Area1  2008 Female        1812    302461  588.    560.    618.</span>
+<span class="co">#&gt;  6 Area1  2008 Male          1964    292433  668.    638.    700.</span>
+<span class="co">#&gt;  7 Area1  2009 Female        2226    281936  806.    770.    843.</span>
+<span class="co">#&gt;  8 Area1  2009 Male          1763    284014  606.    575.    637.</span>
+<span class="co">#&gt;  9 Area1  2010 Female        1786    287422  617.    587.    649.</span>
+<span class="co">#&gt; 10 Area1  2010 Male          2141    292748  766.    733.    801.</span>
 <span class="co">#&gt; # ... with 30 more rows</span>
 
 <span class="co"># calculate same specifying standard population in vector form</span>
@@ -494,16 +494,16 @@ df_std <span class="op">%&gt;%</span>
 <span class="co">#&gt; # Groups:   area, year [20]</span>
 <span class="co">#&gt;    area   year sex   total_count total_pop value lowercl uppercl confidence</span>
 <span class="co">#&gt;    &lt;fct&gt; &lt;int&gt; &lt;fct&gt;       &lt;int&gt;     &lt;int&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;     </span>
-<span class="co">#&gt;  1 Area1  2006 Fema~        1609    297542  593.    563.    624. 95%       </span>
-<span class="co">#&gt;  2 Area1  2006 Male         2293    292439  823.    788.    859. 95%       </span>
-<span class="co">#&gt;  3 Area1  2007 Fema~        2341    301123  799.    764.    834. 95%       </span>
-<span class="co">#&gt;  4 Area1  2007 Male         1687    295453  572.    543.    602. 95%       </span>
-<span class="co">#&gt;  5 Area1  2008 Fema~        1322    290781  498.    469.    527. 95%       </span>
-<span class="co">#&gt;  6 Area1  2008 Male         1960    305175  670.    638.    703. 95%       </span>
-<span class="co">#&gt;  7 Area1  2009 Fema~        1930    297974  624.    595.    654. 95%       </span>
-<span class="co">#&gt;  8 Area1  2009 Male         2013    288190  761.    726.    796. 95%       </span>
-<span class="co">#&gt;  9 Area1  2010 Fema~        1910    295888  692.    659.    726. 95%       </span>
-<span class="co">#&gt; 10 Area1  2010 Male         1829    280043  654.    623.    687. 95%       </span>
+<span class="co">#&gt;  1 Area1  2006 Fema~        2034    274567  745.    711.    781. 95%       </span>
+<span class="co">#&gt;  2 Area1  2006 Male         1793    294669  649.    617.    682. 95%       </span>
+<span class="co">#&gt;  3 Area1  2007 Fema~        2043    287373  742.    708.    777. 95%       </span>
+<span class="co">#&gt;  4 Area1  2007 Male         2021    290581  678.    647.    710. 95%       </span>
+<span class="co">#&gt;  5 Area1  2008 Fema~        1812    302461  588.    560.    618. 95%       </span>
+<span class="co">#&gt;  6 Area1  2008 Male         1964    292433  668.    638.    700. 95%       </span>
+<span class="co">#&gt;  7 Area1  2009 Fema~        2226    281936  806.    770.    843. 95%       </span>
+<span class="co">#&gt;  8 Area1  2009 Male         1763    284014  606.    575.    637. 95%       </span>
+<span class="co">#&gt;  9 Area1  2010 Fema~        1786    287422  617.    587.    649. 95%       </span>
+<span class="co">#&gt; 10 Area1  2010 Male         2141    292748  766.    733.    801. 95%       </span>
 <span class="co">#&gt; # ... with 30 more rows, and 2 more variables: statistic &lt;chr&gt;,</span>
 <span class="co">#&gt; #   method &lt;chr&gt;</span>
 
@@ -516,16 +516,16 @@ df_std <span class="op">%&gt;%</span>
 <span class="co">#&gt; # Groups:   area, year [20]</span>
 <span class="co">#&gt;    area   year sex   total_count total_pop value lowercl uppercl confidence</span>
 <span class="co">#&gt;    &lt;fct&gt; &lt;int&gt; &lt;fct&gt;       &lt;int&gt;     &lt;int&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;     </span>
-<span class="co">#&gt;  1 Area1  2006 Fema~        1609    297542  593.    563.    624. 95%       </span>
-<span class="co">#&gt;  2 Area1  2006 Male         2293    292439  823.    788.    859. 95%       </span>
-<span class="co">#&gt;  3 Area1  2007 Fema~        2341    301123  799.    764.    834. 95%       </span>
-<span class="co">#&gt;  4 Area1  2007 Male         1687    295453  572.    543.    602. 95%       </span>
-<span class="co">#&gt;  5 Area1  2008 Fema~        1322    290781  498.    469.    527. 95%       </span>
-<span class="co">#&gt;  6 Area1  2008 Male         1960    305175  670.    638.    703. 95%       </span>
-<span class="co">#&gt;  7 Area1  2009 Fema~        1930    297974  624.    595.    654. 95%       </span>
-<span class="co">#&gt;  8 Area1  2009 Male         2013    288190  761.    726.    796. 95%       </span>
-<span class="co">#&gt;  9 Area1  2010 Fema~        1910    295888  692.    659.    726. 95%       </span>
-<span class="co">#&gt; 10 Area1  2010 Male         1829    280043  654.    623.    687. 95%       </span>
+<span class="co">#&gt;  1 Area1  2006 Fema~        2034    274567  745.    711.    781. 95%       </span>
+<span class="co">#&gt;  2 Area1  2006 Male         1793    294669  649.    617.    682. 95%       </span>
+<span class="co">#&gt;  3 Area1  2007 Fema~        2043    287373  742.    708.    777. 95%       </span>
+<span class="co">#&gt;  4 Area1  2007 Male         2021    290581  678.    647.    710. 95%       </span>
+<span class="co">#&gt;  5 Area1  2008 Fema~        1812    302461  588.    560.    618. 95%       </span>
+<span class="co">#&gt;  6 Area1  2008 Male         1964    292433  668.    638.    700. 95%       </span>
+<span class="co">#&gt;  7 Area1  2009 Fema~        2226    281936  806.    770.    843. 95%       </span>
+<span class="co">#&gt;  8 Area1  2009 Male         1763    284014  606.    575.    637. 95%       </span>
+<span class="co">#&gt;  9 Area1  2010 Fema~        1786    287422  617.    587.    649. 95%       </span>
+<span class="co">#&gt; 10 Area1  2010 Male         2141    292748  766.    733.    801. 95%       </span>
 <span class="co">#&gt; # ... with 30 more rows, and 2 more variables: statistic &lt;chr&gt;,</span>
 <span class="co">#&gt; #   method &lt;chr&gt;</span>
 
@@ -538,16 +538,16 @@ df_std <span class="op">%&gt;%</span>
 <span class="co">#&gt; # Groups:   area, year [20]</span>
 <span class="co">#&gt;    area   year sex   total_count total_pop value lowercl uppercl confidence</span>
 <span class="co">#&gt;    &lt;fct&gt; &lt;int&gt; &lt;fct&gt;       &lt;int&gt;     &lt;int&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;     </span>
-<span class="co">#&gt;  1 Area1  2006 Fema~        1414    237103  618.    585.    651. 95%       </span>
-<span class="co">#&gt;  2 Area1  2006 Male         2038    237815  858.    821.    897. 95%       </span>
-<span class="co">#&gt;  3 Area1  2007 Fema~        1833    233436  803.    766.    841. 95%       </span>
-<span class="co">#&gt;  4 Area1  2007 Male         1319    231741  564.    534.    596. 95%       </span>
-<span class="co">#&gt;  5 Area1  2008 Fema~        1013    220431  493.    463.    526. 95%       </span>
-<span class="co">#&gt;  6 Area1  2008 Male         1480    240874  668.    633.    704. 95%       </span>
-<span class="co">#&gt;  7 Area1  2009 Fema~        1421    238969  579.    548.    610. 95%       </span>
-<span class="co">#&gt;  8 Area1  2009 Male         1828    235334  804.    767.    843. 95%       </span>
-<span class="co">#&gt;  9 Area1  2010 Fema~        1513    229003  694.    659.    731. 95%       </span>
-<span class="co">#&gt; 10 Area1  2010 Male         1297    224371  586.    554.    619. 95%       </span>
+<span class="co">#&gt;  1 Area1  2006 Fema~        1537    212682  726.    689.    764. 95%       </span>
+<span class="co">#&gt;  2 Area1  2006 Male         1483    234729  671.    637.    707. 95%       </span>
+<span class="co">#&gt;  3 Area1  2007 Fema~        1587    223775  737.    701.    776. 95%       </span>
+<span class="co">#&gt;  4 Area1  2007 Male         1660    237251  702.    668.    737. 95%       </span>
+<span class="co">#&gt;  5 Area1  2008 Fema~        1441    248228  582.    552.    614. 95%       </span>
+<span class="co">#&gt;  6 Area1  2008 Male         1688    238220  687.    654.    721. 95%       </span>
+<span class="co">#&gt;  7 Area1  2009 Fema~        1800    223206  823.    784.    863. 95%       </span>
+<span class="co">#&gt;  8 Area1  2009 Male         1310    219212  601.    568.    635. 95%       </span>
+<span class="co">#&gt;  9 Area1  2010 Fema~        1278    231722  569.    538.    602. 95%       </span>
+<span class="co">#&gt; 10 Area1  2010 Male         1785    229198  788.    751.    825. 95%       </span>
 <span class="co">#&gt; # ... with 30 more rows, and 2 more variables: statistic &lt;chr&gt;,</span>
 <span class="co">#&gt; #   method &lt;chr&gt;</span>
     
@@ -562,26 +562,26 @@ df_std <span class="op">%&gt;%</span>
 <span class="co">#&gt; # Groups:   area [4]</span>
 <span class="co">#&gt;    area   year total_count total_pop value lowercl uppercl confidence</span>
 <span class="co">#&gt;    &lt;fct&gt; &lt;int&gt;       &lt;int&gt;     &lt;int&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;     </span>
-<span class="co">#&gt;  1 Area1  2006        3902    589981  700.    677.    723. 95%       </span>
-<span class="co">#&gt;  2 Area1  2007        4028    596576  689.    667.    712. 95%       </span>
-<span class="co">#&gt;  3 Area1  2008        3282    595956  575.    554.    596. 95%       </span>
-<span class="co">#&gt;  4 Area1  2009        3943    586164  685.    663.    708. 95%       </span>
-<span class="co">#&gt;  5 Area1  2010        3739    575931  646.    624.    668. 95%       </span>
-<span class="co">#&gt;  6 Area2  2006        3753    565383  676.    653.    700. 95%       </span>
-<span class="co">#&gt;  7 Area2  2007        3901    600519  658.    637.    681. 95%       </span>
-<span class="co">#&gt;  8 Area2  2008        3424    598133  561.    541.    581. 95%       </span>
-<span class="co">#&gt;  9 Area2  2009        3993    563161  718.    695.    742. 95%       </span>
-<span class="co">#&gt; 10 Area2  2010        3944    585114  739.    715.    764. 95%       </span>
-<span class="co">#&gt; 11 Area3  2006        4178    563455  788.    763.    813. 95%       </span>
-<span class="co">#&gt; 12 Area3  2007        3484    574973  631.    609.    653. 95%       </span>
-<span class="co">#&gt; 13 Area3  2008        3682    566841  666.    644.    690. 95%       </span>
-<span class="co">#&gt; 14 Area3  2009        3558    547466  649.    626.    671. 95%       </span>
-<span class="co">#&gt; 15 Area3  2010        3601    534559  762.    737.    789. 95%       </span>
-<span class="co">#&gt; 16 Area4  2006        3525    580083  583.    562.    604. 95%       </span>
-<span class="co">#&gt; 17 Area4  2007        3813    564195  693.    670.    717. 95%       </span>
-<span class="co">#&gt; 18 Area4  2008        4039    566938  727.    703.    751. 95%       </span>
-<span class="co">#&gt; 19 Area4  2009        3943    547596  696.    673.    720. 95%       </span>
-<span class="co">#&gt; 20 Area4  2010        4234    557976  794.    769.    819. 95%       </span>
+<span class="co">#&gt;  1 Area1  2006        3827    569236  669.    647.    692. 95%       </span>
+<span class="co">#&gt;  2 Area1  2007        4064    577954  706.    683.    730. 95%       </span>
+<span class="co">#&gt;  3 Area1  2008        3776    594894  633.    612.    655. 95%       </span>
+<span class="co">#&gt;  4 Area1  2009        3989    565950  699.    675.    722. 95%       </span>
+<span class="co">#&gt;  5 Area1  2010        3927    580170  681.    658.    704. 95%       </span>
+<span class="co">#&gt;  6 Area2  2006        3721    553521  648.    626.    671. 95%       </span>
+<span class="co">#&gt;  7 Area2  2007        4343    559070  791.    767.    817. 95%       </span>
+<span class="co">#&gt;  8 Area2  2008        4086    530565  793.    767.    818. 95%       </span>
+<span class="co">#&gt;  9 Area2  2009        3997    547794  721.    697.    745. 95%       </span>
+<span class="co">#&gt; 10 Area2  2010        3802    549293  740.    715.    765. 95%       </span>
+<span class="co">#&gt; 11 Area3  2006        4464    577663  769.    746.    793. 95%       </span>
+<span class="co">#&gt; 12 Area3  2007        3778    540250  742.    718.    767. 95%       </span>
+<span class="co">#&gt; 13 Area3  2008        3853    543948  752.    727.    777. 95%       </span>
+<span class="co">#&gt; 14 Area3  2009        3428    567772  600.    579.    622. 95%       </span>
+<span class="co">#&gt; 15 Area3  2010        4159    547879  726.    703.    750. 95%       </span>
+<span class="co">#&gt; 16 Area4  2006        3413    584511  627.    605.    649. 95%       </span>
+<span class="co">#&gt; 17 Area4  2007        3656    548666  662.    640.    685. 95%       </span>
+<span class="co">#&gt; 18 Area4  2008        3938    552582  693.    669.    717. 95%       </span>
+<span class="co">#&gt; 19 Area4  2009        3755    549062  670.    647.    693. 95%       </span>
+<span class="co">#&gt; 20 Area4  2010        3021    575179  543.    522.    564. 95%       </span>
 <span class="co">#&gt; # ... with 2 more variables: statistic &lt;chr&gt;, method &lt;chr&gt;</span></code></pre></div>
 </div>
 <div id="execute-phe_smr-and-phe_isr" class="section level4">
@@ -605,12 +605,12 @@ df_std <span class="op">%&gt;%</span>
 <span class="co">#&gt; # A tibble: 6 x 3</span>
 <span class="co">#&gt;   ageband   obs    pop</span>
 <span class="co">#&gt;     &lt;dbl&gt; &lt;int&gt;  &lt;int&gt;</span>
-<span class="co">#&gt; 1       0   801 128271</span>
-<span class="co">#&gt; 2       5   979 126392</span>
-<span class="co">#&gt; 3      10  1014 129367</span>
-<span class="co">#&gt; 4      15   685 109258</span>
-<span class="co">#&gt; 5      20   734 106391</span>
-<span class="co">#&gt; 6      25   584 126046</span></code></pre></div>
+<span class="co">#&gt; 1       0   912 116087</span>
+<span class="co">#&gt; 2       5   746 117691</span>
+<span class="co">#&gt; 3      10   929 122302</span>
+<span class="co">#&gt; 4      15   928 113389</span>
+<span class="co">#&gt; 5      20   699 121968</span>
+<span class="co">#&gt; 6      25   623 129101</span></code></pre></div>
 <p>Here are some example code chunks to demonstrate the phe_smr function and the arguments that can optionally be specified</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># calculate separate smrs for each area, year and sex</span>
 df_std <span class="op">%&gt;%</span>
@@ -620,16 +620,16 @@ df_std <span class="op">%&gt;%</span>
 <span class="co">#&gt; # Groups:   area, year [20]</span>
 <span class="co">#&gt;    area   year sex   observed expected value lowercl uppercl confidence</span>
 <span class="co">#&gt;    &lt;fct&gt; &lt;int&gt; &lt;fct&gt;    &lt;int&gt;    &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;     </span>
-<span class="co">#&gt;  1 Area1  2006 Fema~     1609    1997. 0.806   0.767   0.846 95%       </span>
-<span class="co">#&gt;  2 Area1  2006 Male      2293    1962. 1.17    1.12    1.22  95%       </span>
-<span class="co">#&gt;  3 Area1  2007 Fema~     2341    2024. 1.16    1.11    1.20  95%       </span>
-<span class="co">#&gt;  4 Area1  2007 Male      1687    1995. 0.846   0.806   0.887 95%       </span>
-<span class="co">#&gt;  5 Area1  2008 Fema~     1322    1932. 0.684   0.648   0.722 95%       </span>
-<span class="co">#&gt;  6 Area1  2008 Male      1960    2039. 0.961   0.919   1.00  95%       </span>
-<span class="co">#&gt;  7 Area1  2009 Fema~     1930    1981. 0.974   0.931   1.02  95%       </span>
-<span class="co">#&gt;  8 Area1  2009 Male      2013    1923. 1.05    1.00    1.09  95%       </span>
-<span class="co">#&gt;  9 Area1  2010 Fema~     1910    1979. 0.965   0.922   1.01  95%       </span>
-<span class="co">#&gt; 10 Area1  2010 Male      1829    1843. 0.992   0.947   1.04  95%       </span>
+<span class="co">#&gt;  1 Area1  2006 Fema~     2034    1851. 1.10    1.05    1.15  95%       </span>
+<span class="co">#&gt;  2 Area1  2006 Male      1793    1973. 0.909   0.867   0.952 95%       </span>
+<span class="co">#&gt;  3 Area1  2007 Fema~     2043    1940. 1.05    1.01    1.10  95%       </span>
+<span class="co">#&gt;  4 Area1  2007 Male      2021    1959. 1.03    0.987   1.08  95%       </span>
+<span class="co">#&gt;  5 Area1  2008 Fema~     1812    2045. 0.886   0.846   0.928 95%       </span>
+<span class="co">#&gt;  6 Area1  2008 Male      1964    1963. 1.00    0.957   1.05  95%       </span>
+<span class="co">#&gt;  7 Area1  2009 Fema~     2226    1930. 1.15    1.11    1.20  95%       </span>
+<span class="co">#&gt;  8 Area1  2009 Male      1763    1934. 0.912   0.870   0.955 95%       </span>
+<span class="co">#&gt;  9 Area1  2010 Fema~     1786    1963. 0.910   0.868   0.953 95%       </span>
+<span class="co">#&gt; 10 Area1  2010 Male      2141    1988. 1.08    1.03    1.12  95%       </span>
 <span class="co">#&gt; # ... with 30 more rows, and 2 more variables: statistic &lt;chr&gt;,</span>
 <span class="co">#&gt; #   method &lt;chr&gt;</span>
 
@@ -643,16 +643,16 @@ df_std <span class="op">%&gt;%</span>
 <span class="co">#&gt; # Groups:   area, year [20]</span>
 <span class="co">#&gt;    area   year sex   observed expected value lowercl uppercl confidence</span>
 <span class="co">#&gt;    &lt;fct&gt; &lt;int&gt; &lt;fct&gt;    &lt;int&gt;    &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;     </span>
-<span class="co">#&gt;  1 Area1  2006 Fema~     1609    1997. 0.806   0.767   0.846 95%       </span>
-<span class="co">#&gt;  2 Area1  2006 Male      2293    1962. 1.17    1.12    1.22  95%       </span>
-<span class="co">#&gt;  3 Area1  2007 Fema~     2341    2024. 1.16    1.11    1.20  95%       </span>
-<span class="co">#&gt;  4 Area1  2007 Male      1687    1995. 0.846   0.806   0.887 95%       </span>
-<span class="co">#&gt;  5 Area1  2008 Fema~     1322    1932. 0.684   0.648   0.722 95%       </span>
-<span class="co">#&gt;  6 Area1  2008 Male      1960    2039. 0.961   0.919   1.00  95%       </span>
-<span class="co">#&gt;  7 Area1  2009 Fema~     1930    1981. 0.974   0.931   1.02  95%       </span>
-<span class="co">#&gt;  8 Area1  2009 Male      2013    1923. 1.05    1.00    1.09  95%       </span>
-<span class="co">#&gt;  9 Area1  2010 Fema~     1910    1979. 0.965   0.922   1.01  95%       </span>
-<span class="co">#&gt; 10 Area1  2010 Male      1829    1843. 0.992   0.947   1.04  95%       </span>
+<span class="co">#&gt;  1 Area1  2006 Fema~     2034    1851. 1.10    1.05    1.15  95%       </span>
+<span class="co">#&gt;  2 Area1  2006 Male      1793    1973. 0.909   0.867   0.952 95%       </span>
+<span class="co">#&gt;  3 Area1  2007 Fema~     2043    1940. 1.05    1.01    1.10  95%       </span>
+<span class="co">#&gt;  4 Area1  2007 Male      2021    1959. 1.03    0.987   1.08  95%       </span>
+<span class="co">#&gt;  5 Area1  2008 Fema~     1812    2045. 0.886   0.846   0.928 95%       </span>
+<span class="co">#&gt;  6 Area1  2008 Male      1964    1963. 1.00    0.957   1.05  95%       </span>
+<span class="co">#&gt;  7 Area1  2009 Fema~     2226    1930. 1.15    1.11    1.20  95%       </span>
+<span class="co">#&gt;  8 Area1  2009 Male      1763    1934. 0.912   0.870   0.955 95%       </span>
+<span class="co">#&gt;  9 Area1  2010 Fema~     1786    1963. 0.910   0.868   0.953 95%       </span>
+<span class="co">#&gt; 10 Area1  2010 Male      2141    1988. 1.08    1.03    1.12  95%       </span>
 <span class="co">#&gt; # ... with 30 more rows, and 2 more variables: statistic &lt;chr&gt;,</span>
 <span class="co">#&gt; #   method &lt;chr&gt;</span>
 
@@ -666,11 +666,11 @@ df_std <span class="op">%&gt;%</span>
 <span class="co">#&gt; # A tibble: 5 x 6</span>
 <span class="co">#&gt;    year observed expected value lowercl uppercl</span>
 <span class="co">#&gt;   &lt;int&gt;    &lt;int&gt;    &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span>
-<span class="co">#&gt; 1  2006    15358   15358  1       0.984   1.02 </span>
-<span class="co">#&gt; 2  2007    15226   15638. 0.974   0.958   0.989</span>
-<span class="co">#&gt; 3  2008    14427   15607. 0.924   0.909   0.940</span>
-<span class="co">#&gt; 4  2009    15437   15008. 1.03    1.01    1.04 </span>
-<span class="co">#&gt; 5  2010    15518   15010. 1.03    1.02    1.05</span></code></pre></div>
+<span class="co">#&gt; 1  2006    15425   15425  1       0.984   1.02 </span>
+<span class="co">#&gt; 2  2007    15841   15077. 1.05    1.03    1.07 </span>
+<span class="co">#&gt; 3  2008    15653   14971. 1.05    1.03    1.06 </span>
+<span class="co">#&gt; 4  2009    15169   15094. 1.00    0.989   1.02 </span>
+<span class="co">#&gt; 5  2010    14909   15237. 0.978   0.963   0.994</span></code></pre></div>
 <p>The phe_isr function works exactly the same way but instead of expressing the result as a ratio of the observed and expected rates the result is expressed as a rate and the reference rate is also provided. Here are some examples:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># calculate separate isrs for each area, year and sex</span>
 df_std <span class="op">%&gt;%</span>
@@ -680,16 +680,16 @@ df_std <span class="op">%&gt;%</span>
 <span class="co">#&gt; # Groups:   area, year [20]</span>
 <span class="co">#&gt;    area   year sex   observed expected ref_rate value lowercl uppercl</span>
 <span class="co">#&gt;    &lt;fct&gt; &lt;int&gt; &lt;fct&gt;    &lt;int&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 Area1  2006 Fema~     1609    1997.     668.  538.    512.    565.</span>
-<span class="co">#&gt;  2 Area1  2006 Male      2293    1962.     668.  781.    749.    813.</span>
-<span class="co">#&gt;  3 Area1  2007 Fema~     2341    2024.     668.  773.    742.    805.</span>
-<span class="co">#&gt;  4 Area1  2007 Male      1687    1995.     668.  565.    538.    593.</span>
-<span class="co">#&gt;  5 Area1  2008 Fema~     1322    1932.     668.  457.    433.    482.</span>
-<span class="co">#&gt;  6 Area1  2008 Male      1960    2039.     668.  642.    614.    671.</span>
-<span class="co">#&gt;  7 Area1  2009 Fema~     1930    1981.     668.  651.    622.    680.</span>
-<span class="co">#&gt;  8 Area1  2009 Male      2013    1923.     668.  699.    669.    730.</span>
-<span class="co">#&gt;  9 Area1  2010 Fema~     1910    1979.     668.  645.    616.    674.</span>
-<span class="co">#&gt; 10 Area1  2010 Male      1829    1843.     668.  663.    633.    694.</span>
+<span class="co">#&gt;  1 Area1  2006 Fema~     2034    1851.     675.  742.    710.    775.</span>
+<span class="co">#&gt;  2 Area1  2006 Male      1793    1973.     675.  613.    585.    643.</span>
+<span class="co">#&gt;  3 Area1  2007 Fema~     2043    1940.     675.  711.    680.    742.</span>
+<span class="co">#&gt;  4 Area1  2007 Male      2021    1959.     675.  696.    666.    727.</span>
+<span class="co">#&gt;  5 Area1  2008 Fema~     1812    2045.     675.  598.    571.    626.</span>
+<span class="co">#&gt;  6 Area1  2008 Male      1964    1963.     675.  675.    646.    706.</span>
+<span class="co">#&gt;  7 Area1  2009 Fema~     2226    1930.     675.  779.    747.    812.</span>
+<span class="co">#&gt;  8 Area1  2009 Male      1763    1934.     675.  616.    587.    645.</span>
+<span class="co">#&gt;  9 Area1  2010 Fema~     1786    1963.     675.  614.    586.    643.</span>
+<span class="co">#&gt; 10 Area1  2010 Male      2141    1988.     675.  727.    697.    758.</span>
 <span class="co">#&gt; # ... with 30 more rows, and 3 more variables: confidence &lt;chr&gt;,</span>
 <span class="co">#&gt; #   statistic &lt;chr&gt;, method &lt;chr&gt;</span>
 
@@ -703,16 +703,16 @@ df_std <span class="op">%&gt;%</span>
 <span class="co">#&gt; # Groups:   area, year [20]</span>
 <span class="co">#&gt;    area   year sex   observed expected ref_rate value lowercl uppercl</span>
 <span class="co">#&gt;    &lt;fct&gt; &lt;int&gt; &lt;fct&gt;    &lt;int&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 Area1  2006 Fema~     1609    1997.     668.  538.    512.    565.</span>
-<span class="co">#&gt;  2 Area1  2006 Male      2293    1962.     668.  781.    749.    813.</span>
-<span class="co">#&gt;  3 Area1  2007 Fema~     2341    2024.     668.  773.    742.    805.</span>
-<span class="co">#&gt;  4 Area1  2007 Male      1687    1995.     668.  565.    538.    593.</span>
-<span class="co">#&gt;  5 Area1  2008 Fema~     1322    1932.     668.  457.    433.    482.</span>
-<span class="co">#&gt;  6 Area1  2008 Male      1960    2039.     668.  642.    614.    671.</span>
-<span class="co">#&gt;  7 Area1  2009 Fema~     1930    1981.     668.  651.    622.    680.</span>
-<span class="co">#&gt;  8 Area1  2009 Male      2013    1923.     668.  699.    669.    730.</span>
-<span class="co">#&gt;  9 Area1  2010 Fema~     1910    1979.     668.  645.    616.    674.</span>
-<span class="co">#&gt; 10 Area1  2010 Male      1829    1843.     668.  663.    633.    694.</span>
+<span class="co">#&gt;  1 Area1  2006 Fema~     2034    1851.     675.  742.    710.    775.</span>
+<span class="co">#&gt;  2 Area1  2006 Male      1793    1973.     675.  613.    585.    643.</span>
+<span class="co">#&gt;  3 Area1  2007 Fema~     2043    1940.     675.  711.    680.    742.</span>
+<span class="co">#&gt;  4 Area1  2007 Male      2021    1959.     675.  696.    666.    727.</span>
+<span class="co">#&gt;  5 Area1  2008 Fema~     1812    2045.     675.  598.    571.    626.</span>
+<span class="co">#&gt;  6 Area1  2008 Male      1964    1963.     675.  675.    646.    706.</span>
+<span class="co">#&gt;  7 Area1  2009 Fema~     2226    1930.     675.  779.    747.    812.</span>
+<span class="co">#&gt;  8 Area1  2009 Male      1763    1934.     675.  616.    587.    645.</span>
+<span class="co">#&gt;  9 Area1  2010 Fema~     1786    1963.     675.  614.    586.    643.</span>
+<span class="co">#&gt; 10 Area1  2010 Male      2141    1988.     675.  727.    697.    758.</span>
 <span class="co">#&gt; # ... with 30 more rows, and 3 more variables: confidence &lt;chr&gt;,</span>
 <span class="co">#&gt; #   statistic &lt;chr&gt;, method &lt;chr&gt;</span>
 
@@ -726,11 +726,11 @@ df_std <span class="op">%&gt;%</span>
 <span class="co">#&gt; # A tibble: 5 x 7</span>
 <span class="co">#&gt;    year observed expected ref_rate value lowercl uppercl</span>
 <span class="co">#&gt;   &lt;int&gt;    &lt;int&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span>
-<span class="co">#&gt; 1  2006    15358   15358      668.  668.    658.    679.</span>
-<span class="co">#&gt; 2  2007    15226   15638.     668.  650.    640.    661.</span>
-<span class="co">#&gt; 3  2008    14427   15607.     668.  618.    608.    628.</span>
-<span class="co">#&gt; 4  2009    15437   15008.     668.  687.    676.    698.</span>
-<span class="co">#&gt; 5  2010    15518   15010.     668.  691.    680.    702.</span></code></pre></div>
+<span class="co">#&gt; 1  2006    15425   15425      675.  675.    664.    686.</span>
+<span class="co">#&gt; 2  2007    15841   15077.     675.  709.    698.    720.</span>
+<span class="co">#&gt; 3  2008    15653   14971.     675.  706.    695.    717.</span>
+<span class="co">#&gt; 4  2009    15169   15094.     675.  678.    668.    689.</span>
+<span class="co">#&gt; 5  2010    14909   15237.     675.  661.    650.    671.</span></code></pre></div>
 </div>
 </div>
 

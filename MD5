@@ -1,6 +1,6 @@
-d18b8139c252d29c059262f796440f86 *DESCRIPTION
+4f773dd1c3f26c270227ad783457ddef *DESCRIPTION
 e9e947ac407e316c24ff659fd338851b *NAMESPACE
-56631937e4dafbd6e1165a6c6f208c27 *NEWS.md
+4a966fbe90c7785011d15decb22bad6d *NEWS.md
 9f7cf2294bd35f7d5d4fc47ae31f32a6 *R/DSR.R
 1e59e752abdb54fc61b8e645cf99c30d *R/ISR.R
 31c304e77847b5e1a95255b990bda37c *R/LifeExpectancy.R
@@ -22,13 +22,13 @@ c22ae9817598f13d8d352a24c63444cd *build/vignette.rds
 5805e26f15014a8a12c32070d37f8311 *data/prevalence_data.rda
 1ec6d7fcf1c17f7c9757a3e2c73c4aff *inst/doc/DSR-vignette.R
 5d48f977e392da49817843b6beb0f238 *inst/doc/DSR-vignette.Rmd
-c5935ffd9c9b05ad54535bdad6c45c2d *inst/doc/DSR-vignette.html
+690f1cc318d20f0d20943331a35bda11 *inst/doc/DSR-vignette.html
 1ec6d7fcf1c17f7c9757a3e2c73c4aff *inst/doc/Introduction_to_PHEindicatormethods.R
 057440b6ebb08e14d699210465434a25 *inst/doc/Introduction_to_PHEindicatormethods.Rmd
-d67eb0184eb952204924990a89bcd170 *inst/doc/Introduction_to_PHEindicatormethods.html
+e8a1aeb834509621518633eba1e6e50c *inst/doc/Introduction_to_PHEindicatormethods.html
 306ef84314db6dd26ae60aaf8fcd7018 *inst/doc/WorkedExamples_phe_sii.R
 1aab6eec7361456ee94b8d89d12ba97d *inst/doc/WorkedExamples_phe_sii.Rmd
-c29e6f39d50f704ea0311b9c573779cd *inst/doc/WorkedExamples_phe_sii.html
+2f2fb9ceb93878d00d107bef35aed2a8 *inst/doc/WorkedExamples_phe_sii.html
 f0bab9236faf3700de32bfc02675a53d *man/DSR_data.Rd
 0316896459b75612c3698dd31921ec88 *man/FindXValues.Rd
 7a3b82782e7ace18257baa796736704c *man/LE_data.Rd
@@ -57,9 +57,9 @@ ae086244d82ca62a51941b4a76af0dbf *tests/testthat/DSR_testdata.csv
 a4053b0f35a6983414a5d7a63afbd13b *tests/testthat/testByars.R
 74e7ddaf2c862b837652f90ee08a86e4 *tests/testthat/testDSRs.R
 fb069ffd5ae96410ae56dd2b989268cb *tests/testthat/testISRs.R
-0e6b60fcb3cbfba82cc7e5aa8fc3cc8a *tests/testthat/testLifeExpectancy.R
+d8887431a75c0e238b0364cf8fbf31ca *tests/testthat/testLifeExpectancy.R
 a45464499d207df9c712bda44c0a8a27 *tests/testthat/testMeans.R
-eead634d6181fccac3a3cfe6cf505365 *tests/testthat/testProportions.R
+e1424576a8b1254ba78112937e7a832f *tests/testthat/testProportions.R
 40cfab69f4f31051b0406f1082900c6d *tests/testthat/testQuantiles.R
 f6e342c2eb7db2953a339e3dc38cbde1 *tests/testthat/testRates.R
 dc40bdb887a06155f9debb0d336a186f *tests/testthat/testSII.R
