@@ -12,7 +12,7 @@
 
 <meta name="author" content="Georgina Anderson" />
 
-<meta name="date" content="2019-04-23" />
+<meta name="date" content="2019-05-15" />
 
 <title>PHEindicatormethods DSR function</title>
 
@@ -95,7 +95,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">PHEindicatormethods DSR function</h1>
 <h4 class="author">Georgina Anderson</h4>
-<h4 class="date">2019-04-23</h4>
+<h4 class="date">2019-05-15</h4>
 
 
 
@@ -190,12 +190,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
                    <span class="dt">pop =</span> <span class="kw">sample</span>(<span class="dv">10000</span><span class="op">:</span><span class="dv">20000</span>, <span class="dv">19</span> <span class="op">*</span><span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="dv">5</span> <span class="op">*</span><span class="st"> </span><span class="dv">4</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>))
 <span class="kw">head</span>(pops)
 <span class="co">#&gt;   indicator period region ageband   pop</span>
-<span class="co">#&gt; 1      Ind1   2012  Area1       0 10657</span>
-<span class="co">#&gt; 2      Ind1   2012  Area1       5 19856</span>
-<span class="co">#&gt; 3      Ind1   2012  Area1      10 13155</span>
-<span class="co">#&gt; 4      Ind1   2012  Area1      15 13990</span>
-<span class="co">#&gt; 5      Ind1   2012  Area1      20 10918</span>
-<span class="co">#&gt; 6      Ind1   2012  Area1      25 10519</span>
+<span class="co">#&gt; 1      Ind1   2012  Area1       0 16363</span>
+<span class="co">#&gt; 2      Ind1   2012  Area1       5 17794</span>
+<span class="co">#&gt; 3      Ind1   2012  Area1      10 18303</span>
+<span class="co">#&gt; 4      Ind1   2012  Area1      15 14145</span>
+<span class="co">#&gt; 5      Ind1   2012  Area1      20 16336</span>
+<span class="co">#&gt; 6      Ind1   2012  Area1      25 14685</span>
 
 
 deaths &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">indicator =</span> <span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;Ind1&quot;</span>,<span class="st">&quot;Ind2&quot;</span>,<span class="st">&quot;Ind3&quot;</span>,<span class="st">&quot;Ind4&quot;</span>), <span class="dt">each =</span> <span class="dv">19</span> <span class="op">*</span><span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="dv">5</span>),
@@ -206,12 +206,12 @@ deaths &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span cl
                    <span class="dt">dths =</span> <span class="kw">sample</span>(<span class="dv">200</span>, <span class="dv">19</span> <span class="op">*</span><span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="dv">5</span> <span class="op">*</span><span class="st"> </span><span class="dv">4</span>, <span class="dt">replace=</span><span class="ot">TRUE</span>))
 <span class="kw">head</span>(deaths)
 <span class="co">#&gt;   indicator period region ageband dths</span>
-<span class="co">#&gt; 1      Ind1   2012  Area1       0   33</span>
-<span class="co">#&gt; 2      Ind1   2012  Area1       5   70</span>
-<span class="co">#&gt; 3      Ind1   2012  Area1      10  178</span>
-<span class="co">#&gt; 4      Ind1   2012  Area1      15  118</span>
-<span class="co">#&gt; 5      Ind1   2012  Area1      20   16</span>
-<span class="co">#&gt; 6      Ind1   2012  Area1      25  164</span></code></pre></div>
+<span class="co">#&gt; 1      Ind1   2012  Area1       0  149</span>
+<span class="co">#&gt; 2      Ind1   2012  Area1       5   78</span>
+<span class="co">#&gt; 3      Ind1   2012  Area1      10  196</span>
+<span class="co">#&gt; 4      Ind1   2012  Area1      15  135</span>
+<span class="co">#&gt; 5      Ind1   2012  Area1      20   50</span>
+<span class="co">#&gt; 6      Ind1   2012  Area1      25   17</span></code></pre></div>
 </div>
 <div id="then-lets-prepare-and-validate-our-data" class="section level2">
 <h2>Then let’s prepare and validate our data</h2>
@@ -283,16 +283,16 @@ wrong &lt;-<span class="st"> </span>df <span class="op">%&gt;%</span>
 <span class="co">#&gt; # Groups:   indicator, period [20]</span>
 <span class="co">#&gt;    indicator period region total_count total_pop value lowercl uppercl</span>
 <span class="co">#&gt;    &lt;fct&gt;      &lt;int&gt; &lt;fct&gt;        &lt;int&gt;     &lt;int&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 Ind1        2012 Area1         1729    270834  674.    641.    708.</span>
-<span class="co">#&gt;  2 Ind1        2012 Area2         1714    266807  661.    628.    694.</span>
-<span class="co">#&gt;  3 Ind1        2013 Area1         2071    300560  791.    755.    829.</span>
-<span class="co">#&gt;  4 Ind1        2013 Area2         1936    265607  738.    703.    775.</span>
-<span class="co">#&gt;  5 Ind1        2014 Area1         2222    295371  721.    689.    753.</span>
-<span class="co">#&gt;  6 Ind1        2014 Area2         2461    287397  963.    922.   1006.</span>
-<span class="co">#&gt;  7 Ind1        2015 Area1         1790    294430  635.    604.    668.</span>
-<span class="co">#&gt;  8 Ind1        2015 Area2         2271    276108  897.    858.    936.</span>
-<span class="co">#&gt;  9 Ind1        2016 Area1         1948    273166  851.    812.    891.</span>
-<span class="co">#&gt; 10 Ind1        2016 Area2         1956    297434  710.    677.    745.</span>
+<span class="co">#&gt;  1 Ind1        2012 Area1         1790    287023  666.    633.    700.</span>
+<span class="co">#&gt;  2 Ind1        2012 Area2         1507    269763  613.    581.    646.</span>
+<span class="co">#&gt;  3 Ind1        2013 Area1         2037    292926  780.    745.    816.</span>
+<span class="co">#&gt;  4 Ind1        2013 Area2         2233    289311  812.    776.    849.</span>
+<span class="co">#&gt;  5 Ind1        2014 Area1         1540    287040  580.    551.    611.</span>
+<span class="co">#&gt;  6 Ind1        2014 Area2         1366    278460  528.    498.    560.</span>
+<span class="co">#&gt;  7 Ind1        2015 Area1         1843    293743  617.    587.    647.</span>
+<span class="co">#&gt;  8 Ind1        2015 Area2         2350    270543  903.    864.    943.</span>
+<span class="co">#&gt;  9 Ind1        2016 Area1         1551    301812  601.    570.    634.</span>
+<span class="co">#&gt; 10 Ind1        2016 Area2         1872    274606  649.    617.    681.</span>
 <span class="co">#&gt; # ... with 30 more rows, and 3 more variables: confidence &lt;chr&gt;,</span>
 <span class="co">#&gt; #   statistic &lt;chr&gt;, method &lt;chr&gt;</span></code></pre></div>
 <p></br> </br></p>
@@ -307,16 +307,16 @@ wrong &lt;-<span class="st"> </span>df <span class="op">%&gt;%</span>
 <span class="co">#&gt; # Groups:   indicator, period [20]</span>
 <span class="co">#&gt;    indicator period region total_count total_pop value lowercl uppercl</span>
 <span class="co">#&gt;    &lt;fct&gt;      &lt;int&gt; &lt;fct&gt;        &lt;int&gt;     &lt;int&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 Ind1        2012 Area1         1729    270834  67.4    62.2    72.9</span>
-<span class="co">#&gt;  2 Ind1        2012 Area2         1714    266807  66.1    61.0    71.4</span>
-<span class="co">#&gt;  3 Ind1        2013 Area1         2071    300560  79.1    73.4    85.1</span>
-<span class="co">#&gt;  4 Ind1        2013 Area2         1936    265607  73.8    68.3    79.6</span>
-<span class="co">#&gt;  5 Ind1        2014 Area1         2222    295371  72.1    67.1    77.3</span>
-<span class="co">#&gt;  6 Ind1        2014 Area2         2461    287397  96.3    89.9   103. </span>
-<span class="co">#&gt;  7 Ind1        2015 Area1         1790    294430  63.5    58.6    68.7</span>
-<span class="co">#&gt;  8 Ind1        2015 Area2         2271    276108  89.7    83.7    96.0</span>
-<span class="co">#&gt;  9 Ind1        2016 Area1         1948    273166  85.1    79.0    91.4</span>
-<span class="co">#&gt; 10 Ind1        2016 Area2         1956    297434  71.0    65.8    76.5</span>
+<span class="co">#&gt;  1 Ind1        2012 Area1         1790    287023  66.6    61.5    72.0</span>
+<span class="co">#&gt;  2 Ind1        2012 Area2         1507    269763  61.3    56.3    66.5</span>
+<span class="co">#&gt;  3 Ind1        2013 Area1         2037    292926  78.0    72.5    83.8</span>
+<span class="co">#&gt;  4 Ind1        2013 Area2         2233    289311  81.2    75.6    87.1</span>
+<span class="co">#&gt;  5 Ind1        2014 Area1         1540    287040  58.0    53.4    62.9</span>
+<span class="co">#&gt;  6 Ind1        2014 Area2         1366    278460  52.8    48.1    57.8</span>
+<span class="co">#&gt;  7 Ind1        2015 Area1         1843    293743  61.7    57.1    66.5</span>
+<span class="co">#&gt;  8 Ind1        2015 Area2         2350    270543  90.3    84.3    96.6</span>
+<span class="co">#&gt;  9 Ind1        2016 Area1         1551    301812  60.1    55.2    65.3</span>
+<span class="co">#&gt; 10 Ind1        2016 Area2         1872    274606  64.9    60.0    70.0</span>
 <span class="co">#&gt; # ... with 30 more rows</span></code></pre></div>
 <p></br> </br></p>
 </div>
@@ -339,16 +339,16 @@ df18 &lt;-<span class="st"> </span><span class="kw">filter</span>(df18,ageband <
 <span class="co">#&gt; # Groups:   indicator, period [20]</span>
 <span class="co">#&gt;    indicator period region total_count total_pop value lowercl uppercl</span>
 <span class="co">#&gt;    &lt;fct&gt;      &lt;int&gt; &lt;fct&gt;        &lt;int&gt;     &lt;int&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 Ind1        2012 Area1         1729    270834  700.    664.    738.</span>
-<span class="co">#&gt;  2 Ind1        2012 Area2         1714    266807  704.    668.    741.</span>
-<span class="co">#&gt;  3 Ind1        2013 Area1         2071    300560  803.    765.    842.</span>
-<span class="co">#&gt;  4 Ind1        2013 Area2         1936    265607  704.    668.    742.</span>
-<span class="co">#&gt;  5 Ind1        2014 Area1         2222    295371  729.    695.    763.</span>
-<span class="co">#&gt;  6 Ind1        2014 Area2         2461    287397  973.    930.   1017.</span>
-<span class="co">#&gt;  7 Ind1        2015 Area1         1790    294430  604.    572.    636.</span>
-<span class="co">#&gt;  8 Ind1        2015 Area2         2271    276108  901.    861.    943.</span>
-<span class="co">#&gt;  9 Ind1        2016 Area1         1948    273166  868.    827.    910.</span>
-<span class="co">#&gt; 10 Ind1        2016 Area2         1956    297434  730.    694.    766.</span>
+<span class="co">#&gt;  1 Ind1        2012 Area1         1790    287023  696.    661.    732.</span>
+<span class="co">#&gt;  2 Ind1        2012 Area2         1507    269763  637.    602.    673.</span>
+<span class="co">#&gt;  3 Ind1        2013 Area1         2037    292926  780.    744.    818.</span>
+<span class="co">#&gt;  4 Ind1        2013 Area2         2233    289311  848.    809.    888.</span>
+<span class="co">#&gt;  5 Ind1        2014 Area1         1540    287040  565.    535.    596.</span>
+<span class="co">#&gt;  6 Ind1        2014 Area2         1366    278460  510.    479.    542.</span>
+<span class="co">#&gt;  7 Ind1        2015 Area1         1843    293743  623.    591.    656.</span>
+<span class="co">#&gt;  8 Ind1        2015 Area2         2350    270543  917.    876.    959.</span>
+<span class="co">#&gt;  9 Ind1        2016 Area1         1551    301812  606.    573.    641.</span>
+<span class="co">#&gt; 10 Ind1        2016 Area2         1872    274606  606.    574.    640.</span>
 <span class="co">#&gt; # ... with 30 more rows, and 3 more variables: confidence &lt;chr&gt;,</span>
 <span class="co">#&gt; #   statistic &lt;chr&gt;, method &lt;chr&gt;</span></code></pre></div>
 <p></br> </br></p>
@@ -366,16 +366,16 @@ df18 &lt;-<span class="st"> </span><span class="kw">filter</span>(df18,ageband <
 <span class="co">#&gt; # Groups:   indicator, period [20]</span>
 <span class="co">#&gt;    indicator period region total_count total_pop value lowercl uppercl</span>
 <span class="co">#&gt;    &lt;fct&gt;      &lt;int&gt; &lt;fct&gt;        &lt;int&gt;     &lt;int&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 Ind1        2012 Area1         1729    270834  674.    641.    708.</span>
-<span class="co">#&gt;  2 Ind1        2012 Area2         1714    266807  661.    628.    694.</span>
-<span class="co">#&gt;  3 Ind1        2013 Area1         2071    300560  791.    755.    829.</span>
-<span class="co">#&gt;  4 Ind1        2013 Area2         1936    265607  738.    703.    775.</span>
-<span class="co">#&gt;  5 Ind1        2014 Area1         2222    295371  721.    689.    753.</span>
-<span class="co">#&gt;  6 Ind1        2014 Area2         2461    287397  963.    922.   1006.</span>
-<span class="co">#&gt;  7 Ind1        2015 Area1         1790    294430  635.    604.    668.</span>
-<span class="co">#&gt;  8 Ind1        2015 Area2         2271    276108  897.    858.    936.</span>
-<span class="co">#&gt;  9 Ind1        2016 Area1         1948    273166  851.    812.    891.</span>
-<span class="co">#&gt; 10 Ind1        2016 Area2         1956    297434  710.    677.    745.</span>
+<span class="co">#&gt;  1 Ind1        2012 Area1         1790    287023  666.    633.    700.</span>
+<span class="co">#&gt;  2 Ind1        2012 Area2         1507    269763  613.    581.    646.</span>
+<span class="co">#&gt;  3 Ind1        2013 Area1         2037    292926  780.    745.    816.</span>
+<span class="co">#&gt;  4 Ind1        2013 Area2         2233    289311  812.    776.    849.</span>
+<span class="co">#&gt;  5 Ind1        2014 Area1         1540    287040  580.    551.    611.</span>
+<span class="co">#&gt;  6 Ind1        2014 Area2         1366    278460  528.    498.    560.</span>
+<span class="co">#&gt;  7 Ind1        2015 Area1         1843    293743  617.    587.    647.</span>
+<span class="co">#&gt;  8 Ind1        2015 Area2         2350    270543  903.    864.    943.</span>
+<span class="co">#&gt;  9 Ind1        2016 Area1         1551    301812  601.    570.    634.</span>
+<span class="co">#&gt; 10 Ind1        2016 Area2         1872    274606  649.    617.    681.</span>
 <span class="co">#&gt; # ... with 30 more rows, and 3 more variables: confidence &lt;chr&gt;,</span>
 <span class="co">#&gt; #   statistic &lt;chr&gt;, method &lt;chr&gt;</span></code></pre></div>
 <p></br> </br></p>
