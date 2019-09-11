@@ -1,3 +1,11 @@
+## PHEindicatormethods v1.1.5
+phe_sii function updated to be compatible with nest and unnest functions from tidyr version 1.0
+
+## PHEindicatormethods v1.1.4
+No significant changes.
+Removed confusing line of commented out code from phe_life_expectancy calculation
+Amended vignette title
+
 ## PHEindicatormethods v1.1.3
 
 Minor amendments to package testing scripts to work on platforms using clang as compiler.  
