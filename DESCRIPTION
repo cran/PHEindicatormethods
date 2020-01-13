@@ -1,6 +1,6 @@
 Package: PHEindicatormethods
 Type: Package
-Version: 1.1.5
+Version: 1.2.0
 Title: Common Public Health Statistics and their Confidence Intervals
 Description: Functions to calculate commonly used public health statistics and 
     their confidence intervals using methods approved for use in the production  
@@ -30,12 +30,12 @@ Depends: R (>= 3.1.0)
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
-Imports: dplyr, rlang, broom, tidyr, purrr, stats
+Imports: dplyr, rlang (>= 0.4.0), broom, tidyr, purrr, stats
 Suggests: knitr, readxl, rmarkdown, testthat,
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.2
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2019-09-05 20:28:57 UTC; Georgina.Anderson
+Packaged: 2020-01-13 14:03:09 UTC; Georgina.Anderson
 Author: Anderson Georgina [aut, cre],
   Fox Sebastian [ctb],
   Francis Matthew [ctb],
@@ -43,4 +43,4 @@ Author: Anderson Georgina [aut, cre],
   Clegg Emma [ctb]
 Maintainer: Anderson Georgina <georgina.anderson@phe.gov.uk>
 Repository: CRAN
-Date/Publication: 2019-09-11 11:50:02 UTC
+Date/Publication: 2020-01-13 14:30:02 UTC

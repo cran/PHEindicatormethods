@@ -4,8 +4,7 @@
 \alias{phe_rate}
 \title{Calculate Rates using phe_rate}
 \usage{
-phe_rate(data, x, n, type = "full", confidence = 0.95,
-  multiplier = 1e+05)
+phe_rate(data, x, n, type = "full", confidence = 0.95, multiplier = 1e+05)
 }
 \arguments{
 \item{data}{the data.frame containing the data to calculate rates for, pre-grouped if proportions required for
@@ -19,7 +18,8 @@ group aggregates; unquoted string; no default}
 can be "value", "lower", "upper", "standard" (for all data) or "full" (for all data and metadata); quoted string; default = "full"}
 
 \item{confidence}{the required level of confidence expressed as a number between 0.9 and 1
-or 90 and 100; numeric; default 0.95}
+or a number between 90 and 100 or can be a vector of 0.95 and 0.998 to output both 95% and 99.8% CIs;
+numeric; default 0.95}
 
 \item{multiplier}{the multiplier used to express the final values (eg 100,000 = rate per 100,000); numeric; default 100,000}
 }
@@ -60,10 +60,14 @@ phe_rate(dfg, obs, pop)
   Oxford: Blackwell; 2002.
 }
 \seealso{
-Other PHEindicatormethods package functions: \code{\link{phe_dsr}},
-  \code{\link{phe_isr}}, \code{\link{phe_life_expectancy}},
-  \code{\link{phe_mean}}, \code{\link{phe_proportion}},
-  \code{\link{phe_quantile}}, \code{\link{phe_sii}},
-  \code{\link{phe_smr}}
+Other PHEindicatormethods package functions: 
+\code{\link{phe_dsr}()},
+\code{\link{phe_isr}()},
+\code{\link{phe_life_expectancy}()},
+\code{\link{phe_mean}()},
+\code{\link{phe_proportion}()},
+\code{\link{phe_quantile}()},
+\code{\link{phe_sii}()},
+\code{\link{phe_smr}()}
 }
 \concept{PHEindicatormethods package functions}

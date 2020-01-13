@@ -4,10 +4,17 @@
 \alias{phe_life_expectancy}
 \title{Calculate Life Expectancy using phe_life_expectancy}
 \usage{
-phe_life_expectancy(data, deaths, population, startage,
-  age_contents = c(0L, 1L, 5L, 10L, 15L, 20L, 25L, 30L, 35L, 40L, 45L,
-  50L, 55L, 60L, 65L, 70L, 75L, 80L, 85L, 90L), le_age = "all",
-  type = "full", confidence = 0.95)
+phe_life_expectancy(
+  data,
+  deaths,
+  population,
+  startage,
+  age_contents = c(0L, 1L, 5L, 10L, 15L, 20L, 25L, 30L, 35L, 40L, 45L, 50L, 55L, 60L,
+    65L, 70L, 75L, 80L, 85L, 90L),
+  le_age = "all",
+  type = "full",
+  confidence = 0.95
+)
 }
 \arguments{
 \item{data}{data.frame or tbl containing the deaths and population data}
@@ -32,10 +39,13 @@ described by the age_contents input}
 
 \item{type}{type of output; can be "standard" or "full" (full contains
 added details on the calculation within the dataframe); quoted
-string; default full}
+string; default full
+@param confidence the required level of confidence expressed as a number between 0.9 and 1
+                or 90 and 100; numeric; default 0.95}
 
 \item{confidence}{the required level of confidence expressed as a number between 0.9 and 1
-or 90 and 100; numeric; default 0.95}
+or a number between 90 and 100 or can be a vector of 0.95 and 0.998 to output both 95% and 99.8% CIs;
+numeric; default 0.95}
 }
 \description{
 Compute life expectancy for a given age, and its standard error
@@ -141,11 +151,15 @@ small populations. National Statistics  Methodological Series No 33. HMSO 2003. 
 life expectancy estimation. J Epidemiol Community Health 2004;58:243-249 \cr \cr
 }
 \seealso{
-Other PHEindicatormethods package functions: \code{\link{phe_dsr}},
-  \code{\link{phe_isr}}, \code{\link{phe_mean}},
-  \code{\link{phe_proportion}}, \code{\link{phe_quantile}},
-  \code{\link{phe_rate}}, \code{\link{phe_sii}},
-  \code{\link{phe_smr}}
+Other PHEindicatormethods package functions: 
+\code{\link{phe_dsr}()},
+\code{\link{phe_isr}()},
+\code{\link{phe_mean}()},
+\code{\link{phe_proportion}()},
+\code{\link{phe_quantile}()},
+\code{\link{phe_rate}()},
+\code{\link{phe_sii}()},
+\code{\link{phe_smr}()}
 }
 \author{
 Sebastian Fox, \email{sebastian.fox@phe.gov.uk}

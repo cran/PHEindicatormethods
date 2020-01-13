@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
@@ -13,7 +12,7 @@
 
 <meta name="author" content="Georgina Anderson" />
 
-<meta name="date" content="2019-09-05" />
+<meta name="date" content="2020-01-13" />
 
 <title>Introduction to PHEindicatormethods</title>
 
@@ -122,7 +121,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <h1 class="title toc-ignore">Introduction to PHEindicatormethods</h1>
 <h4 class="author">Georgina Anderson</h4>
-<h4 class="date">2019-09-05</h4>
+<h4 class="date">2020-01-13</h4>
 
 
 
@@ -207,14 +206,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb2-5" title="5">        <span class="dt">pop =</span> <span class="kw">sample</span>(<span class="dv">100</span><span class="op">:</span><span class="dv">200</span>, <span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="dv">4</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>))</a>
 <a class="sourceLine" id="cb2-6" title="6">df</a>
 <a class="sourceLine" id="cb2-7" title="7"><span class="co">#&gt;    area year obs pop</span></a>
-<a class="sourceLine" id="cb2-8" title="8"><span class="co">#&gt; 1 Area1 2015  47 128</span></a>
-<a class="sourceLine" id="cb2-9" title="9"><span class="co">#&gt; 2 Area2 2015  16 112</span></a>
-<a class="sourceLine" id="cb2-10" title="10"><span class="co">#&gt; 3 Area3 2015  78 182</span></a>
-<a class="sourceLine" id="cb2-11" title="11"><span class="co">#&gt; 4 Area4 2015  92 163</span></a>
-<a class="sourceLine" id="cb2-12" title="12"><span class="co">#&gt; 5 Area1 2016  74 145</span></a>
-<a class="sourceLine" id="cb2-13" title="13"><span class="co">#&gt; 6 Area2 2016  41 110</span></a>
-<a class="sourceLine" id="cb2-14" title="14"><span class="co">#&gt; 7 Area3 2016  26 117</span></a>
-<a class="sourceLine" id="cb2-15" title="15"><span class="co">#&gt; 8 Area4 2016  33 153</span></a></code></pre></div>
+<a class="sourceLine" id="cb2-8" title="8"><span class="co">#&gt; 1 Area1 2015  19 133</span></a>
+<a class="sourceLine" id="cb2-9" title="9"><span class="co">#&gt; 2 Area2 2015  22 130</span></a>
+<a class="sourceLine" id="cb2-10" title="10"><span class="co">#&gt; 3 Area3 2015  54 126</span></a>
+<a class="sourceLine" id="cb2-11" title="11"><span class="co">#&gt; 4 Area4 2015  95 177</span></a>
+<a class="sourceLine" id="cb2-12" title="12"><span class="co">#&gt; 5 Area1 2016  77 152</span></a>
+<a class="sourceLine" id="cb2-13" title="13"><span class="co">#&gt; 6 Area2 2016  69 162</span></a>
+<a class="sourceLine" id="cb2-14" title="14"><span class="co">#&gt; 7 Area3 2016  81 179</span></a>
+<a class="sourceLine" id="cb2-15" title="15"><span class="co">#&gt; 8 Area4 2016  98 136</span></a></code></pre></div>
 </div>
 <div id="execute-phe_proportion-and-phe_rate" class="section level4">
 <h4>Execute phe_proportion and phe_rate</h4>
@@ -224,153 +223,126 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Here are some example code chunks to demonstrate these two functions and the arguments that can optionally be specified</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="co"># default proportion</span></a>
 <a class="sourceLine" id="cb3-2" title="2"><span class="kw">phe_proportion</span>(df, obs, pop)</a>
-<a class="sourceLine" id="cb3-3" title="3"><span class="co">#&gt;    area year obs pop     value    lowercl   uppercl confidence</span></a>
-<a class="sourceLine" id="cb3-4" title="4"><span class="co">#&gt; 1 Area1 2015  47 128 0.3671875 0.28868455 0.4534300        95%</span></a>
-<a class="sourceLine" id="cb3-5" title="5"><span class="co">#&gt; 2 Area2 2015  16 112 0.1428571 0.08988661 0.2195144        95%</span></a>
-<a class="sourceLine" id="cb3-6" title="6"><span class="co">#&gt; 3 Area3 2015  78 182 0.4285714 0.35888349 0.5012123        95%</span></a>
-<a class="sourceLine" id="cb3-7" title="7"><span class="co">#&gt; 4 Area4 2015  92 163 0.5644172 0.48768236 0.6381856        95%</span></a>
-<a class="sourceLine" id="cb3-8" title="8"><span class="co">#&gt; 5 Area1 2016  74 145 0.5103448 0.42976859 0.5903871        95%</span></a>
-<a class="sourceLine" id="cb3-9" title="9"><span class="co">#&gt; 6 Area2 2016  41 110 0.3727273 0.28809596 0.4659479        95%</span></a>
-<a class="sourceLine" id="cb3-10" title="10"><span class="co">#&gt; 7 Area3 2016  26 117 0.2222222 0.15640397 0.3057012        95%</span></a>
-<a class="sourceLine" id="cb3-11" title="11"><span class="co">#&gt; 8 Area4 2016  33 153 0.2156863 0.15790572 0.2873940        95%</span></a>
-<a class="sourceLine" id="cb3-12" title="12"><span class="co">#&gt;         statistic method</span></a>
-<a class="sourceLine" id="cb3-13" title="13"><span class="co">#&gt; 1 proportion of 1 Wilson</span></a>
-<a class="sourceLine" id="cb3-14" title="14"><span class="co">#&gt; 2 proportion of 1 Wilson</span></a>
-<a class="sourceLine" id="cb3-15" title="15"><span class="co">#&gt; 3 proportion of 1 Wilson</span></a>
-<a class="sourceLine" id="cb3-16" title="16"><span class="co">#&gt; 4 proportion of 1 Wilson</span></a>
-<a class="sourceLine" id="cb3-17" title="17"><span class="co">#&gt; 5 proportion of 1 Wilson</span></a>
-<a class="sourceLine" id="cb3-18" title="18"><span class="co">#&gt; 6 proportion of 1 Wilson</span></a>
-<a class="sourceLine" id="cb3-19" title="19"><span class="co">#&gt; 7 proportion of 1 Wilson</span></a>
-<a class="sourceLine" id="cb3-20" title="20"><span class="co">#&gt; 8 proportion of 1 Wilson</span></a>
+<a class="sourceLine" id="cb3-3" title="3"><span class="co">#&gt;    area year obs pop     value    lowercl   uppercl confidence       statistic</span></a>
+<a class="sourceLine" id="cb3-4" title="4"><span class="co">#&gt; 1 Area1 2015  19 133 0.1428571 0.09340234 0.2123636        95% proportion of 1</span></a>
+<a class="sourceLine" id="cb3-5" title="5"><span class="co">#&gt; 2 Area2 2015  22 130 0.1692308 0.11449563 0.2429531        95% proportion of 1</span></a>
+<a class="sourceLine" id="cb3-6" title="6"><span class="co">#&gt; 3 Area3 2015  54 126 0.4285714 0.34553800 0.5158314        95% proportion of 1</span></a>
+<a class="sourceLine" id="cb3-7" title="7"><span class="co">#&gt; 4 Area4 2015  95 177 0.5367232 0.46326231 0.6086239        95% proportion of 1</span></a>
+<a class="sourceLine" id="cb3-8" title="8"><span class="co">#&gt; 5 Area1 2016  77 152 0.5065789 0.42792215 0.5849114        95% proportion of 1</span></a>
+<a class="sourceLine" id="cb3-9" title="9"><span class="co">#&gt; 6 Area2 2016  69 162 0.4259259 0.35236420 0.5029193        95% proportion of 1</span></a>
+<a class="sourceLine" id="cb3-10" title="10"><span class="co">#&gt; 7 Area3 2016  81 179 0.4525140 0.38135857 0.5256647        95% proportion of 1</span></a>
+<a class="sourceLine" id="cb3-11" title="11"><span class="co">#&gt; 8 Area4 2016  98 136 0.7205882 0.63991250 0.7891448        95% proportion of 1</span></a>
+<a class="sourceLine" id="cb3-12" title="12"><span class="co">#&gt;   method</span></a>
+<a class="sourceLine" id="cb3-13" title="13"><span class="co">#&gt; 1 Wilson</span></a>
+<a class="sourceLine" id="cb3-14" title="14"><span class="co">#&gt; 2 Wilson</span></a>
+<a class="sourceLine" id="cb3-15" title="15"><span class="co">#&gt; 3 Wilson</span></a>
+<a class="sourceLine" id="cb3-16" title="16"><span class="co">#&gt; 4 Wilson</span></a>
+<a class="sourceLine" id="cb3-17" title="17"><span class="co">#&gt; 5 Wilson</span></a>
+<a class="sourceLine" id="cb3-18" title="18"><span class="co">#&gt; 6 Wilson</span></a>
+<a class="sourceLine" id="cb3-19" title="19"><span class="co">#&gt; 7 Wilson</span></a>
+<a class="sourceLine" id="cb3-20" title="20"><span class="co">#&gt; 8 Wilson</span></a>
 <a class="sourceLine" id="cb3-21" title="21"></a>
 <a class="sourceLine" id="cb3-22" title="22"><span class="co"># specify confidence level for proportion</span></a>
 <a class="sourceLine" id="cb3-23" title="23"><span class="kw">phe_proportion</span>(df, obs, pop, <span class="dt">confidence=</span><span class="fl">99.8</span>)</a>
-<a class="sourceLine" id="cb3-24" title="24"><span class="co">#&gt;    area year obs pop     value    lowercl   uppercl confidence</span></a>
-<a class="sourceLine" id="cb3-25" title="25"><span class="co">#&gt; 1 Area1 2015  47 128 0.3671875 0.24906241 0.5037539      99.8%</span></a>
-<a class="sourceLine" id="cb3-26" title="26"><span class="co">#&gt; 2 Area2 2015  16 112 0.1428571 0.06889889 0.2729332      99.8%</span></a>
-<a class="sourceLine" id="cb3-27" title="27"><span class="co">#&gt; 3 Area3 2015  78 182 0.4285714 0.32157994 0.5426849      99.8%</span></a>
-<a class="sourceLine" id="cb3-28" title="28"><span class="co">#&gt; 4 Area4 2015  92 163 0.5644172 0.44415166 0.6775525      99.8%</span></a>
-<a class="sourceLine" id="cb3-29" title="29"><span class="co">#&gt; 5 Area1 2016  74 145 0.5103448 0.38544314 0.6339681      99.8%</span></a>
-<a class="sourceLine" id="cb3-30" title="30"><span class="co">#&gt; 6 Area2 2016  41 110 0.3727273 0.24585624 0.5199312      99.8%</span></a>
-<a class="sourceLine" id="cb3-31" title="31"><span class="co">#&gt; 7 Area3 2016  26 117 0.2222222 0.12707158 0.3592956      99.8%</span></a>
-<a class="sourceLine" id="cb3-32" title="32"><span class="co">#&gt; 8 Area4 2016  33 153 0.2156863 0.13130903 0.3334695      99.8%</span></a>
-<a class="sourceLine" id="cb3-33" title="33"><span class="co">#&gt;         statistic method</span></a>
-<a class="sourceLine" id="cb3-34" title="34"><span class="co">#&gt; 1 proportion of 1 Wilson</span></a>
-<a class="sourceLine" id="cb3-35" title="35"><span class="co">#&gt; 2 proportion of 1 Wilson</span></a>
-<a class="sourceLine" id="cb3-36" title="36"><span class="co">#&gt; 3 proportion of 1 Wilson</span></a>
-<a class="sourceLine" id="cb3-37" title="37"><span class="co">#&gt; 4 proportion of 1 Wilson</span></a>
-<a class="sourceLine" id="cb3-38" title="38"><span class="co">#&gt; 5 proportion of 1 Wilson</span></a>
-<a class="sourceLine" id="cb3-39" title="39"><span class="co">#&gt; 6 proportion of 1 Wilson</span></a>
-<a class="sourceLine" id="cb3-40" title="40"><span class="co">#&gt; 7 proportion of 1 Wilson</span></a>
-<a class="sourceLine" id="cb3-41" title="41"><span class="co">#&gt; 8 proportion of 1 Wilson</span></a>
+<a class="sourceLine" id="cb3-24" title="24"><span class="co">#&gt;    area year obs pop     value    lowercl   uppercl confidence       statistic</span></a>
+<a class="sourceLine" id="cb3-25" title="25"><span class="co">#&gt; 1 Area1 2015  19 133 0.1428571 0.07310538 0.2604596      99.8% proportion of 1</span></a>
+<a class="sourceLine" id="cb3-26" title="26"><span class="co">#&gt; 2 Area2 2015  22 130 0.1692308 0.09120193 0.2925295      99.8% proportion of 1</span></a>
+<a class="sourceLine" id="cb3-27" title="27"><span class="co">#&gt; 3 Area3 2015  54 126 0.4285714 0.30215585 0.5650514      99.8% proportion of 1</span></a>
+<a class="sourceLine" id="cb3-28" title="28"><span class="co">#&gt; 4 Area4 2015  95 177 0.5367232 0.42200675 0.6476798      99.8% proportion of 1</span></a>
+<a class="sourceLine" id="cb3-29" title="29"><span class="co">#&gt; 5 Area1 2016  77 152 0.5065789 0.38463503 0.6277451      99.8% proportion of 1</span></a>
+<a class="sourceLine" id="cb3-30" title="30"><span class="co">#&gt; 6 Area2 2016  69 162 0.4259259 0.31330969 0.5467890      99.8% proportion of 1</span></a>
+<a class="sourceLine" id="cb3-31" title="31"><span class="co">#&gt; 7 Area3 2016  81 179 0.4525140 0.34287697 0.5669610      99.8% proportion of 1</span></a>
+<a class="sourceLine" id="cb3-32" title="32"><span class="co">#&gt; 8 Area4 2016  98 136 0.7205882 0.59027293 0.8219579      99.8% proportion of 1</span></a>
+<a class="sourceLine" id="cb3-33" title="33"><span class="co">#&gt;   method</span></a>
+<a class="sourceLine" id="cb3-34" title="34"><span class="co">#&gt; 1 Wilson</span></a>
+<a class="sourceLine" id="cb3-35" title="35"><span class="co">#&gt; 2 Wilson</span></a>
+<a class="sourceLine" id="cb3-36" title="36"><span class="co">#&gt; 3 Wilson</span></a>
+<a class="sourceLine" id="cb3-37" title="37"><span class="co">#&gt; 4 Wilson</span></a>
+<a class="sourceLine" id="cb3-38" title="38"><span class="co">#&gt; 5 Wilson</span></a>
+<a class="sourceLine" id="cb3-39" title="39"><span class="co">#&gt; 6 Wilson</span></a>
+<a class="sourceLine" id="cb3-40" title="40"><span class="co">#&gt; 7 Wilson</span></a>
+<a class="sourceLine" id="cb3-41" title="41"><span class="co">#&gt; 8 Wilson</span></a>
 <a class="sourceLine" id="cb3-42" title="42"></a>
 <a class="sourceLine" id="cb3-43" title="43"><span class="co"># specify to output proportions as percentages</span></a>
 <a class="sourceLine" id="cb3-44" title="44"><span class="kw">phe_proportion</span>(df, obs, pop, <span class="dt">multiplier=</span><span class="dv">100</span>)</a>
-<a class="sourceLine" id="cb3-45" title="45"><span class="co">#&gt;    area year obs pop    value   lowercl  uppercl confidence  statistic</span></a>
-<a class="sourceLine" id="cb3-46" title="46"><span class="co">#&gt; 1 Area1 2015  47 128 36.71875 28.868455 45.34300        95% percentage</span></a>
-<a class="sourceLine" id="cb3-47" title="47"><span class="co">#&gt; 2 Area2 2015  16 112 14.28571  8.988661 21.95144        95% percentage</span></a>
-<a class="sourceLine" id="cb3-48" title="48"><span class="co">#&gt; 3 Area3 2015  78 182 42.85714 35.888349 50.12123        95% percentage</span></a>
-<a class="sourceLine" id="cb3-49" title="49"><span class="co">#&gt; 4 Area4 2015  92 163 56.44172 48.768236 63.81856        95% percentage</span></a>
-<a class="sourceLine" id="cb3-50" title="50"><span class="co">#&gt; 5 Area1 2016  74 145 51.03448 42.976859 59.03871        95% percentage</span></a>
-<a class="sourceLine" id="cb3-51" title="51"><span class="co">#&gt; 6 Area2 2016  41 110 37.27273 28.809596 46.59479        95% percentage</span></a>
-<a class="sourceLine" id="cb3-52" title="52"><span class="co">#&gt; 7 Area3 2016  26 117 22.22222 15.640397 30.57012        95% percentage</span></a>
-<a class="sourceLine" id="cb3-53" title="53"><span class="co">#&gt; 8 Area4 2016  33 153 21.56863 15.790572 28.73940        95% percentage</span></a>
-<a class="sourceLine" id="cb3-54" title="54"><span class="co">#&gt;   method</span></a>
-<a class="sourceLine" id="cb3-55" title="55"><span class="co">#&gt; 1 Wilson</span></a>
-<a class="sourceLine" id="cb3-56" title="56"><span class="co">#&gt; 2 Wilson</span></a>
-<a class="sourceLine" id="cb3-57" title="57"><span class="co">#&gt; 3 Wilson</span></a>
-<a class="sourceLine" id="cb3-58" title="58"><span class="co">#&gt; 4 Wilson</span></a>
-<a class="sourceLine" id="cb3-59" title="59"><span class="co">#&gt; 5 Wilson</span></a>
-<a class="sourceLine" id="cb3-60" title="60"><span class="co">#&gt; 6 Wilson</span></a>
-<a class="sourceLine" id="cb3-61" title="61"><span class="co">#&gt; 7 Wilson</span></a>
-<a class="sourceLine" id="cb3-62" title="62"><span class="co">#&gt; 8 Wilson</span></a>
-<a class="sourceLine" id="cb3-63" title="63"></a>
-<a class="sourceLine" id="cb3-64" title="64"><span class="co"># specify level of detail to output for proportion</span></a>
-<a class="sourceLine" id="cb3-65" title="65"><span class="kw">phe_proportion</span>(df, obs, pop, <span class="dt">confidence=</span><span class="fl">99.8</span>, <span class="dt">multiplier=</span><span class="dv">100</span>)</a>
-<a class="sourceLine" id="cb3-66" title="66"><span class="co">#&gt;    area year obs pop    value   lowercl  uppercl confidence  statistic</span></a>
-<a class="sourceLine" id="cb3-67" title="67"><span class="co">#&gt; 1 Area1 2015  47 128 36.71875 24.906241 50.37539      99.8% percentage</span></a>
-<a class="sourceLine" id="cb3-68" title="68"><span class="co">#&gt; 2 Area2 2015  16 112 14.28571  6.889889 27.29332      99.8% percentage</span></a>
-<a class="sourceLine" id="cb3-69" title="69"><span class="co">#&gt; 3 Area3 2015  78 182 42.85714 32.157994 54.26849      99.8% percentage</span></a>
-<a class="sourceLine" id="cb3-70" title="70"><span class="co">#&gt; 4 Area4 2015  92 163 56.44172 44.415166 67.75525      99.8% percentage</span></a>
-<a class="sourceLine" id="cb3-71" title="71"><span class="co">#&gt; 5 Area1 2016  74 145 51.03448 38.544314 63.39681      99.8% percentage</span></a>
-<a class="sourceLine" id="cb3-72" title="72"><span class="co">#&gt; 6 Area2 2016  41 110 37.27273 24.585624 51.99312      99.8% percentage</span></a>
-<a class="sourceLine" id="cb3-73" title="73"><span class="co">#&gt; 7 Area3 2016  26 117 22.22222 12.707158 35.92956      99.8% percentage</span></a>
-<a class="sourceLine" id="cb3-74" title="74"><span class="co">#&gt; 8 Area4 2016  33 153 21.56863 13.130903 33.34695      99.8% percentage</span></a>
-<a class="sourceLine" id="cb3-75" title="75"><span class="co">#&gt;   method</span></a>
-<a class="sourceLine" id="cb3-76" title="76"><span class="co">#&gt; 1 Wilson</span></a>
-<a class="sourceLine" id="cb3-77" title="77"><span class="co">#&gt; 2 Wilson</span></a>
-<a class="sourceLine" id="cb3-78" title="78"><span class="co">#&gt; 3 Wilson</span></a>
-<a class="sourceLine" id="cb3-79" title="79"><span class="co">#&gt; 4 Wilson</span></a>
-<a class="sourceLine" id="cb3-80" title="80"><span class="co">#&gt; 5 Wilson</span></a>
-<a class="sourceLine" id="cb3-81" title="81"><span class="co">#&gt; 6 Wilson</span></a>
-<a class="sourceLine" id="cb3-82" title="82"><span class="co">#&gt; 7 Wilson</span></a>
-<a class="sourceLine" id="cb3-83" title="83"><span class="co">#&gt; 8 Wilson</span></a>
-<a class="sourceLine" id="cb3-84" title="84"></a>
-<a class="sourceLine" id="cb3-85" title="85"><span class="co"># specify level of detail to output for proportion and remove metadata columns</span></a>
-<a class="sourceLine" id="cb3-86" title="86"><span class="kw">phe_proportion</span>(df, obs, pop, <span class="dt">confidence=</span><span class="fl">99.8</span>, <span class="dt">multiplier=</span><span class="dv">100</span>, <span class="dt">type=</span><span class="st">&quot;standard&quot;</span>)</a>
-<a class="sourceLine" id="cb3-87" title="87"><span class="co">#&gt;    area year obs pop    value   lowercl  uppercl</span></a>
-<a class="sourceLine" id="cb3-88" title="88"><span class="co">#&gt; 1 Area1 2015  47 128 36.71875 24.906241 50.37539</span></a>
-<a class="sourceLine" id="cb3-89" title="89"><span class="co">#&gt; 2 Area2 2015  16 112 14.28571  6.889889 27.29332</span></a>
-<a class="sourceLine" id="cb3-90" title="90"><span class="co">#&gt; 3 Area3 2015  78 182 42.85714 32.157994 54.26849</span></a>
-<a class="sourceLine" id="cb3-91" title="91"><span class="co">#&gt; 4 Area4 2015  92 163 56.44172 44.415166 67.75525</span></a>
-<a class="sourceLine" id="cb3-92" title="92"><span class="co">#&gt; 5 Area1 2016  74 145 51.03448 38.544314 63.39681</span></a>
-<a class="sourceLine" id="cb3-93" title="93"><span class="co">#&gt; 6 Area2 2016  41 110 37.27273 24.585624 51.99312</span></a>
-<a class="sourceLine" id="cb3-94" title="94"><span class="co">#&gt; 7 Area3 2016  26 117 22.22222 12.707158 35.92956</span></a>
-<a class="sourceLine" id="cb3-95" title="95"><span class="co">#&gt; 8 Area4 2016  33 153 21.56863 13.130903 33.34695</span></a>
-<a class="sourceLine" id="cb3-96" title="96"></a>
-<a class="sourceLine" id="cb3-97" title="97"><span class="co"># default rate</span></a>
-<a class="sourceLine" id="cb3-98" title="98"><span class="kw">phe_rate</span>(df, obs, pop)</a>
-<a class="sourceLine" id="cb3-99" title="99"><span class="co">#&gt;    area year obs pop    value   lowercl  uppercl confidence</span></a>
-<a class="sourceLine" id="cb3-100" title="100"><span class="co">#&gt; 1 Area1 2015  47 128 36718.75 26977.233 48829.25        95%</span></a>
-<a class="sourceLine" id="cb3-101" title="101"><span class="co">#&gt; 2 Area2 2015  16 112 14285.71  8160.276 23200.39        95%</span></a>
-<a class="sourceLine" id="cb3-102" title="102"><span class="co">#&gt; 3 Area3 2015  78 182 42857.14 33875.592 53488.33        95%</span></a>
-<a class="sourceLine" id="cb3-103" title="103"><span class="co">#&gt; 4 Area4 2015  92 163 56441.72 45498.775 69221.48        95%</span></a>
-<a class="sourceLine" id="cb3-104" title="104"><span class="co">#&gt; 5 Area1 2016  74 145 51034.48 40071.490 64069.99        95%</span></a>
-<a class="sourceLine" id="cb3-105" title="105"><span class="co">#&gt; 6 Area2 2016  41 110 37272.73 26744.610 50565.98        95%</span></a>
-<a class="sourceLine" id="cb3-106" title="106"><span class="co">#&gt; 7 Area3 2016  26 117 22222.22 14512.612 32562.00        95%</span></a>
-<a class="sourceLine" id="cb3-107" title="107"><span class="co">#&gt; 8 Area4 2016  33 153 21568.63 14844.428 30291.35        95%</span></a>
-<a class="sourceLine" id="cb3-108" title="108"><span class="co">#&gt;         statistic method</span></a>
-<a class="sourceLine" id="cb3-109" title="109"><span class="co">#&gt; 1 rate per 100000  Byars</span></a>
-<a class="sourceLine" id="cb3-110" title="110"><span class="co">#&gt; 2 rate per 100000  Byars</span></a>
-<a class="sourceLine" id="cb3-111" title="111"><span class="co">#&gt; 3 rate per 100000  Byars</span></a>
-<a class="sourceLine" id="cb3-112" title="112"><span class="co">#&gt; 4 rate per 100000  Byars</span></a>
-<a class="sourceLine" id="cb3-113" title="113"><span class="co">#&gt; 5 rate per 100000  Byars</span></a>
-<a class="sourceLine" id="cb3-114" title="114"><span class="co">#&gt; 6 rate per 100000  Byars</span></a>
-<a class="sourceLine" id="cb3-115" title="115"><span class="co">#&gt; 7 rate per 100000  Byars</span></a>
-<a class="sourceLine" id="cb3-116" title="116"><span class="co">#&gt; 8 rate per 100000  Byars</span></a>
-<a class="sourceLine" id="cb3-117" title="117"></a>
-<a class="sourceLine" id="cb3-118" title="118"><span class="co"># specify rate parameters</span></a>
-<a class="sourceLine" id="cb3-119" title="119"><span class="kw">phe_rate</span>(df, obs, pop, <span class="dt">confidence=</span><span class="fl">99.8</span>, <span class="dt">multiplier=</span><span class="dv">100</span>)</a>
-<a class="sourceLine" id="cb3-120" title="120"><span class="co">#&gt;    area year obs pop    value   lowercl  uppercl confidence    statistic</span></a>
-<a class="sourceLine" id="cb3-121" title="121"><span class="co">#&gt; 1 Area1 2015  47 128 36.71875 22.342317 56.49356      99.8% rate per 100</span></a>
-<a class="sourceLine" id="cb3-122" title="122"><span class="co">#&gt; 2 Area2 2015  16 112 14.28571  5.684786 29.17111      99.8% rate per 100</span></a>
-<a class="sourceLine" id="cb3-123" title="123"><span class="co">#&gt; 3 Area3 2015  78 182 42.85714 29.399746 60.08691      99.8% rate per 100</span></a>
-<a class="sourceLine" id="cb3-124" title="124"><span class="co">#&gt; 4 Area4 2015  92 163 56.44172 39.977631 77.11026      99.8% rate per 100</span></a>
-<a class="sourceLine" id="cb3-125" title="125"><span class="co">#&gt; 5 Area1 2016  74 145 51.03448 34.631101 72.17572      99.8% rate per 100</span></a>
-<a class="sourceLine" id="cb3-126" title="126"><span class="co">#&gt; 6 Area2 2016  41 110 37.27273 21.810353 59.02921      99.8% rate per 100</span></a>
-<a class="sourceLine" id="cb3-127" title="127"><span class="co">#&gt; 7 Area3 2016  26 117 22.22222 11.111580 39.29392      99.8% rate per 100</span></a>
-<a class="sourceLine" id="cb3-128" title="128"><span class="co">#&gt; 8 Area4 2016  33 153 21.56863 11.776009 35.90156      99.8% rate per 100</span></a>
-<a class="sourceLine" id="cb3-129" title="129"><span class="co">#&gt;   method</span></a>
-<a class="sourceLine" id="cb3-130" title="130"><span class="co">#&gt; 1  Byars</span></a>
-<a class="sourceLine" id="cb3-131" title="131"><span class="co">#&gt; 2  Byars</span></a>
-<a class="sourceLine" id="cb3-132" title="132"><span class="co">#&gt; 3  Byars</span></a>
-<a class="sourceLine" id="cb3-133" title="133"><span class="co">#&gt; 4  Byars</span></a>
-<a class="sourceLine" id="cb3-134" title="134"><span class="co">#&gt; 5  Byars</span></a>
-<a class="sourceLine" id="cb3-135" title="135"><span class="co">#&gt; 6  Byars</span></a>
-<a class="sourceLine" id="cb3-136" title="136"><span class="co">#&gt; 7  Byars</span></a>
-<a class="sourceLine" id="cb3-137" title="137"><span class="co">#&gt; 8  Byars</span></a>
-<a class="sourceLine" id="cb3-138" title="138"></a>
-<a class="sourceLine" id="cb3-139" title="139"><span class="co"># specify rate parameters and reduce columns output and remove metadata columns</span></a>
-<a class="sourceLine" id="cb3-140" title="140"><span class="kw">phe_rate</span>(df, obs, pop, <span class="dt">type=</span><span class="st">&quot;standard&quot;</span>, <span class="dt">confidence=</span><span class="fl">99.8</span>, <span class="dt">multiplier=</span><span class="dv">100</span>)</a>
-<a class="sourceLine" id="cb3-141" title="141"><span class="co">#&gt;    area year obs pop    value   lowercl  uppercl</span></a>
-<a class="sourceLine" id="cb3-142" title="142"><span class="co">#&gt; 1 Area1 2015  47 128 36.71875 22.342317 56.49356</span></a>
-<a class="sourceLine" id="cb3-143" title="143"><span class="co">#&gt; 2 Area2 2015  16 112 14.28571  5.684786 29.17111</span></a>
-<a class="sourceLine" id="cb3-144" title="144"><span class="co">#&gt; 3 Area3 2015  78 182 42.85714 29.399746 60.08691</span></a>
-<a class="sourceLine" id="cb3-145" title="145"><span class="co">#&gt; 4 Area4 2015  92 163 56.44172 39.977631 77.11026</span></a>
-<a class="sourceLine" id="cb3-146" title="146"><span class="co">#&gt; 5 Area1 2016  74 145 51.03448 34.631101 72.17572</span></a>
-<a class="sourceLine" id="cb3-147" title="147"><span class="co">#&gt; 6 Area2 2016  41 110 37.27273 21.810353 59.02921</span></a>
-<a class="sourceLine" id="cb3-148" title="148"><span class="co">#&gt; 7 Area3 2016  26 117 22.22222 11.111580 39.29392</span></a>
-<a class="sourceLine" id="cb3-149" title="149"><span class="co">#&gt; 8 Area4 2016  33 153 21.56863 11.776009 35.90156</span></a></code></pre></div>
+<a class="sourceLine" id="cb3-45" title="45"><span class="co">#&gt;    area year obs pop    value   lowercl  uppercl confidence  statistic method</span></a>
+<a class="sourceLine" id="cb3-46" title="46"><span class="co">#&gt; 1 Area1 2015  19 133 14.28571  9.340234 21.23636        95% percentage Wilson</span></a>
+<a class="sourceLine" id="cb3-47" title="47"><span class="co">#&gt; 2 Area2 2015  22 130 16.92308 11.449563 24.29531        95% percentage Wilson</span></a>
+<a class="sourceLine" id="cb3-48" title="48"><span class="co">#&gt; 3 Area3 2015  54 126 42.85714 34.553800 51.58314        95% percentage Wilson</span></a>
+<a class="sourceLine" id="cb3-49" title="49"><span class="co">#&gt; 4 Area4 2015  95 177 53.67232 46.326231 60.86239        95% percentage Wilson</span></a>
+<a class="sourceLine" id="cb3-50" title="50"><span class="co">#&gt; 5 Area1 2016  77 152 50.65789 42.792215 58.49114        95% percentage Wilson</span></a>
+<a class="sourceLine" id="cb3-51" title="51"><span class="co">#&gt; 6 Area2 2016  69 162 42.59259 35.236420 50.29193        95% percentage Wilson</span></a>
+<a class="sourceLine" id="cb3-52" title="52"><span class="co">#&gt; 7 Area3 2016  81 179 45.25140 38.135857 52.56647        95% percentage Wilson</span></a>
+<a class="sourceLine" id="cb3-53" title="53"><span class="co">#&gt; 8 Area4 2016  98 136 72.05882 63.991250 78.91448        95% percentage Wilson</span></a>
+<a class="sourceLine" id="cb3-54" title="54"></a>
+<a class="sourceLine" id="cb3-55" title="55"><span class="co"># specify level of detail to output for proportion</span></a>
+<a class="sourceLine" id="cb3-56" title="56"><span class="kw">phe_proportion</span>(df, obs, pop, <span class="dt">confidence=</span><span class="fl">99.8</span>, <span class="dt">multiplier=</span><span class="dv">100</span>)</a>
+<a class="sourceLine" id="cb3-57" title="57"><span class="co">#&gt;    area year obs pop    value   lowercl  uppercl confidence  statistic method</span></a>
+<a class="sourceLine" id="cb3-58" title="58"><span class="co">#&gt; 1 Area1 2015  19 133 14.28571  7.310538 26.04596      99.8% percentage Wilson</span></a>
+<a class="sourceLine" id="cb3-59" title="59"><span class="co">#&gt; 2 Area2 2015  22 130 16.92308  9.120193 29.25295      99.8% percentage Wilson</span></a>
+<a class="sourceLine" id="cb3-60" title="60"><span class="co">#&gt; 3 Area3 2015  54 126 42.85714 30.215585 56.50514      99.8% percentage Wilson</span></a>
+<a class="sourceLine" id="cb3-61" title="61"><span class="co">#&gt; 4 Area4 2015  95 177 53.67232 42.200675 64.76798      99.8% percentage Wilson</span></a>
+<a class="sourceLine" id="cb3-62" title="62"><span class="co">#&gt; 5 Area1 2016  77 152 50.65789 38.463503 62.77451      99.8% percentage Wilson</span></a>
+<a class="sourceLine" id="cb3-63" title="63"><span class="co">#&gt; 6 Area2 2016  69 162 42.59259 31.330969 54.67890      99.8% percentage Wilson</span></a>
+<a class="sourceLine" id="cb3-64" title="64"><span class="co">#&gt; 7 Area3 2016  81 179 45.25140 34.287697 56.69610      99.8% percentage Wilson</span></a>
+<a class="sourceLine" id="cb3-65" title="65"><span class="co">#&gt; 8 Area4 2016  98 136 72.05882 59.027293 82.19579      99.8% percentage Wilson</span></a>
+<a class="sourceLine" id="cb3-66" title="66"></a>
+<a class="sourceLine" id="cb3-67" title="67"><span class="co"># specify level of detail to output for proportion and remove metadata columns</span></a>
+<a class="sourceLine" id="cb3-68" title="68"><span class="kw">phe_proportion</span>(df, obs, pop, <span class="dt">confidence=</span><span class="fl">99.8</span>, <span class="dt">multiplier=</span><span class="dv">100</span>, <span class="dt">type=</span><span class="st">&quot;standard&quot;</span>)</a>
+<a class="sourceLine" id="cb3-69" title="69"><span class="co">#&gt;    area year obs pop    value   lowercl  uppercl</span></a>
+<a class="sourceLine" id="cb3-70" title="70"><span class="co">#&gt; 1 Area1 2015  19 133 14.28571  7.310538 26.04596</span></a>
+<a class="sourceLine" id="cb3-71" title="71"><span class="co">#&gt; 2 Area2 2015  22 130 16.92308  9.120193 29.25295</span></a>
+<a class="sourceLine" id="cb3-72" title="72"><span class="co">#&gt; 3 Area3 2015  54 126 42.85714 30.215585 56.50514</span></a>
+<a class="sourceLine" id="cb3-73" title="73"><span class="co">#&gt; 4 Area4 2015  95 177 53.67232 42.200675 64.76798</span></a>
+<a class="sourceLine" id="cb3-74" title="74"><span class="co">#&gt; 5 Area1 2016  77 152 50.65789 38.463503 62.77451</span></a>
+<a class="sourceLine" id="cb3-75" title="75"><span class="co">#&gt; 6 Area2 2016  69 162 42.59259 31.330969 54.67890</span></a>
+<a class="sourceLine" id="cb3-76" title="76"><span class="co">#&gt; 7 Area3 2016  81 179 45.25140 34.287697 56.69610</span></a>
+<a class="sourceLine" id="cb3-77" title="77"><span class="co">#&gt; 8 Area4 2016  98 136 72.05882 59.027293 82.19579</span></a>
+<a class="sourceLine" id="cb3-78" title="78"></a>
+<a class="sourceLine" id="cb3-79" title="79"><span class="co"># default rate</span></a>
+<a class="sourceLine" id="cb3-80" title="80"><span class="kw">phe_rate</span>(df, obs, pop)</a>
+<a class="sourceLine" id="cb3-81" title="81"><span class="co">#&gt;    area year obs pop    value   lowercl  uppercl confidence       statistic</span></a>
+<a class="sourceLine" id="cb3-82" title="82"><span class="co">#&gt; 1 Area1 2015  19 133 14285.71  8596.978 22310.03        95% rate per 100000</span></a>
+<a class="sourceLine" id="cb3-83" title="83"><span class="co">#&gt; 2 Area2 2015  22 130 16923.08 10601.917 25622.91        95% rate per 100000</span></a>
+<a class="sourceLine" id="cb3-84" title="84"><span class="co">#&gt; 3 Area3 2015  54 126 42857.14 32193.437 55920.36        95% rate per 100000</span></a>
+<a class="sourceLine" id="cb3-85" title="85"><span class="co">#&gt; 4 Area4 2015  95 177 53672.32 43423.011 65612.28        95% rate per 100000</span></a>
+<a class="sourceLine" id="cb3-86" title="86"><span class="co">#&gt; 5 Area1 2016  77 152 50657.89 39976.969 63314.49        95% rate per 100000</span></a>
+<a class="sourceLine" id="cb3-87" title="87"><span class="co">#&gt; 6 Area2 2016  69 162 42592.59 33138.127 53904.44        95% rate per 100000</span></a>
+<a class="sourceLine" id="cb3-88" title="88"><span class="co">#&gt; 7 Area3 2016  81 179 45251.40 35934.947 56244.04        95% rate per 100000</span></a>
+<a class="sourceLine" id="cb3-89" title="89"><span class="co">#&gt; 8 Area4 2016  98 136 72058.82 58499.433 87817.47        95% rate per 100000</span></a>
+<a class="sourceLine" id="cb3-90" title="90"><span class="co">#&gt;   method</span></a>
+<a class="sourceLine" id="cb3-91" title="91"><span class="co">#&gt; 1  Byars</span></a>
+<a class="sourceLine" id="cb3-92" title="92"><span class="co">#&gt; 2  Byars</span></a>
+<a class="sourceLine" id="cb3-93" title="93"><span class="co">#&gt; 3  Byars</span></a>
+<a class="sourceLine" id="cb3-94" title="94"><span class="co">#&gt; 4  Byars</span></a>
+<a class="sourceLine" id="cb3-95" title="95"><span class="co">#&gt; 5  Byars</span></a>
+<a class="sourceLine" id="cb3-96" title="96"><span class="co">#&gt; 6  Byars</span></a>
+<a class="sourceLine" id="cb3-97" title="97"><span class="co">#&gt; 7  Byars</span></a>
+<a class="sourceLine" id="cb3-98" title="98"><span class="co">#&gt; 8  Byars</span></a>
+<a class="sourceLine" id="cb3-99" title="99"></a>
+<a class="sourceLine" id="cb3-100" title="100"><span class="co"># specify rate parameters</span></a>
+<a class="sourceLine" id="cb3-101" title="101"><span class="kw">phe_rate</span>(df, obs, pop, <span class="dt">confidence=</span><span class="fl">99.8</span>, <span class="dt">multiplier=</span><span class="dv">100</span>)</a>
+<a class="sourceLine" id="cb3-102" title="102"><span class="co">#&gt;    area year obs pop    value   lowercl  uppercl confidence    statistic method</span></a>
+<a class="sourceLine" id="cb3-103" title="103"><span class="co">#&gt; 1 Area1 2015  19 133 14.28571  6.217672 27.62798      99.8% rate per 100  Byars</span></a>
+<a class="sourceLine" id="cb3-104" title="104"><span class="co">#&gt; 2 Area2 2015  22 130 16.92308  7.887686 31.33951      99.8% rate per 100  Byars</span></a>
+<a class="sourceLine" id="cb3-105" title="105"><span class="co">#&gt; 3 Area3 2015  54 126 42.85714 27.047717 64.14027      99.8% rate per 100  Byars</span></a>
+<a class="sourceLine" id="cb3-106" title="106"><span class="co">#&gt; 4 Area4 2015  95 177 53.67232 38.240074 72.97515      99.8% rate per 100  Byars</span></a>
+<a class="sourceLine" id="cb3-107" title="107"><span class="co">#&gt; 5 Area1 2016  77 152 50.65789 34.659672 71.17371      99.8% rate per 100  Byars</span></a>
+<a class="sourceLine" id="cb3-108" title="108"><span class="co">#&gt; 6 Area2 2016  69 162 42.59259 28.473385 60.95598      99.8% rate per 100  Byars</span></a>
+<a class="sourceLine" id="cb3-109" title="109"><span class="co">#&gt; 7 Area3 2016  81 179 45.25140 31.278577 63.05818      99.8% rate per 100  Byars</span></a>
+<a class="sourceLine" id="cb3-110" title="110"><span class="co">#&gt; 8 Area4 2016  98 136 72.05882 51.627792 97.52569      99.8% rate per 100  Byars</span></a>
+<a class="sourceLine" id="cb3-111" title="111"></a>
+<a class="sourceLine" id="cb3-112" title="112"><span class="co"># specify rate parameters and reduce columns output and remove metadata columns</span></a>
+<a class="sourceLine" id="cb3-113" title="113"><span class="kw">phe_rate</span>(df, obs, pop, <span class="dt">type=</span><span class="st">&quot;standard&quot;</span>, <span class="dt">confidence=</span><span class="fl">99.8</span>, <span class="dt">multiplier=</span><span class="dv">100</span>)</a>
+<a class="sourceLine" id="cb3-114" title="114"><span class="co">#&gt;    area year obs pop    value   lowercl  uppercl</span></a>
+<a class="sourceLine" id="cb3-115" title="115"><span class="co">#&gt; 1 Area1 2015  19 133 14.28571  6.217672 27.62798</span></a>
+<a class="sourceLine" id="cb3-116" title="116"><span class="co">#&gt; 2 Area2 2015  22 130 16.92308  7.887686 31.33951</span></a>
+<a class="sourceLine" id="cb3-117" title="117"><span class="co">#&gt; 3 Area3 2015  54 126 42.85714 27.047717 64.14027</span></a>
+<a class="sourceLine" id="cb3-118" title="118"><span class="co">#&gt; 4 Area4 2015  95 177 53.67232 38.240074 72.97515</span></a>
+<a class="sourceLine" id="cb3-119" title="119"><span class="co">#&gt; 5 Area1 2016  77 152 50.65789 34.659672 71.17371</span></a>
+<a class="sourceLine" id="cb3-120" title="120"><span class="co">#&gt; 6 Area2 2016  69 162 42.59259 28.473385 60.95598</span></a>
+<a class="sourceLine" id="cb3-121" title="121"><span class="co">#&gt; 7 Area3 2016  81 179 45.25140 31.278577 63.05818</span></a>
+<a class="sourceLine" id="cb3-122" title="122"><span class="co">#&gt; 8 Area4 2016  98 136 72.05882 51.627792 97.52569</span></a></code></pre></div>
 <p>These functions can also return aggregate data if the input dataframes are grouped:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="co"># default proportion - grouped</span></a>
 <a class="sourceLine" id="cb4-2" title="2">df <span class="op">%&gt;%</span></a>
@@ -379,18 +351,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb4-5" title="5"><span class="co">#&gt; # A tibble: 2 x 9</span></a>
 <a class="sourceLine" id="cb4-6" title="6"><span class="co">#&gt;    year   obs   pop value lowercl uppercl confidence statistic       method</span></a>
 <a class="sourceLine" id="cb4-7" title="7"><span class="co">#&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;           &lt;chr&gt; </span></a>
-<a class="sourceLine" id="cb4-8" title="8"><span class="co">#&gt; 1  2015   233   585 0.398   0.359   0.439 95%        proportion of 1 Wilson</span></a>
-<a class="sourceLine" id="cb4-9" title="9"><span class="co">#&gt; 2  2016   174   525 0.331   0.293   0.373 95%        proportion of 1 Wilson</span></a>
+<a class="sourceLine" id="cb4-8" title="8"><span class="co">#&gt; 1  2015   190   566 0.336   0.298   0.376 95%        proportion of 1 Wilson</span></a>
+<a class="sourceLine" id="cb4-9" title="9"><span class="co">#&gt; 2  2016   325   629 0.517   0.478   0.556 95%        proportion of 1 Wilson</span></a>
 <a class="sourceLine" id="cb4-10" title="10"></a>
 <a class="sourceLine" id="cb4-11" title="11"><span class="co"># default rate - grouped</span></a>
 <a class="sourceLine" id="cb4-12" title="12">df <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb4-13" title="13"><span class="st">  </span><span class="kw">group_by</span>(year) <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb4-14" title="14"><span class="st">  </span><span class="kw">phe_rate</span>(obs, pop)</a>
 <a class="sourceLine" id="cb4-15" title="15"><span class="co">#&gt; # A tibble: 2 x 9</span></a>
-<a class="sourceLine" id="cb4-16" title="16"><span class="co">#&gt;    year   obs   pop  value lowercl uppercl confidence statistic      method</span></a>
-<a class="sourceLine" id="cb4-17" title="17"><span class="co">#&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt;  &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;          &lt;chr&gt; </span></a>
-<a class="sourceLine" id="cb4-18" title="18"><span class="co">#&gt; 1  2015   233   585 39829.  34879.  45285. 95%        rate per 1000~ Byars </span></a>
-<a class="sourceLine" id="cb4-19" title="19"><span class="co">#&gt; 2  2016   174   525 33143.  28401.  38450. 95%        rate per 1000~ Byars</span></a></code></pre></div>
+<a class="sourceLine" id="cb4-16" title="16"><span class="co">#&gt;    year   obs   pop  value lowercl uppercl confidence statistic       method</span></a>
+<a class="sourceLine" id="cb4-17" title="17"><span class="co">#&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt;  &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;           &lt;chr&gt; </span></a>
+<a class="sourceLine" id="cb4-18" title="18"><span class="co">#&gt; 1  2015   190   566 33569.  28965.  38697. 95%        rate per 100000 Byars </span></a>
+<a class="sourceLine" id="cb4-19" title="19"><span class="co">#&gt; 2  2016   325   629 51669.  46204.  57604. 95%        rate per 100000 Byars</span></a></code></pre></div>
 <p><br /> <br /></p>
 </div>
 </div>
@@ -406,21 +378,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Here are some example code chunks to demonstrate the phe_mean function and the arguments that can optionally be specified</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="co"># default mean</span></a>
 <a class="sourceLine" id="cb5-2" title="2"><span class="kw">phe_mean</span>(df,obs)</a>
-<a class="sourceLine" id="cb5-3" title="3"><span class="co">#&gt;   value_sum value_count    stdev  value  lowercl  uppercl confidence</span></a>
-<a class="sourceLine" id="cb5-4" title="4"><span class="co">#&gt; 1       407           8 27.33097 50.875 28.02573 73.72427        95%</span></a>
-<a class="sourceLine" id="cb5-5" title="5"><span class="co">#&gt;   statistic                   method</span></a>
-<a class="sourceLine" id="cb5-6" title="6"><span class="co">#&gt; 1      mean Student&#39;s t-distribution</span></a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="co">#&gt;   value_sum value_count    stdev  value  lowercl  uppercl confidence statistic</span></a>
+<a class="sourceLine" id="cb5-4" title="4"><span class="co">#&gt; 1       515           8 30.44404 64.375 38.92315 89.82685        95%      mean</span></a>
+<a class="sourceLine" id="cb5-5" title="5"><span class="co">#&gt;                     method</span></a>
+<a class="sourceLine" id="cb5-6" title="6"><span class="co">#&gt; 1 Student&#39;s t-distribution</span></a>
 <a class="sourceLine" id="cb5-7" title="7"></a>
 <a class="sourceLine" id="cb5-8" title="8"><span class="co"># multiple means in a single execution with 99.8% confidence</span></a>
 <a class="sourceLine" id="cb5-9" title="9">df <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb5-10" title="10"><span class="st">    </span><span class="kw">group_by</span>(year) <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb5-11" title="11"><span class="st">        </span><span class="kw">phe_mean</span>(obs, <span class="dt">confidence=</span><span class="fl">0.998</span>)</a>
 <a class="sourceLine" id="cb5-12" title="12"><span class="co">#&gt; # A tibble: 2 x 10</span></a>
-<a class="sourceLine" id="cb5-13" title="13"><span class="co">#&gt;    year value_sum value_count stdev value lowercl uppercl confidence</span></a>
-<a class="sourceLine" id="cb5-14" title="14"><span class="co">#&gt;   &lt;int&gt;     &lt;int&gt;       &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;     </span></a>
-<a class="sourceLine" id="cb5-15" title="15"><span class="co">#&gt; 1  2015       233           4  33.9  58.2  -115.     231. 99.8%     </span></a>
-<a class="sourceLine" id="cb5-16" title="16"><span class="co">#&gt; 2  2016       174           4  21.2  43.5   -65.0    152. 99.8%     </span></a>
-<a class="sourceLine" id="cb5-17" title="17"><span class="co">#&gt; # ... with 2 more variables: statistic &lt;chr&gt;, method &lt;chr&gt;</span></a>
+<a class="sourceLine" id="cb5-13" title="13"><span class="co">#&gt;    year value_sum value_count stdev value lowercl uppercl confidence statistic</span></a>
+<a class="sourceLine" id="cb5-14" title="14"><span class="co">#&gt;   &lt;int&gt;     &lt;int&gt;       &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;    </span></a>
+<a class="sourceLine" id="cb5-15" title="15"><span class="co">#&gt; 1  2015       190           4  35.4  47.5  -133.     228. 99.8%      mean     </span></a>
+<a class="sourceLine" id="cb5-16" title="16"><span class="co">#&gt; 2  2016       325           4  12.2  81.2    18.8    144. 99.8%      mean     </span></a>
+<a class="sourceLine" id="cb5-17" title="17"><span class="co">#&gt; # ... with 1 more variable: method &lt;chr&gt;</span></a>
 <a class="sourceLine" id="cb5-18" title="18"></a>
 <a class="sourceLine" id="cb5-19" title="19"><span class="co"># multiple means in a single execution with 99.8% confidence and data-only output</span></a>
 <a class="sourceLine" id="cb5-20" title="20">df <span class="op">%&gt;%</span></a>
@@ -429,8 +401,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb5-23" title="23"><span class="co">#&gt; # A tibble: 2 x 7</span></a>
 <a class="sourceLine" id="cb5-24" title="24"><span class="co">#&gt;    year value_sum value_count stdev value lowercl uppercl</span></a>
 <a class="sourceLine" id="cb5-25" title="25"><span class="co">#&gt;   &lt;int&gt;     &lt;int&gt;       &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb5-26" title="26"><span class="co">#&gt; 1  2015       233           4  33.9  58.2  -115.     231.</span></a>
-<a class="sourceLine" id="cb5-27" title="27"><span class="co">#&gt; 2  2016       174           4  21.2  43.5   -65.0    152.</span></a></code></pre></div>
+<a class="sourceLine" id="cb5-26" title="26"><span class="co">#&gt; 1  2015       190           4  35.4  47.5  -133.     228.</span></a>
+<a class="sourceLine" id="cb5-27" title="27"><span class="co">#&gt; 2  2016       325           4  12.2  81.2    18.8    144.</span></a></code></pre></div>
 </div>
 </div>
 <div id="standardised-aggregate-functions" class="section level2">
@@ -448,12 +420,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb6-8" title="8">            <span class="dt">pop =</span> <span class="kw">sample</span>(<span class="dv">10000</span><span class="op">:</span><span class="dv">20000</span>, <span class="dv">19</span> <span class="op">*</span><span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="dv">5</span> <span class="op">*</span><span class="st"> </span><span class="dv">4</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>))</a>
 <a class="sourceLine" id="cb6-9" title="9"><span class="kw">head</span>(df_std)</a>
 <a class="sourceLine" id="cb6-10" title="10"><span class="co">#&gt;    area year  sex ageband obs   pop</span></a>
-<a class="sourceLine" id="cb6-11" title="11"><span class="co">#&gt; 1 Area1 2006 Male       0  49 18515</span></a>
-<a class="sourceLine" id="cb6-12" title="12"><span class="co">#&gt; 2 Area1 2006 Male       5 120 12429</span></a>
-<a class="sourceLine" id="cb6-13" title="13"><span class="co">#&gt; 3 Area1 2006 Male      10  27 18295</span></a>
-<a class="sourceLine" id="cb6-14" title="14"><span class="co">#&gt; 4 Area1 2006 Male      15 172 13585</span></a>
-<a class="sourceLine" id="cb6-15" title="15"><span class="co">#&gt; 5 Area1 2006 Male      20 142 18873</span></a>
-<a class="sourceLine" id="cb6-16" title="16"><span class="co">#&gt; 6 Area1 2006 Male      25 128 19736</span></a></code></pre></div>
+<a class="sourceLine" id="cb6-11" title="11"><span class="co">#&gt; 1 Area1 2006 Male       0  57 16548</span></a>
+<a class="sourceLine" id="cb6-12" title="12"><span class="co">#&gt; 2 Area1 2006 Male       5  74 19238</span></a>
+<a class="sourceLine" id="cb6-13" title="13"><span class="co">#&gt; 3 Area1 2006 Male      10  25 14721</span></a>
+<a class="sourceLine" id="cb6-14" title="14"><span class="co">#&gt; 4 Area1 2006 Male      15 150 17799</span></a>
+<a class="sourceLine" id="cb6-15" title="15"><span class="co">#&gt; 5 Area1 2006 Male      20  56 16806</span></a>
+<a class="sourceLine" id="cb6-16" title="16"><span class="co">#&gt; 6 Area1 2006 Male      25 155 11338</span></a></code></pre></div>
 </div>
 <div id="execute-phe_dsr" class="section level4">
 <h4>Execute phe_dsr</h4>
@@ -476,22 +448,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb7-2" title="2">df_std <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb7-3" title="3"><span class="st">    </span><span class="kw">group_by</span>(area, year, sex) <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb7-4" title="4"><span class="st">    </span><span class="kw">phe_dsr</span>(obs, pop)</a>
-<a class="sourceLine" id="cb7-5" title="5"><span class="co">#&gt; # A tibble: 40 x 11</span></a>
+<a class="sourceLine" id="cb7-5" title="5"><span class="co">#&gt; # A tibble: 40 x 12</span></a>
 <a class="sourceLine" id="cb7-6" title="6"><span class="co">#&gt; # Groups:   area, year [20]</span></a>
-<a class="sourceLine" id="cb7-7" title="7"><span class="co">#&gt;    area   year sex   total_count total_pop value lowercl uppercl confidence</span></a>
-<a class="sourceLine" id="cb7-8" title="8"><span class="co">#&gt;    &lt;fct&gt; &lt;int&gt; &lt;fct&gt;       &lt;int&gt;     &lt;int&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;     </span></a>
-<a class="sourceLine" id="cb7-9" title="9"><span class="co">#&gt;  1 Area1  2006 Fema~        1588    269585  542.    513.    573. 95%       </span></a>
-<a class="sourceLine" id="cb7-10" title="10"><span class="co">#&gt;  2 Area1  2006 Male         2051    312726  682.    651.    713. 95%       </span></a>
-<a class="sourceLine" id="cb7-11" title="11"><span class="co">#&gt;  3 Area1  2007 Fema~        1976    271347  748.    712.    785. 95%       </span></a>
-<a class="sourceLine" id="cb7-12" title="12"><span class="co">#&gt;  4 Area1  2007 Male         2071    277302  741.    707.    776. 95%       </span></a>
-<a class="sourceLine" id="cb7-13" title="13"><span class="co">#&gt;  5 Area1  2008 Fema~        1654    293895  597.    566.    629. 95%       </span></a>
-<a class="sourceLine" id="cb7-14" title="14"><span class="co">#&gt;  6 Area1  2008 Male         1692    285377  604.    574.    636. 95%       </span></a>
-<a class="sourceLine" id="cb7-15" title="15"><span class="co">#&gt;  7 Area1  2009 Fema~        1829    305132  659.    628.    692. 95%       </span></a>
-<a class="sourceLine" id="cb7-16" title="16"><span class="co">#&gt;  8 Area1  2009 Male         1755    288565  598.    568.    629. 95%       </span></a>
-<a class="sourceLine" id="cb7-17" title="17"><span class="co">#&gt;  9 Area1  2010 Fema~        2254    292523  722.    690.    755. 95%       </span></a>
-<a class="sourceLine" id="cb7-18" title="18"><span class="co">#&gt; 10 Area1  2010 Male         1951    284716  671.    640.    704. 95%       </span></a>
-<a class="sourceLine" id="cb7-19" title="19"><span class="co">#&gt; # ... with 30 more rows, and 2 more variables: statistic &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb7-20" title="20"><span class="co">#&gt; #   method &lt;chr&gt;</span></a>
+<a class="sourceLine" id="cb7-7" title="7"><span class="co">#&gt;    area   year sex   total_count total_pop standardised_pop value lowercl</span></a>
+<a class="sourceLine" id="cb7-8" title="8"><span class="co">#&gt;    &lt;fct&gt; &lt;int&gt; &lt;fct&gt;       &lt;int&gt;     &lt;int&gt;            &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb7-9" title="9"><span class="co">#&gt;  1 Area1  2006 Fema~        1902    280649             760.  760.    724.</span></a>
+<a class="sourceLine" id="cb7-10" title="10"><span class="co">#&gt;  2 Area1  2006 Male         2238    284526             776.  776.    742.</span></a>
+<a class="sourceLine" id="cb7-11" title="11"><span class="co">#&gt;  3 Area1  2007 Fema~        1939    283938             714.  714.    681.</span></a>
+<a class="sourceLine" id="cb7-12" title="12"><span class="co">#&gt;  4 Area1  2007 Male         1427    286021             533.  533.    504.</span></a>
+<a class="sourceLine" id="cb7-13" title="13"><span class="co">#&gt;  5 Area1  2008 Fema~        1901    270756             782.  782.    744.</span></a>
+<a class="sourceLine" id="cb7-14" title="14"><span class="co">#&gt;  6 Area1  2008 Male         1404    277536             547.  547.    517.</span></a>
+<a class="sourceLine" id="cb7-15" title="15"><span class="co">#&gt;  7 Area1  2009 Fema~        1813    289587             731.  731.    696.</span></a>
+<a class="sourceLine" id="cb7-16" title="16"><span class="co">#&gt;  8 Area1  2009 Male         2510    266885             973.  973.    932.</span></a>
+<a class="sourceLine" id="cb7-17" title="17"><span class="co">#&gt;  9 Area1  2010 Fema~        1724    275556             683.  683.    650.</span></a>
+<a class="sourceLine" id="cb7-18" title="18"><span class="co">#&gt; 10 Area1  2010 Male         2273    280717             768.  768.    734.</span></a>
+<a class="sourceLine" id="cb7-19" title="19"><span class="co">#&gt; # ... with 30 more rows, and 4 more variables: uppercl &lt;dbl&gt;, confidence &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb7-20" title="20"><span class="co">#&gt; #   statistic &lt;chr&gt;, method &lt;chr&gt;</span></a>
 <a class="sourceLine" id="cb7-21" title="21"></a>
 <a class="sourceLine" id="cb7-22" title="22"><span class="co"># calculate separate dsrs for each area, year and sex and drop metadata fields from output</span></a>
 <a class="sourceLine" id="cb7-23" title="23">df_std <span class="op">%&gt;%</span></a>
@@ -501,82 +473,82 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb7-27" title="27"><span class="co">#&gt; # Groups:   area, year [20]</span></a>
 <a class="sourceLine" id="cb7-28" title="28"><span class="co">#&gt;    area   year sex    total_count total_pop value lowercl uppercl</span></a>
 <a class="sourceLine" id="cb7-29" title="29"><span class="co">#&gt;    &lt;fct&gt; &lt;int&gt; &lt;fct&gt;        &lt;int&gt;     &lt;int&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb7-30" title="30"><span class="co">#&gt;  1 Area1  2006 Female        1588    269585  542.    513.    573.</span></a>
-<a class="sourceLine" id="cb7-31" title="31"><span class="co">#&gt;  2 Area1  2006 Male          2051    312726  682.    651.    713.</span></a>
-<a class="sourceLine" id="cb7-32" title="32"><span class="co">#&gt;  3 Area1  2007 Female        1976    271347  748.    712.    785.</span></a>
-<a class="sourceLine" id="cb7-33" title="33"><span class="co">#&gt;  4 Area1  2007 Male          2071    277302  741.    707.    776.</span></a>
-<a class="sourceLine" id="cb7-34" title="34"><span class="co">#&gt;  5 Area1  2008 Female        1654    293895  597.    566.    629.</span></a>
-<a class="sourceLine" id="cb7-35" title="35"><span class="co">#&gt;  6 Area1  2008 Male          1692    285377  604.    574.    636.</span></a>
-<a class="sourceLine" id="cb7-36" title="36"><span class="co">#&gt;  7 Area1  2009 Female        1829    305132  659.    628.    692.</span></a>
-<a class="sourceLine" id="cb7-37" title="37"><span class="co">#&gt;  8 Area1  2009 Male          1755    288565  598.    568.    629.</span></a>
-<a class="sourceLine" id="cb7-38" title="38"><span class="co">#&gt;  9 Area1  2010 Female        2254    292523  722.    690.    755.</span></a>
-<a class="sourceLine" id="cb7-39" title="39"><span class="co">#&gt; 10 Area1  2010 Male          1951    284716  671.    640.    704.</span></a>
+<a class="sourceLine" id="cb7-30" title="30"><span class="co">#&gt;  1 Area1  2006 Female        1902    280649  760.    724.    797.</span></a>
+<a class="sourceLine" id="cb7-31" title="31"><span class="co">#&gt;  2 Area1  2006 Male          2238    284526  776.    742.    812.</span></a>
+<a class="sourceLine" id="cb7-32" title="32"><span class="co">#&gt;  3 Area1  2007 Female        1939    283938  714.    681.    748.</span></a>
+<a class="sourceLine" id="cb7-33" title="33"><span class="co">#&gt;  4 Area1  2007 Male          1427    286021  533.    504.    564.</span></a>
+<a class="sourceLine" id="cb7-34" title="34"><span class="co">#&gt;  5 Area1  2008 Female        1901    270756  782.    744.    821.</span></a>
+<a class="sourceLine" id="cb7-35" title="35"><span class="co">#&gt;  6 Area1  2008 Male          1404    277536  547.    517.    579.</span></a>
+<a class="sourceLine" id="cb7-36" title="36"><span class="co">#&gt;  7 Area1  2009 Female        1813    289587  731.    696.    766.</span></a>
+<a class="sourceLine" id="cb7-37" title="37"><span class="co">#&gt;  8 Area1  2009 Male          2510    266885  973.    932.   1014.</span></a>
+<a class="sourceLine" id="cb7-38" title="38"><span class="co">#&gt;  9 Area1  2010 Female        1724    275556  683.    650.    717.</span></a>
+<a class="sourceLine" id="cb7-39" title="39"><span class="co">#&gt; 10 Area1  2010 Male          2273    280717  768.    734.    803.</span></a>
 <a class="sourceLine" id="cb7-40" title="40"><span class="co">#&gt; # ... with 30 more rows</span></a>
 <a class="sourceLine" id="cb7-41" title="41"></a>
 <a class="sourceLine" id="cb7-42" title="42"><span class="co"># calculate same specifying standard population in vector form</span></a>
 <a class="sourceLine" id="cb7-43" title="43">df_std <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb7-44" title="44"><span class="st">    </span><span class="kw">group_by</span>(area, year, sex) <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb7-45" title="45"><span class="st">    </span><span class="kw">phe_dsr</span>(obs, pop, <span class="dt">stdpop =</span> esp2013)</a>
-<a class="sourceLine" id="cb7-46" title="46"><span class="co">#&gt; # A tibble: 40 x 11</span></a>
+<a class="sourceLine" id="cb7-46" title="46"><span class="co">#&gt; # A tibble: 40 x 12</span></a>
 <a class="sourceLine" id="cb7-47" title="47"><span class="co">#&gt; # Groups:   area, year [20]</span></a>
-<a class="sourceLine" id="cb7-48" title="48"><span class="co">#&gt;    area   year sex   total_count total_pop value lowercl uppercl confidence</span></a>
-<a class="sourceLine" id="cb7-49" title="49"><span class="co">#&gt;    &lt;fct&gt; &lt;int&gt; &lt;fct&gt;       &lt;int&gt;     &lt;int&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;     </span></a>
-<a class="sourceLine" id="cb7-50" title="50"><span class="co">#&gt;  1 Area1  2006 Fema~        1588    269585  542.    513.    573. 95%       </span></a>
-<a class="sourceLine" id="cb7-51" title="51"><span class="co">#&gt;  2 Area1  2006 Male         2051    312726  682.    651.    713. 95%       </span></a>
-<a class="sourceLine" id="cb7-52" title="52"><span class="co">#&gt;  3 Area1  2007 Fema~        1976    271347  748.    712.    785. 95%       </span></a>
-<a class="sourceLine" id="cb7-53" title="53"><span class="co">#&gt;  4 Area1  2007 Male         2071    277302  741.    707.    776. 95%       </span></a>
-<a class="sourceLine" id="cb7-54" title="54"><span class="co">#&gt;  5 Area1  2008 Fema~        1654    293895  597.    566.    629. 95%       </span></a>
-<a class="sourceLine" id="cb7-55" title="55"><span class="co">#&gt;  6 Area1  2008 Male         1692    285377  604.    574.    636. 95%       </span></a>
-<a class="sourceLine" id="cb7-56" title="56"><span class="co">#&gt;  7 Area1  2009 Fema~        1829    305132  659.    628.    692. 95%       </span></a>
-<a class="sourceLine" id="cb7-57" title="57"><span class="co">#&gt;  8 Area1  2009 Male         1755    288565  598.    568.    629. 95%       </span></a>
-<a class="sourceLine" id="cb7-58" title="58"><span class="co">#&gt;  9 Area1  2010 Fema~        2254    292523  722.    690.    755. 95%       </span></a>
-<a class="sourceLine" id="cb7-59" title="59"><span class="co">#&gt; 10 Area1  2010 Male         1951    284716  671.    640.    704. 95%       </span></a>
-<a class="sourceLine" id="cb7-60" title="60"><span class="co">#&gt; # ... with 30 more rows, and 2 more variables: statistic &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb7-61" title="61"><span class="co">#&gt; #   method &lt;chr&gt;</span></a>
+<a class="sourceLine" id="cb7-48" title="48"><span class="co">#&gt;    area   year sex   total_count total_pop standardised_pop value lowercl</span></a>
+<a class="sourceLine" id="cb7-49" title="49"><span class="co">#&gt;    &lt;fct&gt; &lt;int&gt; &lt;fct&gt;       &lt;int&gt;     &lt;int&gt;            &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb7-50" title="50"><span class="co">#&gt;  1 Area1  2006 Fema~        1902    280649             760.  760.    724.</span></a>
+<a class="sourceLine" id="cb7-51" title="51"><span class="co">#&gt;  2 Area1  2006 Male         2238    284526             776.  776.    742.</span></a>
+<a class="sourceLine" id="cb7-52" title="52"><span class="co">#&gt;  3 Area1  2007 Fema~        1939    283938             714.  714.    681.</span></a>
+<a class="sourceLine" id="cb7-53" title="53"><span class="co">#&gt;  4 Area1  2007 Male         1427    286021             533.  533.    504.</span></a>
+<a class="sourceLine" id="cb7-54" title="54"><span class="co">#&gt;  5 Area1  2008 Fema~        1901    270756             782.  782.    744.</span></a>
+<a class="sourceLine" id="cb7-55" title="55"><span class="co">#&gt;  6 Area1  2008 Male         1404    277536             547.  547.    517.</span></a>
+<a class="sourceLine" id="cb7-56" title="56"><span class="co">#&gt;  7 Area1  2009 Fema~        1813    289587             731.  731.    696.</span></a>
+<a class="sourceLine" id="cb7-57" title="57"><span class="co">#&gt;  8 Area1  2009 Male         2510    266885             973.  973.    932.</span></a>
+<a class="sourceLine" id="cb7-58" title="58"><span class="co">#&gt;  9 Area1  2010 Fema~        1724    275556             683.  683.    650.</span></a>
+<a class="sourceLine" id="cb7-59" title="59"><span class="co">#&gt; 10 Area1  2010 Male         2273    280717             768.  768.    734.</span></a>
+<a class="sourceLine" id="cb7-60" title="60"><span class="co">#&gt; # ... with 30 more rows, and 4 more variables: uppercl &lt;dbl&gt;, confidence &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb7-61" title="61"><span class="co">#&gt; #   statistic &lt;chr&gt;, method &lt;chr&gt;</span></a>
 <a class="sourceLine" id="cb7-62" title="62"></a>
 <a class="sourceLine" id="cb7-63" title="63"><span class="co"># calculate the same dsrs by appending the standard populations to the data frame</span></a>
 <a class="sourceLine" id="cb7-64" title="64">df_std <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb7-65" title="65"><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">refpop =</span> <span class="kw">rep</span>(esp2013,<span class="dv">40</span>)) <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb7-66" title="66"><span class="st">    </span><span class="kw">group_by</span>(area, year, sex) <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb7-67" title="67"><span class="st">    </span><span class="kw">phe_dsr</span>(obs,pop, <span class="dt">stdpop=</span>refpop, <span class="dt">stdpoptype=</span><span class="st">&quot;field&quot;</span>)</a>
-<a class="sourceLine" id="cb7-68" title="68"><span class="co">#&gt; # A tibble: 40 x 11</span></a>
+<a class="sourceLine" id="cb7-68" title="68"><span class="co">#&gt; # A tibble: 40 x 12</span></a>
 <a class="sourceLine" id="cb7-69" title="69"><span class="co">#&gt; # Groups:   area, year [20]</span></a>
-<a class="sourceLine" id="cb7-70" title="70"><span class="co">#&gt;    area   year sex   total_count total_pop value lowercl uppercl confidence</span></a>
-<a class="sourceLine" id="cb7-71" title="71"><span class="co">#&gt;    &lt;fct&gt; &lt;int&gt; &lt;fct&gt;       &lt;int&gt;     &lt;int&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;     </span></a>
-<a class="sourceLine" id="cb7-72" title="72"><span class="co">#&gt;  1 Area1  2006 Fema~        1588    269585  542.    513.    573. 95%       </span></a>
-<a class="sourceLine" id="cb7-73" title="73"><span class="co">#&gt;  2 Area1  2006 Male         2051    312726  682.    651.    713. 95%       </span></a>
-<a class="sourceLine" id="cb7-74" title="74"><span class="co">#&gt;  3 Area1  2007 Fema~        1976    271347  748.    712.    785. 95%       </span></a>
-<a class="sourceLine" id="cb7-75" title="75"><span class="co">#&gt;  4 Area1  2007 Male         2071    277302  741.    707.    776. 95%       </span></a>
-<a class="sourceLine" id="cb7-76" title="76"><span class="co">#&gt;  5 Area1  2008 Fema~        1654    293895  597.    566.    629. 95%       </span></a>
-<a class="sourceLine" id="cb7-77" title="77"><span class="co">#&gt;  6 Area1  2008 Male         1692    285377  604.    574.    636. 95%       </span></a>
-<a class="sourceLine" id="cb7-78" title="78"><span class="co">#&gt;  7 Area1  2009 Fema~        1829    305132  659.    628.    692. 95%       </span></a>
-<a class="sourceLine" id="cb7-79" title="79"><span class="co">#&gt;  8 Area1  2009 Male         1755    288565  598.    568.    629. 95%       </span></a>
-<a class="sourceLine" id="cb7-80" title="80"><span class="co">#&gt;  9 Area1  2010 Fema~        2254    292523  722.    690.    755. 95%       </span></a>
-<a class="sourceLine" id="cb7-81" title="81"><span class="co">#&gt; 10 Area1  2010 Male         1951    284716  671.    640.    704. 95%       </span></a>
-<a class="sourceLine" id="cb7-82" title="82"><span class="co">#&gt; # ... with 30 more rows, and 2 more variables: statistic &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb7-83" title="83"><span class="co">#&gt; #   method &lt;chr&gt;</span></a>
+<a class="sourceLine" id="cb7-70" title="70"><span class="co">#&gt;    area   year sex   total_count total_pop standardised_pop value lowercl</span></a>
+<a class="sourceLine" id="cb7-71" title="71"><span class="co">#&gt;    &lt;fct&gt; &lt;int&gt; &lt;fct&gt;       &lt;int&gt;     &lt;int&gt;            &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb7-72" title="72"><span class="co">#&gt;  1 Area1  2006 Fema~        1902    280649             760.  760.    724.</span></a>
+<a class="sourceLine" id="cb7-73" title="73"><span class="co">#&gt;  2 Area1  2006 Male         2238    284526             776.  776.    742.</span></a>
+<a class="sourceLine" id="cb7-74" title="74"><span class="co">#&gt;  3 Area1  2007 Fema~        1939    283938             714.  714.    681.</span></a>
+<a class="sourceLine" id="cb7-75" title="75"><span class="co">#&gt;  4 Area1  2007 Male         1427    286021             533.  533.    504.</span></a>
+<a class="sourceLine" id="cb7-76" title="76"><span class="co">#&gt;  5 Area1  2008 Fema~        1901    270756             782.  782.    744.</span></a>
+<a class="sourceLine" id="cb7-77" title="77"><span class="co">#&gt;  6 Area1  2008 Male         1404    277536             547.  547.    517.</span></a>
+<a class="sourceLine" id="cb7-78" title="78"><span class="co">#&gt;  7 Area1  2009 Fema~        1813    289587             731.  731.    696.</span></a>
+<a class="sourceLine" id="cb7-79" title="79"><span class="co">#&gt;  8 Area1  2009 Male         2510    266885             973.  973.    932.</span></a>
+<a class="sourceLine" id="cb7-80" title="80"><span class="co">#&gt;  9 Area1  2010 Fema~        1724    275556             683.  683.    650.</span></a>
+<a class="sourceLine" id="cb7-81" title="81"><span class="co">#&gt; 10 Area1  2010 Male         2273    280717             768.  768.    734.</span></a>
+<a class="sourceLine" id="cb7-82" title="82"><span class="co">#&gt; # ... with 30 more rows, and 4 more variables: uppercl &lt;dbl&gt;, confidence &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb7-83" title="83"><span class="co">#&gt; #   statistic &lt;chr&gt;, method &lt;chr&gt;</span></a>
 <a class="sourceLine" id="cb7-84" title="84"></a>
 <a class="sourceLine" id="cb7-85" title="85"><span class="co"># calculate for under 75s by filtering out records for 75+ from input data frame and standard population</span></a>
 <a class="sourceLine" id="cb7-86" title="86">df_std <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb7-87" title="87"><span class="st">    </span><span class="kw">filter</span>(ageband <span class="op">&lt;=</span><span class="st"> </span><span class="dv">70</span>) <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb7-88" title="88"><span class="st">    </span><span class="kw">group_by</span>(area, year, sex) <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb7-89" title="89"><span class="st">    </span><span class="kw">phe_dsr</span>(obs, pop, <span class="dt">stdpop =</span> esp2013[<span class="dv">1</span><span class="op">:</span><span class="dv">15</span>])</a>
-<a class="sourceLine" id="cb7-90" title="90"><span class="co">#&gt; # A tibble: 40 x 11</span></a>
+<a class="sourceLine" id="cb7-90" title="90"><span class="co">#&gt; # A tibble: 40 x 12</span></a>
 <a class="sourceLine" id="cb7-91" title="91"><span class="co">#&gt; # Groups:   area, year [20]</span></a>
-<a class="sourceLine" id="cb7-92" title="92"><span class="co">#&gt;    area   year sex   total_count total_pop value lowercl uppercl confidence</span></a>
-<a class="sourceLine" id="cb7-93" title="93"><span class="co">#&gt;    &lt;fct&gt; &lt;int&gt; &lt;fct&gt;       &lt;int&gt;     &lt;int&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;     </span></a>
-<a class="sourceLine" id="cb7-94" title="94"><span class="co">#&gt;  1 Area1  2006 Fema~        1034    216699  501.    470.    533. 95%       </span></a>
-<a class="sourceLine" id="cb7-95" title="95"><span class="co">#&gt;  2 Area1  2006 Male         1728    252257  708.    675.    743. 95%       </span></a>
-<a class="sourceLine" id="cb7-96" title="96"><span class="co">#&gt;  3 Area1  2007 Fema~        1526    210474  740.    702.    780. 95%       </span></a>
-<a class="sourceLine" id="cb7-97" title="97"><span class="co">#&gt;  4 Area1  2007 Male         1570    215934  725.    689.    763. 95%       </span></a>
-<a class="sourceLine" id="cb7-98" title="98"><span class="co">#&gt;  5 Area1  2008 Fema~        1271    235630  593.    559.    628. 95%       </span></a>
-<a class="sourceLine" id="cb7-99" title="99"><span class="co">#&gt;  6 Area1  2008 Male         1410    226722  620.    588.    654. 95%       </span></a>
-<a class="sourceLine" id="cb7-100" title="100"><span class="co">#&gt;  7 Area1  2009 Fema~        1610    241629  691.    657.    727. 95%       </span></a>
-<a class="sourceLine" id="cb7-101" title="101"><span class="co">#&gt;  8 Area1  2009 Male         1344    218049  602.    569.    635. 95%       </span></a>
-<a class="sourceLine" id="cb7-102" title="102"><span class="co">#&gt;  9 Area1  2010 Fema~        1584    235585  667.    634.    702. 95%       </span></a>
-<a class="sourceLine" id="cb7-103" title="103"><span class="co">#&gt; 10 Area1  2010 Male         1599    230790  680.    646.    714. 95%       </span></a>
-<a class="sourceLine" id="cb7-104" title="104"><span class="co">#&gt; # ... with 30 more rows, and 2 more variables: statistic &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb7-105" title="105"><span class="co">#&gt; #   method &lt;chr&gt;</span></a>
+<a class="sourceLine" id="cb7-92" title="92"><span class="co">#&gt;    area   year sex   total_count total_pop standardised_pop value lowercl</span></a>
+<a class="sourceLine" id="cb7-93" title="93"><span class="co">#&gt;    &lt;fct&gt; &lt;int&gt; &lt;fct&gt;       &lt;int&gt;     &lt;int&gt;            &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb7-94" title="94"><span class="co">#&gt;  1 Area1  2006 Fema~        1570    222016             713.  783.    744.</span></a>
+<a class="sourceLine" id="cb7-95" title="95"><span class="co">#&gt;  2 Area1  2006 Male         1624    228497             672.  739.    703.</span></a>
+<a class="sourceLine" id="cb7-96" title="96"><span class="co">#&gt;  3 Area1  2007 Fema~        1510    232395             626.  687.    652.</span></a>
+<a class="sourceLine" id="cb7-97" title="97"><span class="co">#&gt;  4 Area1  2007 Male         1066    220432             470.  517.    486.</span></a>
+<a class="sourceLine" id="cb7-98" title="98"><span class="co">#&gt;  5 Area1  2008 Fema~        1500    215180             719.  790.    749.</span></a>
+<a class="sourceLine" id="cb7-99" title="99"><span class="co">#&gt;  6 Area1  2008 Male         1158    221122             503.  552.    520.</span></a>
+<a class="sourceLine" id="cb7-100" title="100"><span class="co">#&gt;  7 Area1  2009 Fema~        1636    226142             698.  767.    730.</span></a>
+<a class="sourceLine" id="cb7-101" title="101"><span class="co">#&gt;  8 Area1  2009 Male         1907    213639             872.  959.    915.</span></a>
+<a class="sourceLine" id="cb7-102" title="102"><span class="co">#&gt;  9 Area1  2010 Fema~        1429    217487             617.  678.    643.</span></a>
+<a class="sourceLine" id="cb7-103" title="103"><span class="co">#&gt; 10 Area1  2010 Male         1729    221139             703.  773.    736.</span></a>
+<a class="sourceLine" id="cb7-104" title="104"><span class="co">#&gt; # ... with 30 more rows, and 4 more variables: uppercl &lt;dbl&gt;, confidence &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb7-105" title="105"><span class="co">#&gt; #   statistic &lt;chr&gt;, method &lt;chr&gt;</span></a>
 <a class="sourceLine" id="cb7-106" title="106">    </a>
 <a class="sourceLine" id="cb7-107" title="107"><span class="co"># calculate separate dsrs for persons for each area and year)</span></a>
 <a class="sourceLine" id="cb7-108" title="108">df_std <span class="op">%&gt;%</span></a>
@@ -585,31 +557,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb7-111" title="111">              <span class="dt">pop =</span> <span class="kw">sum</span>(pop)) <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb7-112" title="112"><span class="st">    </span><span class="kw">group_by</span>(area, year) <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb7-113" title="113"><span class="st">    </span><span class="kw">phe_dsr</span>(obs,pop)</a>
-<a class="sourceLine" id="cb7-114" title="114"><span class="co">#&gt; # A tibble: 20 x 10</span></a>
+<a class="sourceLine" id="cb7-114" title="114"><span class="co">#&gt; # A tibble: 20 x 11</span></a>
 <a class="sourceLine" id="cb7-115" title="115"><span class="co">#&gt; # Groups:   area [4]</span></a>
-<a class="sourceLine" id="cb7-116" title="116"><span class="co">#&gt;    area   year total_count total_pop value lowercl uppercl confidence</span></a>
-<a class="sourceLine" id="cb7-117" title="117"><span class="co">#&gt;    &lt;fct&gt; &lt;int&gt;       &lt;int&gt;     &lt;int&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;     </span></a>
-<a class="sourceLine" id="cb7-118" title="118"><span class="co">#&gt;  1 Area1  2006        3639    582311  601.    580.    623. 95%       </span></a>
-<a class="sourceLine" id="cb7-119" title="119"><span class="co">#&gt;  2 Area1  2007        4047    548649  739.    715.    764. 95%       </span></a>
-<a class="sourceLine" id="cb7-120" title="120"><span class="co">#&gt;  3 Area1  2008        3346    579272  587.    566.    608. 95%       </span></a>
-<a class="sourceLine" id="cb7-121" title="121"><span class="co">#&gt;  4 Area1  2009        3584    593697  624.    603.    646. 95%       </span></a>
-<a class="sourceLine" id="cb7-122" title="122"><span class="co">#&gt;  5 Area1  2010        4205    577239  698.    675.    721. 95%       </span></a>
-<a class="sourceLine" id="cb7-123" title="123"><span class="co">#&gt;  6 Area2  2006        3732    595337  620.    599.    642. 95%       </span></a>
-<a class="sourceLine" id="cb7-124" title="124"><span class="co">#&gt;  7 Area2  2007        3656    576631  671.    648.    694. 95%       </span></a>
-<a class="sourceLine" id="cb7-125" title="125"><span class="co">#&gt;  8 Area2  2008        3367    604795  604.    583.    626. 95%       </span></a>
-<a class="sourceLine" id="cb7-126" title="126"><span class="co">#&gt;  9 Area2  2009        3611    563165  652.    629.    675. 95%       </span></a>
-<a class="sourceLine" id="cb7-127" title="127"><span class="co">#&gt; 10 Area2  2010        3159    602672  513.    494.    532. 95%       </span></a>
-<a class="sourceLine" id="cb7-128" title="128"><span class="co">#&gt; 11 Area3  2006        4166    574100  730.    707.    755. 95%       </span></a>
-<a class="sourceLine" id="cb7-129" title="129"><span class="co">#&gt; 12 Area3  2007        3791    585599  658.    636.    681. 95%       </span></a>
-<a class="sourceLine" id="cb7-130" title="130"><span class="co">#&gt; 13 Area3  2008        3907    560264  728.    704.    753. 95%       </span></a>
-<a class="sourceLine" id="cb7-131" title="131"><span class="co">#&gt; 14 Area3  2009        3744    602071  613.    592.    634. 95%       </span></a>
-<a class="sourceLine" id="cb7-132" title="132"><span class="co">#&gt; 15 Area3  2010        4227    589856  747.    723.    771. 95%       </span></a>
-<a class="sourceLine" id="cb7-133" title="133"><span class="co">#&gt; 16 Area4  2006        3545    553076  662.    639.    685. 95%       </span></a>
-<a class="sourceLine" id="cb7-134" title="134"><span class="co">#&gt; 17 Area4  2007        3911    571843  696.    673.    720. 95%       </span></a>
-<a class="sourceLine" id="cb7-135" title="135"><span class="co">#&gt; 18 Area4  2008        3860    582601  693.    670.    716. 95%       </span></a>
-<a class="sourceLine" id="cb7-136" title="136"><span class="co">#&gt; 19 Area4  2009        3349    588160  602.    581.    624. 95%       </span></a>
-<a class="sourceLine" id="cb7-137" title="137"><span class="co">#&gt; 20 Area4  2010        4227    571729  724.    701.    748. 95%       </span></a>
-<a class="sourceLine" id="cb7-138" title="138"><span class="co">#&gt; # ... with 2 more variables: statistic &lt;chr&gt;, method &lt;chr&gt;</span></a></code></pre></div>
+<a class="sourceLine" id="cb7-116" title="116"><span class="co">#&gt;    area   year total_count total_pop standardised_pop value lowercl uppercl</span></a>
+<a class="sourceLine" id="cb7-117" title="117"><span class="co">#&gt;    &lt;fct&gt; &lt;int&gt;       &lt;int&gt;     &lt;int&gt;            &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb7-118" title="118"><span class="co">#&gt;  1 Area1  2006        4140    565175             730.  730.    707.    754.</span></a>
+<a class="sourceLine" id="cb7-119" title="119"><span class="co">#&gt;  2 Area1  2007        3366    569959             614.  614.    593.    636.</span></a>
+<a class="sourceLine" id="cb7-120" title="120"><span class="co">#&gt;  3 Area1  2008        3305    548292             645.  645.    622.    669.</span></a>
+<a class="sourceLine" id="cb7-121" title="121"><span class="co">#&gt;  4 Area1  2009        4323    556472             822.  822.    797.    849.</span></a>
+<a class="sourceLine" id="cb7-122" title="122"><span class="co">#&gt;  5 Area1  2010        3997    556273             712.  712.    689.    735.</span></a>
+<a class="sourceLine" id="cb7-123" title="123"><span class="co">#&gt;  6 Area2  2006        4309    583335             752.  752.    728.    777.</span></a>
+<a class="sourceLine" id="cb7-124" title="124"><span class="co">#&gt;  7 Area2  2007        3770    545306             682.  682.    659.    705.</span></a>
+<a class="sourceLine" id="cb7-125" title="125"><span class="co">#&gt;  8 Area2  2008        4131    558671             742.  742.    718.    767.</span></a>
+<a class="sourceLine" id="cb7-126" title="126"><span class="co">#&gt;  9 Area2  2009        4093    576157             707.  707.    684.    731.</span></a>
+<a class="sourceLine" id="cb7-127" title="127"><span class="co">#&gt; 10 Area2  2010        4049    583252             698.  698.    675.    721.</span></a>
+<a class="sourceLine" id="cb7-128" title="128"><span class="co">#&gt; 11 Area3  2006        3519    513099             695.  695.    671.    720.</span></a>
+<a class="sourceLine" id="cb7-129" title="129"><span class="co">#&gt; 12 Area3  2007        4183    585328             742.  742.    718.    765.</span></a>
+<a class="sourceLine" id="cb7-130" title="130"><span class="co">#&gt; 13 Area3  2008        3523    561450             637.  637.    615.    660.</span></a>
+<a class="sourceLine" id="cb7-131" title="131"><span class="co">#&gt; 14 Area3  2009        3979    572040             694.  694.    671.    717.</span></a>
+<a class="sourceLine" id="cb7-132" title="132"><span class="co">#&gt; 15 Area3  2010        4219    573184             750.  750.    726.    774.</span></a>
+<a class="sourceLine" id="cb7-133" title="133"><span class="co">#&gt; 16 Area4  2006        3205    557733             613.  613.    591.    635.</span></a>
+<a class="sourceLine" id="cb7-134" title="134"><span class="co">#&gt; 17 Area4  2007        3631    605148             602.  602.    581.    623.</span></a>
+<a class="sourceLine" id="cb7-135" title="135"><span class="co">#&gt; 18 Area4  2008        3908    543962             780.  780.    754.    806.</span></a>
+<a class="sourceLine" id="cb7-136" title="136"><span class="co">#&gt; 19 Area4  2009        3750    581381             670.  670.    647.    692.</span></a>
+<a class="sourceLine" id="cb7-137" title="137"><span class="co">#&gt; 20 Area4  2010        3506    581500             617.  617.    595.    639.</span></a>
+<a class="sourceLine" id="cb7-138" title="138"><span class="co">#&gt; # ... with 3 more variables: confidence &lt;chr&gt;, statistic &lt;chr&gt;, method &lt;chr&gt;</span></a></code></pre></div>
 </div>
 <div id="execute-phe_smr-and-phe_isr" class="section level4">
 <h4>Execute phe_smr and phe_isr</h4>
@@ -632,12 +604,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb8-8" title="8"><span class="co">#&gt; # A tibble: 6 x 3</span></a>
 <a class="sourceLine" id="cb8-9" title="9"><span class="co">#&gt;   ageband   obs    pop</span></a>
 <a class="sourceLine" id="cb8-10" title="10"><span class="co">#&gt;     &lt;dbl&gt; &lt;int&gt;  &lt;int&gt;</span></a>
-<a class="sourceLine" id="cb8-11" title="11"><span class="co">#&gt; 1       0   599 129182</span></a>
-<a class="sourceLine" id="cb8-12" title="12"><span class="co">#&gt; 2       5   651 115841</span></a>
-<a class="sourceLine" id="cb8-13" title="13"><span class="co">#&gt; 3      10   617 120517</span></a>
-<a class="sourceLine" id="cb8-14" title="14"><span class="co">#&gt; 4      15   577 134855</span></a>
-<a class="sourceLine" id="cb8-15" title="15"><span class="co">#&gt; 5      20   839 123381</span></a>
-<a class="sourceLine" id="cb8-16" title="16"><span class="co">#&gt; 6      25   915 134561</span></a></code></pre></div>
+<a class="sourceLine" id="cb8-11" title="11"><span class="co">#&gt; 1       0   616 128749</span></a>
+<a class="sourceLine" id="cb8-12" title="12"><span class="co">#&gt; 2       5   809 113432</span></a>
+<a class="sourceLine" id="cb8-13" title="13"><span class="co">#&gt; 3      10   795 120597</span></a>
+<a class="sourceLine" id="cb8-14" title="14"><span class="co">#&gt; 4      15   921 105706</span></a>
+<a class="sourceLine" id="cb8-15" title="15"><span class="co">#&gt; 5      20   751 141603</span></a>
+<a class="sourceLine" id="cb8-16" title="16"><span class="co">#&gt; 6      25   896 120961</span></a></code></pre></div>
 <p>Here are some example code chunks to demonstrate the phe_smr function and the arguments that can optionally be specified</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1"><span class="co"># calculate separate smrs for each area, year and sex</span></a>
 <a class="sourceLine" id="cb9-2" title="2">df_std <span class="op">%&gt;%</span></a>
@@ -647,57 +619,55 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb9-6" title="6"><span class="co">#&gt; # Groups:   area, year [20]</span></a>
 <a class="sourceLine" id="cb9-7" title="7"><span class="co">#&gt;    area   year sex   observed expected value lowercl uppercl confidence</span></a>
 <a class="sourceLine" id="cb9-8" title="8"><span class="co">#&gt;    &lt;fct&gt; &lt;int&gt; &lt;fct&gt;    &lt;int&gt;    &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;     </span></a>
-<a class="sourceLine" id="cb9-9" title="9"><span class="co">#&gt;  1 Area1  2006 Fema~     1588    1760. 0.902   0.858   0.948 95%       </span></a>
-<a class="sourceLine" id="cb9-10" title="10"><span class="co">#&gt;  2 Area1  2006 Male      2051    2047. 1.00    0.959   1.05  95%       </span></a>
-<a class="sourceLine" id="cb9-11" title="11"><span class="co">#&gt;  3 Area1  2007 Fema~     1976    1827. 1.08    1.03    1.13  95%       </span></a>
-<a class="sourceLine" id="cb9-12" title="12"><span class="co">#&gt;  4 Area1  2007 Male      2071    1850. 1.12    1.07    1.17  95%       </span></a>
-<a class="sourceLine" id="cb9-13" title="13"><span class="co">#&gt;  5 Area1  2008 Fema~     1654    1968. 0.841   0.801   0.882 95%       </span></a>
-<a class="sourceLine" id="cb9-14" title="14"><span class="co">#&gt;  6 Area1  2008 Male      1692    1886. 0.897   0.855   0.941 95%       </span></a>
-<a class="sourceLine" id="cb9-15" title="15"><span class="co">#&gt;  7 Area1  2009 Fema~     1829    2024. 0.904   0.863   0.946 95%       </span></a>
-<a class="sourceLine" id="cb9-16" title="16"><span class="co">#&gt;  8 Area1  2009 Male      1755    1913. 0.917   0.875   0.961 95%       </span></a>
-<a class="sourceLine" id="cb9-17" title="17"><span class="co">#&gt;  9 Area1  2010 Fema~     2254    1932. 1.17    1.12    1.22  95%       </span></a>
-<a class="sourceLine" id="cb9-18" title="18"><span class="co">#&gt; 10 Area1  2010 Male      1951    1879. 1.04    0.993   1.09  95%       </span></a>
-<a class="sourceLine" id="cb9-19" title="19"><span class="co">#&gt; # ... with 30 more rows, and 2 more variables: statistic &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb9-20" title="20"><span class="co">#&gt; #   method &lt;chr&gt;</span></a>
-<a class="sourceLine" id="cb9-21" title="21"></a>
-<a class="sourceLine" id="cb9-22" title="22"><span class="co"># calculate the same smrs by appending the reference data to the data frame</span></a>
-<a class="sourceLine" id="cb9-23" title="23">df_std <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb9-24" title="24"><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">refobs =</span> <span class="kw">rep</span>(df_ref<span class="op">$</span>obs,<span class="dv">40</span>),</a>
-<a class="sourceLine" id="cb9-25" title="25">           <span class="dt">refpop =</span> <span class="kw">rep</span>(df_ref<span class="op">$</span>pop,<span class="dv">40</span>)) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb9-26" title="26"><span class="st">    </span><span class="kw">group_by</span>(area, year, sex) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb9-27" title="27"><span class="st">    </span><span class="kw">phe_smr</span>(obs, pop, refobs, refpop, <span class="dt">refpoptype=</span><span class="st">&quot;field&quot;</span>)</a>
-<a class="sourceLine" id="cb9-28" title="28"><span class="co">#&gt; # A tibble: 40 x 11</span></a>
-<a class="sourceLine" id="cb9-29" title="29"><span class="co">#&gt; # Groups:   area, year [20]</span></a>
-<a class="sourceLine" id="cb9-30" title="30"><span class="co">#&gt;    area   year sex   observed expected value lowercl uppercl confidence</span></a>
-<a class="sourceLine" id="cb9-31" title="31"><span class="co">#&gt;    &lt;fct&gt; &lt;int&gt; &lt;fct&gt;    &lt;int&gt;    &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;     </span></a>
-<a class="sourceLine" id="cb9-32" title="32"><span class="co">#&gt;  1 Area1  2006 Fema~     1588    1760. 0.902   0.858   0.948 95%       </span></a>
-<a class="sourceLine" id="cb9-33" title="33"><span class="co">#&gt;  2 Area1  2006 Male      2051    2047. 1.00    0.959   1.05  95%       </span></a>
-<a class="sourceLine" id="cb9-34" title="34"><span class="co">#&gt;  3 Area1  2007 Fema~     1976    1827. 1.08    1.03    1.13  95%       </span></a>
-<a class="sourceLine" id="cb9-35" title="35"><span class="co">#&gt;  4 Area1  2007 Male      2071    1850. 1.12    1.07    1.17  95%       </span></a>
-<a class="sourceLine" id="cb9-36" title="36"><span class="co">#&gt;  5 Area1  2008 Fema~     1654    1968. 0.841   0.801   0.882 95%       </span></a>
-<a class="sourceLine" id="cb9-37" title="37"><span class="co">#&gt;  6 Area1  2008 Male      1692    1886. 0.897   0.855   0.941 95%       </span></a>
-<a class="sourceLine" id="cb9-38" title="38"><span class="co">#&gt;  7 Area1  2009 Fema~     1829    2024. 0.904   0.863   0.946 95%       </span></a>
-<a class="sourceLine" id="cb9-39" title="39"><span class="co">#&gt;  8 Area1  2009 Male      1755    1913. 0.917   0.875   0.961 95%       </span></a>
-<a class="sourceLine" id="cb9-40" title="40"><span class="co">#&gt;  9 Area1  2010 Fema~     2254    1932. 1.17    1.12    1.22  95%       </span></a>
-<a class="sourceLine" id="cb9-41" title="41"><span class="co">#&gt; 10 Area1  2010 Male      1951    1879. 1.04    0.993   1.09  95%       </span></a>
-<a class="sourceLine" id="cb9-42" title="42"><span class="co">#&gt; # ... with 30 more rows, and 2 more variables: statistic &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb9-43" title="43"><span class="co">#&gt; #   method &lt;chr&gt;</span></a>
-<a class="sourceLine" id="cb9-44" title="44"></a>
-<a class="sourceLine" id="cb9-45" title="45"><span class="co"># calculate separate smrs for each year and drop metadata columns from output</span></a>
-<a class="sourceLine" id="cb9-46" title="46">df_std <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb9-47" title="47"><span class="st">    </span><span class="kw">group_by</span>(year, ageband) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb9-48" title="48"><span class="st">    </span><span class="kw">summarise</span>(<span class="dt">obs =</span> <span class="kw">sum</span>(obs),</a>
-<a class="sourceLine" id="cb9-49" title="49">              <span class="dt">pop =</span> <span class="kw">sum</span>(pop)) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb9-50" title="50"><span class="st">    </span><span class="kw">group_by</span>(year) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb9-51" title="51"><span class="st">    </span><span class="kw">phe_smr</span>(obs, pop, df_ref<span class="op">$</span>obs, df_ref<span class="op">$</span>pop, <span class="dt">type=</span><span class="st">&quot;standard&quot;</span>)</a>
-<a class="sourceLine" id="cb9-52" title="52"><span class="co">#&gt; # A tibble: 5 x 6</span></a>
-<a class="sourceLine" id="cb9-53" title="53"><span class="co">#&gt;    year observed expected value lowercl uppercl</span></a>
-<a class="sourceLine" id="cb9-54" title="54"><span class="co">#&gt;   &lt;int&gt;    &lt;int&gt;    &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb9-55" title="55"><span class="co">#&gt; 1  2006    15082   15082  1       0.984   1.02 </span></a>
-<a class="sourceLine" id="cb9-56" title="56"><span class="co">#&gt; 2  2007    15405   15086. 1.02    1.01    1.04 </span></a>
-<a class="sourceLine" id="cb9-57" title="57"><span class="co">#&gt; 3  2008    14480   15383. 0.941   0.926   0.957</span></a>
-<a class="sourceLine" id="cb9-58" title="58"><span class="co">#&gt; 4  2009    14288   15485. 0.923   0.908   0.938</span></a>
-<a class="sourceLine" id="cb9-59" title="59"><span class="co">#&gt; 5  2010    15818   15432. 1.03    1.01    1.04</span></a></code></pre></div>
+<a class="sourceLine" id="cb9-9" title="9"><span class="co">#&gt;  1 Area1  2006 Fema~     1902    1904. 0.999   0.955   1.05  95%       </span></a>
+<a class="sourceLine" id="cb9-10" title="10"><span class="co">#&gt;  2 Area1  2006 Male      2238    1952. 1.15    1.10    1.19  95%       </span></a>
+<a class="sourceLine" id="cb9-11" title="11"><span class="co">#&gt;  3 Area1  2007 Fema~     1939    1965. 0.987   0.943   1.03  95%       </span></a>
+<a class="sourceLine" id="cb9-12" title="12"><span class="co">#&gt;  4 Area1  2007 Male      1427    1969. 0.725   0.687   0.763 95%       </span></a>
+<a class="sourceLine" id="cb9-13" title="13"><span class="co">#&gt;  5 Area1  2008 Fema~     1901    1849. 1.03    0.982   1.08  95%       </span></a>
+<a class="sourceLine" id="cb9-14" title="14"><span class="co">#&gt;  6 Area1  2008 Male      1404    1882. 0.746   0.708   0.786 95%       </span></a>
+<a class="sourceLine" id="cb9-15" title="15"><span class="co">#&gt;  7 Area1  2009 Fema~     1813    2010. 0.902   0.861   0.945 95%       </span></a>
+<a class="sourceLine" id="cb9-16" title="16"><span class="co">#&gt;  8 Area1  2009 Male      2510    1810. 1.39    1.33    1.44  95%       </span></a>
+<a class="sourceLine" id="cb9-17" title="17"><span class="co">#&gt;  9 Area1  2010 Fema~     1724    1886. 0.914   0.872   0.958 95%       </span></a>
+<a class="sourceLine" id="cb9-18" title="18"><span class="co">#&gt; 10 Area1  2010 Male      2273    1935. 1.17    1.13    1.22  95%       </span></a>
+<a class="sourceLine" id="cb9-19" title="19"><span class="co">#&gt; # ... with 30 more rows, and 2 more variables: statistic &lt;chr&gt;, method &lt;chr&gt;</span></a>
+<a class="sourceLine" id="cb9-20" title="20"></a>
+<a class="sourceLine" id="cb9-21" title="21"><span class="co"># calculate the same smrs by appending the reference data to the data frame</span></a>
+<a class="sourceLine" id="cb9-22" title="22">df_std <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb9-23" title="23"><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">refobs =</span> <span class="kw">rep</span>(df_ref<span class="op">$</span>obs,<span class="dv">40</span>),</a>
+<a class="sourceLine" id="cb9-24" title="24">           <span class="dt">refpop =</span> <span class="kw">rep</span>(df_ref<span class="op">$</span>pop,<span class="dv">40</span>)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb9-25" title="25"><span class="st">    </span><span class="kw">group_by</span>(area, year, sex) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb9-26" title="26"><span class="st">    </span><span class="kw">phe_smr</span>(obs, pop, refobs, refpop, <span class="dt">refpoptype=</span><span class="st">&quot;field&quot;</span>)</a>
+<a class="sourceLine" id="cb9-27" title="27"><span class="co">#&gt; # A tibble: 40 x 11</span></a>
+<a class="sourceLine" id="cb9-28" title="28"><span class="co">#&gt; # Groups:   area, year [20]</span></a>
+<a class="sourceLine" id="cb9-29" title="29"><span class="co">#&gt;    area   year sex   observed expected value lowercl uppercl confidence</span></a>
+<a class="sourceLine" id="cb9-30" title="30"><span class="co">#&gt;    &lt;fct&gt; &lt;int&gt; &lt;fct&gt;    &lt;int&gt;    &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;     </span></a>
+<a class="sourceLine" id="cb9-31" title="31"><span class="co">#&gt;  1 Area1  2006 Fema~     1902    1904. 0.999   0.955   1.05  95%       </span></a>
+<a class="sourceLine" id="cb9-32" title="32"><span class="co">#&gt;  2 Area1  2006 Male      2238    1952. 1.15    1.10    1.19  95%       </span></a>
+<a class="sourceLine" id="cb9-33" title="33"><span class="co">#&gt;  3 Area1  2007 Fema~     1939    1965. 0.987   0.943   1.03  95%       </span></a>
+<a class="sourceLine" id="cb9-34" title="34"><span class="co">#&gt;  4 Area1  2007 Male      1427    1969. 0.725   0.687   0.763 95%       </span></a>
+<a class="sourceLine" id="cb9-35" title="35"><span class="co">#&gt;  5 Area1  2008 Fema~     1901    1849. 1.03    0.982   1.08  95%       </span></a>
+<a class="sourceLine" id="cb9-36" title="36"><span class="co">#&gt;  6 Area1  2008 Male      1404    1882. 0.746   0.708   0.786 95%       </span></a>
+<a class="sourceLine" id="cb9-37" title="37"><span class="co">#&gt;  7 Area1  2009 Fema~     1813    2010. 0.902   0.861   0.945 95%       </span></a>
+<a class="sourceLine" id="cb9-38" title="38"><span class="co">#&gt;  8 Area1  2009 Male      2510    1810. 1.39    1.33    1.44  95%       </span></a>
+<a class="sourceLine" id="cb9-39" title="39"><span class="co">#&gt;  9 Area1  2010 Fema~     1724    1886. 0.914   0.872   0.958 95%       </span></a>
+<a class="sourceLine" id="cb9-40" title="40"><span class="co">#&gt; 10 Area1  2010 Male      2273    1935. 1.17    1.13    1.22  95%       </span></a>
+<a class="sourceLine" id="cb9-41" title="41"><span class="co">#&gt; # ... with 30 more rows, and 2 more variables: statistic &lt;chr&gt;, method &lt;chr&gt;</span></a>
+<a class="sourceLine" id="cb9-42" title="42"></a>
+<a class="sourceLine" id="cb9-43" title="43"><span class="co"># calculate separate smrs for each year and drop metadata columns from output</span></a>
+<a class="sourceLine" id="cb9-44" title="44">df_std <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb9-45" title="45"><span class="st">    </span><span class="kw">group_by</span>(year, ageband) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb9-46" title="46"><span class="st">    </span><span class="kw">summarise</span>(<span class="dt">obs =</span> <span class="kw">sum</span>(obs),</a>
+<a class="sourceLine" id="cb9-47" title="47">              <span class="dt">pop =</span> <span class="kw">sum</span>(pop)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb9-48" title="48"><span class="st">    </span><span class="kw">group_by</span>(year) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb9-49" title="49"><span class="st">    </span><span class="kw">phe_smr</span>(obs, pop, df_ref<span class="op">$</span>obs, df_ref<span class="op">$</span>pop, <span class="dt">type=</span><span class="st">&quot;standard&quot;</span>)</a>
+<a class="sourceLine" id="cb9-50" title="50"><span class="co">#&gt; # A tibble: 5 x 6</span></a>
+<a class="sourceLine" id="cb9-51" title="51"><span class="co">#&gt;    year observed expected value lowercl uppercl</span></a>
+<a class="sourceLine" id="cb9-52" title="52"><span class="co">#&gt;   &lt;int&gt;    &lt;int&gt;    &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb9-53" title="53"><span class="co">#&gt; 1  2006    15173   15173  1       0.984   1.02 </span></a>
+<a class="sourceLine" id="cb9-54" title="54"><span class="co">#&gt; 2  2007    14950   15864. 0.942   0.927   0.958</span></a>
+<a class="sourceLine" id="cb9-55" title="55"><span class="co">#&gt; 3  2008    14867   15145. 0.982   0.966   0.998</span></a>
+<a class="sourceLine" id="cb9-56" title="56"><span class="co">#&gt; 4  2009    16145   15687. 1.03    1.01    1.05 </span></a>
+<a class="sourceLine" id="cb9-57" title="57"><span class="co">#&gt; 5  2010    15771   15758. 1.00    0.985   1.02</span></a></code></pre></div>
 <p>The phe_isr function works exactly the same way but instead of expressing the result as a ratio of the observed and expected rates the result is expressed as a rate and the reference rate is also provided. Here are some examples:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" title="1"><span class="co"># calculate separate isrs for each area, year and sex</span></a>
 <a class="sourceLine" id="cb10-2" title="2">df_std <span class="op">%&gt;%</span></a>
@@ -705,59 +675,57 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb10-4" title="4"><span class="st">    </span><span class="kw">phe_isr</span>(obs, pop, df_ref<span class="op">$</span>obs, df_ref<span class="op">$</span>pop)</a>
 <a class="sourceLine" id="cb10-5" title="5"><span class="co">#&gt; # A tibble: 40 x 12</span></a>
 <a class="sourceLine" id="cb10-6" title="6"><span class="co">#&gt; # Groups:   area, year [20]</span></a>
-<a class="sourceLine" id="cb10-7" title="7"><span class="co">#&gt;    area   year sex   observed expected ref_rate value lowercl uppercl</span></a>
-<a class="sourceLine" id="cb10-8" title="8"><span class="co">#&gt;    &lt;fct&gt; &lt;int&gt; &lt;fct&gt;    &lt;int&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb10-9" title="9"><span class="co">#&gt;  1 Area1  2006 Fema~     1588    1760.     654.  590.    562.    620.</span></a>
-<a class="sourceLine" id="cb10-10" title="10"><span class="co">#&gt;  2 Area1  2006 Male      2051    2047.     654.  656.    628.    685.</span></a>
-<a class="sourceLine" id="cb10-11" title="11"><span class="co">#&gt;  3 Area1  2007 Fema~     1976    1827.     654.  708.    677.    740.</span></a>
-<a class="sourceLine" id="cb10-12" title="12"><span class="co">#&gt;  4 Area1  2007 Male      2071    1850.     654.  732.    701.    765.</span></a>
-<a class="sourceLine" id="cb10-13" title="13"><span class="co">#&gt;  5 Area1  2008 Fema~     1654    1968.     654.  550.    524.    577.</span></a>
-<a class="sourceLine" id="cb10-14" title="14"><span class="co">#&gt;  6 Area1  2008 Male      1692    1886.     654.  587.    559.    616.</span></a>
-<a class="sourceLine" id="cb10-15" title="15"><span class="co">#&gt;  7 Area1  2009 Fema~     1829    2024.     654.  591.    565.    619.</span></a>
-<a class="sourceLine" id="cb10-16" title="16"><span class="co">#&gt;  8 Area1  2009 Male      1755    1913.     654.  600.    573.    629.</span></a>
-<a class="sourceLine" id="cb10-17" title="17"><span class="co">#&gt;  9 Area1  2010 Fema~     2254    1932.     654.  763.    732.    796.</span></a>
-<a class="sourceLine" id="cb10-18" title="18"><span class="co">#&gt; 10 Area1  2010 Male      1951    1879.     654.  680.    650.    710.</span></a>
-<a class="sourceLine" id="cb10-19" title="19"><span class="co">#&gt; # ... with 30 more rows, and 3 more variables: confidence &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb10-20" title="20"><span class="co">#&gt; #   statistic &lt;chr&gt;, method &lt;chr&gt;</span></a>
-<a class="sourceLine" id="cb10-21" title="21"></a>
-<a class="sourceLine" id="cb10-22" title="22"><span class="co"># calculate the same isrs by appending the reference data to the data frame</span></a>
-<a class="sourceLine" id="cb10-23" title="23">df_std <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb10-24" title="24"><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">refobs =</span> <span class="kw">rep</span>(df_ref<span class="op">$</span>obs,<span class="dv">40</span>),</a>
-<a class="sourceLine" id="cb10-25" title="25">           <span class="dt">refpop =</span> <span class="kw">rep</span>(df_ref<span class="op">$</span>pop,<span class="dv">40</span>)) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb10-26" title="26"><span class="st">    </span><span class="kw">group_by</span>(area, year, sex) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb10-27" title="27"><span class="st">    </span><span class="kw">phe_isr</span>(obs, pop, refobs, refpop, <span class="dt">refpoptype=</span><span class="st">&quot;field&quot;</span>)</a>
-<a class="sourceLine" id="cb10-28" title="28"><span class="co">#&gt; # A tibble: 40 x 12</span></a>
-<a class="sourceLine" id="cb10-29" title="29"><span class="co">#&gt; # Groups:   area, year [20]</span></a>
-<a class="sourceLine" id="cb10-30" title="30"><span class="co">#&gt;    area   year sex   observed expected ref_rate value lowercl uppercl</span></a>
-<a class="sourceLine" id="cb10-31" title="31"><span class="co">#&gt;    &lt;fct&gt; &lt;int&gt; &lt;fct&gt;    &lt;int&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb10-32" title="32"><span class="co">#&gt;  1 Area1  2006 Fema~     1588    1760.     654.  590.    562.    620.</span></a>
-<a class="sourceLine" id="cb10-33" title="33"><span class="co">#&gt;  2 Area1  2006 Male      2051    2047.     654.  656.    628.    685.</span></a>
-<a class="sourceLine" id="cb10-34" title="34"><span class="co">#&gt;  3 Area1  2007 Fema~     1976    1827.     654.  708.    677.    740.</span></a>
-<a class="sourceLine" id="cb10-35" title="35"><span class="co">#&gt;  4 Area1  2007 Male      2071    1850.     654.  732.    701.    765.</span></a>
-<a class="sourceLine" id="cb10-36" title="36"><span class="co">#&gt;  5 Area1  2008 Fema~     1654    1968.     654.  550.    524.    577.</span></a>
-<a class="sourceLine" id="cb10-37" title="37"><span class="co">#&gt;  6 Area1  2008 Male      1692    1886.     654.  587.    559.    616.</span></a>
-<a class="sourceLine" id="cb10-38" title="38"><span class="co">#&gt;  7 Area1  2009 Fema~     1829    2024.     654.  591.    565.    619.</span></a>
-<a class="sourceLine" id="cb10-39" title="39"><span class="co">#&gt;  8 Area1  2009 Male      1755    1913.     654.  600.    573.    629.</span></a>
-<a class="sourceLine" id="cb10-40" title="40"><span class="co">#&gt;  9 Area1  2010 Fema~     2254    1932.     654.  763.    732.    796.</span></a>
-<a class="sourceLine" id="cb10-41" title="41"><span class="co">#&gt; 10 Area1  2010 Male      1951    1879.     654.  680.    650.    710.</span></a>
-<a class="sourceLine" id="cb10-42" title="42"><span class="co">#&gt; # ... with 30 more rows, and 3 more variables: confidence &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb10-43" title="43"><span class="co">#&gt; #   statistic &lt;chr&gt;, method &lt;chr&gt;</span></a>
-<a class="sourceLine" id="cb10-44" title="44"></a>
-<a class="sourceLine" id="cb10-45" title="45"><span class="co"># calculate separate isrs for each year and drop metadata columns from output</span></a>
-<a class="sourceLine" id="cb10-46" title="46">df_std <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb10-47" title="47"><span class="st">    </span><span class="kw">group_by</span>(year, ageband) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb10-48" title="48"><span class="st">    </span><span class="kw">summarise</span>(<span class="dt">obs =</span> <span class="kw">sum</span>(obs),</a>
-<a class="sourceLine" id="cb10-49" title="49">              <span class="dt">pop =</span> <span class="kw">sum</span>(pop)) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb10-50" title="50"><span class="st">    </span><span class="kw">group_by</span>(year) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb10-51" title="51"><span class="st">    </span><span class="kw">phe_isr</span>(obs, pop, df_ref<span class="op">$</span>obs, df_ref<span class="op">$</span>pop, <span class="dt">type=</span><span class="st">&quot;standard&quot;</span>)</a>
-<a class="sourceLine" id="cb10-52" title="52"><span class="co">#&gt; # A tibble: 5 x 7</span></a>
-<a class="sourceLine" id="cb10-53" title="53"><span class="co">#&gt;    year observed expected ref_rate value lowercl uppercl</span></a>
-<a class="sourceLine" id="cb10-54" title="54"><span class="co">#&gt;   &lt;int&gt;    &lt;int&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb10-55" title="55"><span class="co">#&gt; 1  2006    15082   15082      654.  654.    644.    665.</span></a>
-<a class="sourceLine" id="cb10-56" title="56"><span class="co">#&gt; 2  2007    15405   15086.     654.  668.    658.    679.</span></a>
-<a class="sourceLine" id="cb10-57" title="57"><span class="co">#&gt; 3  2008    14480   15383.     654.  616.    606.    626.</span></a>
-<a class="sourceLine" id="cb10-58" title="58"><span class="co">#&gt; 4  2009    14288   15485.     654.  604.    594.    614.</span></a>
-<a class="sourceLine" id="cb10-59" title="59"><span class="co">#&gt; 5  2010    15818   15432.     654.  671.    660.    681.</span></a></code></pre></div>
+<a class="sourceLine" id="cb10-7" title="7"><span class="co">#&gt;    area   year sex   observed expected ref_rate value lowercl uppercl confidence</span></a>
+<a class="sourceLine" id="cb10-8" title="8"><span class="co">#&gt;    &lt;fct&gt; &lt;int&gt; &lt;fct&gt;    &lt;int&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;     </span></a>
+<a class="sourceLine" id="cb10-9" title="9"><span class="co">#&gt;  1 Area1  2006 Fema~     1902    1904.     684.  683.    653.    715. 95%       </span></a>
+<a class="sourceLine" id="cb10-10" title="10"><span class="co">#&gt;  2 Area1  2006 Male      2238    1952.     684.  784.    752.    817. 95%       </span></a>
+<a class="sourceLine" id="cb10-11" title="11"><span class="co">#&gt;  3 Area1  2007 Fema~     1939    1965.     684.  675.    645.    705. 95%       </span></a>
+<a class="sourceLine" id="cb10-12" title="12"><span class="co">#&gt;  4 Area1  2007 Male      1427    1969.     684.  495.    470.    522. 95%       </span></a>
+<a class="sourceLine" id="cb10-13" title="13"><span class="co">#&gt;  5 Area1  2008 Fema~     1901    1849.     684.  703.    672.    735. 95%       </span></a>
+<a class="sourceLine" id="cb10-14" title="14"><span class="co">#&gt;  6 Area1  2008 Male      1404    1882.     684.  510.    484.    538. 95%       </span></a>
+<a class="sourceLine" id="cb10-15" title="15"><span class="co">#&gt;  7 Area1  2009 Fema~     1813    2010.     684.  617.    589.    646. 95%       </span></a>
+<a class="sourceLine" id="cb10-16" title="16"><span class="co">#&gt;  8 Area1  2009 Male      2510    1810.     684.  948.    911.    986. 95%       </span></a>
+<a class="sourceLine" id="cb10-17" title="17"><span class="co">#&gt;  9 Area1  2010 Fema~     1724    1886.     684.  625.    596.    655. 95%       </span></a>
+<a class="sourceLine" id="cb10-18" title="18"><span class="co">#&gt; 10 Area1  2010 Male      2273    1935.     684.  803.    771.    837. 95%       </span></a>
+<a class="sourceLine" id="cb10-19" title="19"><span class="co">#&gt; # ... with 30 more rows, and 2 more variables: statistic &lt;chr&gt;, method &lt;chr&gt;</span></a>
+<a class="sourceLine" id="cb10-20" title="20"></a>
+<a class="sourceLine" id="cb10-21" title="21"><span class="co"># calculate the same isrs by appending the reference data to the data frame</span></a>
+<a class="sourceLine" id="cb10-22" title="22">df_std <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb10-23" title="23"><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">refobs =</span> <span class="kw">rep</span>(df_ref<span class="op">$</span>obs,<span class="dv">40</span>),</a>
+<a class="sourceLine" id="cb10-24" title="24">           <span class="dt">refpop =</span> <span class="kw">rep</span>(df_ref<span class="op">$</span>pop,<span class="dv">40</span>)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb10-25" title="25"><span class="st">    </span><span class="kw">group_by</span>(area, year, sex) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb10-26" title="26"><span class="st">    </span><span class="kw">phe_isr</span>(obs, pop, refobs, refpop, <span class="dt">refpoptype=</span><span class="st">&quot;field&quot;</span>)</a>
+<a class="sourceLine" id="cb10-27" title="27"><span class="co">#&gt; # A tibble: 40 x 12</span></a>
+<a class="sourceLine" id="cb10-28" title="28"><span class="co">#&gt; # Groups:   area, year [20]</span></a>
+<a class="sourceLine" id="cb10-29" title="29"><span class="co">#&gt;    area   year sex   observed expected ref_rate value lowercl uppercl confidence</span></a>
+<a class="sourceLine" id="cb10-30" title="30"><span class="co">#&gt;    &lt;fct&gt; &lt;int&gt; &lt;fct&gt;    &lt;int&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;     </span></a>
+<a class="sourceLine" id="cb10-31" title="31"><span class="co">#&gt;  1 Area1  2006 Fema~     1902    1904.     684.  683.    653.    715. 95%       </span></a>
+<a class="sourceLine" id="cb10-32" title="32"><span class="co">#&gt;  2 Area1  2006 Male      2238    1952.     684.  784.    752.    817. 95%       </span></a>
+<a class="sourceLine" id="cb10-33" title="33"><span class="co">#&gt;  3 Area1  2007 Fema~     1939    1965.     684.  675.    645.    705. 95%       </span></a>
+<a class="sourceLine" id="cb10-34" title="34"><span class="co">#&gt;  4 Area1  2007 Male      1427    1969.     684.  495.    470.    522. 95%       </span></a>
+<a class="sourceLine" id="cb10-35" title="35"><span class="co">#&gt;  5 Area1  2008 Fema~     1901    1849.     684.  703.    672.    735. 95%       </span></a>
+<a class="sourceLine" id="cb10-36" title="36"><span class="co">#&gt;  6 Area1  2008 Male      1404    1882.     684.  510.    484.    538. 95%       </span></a>
+<a class="sourceLine" id="cb10-37" title="37"><span class="co">#&gt;  7 Area1  2009 Fema~     1813    2010.     684.  617.    589.    646. 95%       </span></a>
+<a class="sourceLine" id="cb10-38" title="38"><span class="co">#&gt;  8 Area1  2009 Male      2510    1810.     684.  948.    911.    986. 95%       </span></a>
+<a class="sourceLine" id="cb10-39" title="39"><span class="co">#&gt;  9 Area1  2010 Fema~     1724    1886.     684.  625.    596.    655. 95%       </span></a>
+<a class="sourceLine" id="cb10-40" title="40"><span class="co">#&gt; 10 Area1  2010 Male      2273    1935.     684.  803.    771.    837. 95%       </span></a>
+<a class="sourceLine" id="cb10-41" title="41"><span class="co">#&gt; # ... with 30 more rows, and 2 more variables: statistic &lt;chr&gt;, method &lt;chr&gt;</span></a>
+<a class="sourceLine" id="cb10-42" title="42"></a>
+<a class="sourceLine" id="cb10-43" title="43"><span class="co"># calculate separate isrs for each year and drop metadata columns from output</span></a>
+<a class="sourceLine" id="cb10-44" title="44">df_std <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb10-45" title="45"><span class="st">    </span><span class="kw">group_by</span>(year, ageband) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb10-46" title="46"><span class="st">    </span><span class="kw">summarise</span>(<span class="dt">obs =</span> <span class="kw">sum</span>(obs),</a>
+<a class="sourceLine" id="cb10-47" title="47">              <span class="dt">pop =</span> <span class="kw">sum</span>(pop)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb10-48" title="48"><span class="st">    </span><span class="kw">group_by</span>(year) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb10-49" title="49"><span class="st">    </span><span class="kw">phe_isr</span>(obs, pop, df_ref<span class="op">$</span>obs, df_ref<span class="op">$</span>pop, <span class="dt">type=</span><span class="st">&quot;standard&quot;</span>)</a>
+<a class="sourceLine" id="cb10-50" title="50"><span class="co">#&gt; # A tibble: 5 x 7</span></a>
+<a class="sourceLine" id="cb10-51" title="51"><span class="co">#&gt;    year observed expected ref_rate value lowercl uppercl</span></a>
+<a class="sourceLine" id="cb10-52" title="52"><span class="co">#&gt;   &lt;int&gt;    &lt;int&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb10-53" title="53"><span class="co">#&gt; 1  2006    15173   15173      684.  684.    673.    695.</span></a>
+<a class="sourceLine" id="cb10-54" title="54"><span class="co">#&gt; 2  2007    14950   15864.     684.  644.    634.    655.</span></a>
+<a class="sourceLine" id="cb10-55" title="55"><span class="co">#&gt; 3  2008    14867   15145.     684.  671.    660.    682.</span></a>
+<a class="sourceLine" id="cb10-56" title="56"><span class="co">#&gt; 4  2009    16145   15687.     684.  704.    693.    715.</span></a>
+<a class="sourceLine" id="cb10-57" title="57"><span class="co">#&gt; 5  2010    15771   15758.     684.  684.    674.    695.</span></a></code></pre></div>
 </div>
 </div>
 

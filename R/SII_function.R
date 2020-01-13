@@ -348,10 +348,18 @@ phe_sii <- function(data, quantile, population,  # compulsory fields
 
         # calculate confidence interval for SII via simulation
         # Repeat this 10 times to get a "variability" measure if requested
-        sim_CI <- pops_prep_ab %>%
-                        group_by(!!! syms(grouping_variables)) %>%
-                        tidyr::nest() %>%
-                        mutate(CI_params = purrr::map(data, ~ SimulationFunc(data = ., value, value_type, se_calc, repetitions, confidence, sqrt_a, b_sqrt_a, rii, reliability_stat)))
+
+        # Different nest() argument needed for ungrouped dataset
+        if(length(grouping_variables) == 0) {
+            sim_CI <- pops_prep_ab %>%
+                tidyr::nest(data = everything()) %>%
+                mutate(CI_params = purrr::map(data, ~ SimulationFunc(data = ., value, value_type, se_calc, repetitions, confidence, sqrt_a, b_sqrt_a, rii, reliability_stat)))
+        } else {
+            sim_CI <- pops_prep_ab %>%
+                group_by(!!! syms(grouping_variables)) %>%
+                tidyr::nest() %>%
+                mutate(CI_params = purrr::map(data, ~ SimulationFunc(data = ., value, value_type, se_calc, repetitions, confidence, sqrt_a, b_sqrt_a, rii, reliability_stat)))
+        }
 
         # Extract confidence limits and reliability measures in a data frame for joining
            sim_CI <- data.frame(cbind(sim_CI[,0:length(grouping_variables)],
@@ -364,23 +372,32 @@ phe_sii <- function(data, quantile, population,  # compulsory fields
 
 
         # Perform regression to calculate SII and extract model parameters
+
+        # Different nest() argument needed for ungrouped dataset
+    if(length(grouping_variables) == 0) {
         popsSII_model <- pops_prep_ab %>%
-                group_by(!!! syms(grouping_variables)) %>%
-                tidyr::nest() %>%   # create nested table
-                     # perform linear model
-                mutate(model = purrr::map(data, function(df) stats::lm(yvals ~ sqrt_a + b_sqrt_a - 1, data = df))) %>%
-                   # extract model coefficients
-                mutate(model = purrr::map(model, broom::tidy)) %>%
-                tidyr::unnest(model) %>%
-                 # remove unecessary fields
-               select(-std.error, -statistic, -p.value) %>%
-                  # create columns for each parameter
-               tidyr::spread(key = term, value = estimate) %>%
-                  # Extract SII and RII values
-               mutate(sii = b_sqrt_a,
-                      rii = (sqrt_a + b_sqrt_a)/sqrt_a) %>%
-                 # remove unnecesary fields
-               select(grouping_variables, sii, rii)
+                tidyr::nest(data = everything())
+    } else {
+        popsSII_model <- pops_prep_ab %>%
+            group_by(!!! syms(grouping_variables)) %>%
+            tidyr::nest()
+    }
+
+        popsSII_model <- popsSII_model %>%
+            # perform linear model
+            mutate(model = purrr::map(data, function(df) stats::lm(yvals ~ sqrt_a + b_sqrt_a - 1, data = df))) %>%
+            # extract model coefficients
+            mutate(model = purrr::map(model, broom::tidy)) %>%
+            tidyr::unnest(model) %>%
+            # remove unecessary fields
+            select(-std.error, -statistic, -p.value) %>%
+            # create columns for each parameter
+            tidyr::spread(key = term, value = estimate) %>%
+            # Extract SII and RII values
+            mutate(sii = b_sqrt_a,
+                   rii = (sqrt_a + b_sqrt_a)/sqrt_a) %>%
+            # remove unnecesary fields
+            select(grouping_variables, sii, rii)
 
 
                # join on dataset with confidence limits and reliability stats

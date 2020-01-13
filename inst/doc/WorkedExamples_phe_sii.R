@@ -1,13 +1,13 @@
-## ----output, include=FALSE-----------------------------------------------
+## ----output, include=FALSE----------------------------------------------------
 knitr::opts_chunk$set(echo = TRUE)
 
 
-## ----setup, message = FALSE, warning = FALSE-----------------------------
+## ----setup, message = FALSE, warning = FALSE----------------------------------
 # source functions required
 library(PHEindicatormethods)
 library(dplyr)
 
-## ----default_example-----------------------------------------------------
+## ----default_example----------------------------------------------------------
 
 # Pass data through SII function ---------------------------------------
 LE_data_SII <- LE_data %>%
@@ -26,7 +26,7 @@ LE_data_SII <- LE_data %>%
 knitr::kable(head(LE_data_SII, 10))  
 
 
-## ----rate_example--------------------------------------------------------
+## ----rate_example-------------------------------------------------------------
 
 # Pass data through SII function ---------------------------------------
 DSR_data_SII <- DSR_data %>%
@@ -46,7 +46,7 @@ DSR_data_SII <- DSR_data %>%
 knitr::kable(DSR_data_SII)  
 
 
-## ----proportion_example--------------------------------------------------
+## ----proportion_example-------------------------------------------------------
 
 # Pass data through SII function ---------------------------------------
 prevalence_SII <- prevalence_data %>%
