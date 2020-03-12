@@ -34,13 +34,13 @@ quoted string "field" or "vector"; default = "vector"}
 can be "value", "lower", "upper", "standard" (for all data) or "full" (for all data and metadata); quoted string; default = "full"}
 
 \item{confidence}{the required level of confidence expressed as a number between 0.9 and 1
-or a number between 90 and 100 or can be a vector of 0.95 and 0.998 to output both 95% and 99.8% CIs;
+or a number between 90 and 100 or can be a vector of 0.95 and 0.998, for example, to output both 95\% and 99.8\% CIs;
 numeric; default 0.95}
 
 \item{multiplier}{the multiplier used to express the final values (eg 100,000 = rate per 100,000); numeric; default 100,000}
 }
 \value{
-When type = "full", returns a tibble of total counts, total populations, standardised populations,
+When type = "full", returns a tibble of total counts, total populations,
  directly standardised rates, lower confidence limits, upper confidence limits,
  confidence level, statistic and method for each grouping set
 }

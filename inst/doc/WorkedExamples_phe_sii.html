@@ -8,11 +8,11 @@
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <meta name="author" content="Emma Clegg" />
 
-<meta name="date" content="2020-01-13" />
+<meta name="date" content="2020-03-12" />
 
 <title>Worked examples for phe_sii function</title>
 
@@ -121,7 +121,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <h1 class="title toc-ignore">Worked examples for phe_sii function</h1>
 <h4 class="author">Emma Clegg</h4>
-<h4 class="date">2020-01-13</h4>
+<h4 class="date">2020-03-12</h4>
 
 
 
@@ -153,9 +153,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb2-7" title="7">                <span class="dt">population =</span> Pop ,</a>
 <a class="sourceLine" id="cb2-8" title="8">                <span class="dt">value =</span> LifeExp,</a>
 <a class="sourceLine" id="cb2-9" title="9">                <span class="dt">value_type =</span> <span class="dv">0</span>, <span class="co"># specify default indicator type</span></a>
-<a class="sourceLine" id="cb2-10" title="10">                <span class="dt">se =</span> SE,</a>
-<a class="sourceLine" id="cb2-11" title="11">                <span class="dt">repetitions =</span> <span class="dv">100</span>,</a>
-<a class="sourceLine" id="cb2-12" title="12">                <span class="dt">type =</span> <span class="st">&quot;full&quot;</span>) <span class="co"># use smaller no. of repetitions e.g. for testing</span></a></code></pre></div>
+<a class="sourceLine" id="cb2-10" title="10">                <span class="dt">confidence =</span> <span class="kw">c</span>(<span class="fl">0.95</span>, <span class="fl">0.998</span>),</a>
+<a class="sourceLine" id="cb2-11" title="11">                <span class="dt">se =</span> SE,</a>
+<a class="sourceLine" id="cb2-12" title="12">                <span class="dt">repetitions =</span> <span class="dv">1000</span>,</a>
+<a class="sourceLine" id="cb2-13" title="13">                <span class="dt">rii =</span> <span class="ot">FALSE</span>,</a>
+<a class="sourceLine" id="cb2-14" title="14">                <span class="dt">type =</span> <span class="st">&quot;full&quot;</span>) <span class="co"># use smaller no. of repetitions e.g. for testing</span></a></code></pre></div>
 <pre><code>## Warning in phe_sii(., quantile = Decile, population = Pop, value = LifeExp, :
 ## some records have been removed due to incomplete or invalid data</code></pre>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="co"># View first 10 rows of results</span></a>
@@ -165,12 +167,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <tr class="header">
 <th align="right">Sex</th>
 <th align="left">GeoCode</th>
-<th align="right">SII</th>
-<th align="right">SII_lowerCL</th>
-<th align="right">SII_upperCL</th>
+<th align="right">sii</th>
+<th align="right">sii_lower95_0cl</th>
+<th align="right">sii_lower99_8cl</th>
+<th align="right">sii_upper95_0cl</th>
+<th align="right">sii_upper99_8cl</th>
 <th align="left">indicator_type</th>
 <th align="right">multiplier</th>
-<th align="right">CI_confidence</th>
+<th align="left">CI_confidence</th>
 <th align="left">CI_method</th>
 </tr>
 </thead>
@@ -179,111 +183,131 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td align="right">1</td>
 <td align="left">E06000001</td>
 <td align="right">11.68886</td>
-<td align="right">9.025391</td>
-<td align="right">13.69412</td>
+<td align="right">9.369003</td>
+<td align="right">8.067854</td>
+<td align="right">14.18708</td>
+<td align="right">15.51744</td>
 <td align="left">normal</td>
 <td align="right">1</td>
-<td align="right">0.95</td>
-<td align="left">simulation 100 reps</td>
+<td align="left">95%, 99.8%</td>
+<td align="left">simulation 1000 reps</td>
 </tr>
 <tr class="even">
 <td align="right">1</td>
 <td align="left">E06000002</td>
 <td align="right">12.54785</td>
-<td align="right">10.287780</td>
-<td align="right">14.21586</td>
+<td align="right">10.422294</td>
+<td align="right">9.030230</td>
+<td align="right">14.54217</td>
+<td align="right">15.50649</td>
 <td align="left">normal</td>
 <td align="right">1</td>
-<td align="right">0.95</td>
-<td align="left">simulation 100 reps</td>
+<td align="left">95%, 99.8%</td>
+<td align="left">simulation 1000 reps</td>
 </tr>
 <tr class="odd">
 <td align="right">1</td>
 <td align="left">E06000003</td>
 <td align="right">10.05084</td>
-<td align="right">7.566302</td>
-<td align="right">12.16822</td>
+<td align="right">7.680368</td>
+<td align="right">6.325374</td>
+<td align="right">12.28876</td>
+<td align="right">13.12107</td>
 <td align="left">normal</td>
 <td align="right">1</td>
-<td align="right">0.95</td>
-<td align="left">simulation 100 reps</td>
+<td align="left">95%, 99.8%</td>
+<td align="left">simulation 1000 reps</td>
 </tr>
 <tr class="even">
 <td align="right">1</td>
 <td align="left">E06000004</td>
 <td align="right">14.85223</td>
-<td align="right">13.552183</td>
-<td align="right">16.45708</td>
+<td align="right">12.981842</td>
+<td align="right">11.969177</td>
+<td align="right">16.53620</td>
+<td align="right">17.29092</td>
 <td align="left">normal</td>
 <td align="right">1</td>
-<td align="right">0.95</td>
-<td align="left">simulation 100 reps</td>
+<td align="left">95%, 99.8%</td>
+<td align="left">simulation 1000 reps</td>
 </tr>
 <tr class="odd">
 <td align="right">1</td>
 <td align="left">E06000005</td>
 <td align="right">11.68095</td>
-<td align="right">8.616275</td>
-<td align="right">14.12426</td>
+<td align="right">9.045422</td>
+<td align="right">7.523574</td>
+<td align="right">14.14777</td>
+<td align="right">15.60711</td>
 <td align="left">normal</td>
 <td align="right">1</td>
-<td align="right">0.95</td>
-<td align="left">simulation 100 reps</td>
+<td align="left">95%, 99.8%</td>
+<td align="left">simulation 1000 reps</td>
 </tr>
 <tr class="even">
 <td align="right">1</td>
 <td align="left">E06000006</td>
 <td align="right">12.27526</td>
-<td align="right">9.925947</td>
-<td align="right">13.96964</td>
+<td align="right">10.359998</td>
+<td align="right">9.558136</td>
+<td align="right">14.49998</td>
+<td align="right">15.71337</td>
 <td align="left">normal</td>
 <td align="right">1</td>
-<td align="right">0.95</td>
-<td align="left">simulation 100 reps</td>
+<td align="left">95%, 99.8%</td>
+<td align="left">simulation 1000 reps</td>
 </tr>
 <tr class="odd">
 <td align="right">1</td>
 <td align="left">E06000007</td>
 <td align="right">11.59893</td>
-<td align="right">9.897860</td>
-<td align="right">13.25634</td>
+<td align="right">10.005473</td>
+<td align="right">9.023977</td>
+<td align="right">13.19292</td>
+<td align="right">13.99210</td>
 <td align="left">normal</td>
 <td align="right">1</td>
-<td align="right">0.95</td>
-<td align="left">simulation 100 reps</td>
+<td align="left">95%, 99.8%</td>
+<td align="left">simulation 1000 reps</td>
 </tr>
 <tr class="even">
 <td align="right">1</td>
 <td align="left">E06000008</td>
 <td align="right">10.72510</td>
-<td align="right">8.564336</td>
-<td align="right">12.72691</td>
+<td align="right">8.705289</td>
+<td align="right">6.972355</td>
+<td align="right">12.90633</td>
+<td align="right">14.22027</td>
 <td align="left">normal</td>
 <td align="right">1</td>
-<td align="right">0.95</td>
-<td align="left">simulation 100 reps</td>
+<td align="left">95%, 99.8%</td>
+<td align="left">simulation 1000 reps</td>
 </tr>
 <tr class="odd">
 <td align="right">1</td>
 <td align="left">E06000009</td>
 <td align="right">13.59387</td>
-<td align="right">11.812455</td>
-<td align="right">15.24583</td>
+<td align="right">11.493075</td>
+<td align="right">10.396824</td>
+<td align="right">15.79382</td>
+<td align="right">16.63709</td>
 <td align="left">normal</td>
 <td align="right">1</td>
-<td align="right">0.95</td>
-<td align="left">simulation 100 reps</td>
+<td align="left">95%, 99.8%</td>
+<td align="left">simulation 1000 reps</td>
 </tr>
 <tr class="even">
 <td align="right">1</td>
 <td align="left">E06000010</td>
 <td align="right">11.20094</td>
-<td align="right">9.700462</td>
-<td align="right">12.44757</td>
+<td align="right">9.730794</td>
+<td align="right">8.740264</td>
+<td align="right">12.66902</td>
+<td align="right">13.45738</td>
 <td align="left">normal</td>
 <td align="right">1</td>
-<td align="right">0.95</td>
-<td align="left">simulation 100 reps</td>
+<td align="left">95%, 99.8%</td>
+<td align="left">simulation 1000 reps</td>
 </tr>
 </tbody>
 </table>
@@ -306,25 +330,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb5-10" title="10">                <span class="dt">lower_cl =</span> lowercl,</a>
 <a class="sourceLine" id="cb5-11" title="11">                <span class="dt">upper_cl =</span> uppercl,</a>
 <a class="sourceLine" id="cb5-12" title="12">                <span class="dt">rii =</span> <span class="ot">TRUE</span>, <span class="co"># returns RII as well as SII (default is FALSE)</span></a>
-<a class="sourceLine" id="cb5-13" title="13">                <span class="dt">reliability_stat =</span> <span class="ot">TRUE</span>) <span class="co"># returns reliability stats (default is FALSE)</span></a></code></pre></div>
-<pre><code>## For guidance on how to interpret the Mean Average Difference (MAD) figures, see the phe_sii accompanying vignette</code></pre>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="co"># View results</span></a>
-<a class="sourceLine" id="cb7-2" title="2">knitr<span class="op">::</span><span class="kw">kable</span>(DSR_data_SII)  </a></code></pre></div>
+<a class="sourceLine" id="cb5-13" title="13">                <span class="dt">reliability_stat =</span> <span class="ot">TRUE</span>) <span class="co"># returns reliability stats (default is FALSE)</span></a>
+<a class="sourceLine" id="cb5-14" title="14"></a>
+<a class="sourceLine" id="cb5-15" title="15"><span class="co"># View results</span></a>
+<a class="sourceLine" id="cb5-16" title="16">knitr<span class="op">::</span><span class="kw">kable</span>(DSR_data_SII)  </a></code></pre></div>
 <table>
 <thead>
 <tr class="header">
 <th align="right">Period</th>
-<th align="right">SII</th>
-<th align="right">SII_lowerCL</th>
-<th align="right">SII_upperCL</th>
-<th align="right">SII_MAD</th>
-<th align="right">RII</th>
-<th align="right">RII_lowerCL</th>
-<th align="right">RII_upperCL</th>
-<th align="right">RII_MAD</th>
+<th align="right">sii</th>
+<th align="right">rii</th>
+<th align="right">sii_lower95_0cl</th>
+<th align="right">sii_upper95_0cl</th>
+<th align="right">rii_lower95_0cl</th>
+<th align="right">rii_upper95_0cl</th>
+<th align="right">sii_mad95_0</th>
+<th align="right">rii_mad95_0</th>
 <th align="left">indicator_type</th>
 <th align="right">multiplier</th>
-<th align="right">CI_confidence</th>
+<th align="left">CI_confidence</th>
 <th align="left">CI_method</th>
 </tr>
 </thead>
@@ -332,91 +356,91 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <tr class="odd">
 <td align="right">2010</td>
 <td align="right">-14.848683</td>
-<td align="right">-18.96265</td>
-<td align="right">-10.754711</td>
-<td align="right">0.01151</td>
 <td align="right">0.8956758</td>
-<td align="right">0.8688189</td>
-<td align="right">0.9232222</td>
-<td align="right">0.0000655</td>
+<td align="right">-18.96563</td>
+<td align="right">-10.774602</td>
+<td align="right">0.8688503</td>
+<td align="right">0.9231615</td>
+<td align="right">0.0181013</td>
+<td align="right">0.0001137</td>
 <td align="left">rate</td>
 <td align="right">1</td>
-<td align="right">0.95</td>
+<td align="left">95%</td>
 <td align="left">simulation 1e+05 reps</td>
 </tr>
 <tr class="even">
 <td align="right">2011</td>
 <td align="right">-13.528326</td>
-<td align="right">-17.60489</td>
-<td align="right">-9.458604</td>
-<td align="right">0.01511</td>
 <td align="right">0.9039924</td>
-<td align="right">0.8769977</td>
-<td align="right">0.9318011</td>
-<td align="right">0.0000959</td>
+<td align="right">-17.61358</td>
+<td align="right">-9.450851</td>
+<td align="right">0.8769541</td>
+<td align="right">0.9318526</td>
+<td align="right">0.0165718</td>
+<td align="right">0.0001072</td>
 <td align="left">rate</td>
 <td align="right">1</td>
-<td align="right">0.95</td>
+<td align="left">95%</td>
 <td align="left">simulation 1e+05 reps</td>
 </tr>
 <tr class="odd">
 <td align="right">2012</td>
 <td align="right">-11.680045</td>
-<td align="right">-15.69909</td>
-<td align="right">-7.669306</td>
-<td align="right">0.01750</td>
 <td align="right">0.9159389</td>
-<td align="right">0.8887984</td>
-<td align="right">0.9439479</td>
-<td align="right">0.0001396</td>
+<td align="right">-15.71594</td>
+<td align="right">-7.657857</td>
+<td align="right">0.8886659</td>
+<td align="right">0.9439515</td>
+<td align="right">0.0118450</td>
+<td align="right">0.0000969</td>
 <td align="left">rate</td>
 <td align="right">1</td>
-<td align="right">0.95</td>
+<td align="left">95%</td>
 <td align="left">simulation 1e+05 reps</td>
 </tr>
 <tr class="even">
 <td align="right">2013</td>
 <td align="right">-10.544273</td>
-<td align="right">-14.52656</td>
-<td align="right">-6.580557</td>
-<td align="right">0.02006</td>
 <td align="right">0.9232984</td>
-<td align="right">0.8959293</td>
-<td align="right">0.9513674</td>
-<td align="right">0.0001464</td>
+<td align="right">-14.56965</td>
+<td align="right">-6.558889</td>
+<td align="right">0.8956908</td>
+<td align="right">0.9515340</td>
+<td align="right">0.0214623</td>
+<td align="right">0.0001402</td>
 <td align="left">rate</td>
 <td align="right">1</td>
-<td align="right">0.95</td>
+<td align="left">95%</td>
 <td align="left">simulation 1e+05 reps</td>
 </tr>
 <tr class="odd">
 <td align="right">2014</td>
 <td align="right">-10.591214</td>
-<td align="right">-14.50825</td>
-<td align="right">-6.670704</td>
-<td align="right">0.03434</td>
 <td align="right">0.9226440</td>
-<td align="right">0.8956288</td>
-<td align="right">0.9505387</td>
-<td align="right">0.0002155</td>
+<td align="right">-14.55707</td>
+<td align="right">-6.639039</td>
+<td align="right">0.8953167</td>
+<td align="right">0.9507750</td>
+<td align="right">0.0132154</td>
+<td align="right">0.0001006</td>
 <td align="left">rate</td>
 <td align="right">1</td>
-<td align="right">0.95</td>
+<td align="left">95%</td>
 <td align="left">simulation 1e+05 reps</td>
 </tr>
 <tr class="even">
 <td align="right">2015</td>
 <td align="right">-9.042367</td>
-<td align="right">-12.96990</td>
-<td align="right">-5.145189</td>
-<td align="right">0.01487</td>
 <td align="right">0.9332670</td>
-<td align="right">0.9057514</td>
-<td align="right">0.9614312</td>
-<td align="right">0.0001141</td>
+<td align="right">-12.95527</td>
+<td align="right">-5.138369</td>
+<td align="right">0.9059004</td>
+<td align="right">0.9614775</td>
+<td align="right">0.0113042</td>
+<td align="right">0.0000836</td>
 <td align="left">rate</td>
 <td align="right">1</td>
-<td align="right">0.95</td>
+<td align="left">95%</td>
 <td align="left">simulation 1e+05 reps</td>
 </tr>
 </tbody>
@@ -429,37 +453,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The function will again run on the default 100,000 reps, and neither the RII or MAD values will be returned.</p>
 <p>There is the option to specify a numeric <code>multiplier</code> in the arguments, which will scale the SII, SII_lowerCL, SII_upperCL (and SII_MAD) before outputting. This could be used if an absolute (i.e. positive) slope is desired for an indicator, where the “high is bad” polarity would otherwise give negative SII results.</p>
 <p>Below, a multiplier of -100 is used, to output absolute prevalence figures that are expressed on a scale between 0 and 100.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1"><span class="co"># Pass data through SII function ---------------------------------------</span></a>
-<a class="sourceLine" id="cb8-2" title="2">prevalence_SII &lt;-<span class="st"> </span>prevalence_data <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb8-3" title="3"><span class="st">          </span><span class="co"># Group the input dataframe to create subgroups to calculate the SII for</span></a>
-<a class="sourceLine" id="cb8-4" title="4"><span class="st">        </span><span class="kw">group_by</span>(Period, SchoolYear, AreaCode) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb8-5" title="5"><span class="st">          </span><span class="co"># Format prevalences to be between 0 and 1</span></a>
-<a class="sourceLine" id="cb8-6" title="6"><span class="st">        </span><span class="kw">mutate</span>(<span class="dt">Rate =</span> Rate<span class="op">/</span><span class="dv">100</span>,</a>
-<a class="sourceLine" id="cb8-7" title="7">               <span class="dt">LCL =</span> LCL<span class="op">/</span><span class="dv">100</span>,</a>
-<a class="sourceLine" id="cb8-8" title="8">               <span class="dt">UCL =</span> UCL<span class="op">/</span><span class="dv">100</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb8-9" title="9"><span class="st">           </span><span class="co"># Run SII function on grouped dataset</span></a>
-<a class="sourceLine" id="cb8-10" title="10"><span class="st">        </span><span class="kw">phe_sii</span>(<span class="dt">quantile =</span> Decile,</a>
-<a class="sourceLine" id="cb8-11" title="11">                        <span class="dt">population =</span> Measured,</a>
-<a class="sourceLine" id="cb8-12" title="12">                        <span class="dt">value =</span> Rate,</a>
-<a class="sourceLine" id="cb8-13" title="13">                        <span class="dt">value_type =</span> <span class="dv">2</span>, <span class="co"># specifies indicator is a proportion</span></a>
-<a class="sourceLine" id="cb8-14" title="14">                        <span class="dt">lower_cl =</span> LCL,</a>
-<a class="sourceLine" id="cb8-15" title="15">                        <span class="dt">upper_cl =</span> UCL,</a>
-<a class="sourceLine" id="cb8-16" title="16">                        <span class="dt">multiplier =</span> <span class="dv">-100</span>) <span class="co"># negative multiplier to scale SII outputs</span></a>
-<a class="sourceLine" id="cb8-17" title="17"></a>
-<a class="sourceLine" id="cb8-18" title="18"><span class="co"># View first 10 rows of results</span></a>
-<a class="sourceLine" id="cb8-19" title="19">knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">head</span>(prevalence_SII,<span class="dv">10</span>)) </a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1"><span class="co"># Pass data through SII function ---------------------------------------</span></a>
+<a class="sourceLine" id="cb6-2" title="2">prevalence_SII &lt;-<span class="st"> </span>prevalence_data <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb6-3" title="3"><span class="st">          </span><span class="co"># Group the input dataframe to create subgroups to calculate the SII for</span></a>
+<a class="sourceLine" id="cb6-4" title="4"><span class="st">        </span><span class="kw">group_by</span>(Period, SchoolYear, AreaCode) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb6-5" title="5"><span class="st">          </span><span class="co"># Format prevalences to be between 0 and 1</span></a>
+<a class="sourceLine" id="cb6-6" title="6"><span class="st">        </span><span class="kw">mutate</span>(<span class="dt">Rate =</span> Rate<span class="op">/</span><span class="dv">100</span>,</a>
+<a class="sourceLine" id="cb6-7" title="7">               <span class="dt">LCL =</span> LCL<span class="op">/</span><span class="dv">100</span>,</a>
+<a class="sourceLine" id="cb6-8" title="8">               <span class="dt">UCL =</span> UCL<span class="op">/</span><span class="dv">100</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb6-9" title="9"><span class="st">           </span><span class="co"># Run SII function on grouped dataset</span></a>
+<a class="sourceLine" id="cb6-10" title="10"><span class="st">        </span><span class="kw">phe_sii</span>(<span class="dt">quantile =</span> Decile,</a>
+<a class="sourceLine" id="cb6-11" title="11">                        <span class="dt">population =</span> Measured,</a>
+<a class="sourceLine" id="cb6-12" title="12">                        <span class="dt">value =</span> Rate,</a>
+<a class="sourceLine" id="cb6-13" title="13">                        <span class="dt">value_type =</span> <span class="dv">2</span>, <span class="co"># specifies indicator is a proportion</span></a>
+<a class="sourceLine" id="cb6-14" title="14">                        <span class="dt">lower_cl =</span> LCL,</a>
+<a class="sourceLine" id="cb6-15" title="15">                        <span class="dt">upper_cl =</span> UCL,</a>
+<a class="sourceLine" id="cb6-16" title="16">                        <span class="dt">multiplier =</span> <span class="dv">-100</span>) <span class="co"># negative multiplier to scale SII outputs</span></a>
+<a class="sourceLine" id="cb6-17" title="17"></a>
+<a class="sourceLine" id="cb6-18" title="18"><span class="co"># View first 10 rows of results</span></a>
+<a class="sourceLine" id="cb6-19" title="19">knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">head</span>(prevalence_SII,<span class="dv">10</span>)) </a></code></pre></div>
 <table>
 <thead>
 <tr class="header">
 <th align="right">Period</th>
 <th align="left">SchoolYear</th>
 <th align="left">AreaCode</th>
-<th align="right">SII</th>
-<th align="right">SII_lowerCL</th>
-<th align="right">SII_upperCL</th>
+<th align="right">sii</th>
+<th align="right">sii_lower95_0cl</th>
+<th align="right">sii_upper95_0cl</th>
 <th align="left">indicator_type</th>
 <th align="right">multiplier</th>
-<th align="right">CI_confidence</th>
+<th align="left">CI_confidence</th>
 <th align="left">CI_method</th>
 </tr>
 </thead>
@@ -469,11 +493,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td align="left">6</td>
 <td align="left">E92000001</td>
 <td align="right">10.720032</td>
-<td align="right">10.218824</td>
-<td align="right">11.225464</td>
+<td align="right">10.219059</td>
+<td align="right">11.219626</td>
 <td align="left">proportion</td>
 <td align="right">-100</td>
-<td align="right">0.95</td>
+<td align="left">95%</td>
 <td align="left">simulation 1e+05 reps</td>
 </tr>
 <tr class="even">
@@ -481,11 +505,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td align="left">R</td>
 <td align="left">E92000001</td>
 <td align="right">5.818547</td>
-<td align="right">5.419779</td>
-<td align="right">6.217577</td>
+<td align="right">5.417407</td>
+<td align="right">6.215327</td>
 <td align="left">proportion</td>
 <td align="right">-100</td>
-<td align="right">0.95</td>
+<td align="left">95%</td>
 <td align="left">simulation 1e+05 reps</td>
 </tr>
 <tr class="odd">
@@ -493,11 +517,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td align="left">6</td>
 <td align="left">E92000001</td>
 <td align="right">11.025821</td>
-<td align="right">10.651680</td>
-<td align="right">11.396498</td>
+<td align="right">10.651103</td>
+<td align="right">11.401803</td>
 <td align="left">proportion</td>
 <td align="right">-100</td>
-<td align="right">0.95</td>
+<td align="left">95%</td>
 <td align="left">simulation 1e+05 reps</td>
 </tr>
 <tr class="even">
@@ -505,11 +529,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td align="left">R</td>
 <td align="left">E92000001</td>
 <td align="right">6.048249</td>
-<td align="right">5.758357</td>
-<td align="right">6.338796</td>
+<td align="right">5.755818</td>
+<td align="right">6.338338</td>
 <td align="left">proportion</td>
 <td align="right">-100</td>
-<td align="right">0.95</td>
+<td align="left">95%</td>
 <td align="left">simulation 1e+05 reps</td>
 </tr>
 <tr class="odd">
@@ -517,11 +541,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td align="left">6</td>
 <td align="left">E92000001</td>
 <td align="right">11.528301</td>
-<td align="right">11.160635</td>
-<td align="right">11.894648</td>
+<td align="right">11.161521</td>
+<td align="right">11.894117</td>
 <td align="left">proportion</td>
 <td align="right">-100</td>
-<td align="right">0.95</td>
+<td align="left">95%</td>
 <td align="left">simulation 1e+05 reps</td>
 </tr>
 <tr class="even">
@@ -529,11 +553,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td align="left">R</td>
 <td align="left">E92000001</td>
 <td align="right">6.734782</td>
-<td align="right">6.460832</td>
-<td align="right">7.009282</td>
+<td align="right">6.460237</td>
+<td align="right">7.009756</td>
 <td align="left">proportion</td>
 <td align="right">-100</td>
-<td align="right">0.95</td>
+<td align="left">95%</td>
 <td align="left">simulation 1e+05 reps</td>
 </tr>
 <tr class="odd">
@@ -541,11 +565,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td align="left">6</td>
 <td align="left">E92000001</td>
 <td align="right">12.186004</td>
-<td align="right">11.818662</td>
-<td align="right">12.552513</td>
+<td align="right">11.818970</td>
+<td align="right">12.553323</td>
 <td align="left">proportion</td>
 <td align="right">-100</td>
-<td align="right">0.95</td>
+<td align="left">95%</td>
 <td align="left">simulation 1e+05 reps</td>
 </tr>
 <tr class="even">
@@ -553,11 +577,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td align="left">R</td>
 <td align="left">E92000001</td>
 <td align="right">6.959414</td>
-<td align="right">6.685911</td>
-<td align="right">7.233079</td>
+<td align="right">6.685161</td>
+<td align="right">7.229907</td>
 <td align="left">proportion</td>
 <td align="right">-100</td>
-<td align="right">0.95</td>
+<td align="left">95%</td>
 <td align="left">simulation 1e+05 reps</td>
 </tr>
 <tr class="odd">
@@ -565,11 +589,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td align="left">6</td>
 <td align="left">E92000001</td>
 <td align="right">12.781047</td>
-<td align="right">12.409065</td>
-<td align="right">13.150316</td>
+<td align="right">12.413154</td>
+<td align="right">13.151157</td>
 <td align="left">proportion</td>
 <td align="right">-100</td>
-<td align="right">0.95</td>
+<td align="left">95%</td>
 <td align="left">simulation 1e+05 reps</td>
 </tr>
 <tr class="even">
@@ -577,11 +601,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td align="left">R</td>
 <td align="left">E92000001</td>
 <td align="right">6.953482</td>
-<td align="right">6.691068</td>
-<td align="right">7.215004</td>
+<td align="right">6.690314</td>
+<td align="right">7.217695</td>
 <td align="left">proportion</td>
 <td align="right">-100</td>
-<td align="right">0.95</td>
+<td align="left">95%</td>
 <td align="left">simulation 1e+05 reps</td>
 </tr>
 </tbody>

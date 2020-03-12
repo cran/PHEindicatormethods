@@ -8,11 +8,11 @@
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <meta name="author" content="Georgina Anderson" />
 
-<meta name="date" content="2020-01-13" />
+<meta name="date" content="2020-03-12" />
 
 <title>PHEindicatormethods DSR function</title>
 
@@ -121,7 +121,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <h1 class="title toc-ignore">PHEindicatormethods DSR function</h1>
 <h4 class="author">Georgina Anderson</h4>
-<h4 class="date">2020-01-13</h4>
+<h4 class="date">2020-03-12</h4>
 
 
 
@@ -216,12 +216,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb2-6" title="6">                   <span class="dt">pop =</span> <span class="kw">sample</span>(<span class="dv">10000</span><span class="op">:</span><span class="dv">20000</span>, <span class="dv">19</span> <span class="op">*</span><span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="dv">5</span> <span class="op">*</span><span class="st"> </span><span class="dv">4</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>))</a>
 <a class="sourceLine" id="cb2-7" title="7"><span class="kw">head</span>(pops)</a>
 <a class="sourceLine" id="cb2-8" title="8"><span class="co">#&gt;   indicator period region ageband   pop</span></a>
-<a class="sourceLine" id="cb2-9" title="9"><span class="co">#&gt; 1      Ind1   2012  Area1       0 14319</span></a>
-<a class="sourceLine" id="cb2-10" title="10"><span class="co">#&gt; 2      Ind1   2012  Area1       5 12511</span></a>
-<a class="sourceLine" id="cb2-11" title="11"><span class="co">#&gt; 3      Ind1   2012  Area1      10 15155</span></a>
-<a class="sourceLine" id="cb2-12" title="12"><span class="co">#&gt; 4      Ind1   2012  Area1      15 14061</span></a>
-<a class="sourceLine" id="cb2-13" title="13"><span class="co">#&gt; 5      Ind1   2012  Area1      20 13480</span></a>
-<a class="sourceLine" id="cb2-14" title="14"><span class="co">#&gt; 6      Ind1   2012  Area1      25 17316</span></a>
+<a class="sourceLine" id="cb2-9" title="9"><span class="co">#&gt; 1      Ind1   2012  Area1       0 19565</span></a>
+<a class="sourceLine" id="cb2-10" title="10"><span class="co">#&gt; 2      Ind1   2012  Area1       5 16044</span></a>
+<a class="sourceLine" id="cb2-11" title="11"><span class="co">#&gt; 3      Ind1   2012  Area1      10 19837</span></a>
+<a class="sourceLine" id="cb2-12" title="12"><span class="co">#&gt; 4      Ind1   2012  Area1      15 19834</span></a>
+<a class="sourceLine" id="cb2-13" title="13"><span class="co">#&gt; 5      Ind1   2012  Area1      20 14998</span></a>
+<a class="sourceLine" id="cb2-14" title="14"><span class="co">#&gt; 6      Ind1   2012  Area1      25 10592</span></a>
 <a class="sourceLine" id="cb2-15" title="15"></a>
 <a class="sourceLine" id="cb2-16" title="16"></a>
 <a class="sourceLine" id="cb2-17" title="17">deaths &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">indicator =</span> <span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;Ind1&quot;</span>,<span class="st">&quot;Ind2&quot;</span>,<span class="st">&quot;Ind3&quot;</span>,<span class="st">&quot;Ind4&quot;</span>), <span class="dt">each =</span> <span class="dv">19</span> <span class="op">*</span><span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="dv">5</span>),</a>
@@ -232,12 +232,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb2-22" title="22">                   <span class="dt">dths =</span> <span class="kw">sample</span>(<span class="dv">200</span>, <span class="dv">19</span> <span class="op">*</span><span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="dv">5</span> <span class="op">*</span><span class="st"> </span><span class="dv">4</span>, <span class="dt">replace=</span><span class="ot">TRUE</span>))</a>
 <a class="sourceLine" id="cb2-23" title="23"><span class="kw">head</span>(deaths)</a>
 <a class="sourceLine" id="cb2-24" title="24"><span class="co">#&gt;   indicator period region ageband dths</span></a>
-<a class="sourceLine" id="cb2-25" title="25"><span class="co">#&gt; 1      Ind1   2012  Area1       0  100</span></a>
-<a class="sourceLine" id="cb2-26" title="26"><span class="co">#&gt; 2      Ind1   2012  Area1       5  142</span></a>
-<a class="sourceLine" id="cb2-27" title="27"><span class="co">#&gt; 3      Ind1   2012  Area1      10   62</span></a>
-<a class="sourceLine" id="cb2-28" title="28"><span class="co">#&gt; 4      Ind1   2012  Area1      15   61</span></a>
-<a class="sourceLine" id="cb2-29" title="29"><span class="co">#&gt; 5      Ind1   2012  Area1      20   31</span></a>
-<a class="sourceLine" id="cb2-30" title="30"><span class="co">#&gt; 6      Ind1   2012  Area1      25  178</span></a></code></pre></div>
+<a class="sourceLine" id="cb2-25" title="25"><span class="co">#&gt; 1      Ind1   2012  Area1       0  157</span></a>
+<a class="sourceLine" id="cb2-26" title="26"><span class="co">#&gt; 2      Ind1   2012  Area1       5   88</span></a>
+<a class="sourceLine" id="cb2-27" title="27"><span class="co">#&gt; 3      Ind1   2012  Area1      10  189</span></a>
+<a class="sourceLine" id="cb2-28" title="28"><span class="co">#&gt; 4      Ind1   2012  Area1      15   90</span></a>
+<a class="sourceLine" id="cb2-29" title="29"><span class="co">#&gt; 5      Ind1   2012  Area1      20  150</span></a>
+<a class="sourceLine" id="cb2-30" title="30"><span class="co">#&gt; 6      Ind1   2012  Area1      25   84</span></a></code></pre></div>
 </div>
 <div id="then-lets-prepare-and-validate-our-data" class="section level2">
 <h2>Then let’s prepare and validate our data</h2>
@@ -305,21 +305,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Now we’re ready to calculate the DSRs using our correctly ordered df data frame.</p>
 <p>By default the function will apply 95% confidence, a 100,000 multiplier and will output just 3 fields against each grouping set - the dsr, the lower confidence limit and the upper confidence limit:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">phe_dsr</span>(df, dths, pop)</a>
-<a class="sourceLine" id="cb8-2" title="2"><span class="co">#&gt; # A tibble: 40 x 12</span></a>
+<a class="sourceLine" id="cb8-2" title="2"><span class="co">#&gt; # A tibble: 40 x 11</span></a>
 <a class="sourceLine" id="cb8-3" title="3"><span class="co">#&gt; # Groups:   indicator, period [20]</span></a>
-<a class="sourceLine" id="cb8-4" title="4"><span class="co">#&gt;    indicator period region total_count total_pop standardised_pop value lowercl</span></a>
-<a class="sourceLine" id="cb8-5" title="5"><span class="co">#&gt;    &lt;fct&gt;      &lt;int&gt; &lt;fct&gt;        &lt;int&gt;     &lt;int&gt;            &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb8-6" title="6"><span class="co">#&gt;  1 Ind1        2012 Area1         1707    286813             587.  587.    558.</span></a>
-<a class="sourceLine" id="cb8-7" title="7"><span class="co">#&gt;  2 Ind1        2012 Area2         1616    275034             630.  630.    598.</span></a>
-<a class="sourceLine" id="cb8-8" title="8"><span class="co">#&gt;  3 Ind1        2013 Area1         1961    299946             638.  638.    607.</span></a>
-<a class="sourceLine" id="cb8-9" title="9"><span class="co">#&gt;  4 Ind1        2013 Area2         1988    284160             760.  760.    726.</span></a>
-<a class="sourceLine" id="cb8-10" title="10"><span class="co">#&gt;  5 Ind1        2014 Area1         2007    278678             704.  704.    672.</span></a>
-<a class="sourceLine" id="cb8-11" title="11"><span class="co">#&gt;  6 Ind1        2014 Area2         2224    306171             786.  786.    751.</span></a>
-<a class="sourceLine" id="cb8-12" title="12"><span class="co">#&gt;  7 Ind1        2015 Area1         1915    297056             668.  668.    635.</span></a>
-<a class="sourceLine" id="cb8-13" title="13"><span class="co">#&gt;  8 Ind1        2015 Area2         2042    283828             649.  649.    619.</span></a>
-<a class="sourceLine" id="cb8-14" title="14"><span class="co">#&gt;  9 Ind1        2016 Area1         1920    286251             691.  691.    657.</span></a>
-<a class="sourceLine" id="cb8-15" title="15"><span class="co">#&gt; 10 Ind1        2016 Area2         2355    279947             892.  892.    854.</span></a>
-<a class="sourceLine" id="cb8-16" title="16"><span class="co">#&gt; # ... with 30 more rows, and 4 more variables: uppercl &lt;dbl&gt;, confidence &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb8-4" title="4"><span class="co">#&gt;    indicator period region total_count total_pop value lowercl uppercl</span></a>
+<a class="sourceLine" id="cb8-5" title="5"><span class="co">#&gt;    &lt;fct&gt;      &lt;int&gt; &lt;fct&gt;        &lt;int&gt;     &lt;int&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb8-6" title="6"><span class="co">#&gt;  1 Ind1        2012 Area1         2060    288889  736.    701.    772.</span></a>
+<a class="sourceLine" id="cb8-7" title="7"><span class="co">#&gt;  2 Ind1        2012 Area2         2207    277326  808.    772.    845.</span></a>
+<a class="sourceLine" id="cb8-8" title="8"><span class="co">#&gt;  3 Ind1        2013 Area1         1377    266348  553.    521.    586.</span></a>
+<a class="sourceLine" id="cb8-9" title="9"><span class="co">#&gt;  4 Ind1        2013 Area2         1895    302968  616.    587.    646.</span></a>
+<a class="sourceLine" id="cb8-10" title="10"><span class="co">#&gt;  5 Ind1        2014 Area1         2079    292936  713.    679.    748.</span></a>
+<a class="sourceLine" id="cb8-11" title="11"><span class="co">#&gt;  6 Ind1        2014 Area2         2004    301216  702.    669.    736.</span></a>
+<a class="sourceLine" id="cb8-12" title="12"><span class="co">#&gt;  7 Ind1        2015 Area1         2037    289122  748.    713.    784.</span></a>
+<a class="sourceLine" id="cb8-13" title="13"><span class="co">#&gt;  8 Ind1        2015 Area2         2034    289031  760.    725.    796.</span></a>
+<a class="sourceLine" id="cb8-14" title="14"><span class="co">#&gt;  9 Ind1        2016 Area1         1986    303488  635.    605.    666.</span></a>
+<a class="sourceLine" id="cb8-15" title="15"><span class="co">#&gt; 10 Ind1        2016 Area2         2135    295268  749.    715.    784.</span></a>
+<a class="sourceLine" id="cb8-16" title="16"><span class="co">#&gt; # ... with 30 more rows, and 3 more variables: confidence &lt;chr&gt;,</span></a>
 <a class="sourceLine" id="cb8-17" title="17"><span class="co">#&gt; #   statistic &lt;chr&gt;, method &lt;chr&gt;</span></a></code></pre></div>
 <p></br> </br></p>
 <p>Alternatively, we can add further arguments to specify:</p>
@@ -333,16 +333,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb9-3" title="3"><span class="co">#&gt; # Groups:   indicator, period [20]</span></a>
 <a class="sourceLine" id="cb9-4" title="4"><span class="co">#&gt;    indicator period region total_count total_pop value lowercl uppercl</span></a>
 <a class="sourceLine" id="cb9-5" title="5"><span class="co">#&gt;    &lt;fct&gt;      &lt;int&gt; &lt;fct&gt;        &lt;int&gt;     &lt;int&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb9-6" title="6"><span class="co">#&gt;  1 Ind1        2012 Area1         1707    286813  58.7    54.1    63.6</span></a>
-<a class="sourceLine" id="cb9-7" title="7"><span class="co">#&gt;  2 Ind1        2012 Area2         1616    275034  63.0    58.0    68.3</span></a>
-<a class="sourceLine" id="cb9-8" title="8"><span class="co">#&gt;  3 Ind1        2013 Area1         1961    299946  63.8    59.0    68.8</span></a>
-<a class="sourceLine" id="cb9-9" title="9"><span class="co">#&gt;  4 Ind1        2013 Area2         1988    284160  76.0    70.6    81.7</span></a>
-<a class="sourceLine" id="cb9-10" title="10"><span class="co">#&gt;  5 Ind1        2014 Area1         2007    278678  70.4    65.4    75.7</span></a>
-<a class="sourceLine" id="cb9-11" title="11"><span class="co">#&gt;  6 Ind1        2014 Area2         2224    306171  78.6    73.1    84.2</span></a>
-<a class="sourceLine" id="cb9-12" title="12"><span class="co">#&gt;  7 Ind1        2015 Area1         1915    297056  66.8    61.7    72.1</span></a>
-<a class="sourceLine" id="cb9-13" title="13"><span class="co">#&gt;  8 Ind1        2015 Area2         2042    283828  64.9    60.2    69.8</span></a>
-<a class="sourceLine" id="cb9-14" title="14"><span class="co">#&gt;  9 Ind1        2016 Area1         1920    286251  69.1    63.9    74.5</span></a>
-<a class="sourceLine" id="cb9-15" title="15"><span class="co">#&gt; 10 Ind1        2016 Area2         2355    279947  89.2    83.3    95.3</span></a>
+<a class="sourceLine" id="cb9-6" title="6"><span class="co">#&gt;  1 Ind1        2012 Area1         2060    288889  73.6    68.2    79.3</span></a>
+<a class="sourceLine" id="cb9-7" title="7"><span class="co">#&gt;  2 Ind1        2012 Area2         2207    277326  80.8    75.2    86.7</span></a>
+<a class="sourceLine" id="cb9-8" title="8"><span class="co">#&gt;  3 Ind1        2013 Area1         1377    266348  55.3    50.4    60.5</span></a>
+<a class="sourceLine" id="cb9-9" title="9"><span class="co">#&gt;  4 Ind1        2013 Area2         1895    302968  61.6    57.0    66.4</span></a>
+<a class="sourceLine" id="cb9-10" title="10"><span class="co">#&gt;  5 Ind1        2014 Area1         2079    292936  71.3    66.0    76.8</span></a>
+<a class="sourceLine" id="cb9-11" title="11"><span class="co">#&gt;  6 Ind1        2014 Area2         2004    301216  70.2    65.0    75.5</span></a>
+<a class="sourceLine" id="cb9-12" title="12"><span class="co">#&gt;  7 Ind1        2015 Area1         2037    289122  74.8    69.4    80.5</span></a>
+<a class="sourceLine" id="cb9-13" title="13"><span class="co">#&gt;  8 Ind1        2015 Area2         2034    289031  76.0    70.6    81.7</span></a>
+<a class="sourceLine" id="cb9-14" title="14"><span class="co">#&gt;  9 Ind1        2016 Area1         1986    303488  63.5    58.8    68.4</span></a>
+<a class="sourceLine" id="cb9-15" title="15"><span class="co">#&gt; 10 Ind1        2016 Area2         2135    295268  74.9    69.6    80.5</span></a>
 <a class="sourceLine" id="cb9-16" title="16"><span class="co">#&gt; # ... with 30 more rows</span></a></code></pre></div>
 <p></br> </br></p>
 </div>
@@ -361,21 +361,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb10-6" title="6">df18 &lt;-<span class="st"> </span><span class="kw">filter</span>(df18,ageband <span class="op">!=</span><span class="st"> </span><span class="dv">90</span>)</a>
 <a class="sourceLine" id="cb10-7" title="7"></a>
 <a class="sourceLine" id="cb10-8" title="8"><span class="kw">phe_dsr</span>(df18,dths,pop,<span class="dt">stdpop =</span> esp1976)</a>
-<a class="sourceLine" id="cb10-9" title="9"><span class="co">#&gt; # A tibble: 40 x 12</span></a>
+<a class="sourceLine" id="cb10-9" title="9"><span class="co">#&gt; # A tibble: 40 x 11</span></a>
 <a class="sourceLine" id="cb10-10" title="10"><span class="co">#&gt; # Groups:   indicator, period [20]</span></a>
-<a class="sourceLine" id="cb10-11" title="11"><span class="co">#&gt;    indicator period region total_count total_pop standardised_pop value lowercl</span></a>
-<a class="sourceLine" id="cb10-12" title="12"><span class="co">#&gt;    &lt;fct&gt;      &lt;int&gt; &lt;fct&gt;        &lt;int&gt;     &lt;int&gt;            &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb10-13" title="13"><span class="co">#&gt;  1 Ind1        2012 Area1         1707    286813             610.  610.    578.</span></a>
-<a class="sourceLine" id="cb10-14" title="14"><span class="co">#&gt;  2 Ind1        2012 Area2         1616    275034             663.  663.    628.</span></a>
-<a class="sourceLine" id="cb10-15" title="15"><span class="co">#&gt;  3 Ind1        2013 Area1         1961    299946             620.  620.    589.</span></a>
-<a class="sourceLine" id="cb10-16" title="16"><span class="co">#&gt;  4 Ind1        2013 Area2         1988    284160             803.  803.    764.</span></a>
-<a class="sourceLine" id="cb10-17" title="17"><span class="co">#&gt;  5 Ind1        2014 Area1         2007    278678             705.  705.    672.</span></a>
-<a class="sourceLine" id="cb10-18" title="18"><span class="co">#&gt;  6 Ind1        2014 Area2         2224    306171             760.  760.    725.</span></a>
-<a class="sourceLine" id="cb10-19" title="19"><span class="co">#&gt;  7 Ind1        2015 Area1         1915    297056             683.  683.    648.</span></a>
-<a class="sourceLine" id="cb10-20" title="20"><span class="co">#&gt;  8 Ind1        2015 Area2         2042    283828             658.  658.    625.</span></a>
-<a class="sourceLine" id="cb10-21" title="21"><span class="co">#&gt;  9 Ind1        2016 Area1         1920    286251             692.  692.    657.</span></a>
-<a class="sourceLine" id="cb10-22" title="22"><span class="co">#&gt; 10 Ind1        2016 Area2         2355    279947             903.  903.    863.</span></a>
-<a class="sourceLine" id="cb10-23" title="23"><span class="co">#&gt; # ... with 30 more rows, and 4 more variables: uppercl &lt;dbl&gt;, confidence &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb10-11" title="11"><span class="co">#&gt;    indicator period region total_count total_pop value lowercl uppercl</span></a>
+<a class="sourceLine" id="cb10-12" title="12"><span class="co">#&gt;    &lt;fct&gt;      &lt;int&gt; &lt;fct&gt;        &lt;int&gt;     &lt;int&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb10-13" title="13"><span class="co">#&gt;  1 Ind1        2012 Area1         2060    288889  737.    702.    774.</span></a>
+<a class="sourceLine" id="cb10-14" title="14"><span class="co">#&gt;  2 Ind1        2012 Area2         2207    277326  795.    758.    834.</span></a>
+<a class="sourceLine" id="cb10-15" title="15"><span class="co">#&gt;  3 Ind1        2013 Area1         1377    266348  545.    512.    578.</span></a>
+<a class="sourceLine" id="cb10-16" title="16"><span class="co">#&gt;  4 Ind1        2013 Area2         1895    302968  605.    575.    636.</span></a>
+<a class="sourceLine" id="cb10-17" title="17"><span class="co">#&gt;  5 Ind1        2014 Area1         2079    292936  718.    682.    755.</span></a>
+<a class="sourceLine" id="cb10-18" title="18"><span class="co">#&gt;  6 Ind1        2014 Area2         2004    301216  710.    675.    745.</span></a>
+<a class="sourceLine" id="cb10-19" title="19"><span class="co">#&gt;  7 Ind1        2015 Area1         2037    289122  759.    721.    797.</span></a>
+<a class="sourceLine" id="cb10-20" title="20"><span class="co">#&gt;  8 Ind1        2015 Area2         2034    289031  741.    705.    778.</span></a>
+<a class="sourceLine" id="cb10-21" title="21"><span class="co">#&gt;  9 Ind1        2016 Area1         1986    303488  608.    578.    640.</span></a>
+<a class="sourceLine" id="cb10-22" title="22"><span class="co">#&gt; 10 Ind1        2016 Area2         2135    295268  732.    697.    767.</span></a>
+<a class="sourceLine" id="cb10-23" title="23"><span class="co">#&gt; # ... with 30 more rows, and 3 more variables: confidence &lt;chr&gt;,</span></a>
 <a class="sourceLine" id="cb10-24" title="24"><span class="co">#&gt; #   statistic &lt;chr&gt;, method &lt;chr&gt;</span></a></code></pre></div>
 <p></br> </br></p>
 </div>
@@ -388,21 +388,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb11-4" title="4"><span class="co">#&gt; [1] &quot;indicator&quot; &quot;period&quot;    &quot;region&quot;    &quot;ageband&quot;   &quot;pop&quot;       &quot;dths&quot;     </span></a>
 <a class="sourceLine" id="cb11-5" title="5"><span class="co">#&gt; [7] &quot;spop&quot;</span></a>
 <a class="sourceLine" id="cb11-6" title="6"><span class="kw">phe_dsr</span>(df_with_stdpop, dths, pop, <span class="dt">stdpop =</span> spop, <span class="dt">stdpoptype =</span> <span class="st">&quot;field&quot;</span>)</a>
-<a class="sourceLine" id="cb11-7" title="7"><span class="co">#&gt; # A tibble: 40 x 12</span></a>
+<a class="sourceLine" id="cb11-7" title="7"><span class="co">#&gt; # A tibble: 40 x 11</span></a>
 <a class="sourceLine" id="cb11-8" title="8"><span class="co">#&gt; # Groups:   indicator, period [20]</span></a>
-<a class="sourceLine" id="cb11-9" title="9"><span class="co">#&gt;    indicator period region total_count total_pop standardised_pop value lowercl</span></a>
-<a class="sourceLine" id="cb11-10" title="10"><span class="co">#&gt;    &lt;fct&gt;      &lt;int&gt; &lt;fct&gt;        &lt;int&gt;     &lt;int&gt;            &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb11-11" title="11"><span class="co">#&gt;  1 Ind1        2012 Area1         1707    286813             587.  587.    558.</span></a>
-<a class="sourceLine" id="cb11-12" title="12"><span class="co">#&gt;  2 Ind1        2012 Area2         1616    275034             630.  630.    598.</span></a>
-<a class="sourceLine" id="cb11-13" title="13"><span class="co">#&gt;  3 Ind1        2013 Area1         1961    299946             638.  638.    607.</span></a>
-<a class="sourceLine" id="cb11-14" title="14"><span class="co">#&gt;  4 Ind1        2013 Area2         1988    284160             760.  760.    726.</span></a>
-<a class="sourceLine" id="cb11-15" title="15"><span class="co">#&gt;  5 Ind1        2014 Area1         2007    278678             704.  704.    672.</span></a>
-<a class="sourceLine" id="cb11-16" title="16"><span class="co">#&gt;  6 Ind1        2014 Area2         2224    306171             786.  786.    751.</span></a>
-<a class="sourceLine" id="cb11-17" title="17"><span class="co">#&gt;  7 Ind1        2015 Area1         1915    297056             668.  668.    635.</span></a>
-<a class="sourceLine" id="cb11-18" title="18"><span class="co">#&gt;  8 Ind1        2015 Area2         2042    283828             649.  649.    619.</span></a>
-<a class="sourceLine" id="cb11-19" title="19"><span class="co">#&gt;  9 Ind1        2016 Area1         1920    286251             691.  691.    657.</span></a>
-<a class="sourceLine" id="cb11-20" title="20"><span class="co">#&gt; 10 Ind1        2016 Area2         2355    279947             892.  892.    854.</span></a>
-<a class="sourceLine" id="cb11-21" title="21"><span class="co">#&gt; # ... with 30 more rows, and 4 more variables: uppercl &lt;dbl&gt;, confidence &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb11-9" title="9"><span class="co">#&gt;    indicator period region total_count total_pop value lowercl uppercl</span></a>
+<a class="sourceLine" id="cb11-10" title="10"><span class="co">#&gt;    &lt;fct&gt;      &lt;int&gt; &lt;fct&gt;        &lt;int&gt;     &lt;int&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb11-11" title="11"><span class="co">#&gt;  1 Ind1        2012 Area1         2060    288889  736.    701.    772.</span></a>
+<a class="sourceLine" id="cb11-12" title="12"><span class="co">#&gt;  2 Ind1        2012 Area2         2207    277326  808.    772.    845.</span></a>
+<a class="sourceLine" id="cb11-13" title="13"><span class="co">#&gt;  3 Ind1        2013 Area1         1377    266348  553.    521.    586.</span></a>
+<a class="sourceLine" id="cb11-14" title="14"><span class="co">#&gt;  4 Ind1        2013 Area2         1895    302968  616.    587.    646.</span></a>
+<a class="sourceLine" id="cb11-15" title="15"><span class="co">#&gt;  5 Ind1        2014 Area1         2079    292936  713.    679.    748.</span></a>
+<a class="sourceLine" id="cb11-16" title="16"><span class="co">#&gt;  6 Ind1        2014 Area2         2004    301216  702.    669.    736.</span></a>
+<a class="sourceLine" id="cb11-17" title="17"><span class="co">#&gt;  7 Ind1        2015 Area1         2037    289122  748.    713.    784.</span></a>
+<a class="sourceLine" id="cb11-18" title="18"><span class="co">#&gt;  8 Ind1        2015 Area2         2034    289031  760.    725.    796.</span></a>
+<a class="sourceLine" id="cb11-19" title="19"><span class="co">#&gt;  9 Ind1        2016 Area1         1986    303488  635.    605.    666.</span></a>
+<a class="sourceLine" id="cb11-20" title="20"><span class="co">#&gt; 10 Ind1        2016 Area2         2135    295268  749.    715.    784.</span></a>
+<a class="sourceLine" id="cb11-21" title="21"><span class="co">#&gt; # ... with 30 more rows, and 3 more variables: confidence &lt;chr&gt;,</span></a>
 <a class="sourceLine" id="cb11-22" title="22"><span class="co">#&gt; #   statistic &lt;chr&gt;, method &lt;chr&gt;</span></a></code></pre></div>
 <p></br> </br></p>
 </div>
@@ -421,18 +421,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>If we join these data frames to produce the input data frame required for the phe_dsr function then we get NA values in the Deaths column. From PHEindicatormethods version 1.1.0 onwards, the phe_dsr function will return the correct DSR, assuming zero deaths in the age groups with no deaths recorded. If you are using an earlier version of PHEindicatormethods then an error will be returned. See what you get…..</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" title="1">df2 &lt;-<span class="st"> </span><span class="kw">left_join</span>(pops2, deaths2, <span class="dt">by=</span><span class="st">&quot;ageband&quot;</span>)</a>
 <a class="sourceLine" id="cb13-2" title="2"><span class="kw">phe_dsr</span>(df2, dths, pop)</a>
-<a class="sourceLine" id="cb13-3" title="3"><span class="co">#&gt;   total_count total_pop standardised_pop    value  lowercl  uppercl confidence</span></a>
-<a class="sourceLine" id="cb13-4" title="4"><span class="co">#&gt; 1          88       860         8283.016 8283.016 6570.819 10289.65        95%</span></a>
-<a class="sourceLine" id="cb13-5" title="5"><span class="co">#&gt;        statistic method</span></a>
-<a class="sourceLine" id="cb13-6" title="6"><span class="co">#&gt; 1 dsr per 100000 Dobson</span></a></code></pre></div>
+<a class="sourceLine" id="cb13-3" title="3"><span class="co">#&gt;   total_count total_pop    value  lowercl  uppercl confidence      statistic</span></a>
+<a class="sourceLine" id="cb13-4" title="4"><span class="co">#&gt; 1          88       860 8283.016 6570.819 10289.65        95% dsr per 100000</span></a>
+<a class="sourceLine" id="cb13-5" title="5"><span class="co">#&gt;   method</span></a>
+<a class="sourceLine" id="cb13-6" title="6"><span class="co">#&gt; 1 Dobson</span></a></code></pre></div>
 <p>For earlier versions of PHEindicatormethods, the NA values must be replaced with zeros before executing the function:</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1">df3 &lt;-<span class="st"> </span>df2 <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb14-2" title="2"><span class="st">        </span><span class="kw">mutate</span>(<span class="dt">dths =</span> <span class="kw">replace</span>(dths, <span class="kw">which</span>(<span class="kw">is.na</span>(dths)), <span class="dv">0</span>))</a>
 <a class="sourceLine" id="cb14-3" title="3"><span class="kw">phe_dsr</span>(df3, dths, pop)</a>
-<a class="sourceLine" id="cb14-4" title="4"><span class="co">#&gt;   total_count total_pop standardised_pop    value  lowercl  uppercl confidence</span></a>
-<a class="sourceLine" id="cb14-5" title="5"><span class="co">#&gt; 1          88       860         8283.016 8283.016 6570.819 10289.65        95%</span></a>
-<a class="sourceLine" id="cb14-6" title="6"><span class="co">#&gt;        statistic method</span></a>
-<a class="sourceLine" id="cb14-7" title="7"><span class="co">#&gt; 1 dsr per 100000 Dobson</span></a></code></pre></div>
+<a class="sourceLine" id="cb14-4" title="4"><span class="co">#&gt;   total_count total_pop    value  lowercl  uppercl confidence      statistic</span></a>
+<a class="sourceLine" id="cb14-5" title="5"><span class="co">#&gt; 1          88       860 8283.016 6570.819 10289.65        95% dsr per 100000</span></a>
+<a class="sourceLine" id="cb14-6" title="6"><span class="co">#&gt;   method</span></a>
+<a class="sourceLine" id="cb14-7" title="7"><span class="co">#&gt; 1 Dobson</span></a></code></pre></div>
 </div>
 </div>
 
