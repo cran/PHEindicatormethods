@@ -12,7 +12,7 @@
 
 <meta name="author" content="Emma Clegg" />
 
-<meta name="date" content="2020-04-12" />
+<meta name="date" content="2020-06-23" />
 
 <title>Worked examples for phe_sii function</title>
 
@@ -121,7 +121,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <h1 class="title toc-ignore">Worked examples for phe_sii function</h1>
 <h4 class="author">Emma Clegg</h4>
-<h4 class="date">2020-04-12</h4>
+<h4 class="date">2020-06-23</h4>
 
 
 
@@ -144,6 +144,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The example below calculates the SII on some life expectancy data. This is assumed to have symmetric confidence intervals around the indicator values, so default standard error calculations would be done (involving no prior transformations).</p>
 <p>The relevant fields in the input dataset are specified for the arguments <code>quantile</code>, <code>population</code> and <code>value</code>. <code>value_type</code> is kept equal to 0 (default), and the number of repetitions set to 100 for faster running of the function as a demonstration.</p>
 <p>The standard error (<code>se</code>) has been provided here in the input dataset, meaning this will be used directly and lower/upper 95% confidence limits of the indicator values are not needed.</p>
+<p>A warning is generated because one of the GeoCodes (E06000053) in the data does not contain a record for every quantile so no output is provided for this area.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="co"># Pass data through SII function ---------------------------------------</span></a>
 <a class="sourceLine" id="cb2-2" title="2">LE_data_SII &lt;-<span class="st"> </span>LE_data <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb2-3" title="3"><span class="st">        </span><span class="co"># Group the input dataframe to create subgroups to calculate the SII for</span></a>
@@ -159,7 +160,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb2-13" title="13">                <span class="dt">rii =</span> <span class="ot">FALSE</span>,</a>
 <a class="sourceLine" id="cb2-14" title="14">                <span class="dt">type =</span> <span class="st">&quot;full&quot;</span>) <span class="co"># use smaller no. of repetitions e.g. for testing</span></a></code></pre></div>
 <pre><code>## Warning in phe_sii(., quantile = Decile, population = Pop, value = LifeExp, :
-## some records have been removed due to incomplete or invalid data</code></pre>
+## WARNING: some records have been removed due to incomplete or invalid data</code></pre>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="co"># View first 10 rows of results</span></a>
 <a class="sourceLine" id="cb4-2" title="2">knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">head</span>(LE_data_SII, <span class="dv">10</span>))  </a></code></pre></div>
 <table>
@@ -183,10 +184,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td align="right">1</td>
 <td align="left">E06000001</td>
 <td align="right">11.68886</td>
-<td align="right">9.234458</td>
-<td align="right">7.688622</td>
-<td align="right">14.10492</td>
-<td align="right">15.26085</td>
+<td align="right">9.384847</td>
+<td align="right">7.901958</td>
+<td align="right">14.20602</td>
+<td align="right">15.41343</td>
 <td align="left">normal</td>
 <td align="right">1</td>
 <td align="left">95%, 99.8%</td>
@@ -196,10 +197,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td align="right">1</td>
 <td align="left">E06000002</td>
 <td align="right">12.54785</td>
-<td align="right">10.573053</td>
-<td align="right">9.636888</td>
-<td align="right">14.88095</td>
-<td align="right">15.97478</td>
+<td align="right">10.390660</td>
+<td align="right">8.315881</td>
+<td align="right">14.63612</td>
+<td align="right">15.55884</td>
 <td align="left">normal</td>
 <td align="right">1</td>
 <td align="left">95%, 99.8%</td>
@@ -209,10 +210,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td align="right">1</td>
 <td align="left">E06000003</td>
 <td align="right">10.05084</td>
-<td align="right">7.743650</td>
-<td align="right">6.380714</td>
-<td align="right">12.14043</td>
-<td align="right">13.44115</td>
+<td align="right">7.727753</td>
+<td align="right">6.308257</td>
+<td align="right">12.35499</td>
+<td align="right">13.50358</td>
 <td align="left">normal</td>
 <td align="right">1</td>
 <td align="left">95%, 99.8%</td>
@@ -222,10 +223,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td align="right">1</td>
 <td align="left">E06000004</td>
 <td align="right">14.85223</td>
-<td align="right">13.092788</td>
-<td align="right">11.437900</td>
-<td align="right">16.71881</td>
-<td align="right">17.89030</td>
+<td align="right">13.055243</td>
+<td align="right">11.896465</td>
+<td align="right">16.63475</td>
+<td align="right">17.56994</td>
 <td align="left">normal</td>
 <td align="right">1</td>
 <td align="left">95%, 99.8%</td>
@@ -235,10 +236,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td align="right">1</td>
 <td align="left">E06000005</td>
 <td align="right">11.68095</td>
-<td align="right">9.113652</td>
-<td align="right">8.012103</td>
-<td align="right">14.27987</td>
-<td align="right">14.99867</td>
+<td align="right">9.201616</td>
+<td align="right">7.078284</td>
+<td align="right">14.24529</td>
+<td align="right">15.47069</td>
 <td align="left">normal</td>
 <td align="right">1</td>
 <td align="left">95%, 99.8%</td>
@@ -248,10 +249,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td align="right">1</td>
 <td align="left">E06000006</td>
 <td align="right">12.27526</td>
-<td align="right">10.054969</td>
-<td align="right">7.732851</td>
-<td align="right">14.47352</td>
-<td align="right">15.54249</td>
+<td align="right">10.086474</td>
+<td align="right">8.700927</td>
+<td align="right">14.34260</td>
+<td align="right">15.02997</td>
 <td align="left">normal</td>
 <td align="right">1</td>
 <td align="left">95%, 99.8%</td>
@@ -261,10 +262,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td align="right">1</td>
 <td align="left">E06000007</td>
 <td align="right">11.59893</td>
-<td align="right">10.064619</td>
-<td align="right">8.928785</td>
-<td align="right">13.10388</td>
-<td align="right">13.82797</td>
+<td align="right">10.134951</td>
+<td align="right">9.204742</td>
+<td align="right">13.06471</td>
+<td align="right">14.04419</td>
 <td align="left">normal</td>
 <td align="right">1</td>
 <td align="left">95%, 99.8%</td>
@@ -274,10 +275,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td align="right">1</td>
 <td align="left">E06000008</td>
 <td align="right">10.72510</td>
-<td align="right">8.617149</td>
-<td align="right">7.184610</td>
-<td align="right">12.74220</td>
-<td align="right">13.46656</td>
+<td align="right">8.752538</td>
+<td align="right">7.117352</td>
+<td align="right">12.74114</td>
+<td align="right">13.70902</td>
 <td align="left">normal</td>
 <td align="right">1</td>
 <td align="left">95%, 99.8%</td>
@@ -287,10 +288,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td align="right">1</td>
 <td align="left">E06000009</td>
 <td align="right">13.59387</td>
-<td align="right">11.592320</td>
-<td align="right">9.716681</td>
-<td align="right">15.66616</td>
-<td align="right">16.72332</td>
+<td align="right">11.467974</td>
+<td align="right">10.023411</td>
+<td align="right">15.58183</td>
+<td align="right">16.66831</td>
 <td align="left">normal</td>
 <td align="right">1</td>
 <td align="left">95%, 99.8%</td>
@@ -300,10 +301,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td align="right">1</td>
 <td align="left">E06000010</td>
 <td align="right">11.20094</td>
-<td align="right">9.718701</td>
-<td align="right">9.124462</td>
-<td align="right">12.80115</td>
-<td align="right">13.29071</td>
+<td align="right">9.670168</td>
+<td align="right">9.189535</td>
+<td align="right">12.80885</td>
+<td align="right">13.52523</td>
 <td align="left">normal</td>
 <td align="right">1</td>
 <td align="left">95%, 99.8%</td>
@@ -357,12 +358,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td align="right">2010</td>
 <td align="right">-14.848683</td>
 <td align="right">0.8956758</td>
-<td align="right">-18.99312</td>
-<td align="right">-10.736762</td>
-<td align="right">0.8687141</td>
-<td align="right">0.9233579</td>
-<td align="right">0.0221065</td>
-<td align="right">0.0001050</td>
+<td align="right">-18.94895</td>
+<td align="right">-10.767618</td>
+<td align="right">0.8689296</td>
+<td align="right">0.9231619</td>
+<td align="right">0.0187166</td>
+<td align="right">0.0001189</td>
 <td align="left">rate</td>
 <td align="right">1</td>
 <td align="left">95%</td>
@@ -372,12 +373,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td align="right">2011</td>
 <td align="right">-13.528326</td>
 <td align="right">0.9039924</td>
-<td align="right">-17.62199</td>
-<td align="right">-9.474460</td>
-<td align="right">0.8768990</td>
-<td align="right">0.9316812</td>
-<td align="right">0.0182053</td>
-<td align="right">0.0001208</td>
+<td align="right">-17.59739</td>
+<td align="right">-9.440905</td>
+<td align="right">0.8770905</td>
+<td align="right">0.9319611</td>
+<td align="right">0.0220730</td>
+<td align="right">0.0001681</td>
 <td align="left">rate</td>
 <td align="right">1</td>
 <td align="left">95%</td>
@@ -387,12 +388,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td align="right">2012</td>
 <td align="right">-11.680045</td>
 <td align="right">0.9159389</td>
-<td align="right">-15.71695</td>
-<td align="right">-7.690143</td>
-<td align="right">0.8886752</td>
-<td align="right">0.9437816</td>
-<td align="right">0.0234049</td>
-<td align="right">0.0001631</td>
+<td align="right">-15.71630</td>
+<td align="right">-7.668494</td>
+<td align="right">0.8886555</td>
+<td align="right">0.9439264</td>
+<td align="right">0.0180699</td>
+<td align="right">0.0001137</td>
 <td align="left">rate</td>
 <td align="right">1</td>
 <td align="left">95%</td>
@@ -402,12 +403,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td align="right">2013</td>
 <td align="right">-10.544273</td>
 <td align="right">0.9232984</td>
-<td align="right">-14.54843</td>
-<td align="right">-6.567652</td>
-<td align="right">0.8958152</td>
-<td align="right">0.9514756</td>
-<td align="right">0.0191881</td>
-<td align="right">0.0001348</td>
+<td align="right">-14.53828</td>
+<td align="right">-6.573173</td>
+<td align="right">0.8959216</td>
+<td align="right">0.9514144</td>
+<td align="right">0.0152713</td>
+<td align="right">0.0001048</td>
 <td align="left">rate</td>
 <td align="right">1</td>
 <td align="left">95%</td>
@@ -417,12 +418,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td align="right">2014</td>
 <td align="right">-10.591214</td>
 <td align="right">0.9226440</td>
-<td align="right">-14.52983</td>
-<td align="right">-6.635019</td>
-<td align="right">0.8955053</td>
-<td align="right">0.9507746</td>
-<td align="right">0.0206466</td>
-<td align="right">0.0001494</td>
+<td align="right">-14.50746</td>
+<td align="right">-6.646637</td>
+<td align="right">0.8956632</td>
+<td align="right">0.9506939</td>
+<td align="right">0.0262948</td>
+<td align="right">0.0001828</td>
 <td align="left">rate</td>
 <td align="right">1</td>
 <td align="left">95%</td>
@@ -432,12 +433,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td align="right">2015</td>
 <td align="right">-9.042367</td>
 <td align="right">0.9332670</td>
-<td align="right">-12.94869</td>
-<td align="right">-5.146328</td>
-<td align="right">0.9059260</td>
-<td align="right">0.9614104</td>
-<td align="right">0.0131324</td>
-<td align="right">0.0000836</td>
+<td align="right">-12.97108</td>
+<td align="right">-5.145767</td>
+<td align="right">0.9057449</td>
+<td align="right">0.9614199</td>
+<td align="right">0.0196853</td>
+<td align="right">0.0001503</td>
 <td align="left">rate</td>
 <td align="right">1</td>
 <td align="left">95%</td>
@@ -493,8 +494,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td align="left">6</td>
 <td align="left">E92000001</td>
 <td align="right">10.720032</td>
-<td align="right">10.220725</td>
-<td align="right">11.220540</td>
+<td align="right">10.219930</td>
+<td align="right">11.216222</td>
 <td align="left">proportion</td>
 <td align="right">-100</td>
 <td align="left">95%</td>
@@ -505,8 +506,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td align="left">R</td>
 <td align="left">E92000001</td>
 <td align="right">5.818547</td>
-<td align="right">5.418871</td>
-<td align="right">6.217387</td>
+<td align="right">5.413881</td>
+<td align="right">6.214953</td>
 <td align="left">proportion</td>
 <td align="right">-100</td>
 <td align="left">95%</td>
@@ -517,8 +518,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td align="left">6</td>
 <td align="left">E92000001</td>
 <td align="right">11.025821</td>
-<td align="right">10.649700</td>
-<td align="right">11.403689</td>
+<td align="right">10.650050</td>
+<td align="right">11.398987</td>
 <td align="left">proportion</td>
 <td align="right">-100</td>
 <td align="left">95%</td>
@@ -529,8 +530,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td align="left">R</td>
 <td align="left">E92000001</td>
 <td align="right">6.048249</td>
-<td align="right">5.756966</td>
-<td align="right">6.338096</td>
+<td align="right">5.759181</td>
+<td align="right">6.338436</td>
 <td align="left">proportion</td>
 <td align="right">-100</td>
 <td align="left">95%</td>
@@ -541,8 +542,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td align="left">6</td>
 <td align="left">E92000001</td>
 <td align="right">11.528301</td>
-<td align="right">11.161083</td>
-<td align="right">11.892587</td>
+<td align="right">11.162399</td>
+<td align="right">11.892320</td>
 <td align="left">proportion</td>
 <td align="right">-100</td>
 <td align="left">95%</td>
@@ -553,8 +554,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td align="left">R</td>
 <td align="left">E92000001</td>
 <td align="right">6.734782</td>
-<td align="right">6.457113</td>
-<td align="right">7.010741</td>
+<td align="right">6.460450</td>
+<td align="right">7.011744</td>
 <td align="left">proportion</td>
 <td align="right">-100</td>
 <td align="left">95%</td>
@@ -565,8 +566,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td align="left">6</td>
 <td align="left">E92000001</td>
 <td align="right">12.186004</td>
-<td align="right">11.818605</td>
-<td align="right">12.551135</td>
+<td align="right">11.821573</td>
+<td align="right">12.551622</td>
 <td align="left">proportion</td>
 <td align="right">-100</td>
 <td align="left">95%</td>
@@ -577,8 +578,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td align="left">R</td>
 <td align="left">E92000001</td>
 <td align="right">6.959414</td>
-<td align="right">6.687295</td>
-<td align="right">7.231427</td>
+<td align="right">6.686108</td>
+<td align="right">7.233054</td>
 <td align="left">proportion</td>
 <td align="right">-100</td>
 <td align="left">95%</td>
@@ -589,8 +590,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td align="left">6</td>
 <td align="left">E92000001</td>
 <td align="right">12.781047</td>
-<td align="right">12.412537</td>
-<td align="right">13.149741</td>
+<td align="right">12.408601</td>
+<td align="right">13.153370</td>
 <td align="left">proportion</td>
 <td align="right">-100</td>
 <td align="left">95%</td>
@@ -601,8 +602,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td align="left">R</td>
 <td align="left">E92000001</td>
 <td align="right">6.953482</td>
-<td align="right">6.691174</td>
-<td align="right">7.215667</td>
+<td align="right">6.690419</td>
+<td align="right">7.215654</td>
 <td align="left">proportion</td>
 <td align="right">-100</td>
 <td align="left">95%</td>
