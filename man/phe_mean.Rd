@@ -12,15 +12,17 @@ phe_mean(data, x, type = "full", confidence = 0.95)
 \item{x}{field name from data containing the values to calculate the means for; unquoted string; no default}
 
 \item{type}{defines the data and metadata columns to be included in output;
-can be "value", "lower", "upper", "standard" (for all data) or "full" (for all data and metadata); quoted string; default = "full"}
+can be "value", "lower", "upper", "standard" (for all data) or "full" (for
+all data and metadata); quoted string; default = "full"}
 
-\item{confidence}{the required level of confidence expressed as a number between 0.9 and 1
-or a number between 90 and 100 or can be a vector of 0.95 and 0.998, for example, to output both 95\% and 99.8\% CIs;
-numeric; default 0.95}
+\item{confidence}{the required level of confidence expressed as a number
+between 0.9 and 1 or a number between 90 and 100 or can be a vector of 0.95
+and 0.998, for example, to output both 95 percent and 99.8 percent percent CIs; numeric;
+default 0.95}
 }
 \value{
 When type = "full", returns a data.frame of value_sum, value_count, stdev, value, lowercl, uppercl, confidence, statistic and method
-        for each grouping set
+for each grouping set
 }
 \description{
 Calculates means with confidence limits using Student's t-distribution method.
@@ -47,13 +49,16 @@ phe_mean(df2,values,type="standard", confidence=0.998)
 }
 \seealso{
 Other PHEindicatormethods package functions: 
+\code{\link{assign_funnel_significance}()},
+\code{\link{calculate_ISRate}()},
+\code{\link{calculate_ISRatio}()},
+\code{\link{calculate_funnel_limits}()},
+\code{\link{calculate_funnel_points}()},
 \code{\link{phe_dsr}()},
-\code{\link{phe_isr}()},
 \code{\link{phe_life_expectancy}()},
 \code{\link{phe_proportion}()},
 \code{\link{phe_quantile}()},
 \code{\link{phe_rate}()},
-\code{\link{phe_sii}()},
-\code{\link{phe_smr}()}
+\code{\link{phe_sii}()}
 }
 \concept{PHEindicatormethods package functions}

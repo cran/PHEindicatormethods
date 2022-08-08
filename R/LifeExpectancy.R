@@ -24,13 +24,15 @@
 #'         for each le_age requested.  When type = 'full' additionally returns the cumulative
 #'         populations and deaths used in each LE calculation and metadata indicating parameters passed.
 #' @details This function aligns with the methodology in Public Health England's
-#'   \href{https://fingertips.phe.org.uk/documents/PHE\%20Life\%20Expectancy\%20Calculator.xlsm}{Life Expectancy Excel Tool}.
+#'   Life Expectancy Calculator available on the
+#'   [Fingertips Technical Guidance](https://fingertips.phe.org.uk/profile/guidance/supporting-information/PH-methods)
+#'   web page.
 #'
 #'   The function is for an abridged life table using 5 year age intervals with
 #'   a final age interval of 90+. The table has been completed using the methods
-#'   described by Chiang.[1],[2]  This age structure and methodology is used by
+#'   described by Chiang.(1, 2)  This age structure and methodology is used by
 #'   The Office for National Statistics to produce life expectancy at national
-#'   and local authority level.[3]
+#'   and local authority level.(3)
 #'
 #'   This function includes an adjustment to the method for calculating the
 #'   variance of the life expectancy estimate to include a term for the variance
@@ -38,7 +40,7 @@
 #'   the life expectancy is the weighted sum of the variance of the probability
 #'   of survival across all the age intervals.  For the final age interval the
 #'   probability of survival is, Chiang argues, zero and has zero variance.
-#'   However, Silcocks et al argue[4] that in the case of the final age interval
+#'   However, Silcocks et al argue(4) that in the case of the final age interval
 #'   the life expectancy is dependent not on the probability of survival but on
 #'   the mean length of survival \eqn{(1/M<sub>omega</sub>)}{(1/M\omega)}.
 #'   Therefore the variance associated with the final age interval depends on the
@@ -47,27 +49,31 @@
 #'   Life expectancy cannot be calculated if the person-years in any given age
 #'   interval is zero. It will also not be calculated if the total person-years
 #'   is less than 5,000 as this is considered to be the minimum size for robust
-#'   calculation of life expectancy.[5]  Zero death counts are not a problem,
-#'   except for the final age interval - there must be at least one death in
-#'   the 90+ interval for the calculations to be possible.
+#'   calculation of life expectancy.(5)  Zero death counts are not a problem,
+#'   except for the final age interval - there must be at least one death in the
+#'   90+ interval for the calculations to be possible.
+#'
+#'   Individual Life Expectancy values will be suppressed (although confidence
+#'   intervals will be shown) when the 95% confidence interval is greater
+#'   than 20 years.
 #'
 #'   The methodology used in this function, along with discussion of alternative
 #'   options for life expectancy calculation for small areas, were described Eayres
-#'   and Williams.[6]
+#'   and Williams.(6)
 #'
 #' @references
-#' [1] Chiang CL. The Life Table and its Construction. In: Introduction to
+#' (1) Chiang CL. The Life Table and its Construction. In: Introduction to
 #' Stochastic Processes in Biostatistics. New York, John Wiley & Sons, 1968:189-214. \cr \cr
-#' [2] Newell C. Methods and Models in Demography. Chichester, John Wiley & Sons, 1994:63-81 \cr \cr
-#' [3] Office for National Statistics Report. Life expectancy at birth by
+#' (2) Newell C. Methods and Models in Demography. Chichester, John Wiley & Sons, 1994:63-81 \cr \cr
+#' (3) Office for National Statistics Report. Life expectancy at birth by
 #' health and local authorities in the United Kingdom, 1998 to 2000 (3-year
 #' aggregate figures.) Health Statistics Quarterly 2002;13:83-90 \cr \cr
-#' [4] Silcocks PBS, Jenner DA, Reza R.  Life expectancy as a summary of mortality
+#' (4) Silcocks PBS, Jenner DA, Reza R.  Life expectancy as a summary of mortality
 #' in a population: statistical considerations and suitability for use by health
 #' authorities. J Epidemiol Community Health 2001;55:38-43 \cr \cr
-#' [5] Toson B, Baker A. Life expectancy at birth: methodological options for
+#' (5) Toson B, Baker A. Life expectancy at birth: methodological options for
 #' small populations. National Statistics  Methodological Series No 33. HMSO 2003. \cr \cr
-#' [6] Eayres DP, Williams ES. Evaluation of methodologies for small area
+#' (6) Eayres DP, Williams ES. Evaluation of methodologies for small area
 #' life expectancy estimation. J Epidemiol Community Health 2004;58:243-249 \cr \cr
 #'
 #' @inheritParams phe_dsr
@@ -420,12 +426,19 @@ phe_life_expectancy <- function(data, deaths, population, startage,
              id_2b_removed < number_age_bands ~ spi_2b_removed * (l_2b_removed ^ 2) * (((1 - ai_2b_removed) * ni_2b_removed + lead(ei)) ^ 2),
              TRUE ~ ((l_2b_removed / 2) ^ 2) * spi_2b_removed),
            STi_2b_removed = rev(cumsum(rev(W_spi_2b_removed))),
-           SeSE_2b_removed = sqrt(STi_2b_removed / (l_2b_removed ^ 2)))
+           SeSE_2b_removed = sqrt(STi_2b_removed / (l_2b_removed ^ 2)),
+           ciover20_2b_removed = case_when(
+             qnorm(0.975) * SeSE_2b_removed > 10 ~ TRUE, TRUE ~ FALSE))
 
   lower_cls <- z %>%
     lapply(function(z, x, y) x - z * y, x = data$ei, y = data$SeSE_2b_removed)
   upper_cls <- z %>%
     lapply(function(z, x, y) x + z * y, x = data$ei, y = data$SeSE_2b_removed)
+
+  if (any(data$ciover20_2b_removed == TRUE)) {
+      warning(paste0("some life expectancy values have a 95% confidence interval ",
+                     "> 20 years; these values have been suppressed to NAs"))
+  }
 
   if (length(lower_cls) > 1) {
     names(lower_cls) <- paste0("lower",
@@ -446,6 +459,11 @@ phe_life_expectancy <- function(data, deaths, population, startage,
     rename(value = ei)
 
   data$value[data$value == Inf] <- NA
+
+  # suppress LE values when 95% CI is wider than 20 years
+  data <- data %>%
+    mutate(value = case_when(
+      ciover20_2b_removed == TRUE ~ NA_real_, TRUE ~ value))
 
   if (nrow(suppressed_data) > 0) data <- bind_rows(data, suppressed_data)
 

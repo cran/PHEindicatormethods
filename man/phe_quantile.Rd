@@ -38,17 +38,17 @@ can be "standard" or "full"; quoted string; default = "full"}
 }
 \value{
 When type = "full", returns the original data.frame with quantile (quantile value),
-        nquantiles (number of quantiles requested), groupvars (grouping sets quantiles assigned within)
-        and invert (indicating direction of quantile assignment) fields appended.
+nquantiles (number of quantiles requested), groupvars (grouping sets quantiles assigned within)
+and invert (indicating direction of quantile assignment) fields appended.
 }
 \description{
 Assigns data to quantiles based on numeric data rankings.
 }
 \section{Notes}{
- See [PHE Technical Guide - Assigning Deprivation Quintiles](https://fingertips.phe.org.uk/profile/guidance) for methodology.
-         In particular, note that this function strictly applies the algorithm defined but some manual
-         review, and potentially adjustment, is advised in some cases where multiple small areas with equal rank
-         fall across a natural quantile boundary.
+ See \href{https://fingertips.phe.org.uk/profile/guidance/supporting-information/PH-methods}{PHE Technical Guide - Assigning Deprivation Quintiles} for methodology.
+In particular, note that this function strictly applies the algorithm defined but some manual
+review, and potentially adjustment, is advised in some cases where multiple small areas with equal rank
+fall across a natural quantile boundary.
 }
 
 \examples{
@@ -72,13 +72,16 @@ phe_quantile(df, vals, nquantiles = 5L, invert=FALSE)
 }
 \seealso{
 Other PHEindicatormethods package functions: 
+\code{\link{assign_funnel_significance}()},
+\code{\link{calculate_ISRate}()},
+\code{\link{calculate_ISRatio}()},
+\code{\link{calculate_funnel_limits}()},
+\code{\link{calculate_funnel_points}()},
 \code{\link{phe_dsr}()},
-\code{\link{phe_isr}()},
 \code{\link{phe_life_expectancy}()},
 \code{\link{phe_mean}()},
 \code{\link{phe_proportion}()},
 \code{\link{phe_rate}()},
-\code{\link{phe_sii}()},
-\code{\link{phe_smr}()}
+\code{\link{phe_sii}()}
 }
 \concept{PHEindicatormethods package functions}
