@@ -12,7 +12,7 @@
 
 <meta name="author" content="Emma Clegg" />
 
-<meta name="date" content="2022-08-08" />
+<meta name="date" content="2022-11-30" />
 
 <title>Worked examples for phe_sii function</title>
 
@@ -122,13 +122,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   for (var i = 0; i < sheets.length; i++) {
     if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
     try { var rules = sheets[i].cssRules; } catch (e) { continue; }
-    for (var j = 0; j < rules.length; j++) {
+    var j = 0;
+    while (j < rules.length) {
       var rule = rules[j];
       // check if there is a div.sourceCode rule
-      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
       var style = rule.style.cssText;
       // check if color or background-color is set
-      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
       // replace div.sourceCode by a pre.sourceCode rule
       sheets[i].deleteRule(j);
       sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
@@ -154,7 +161,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <h1 class="title toc-ignore">Worked examples for phe_sii function</h1>
 <h4 class="author">Emma Clegg</h4>
-<h4 class="date">2022-08-08</h4>
+<h4 class="date">2022-11-30</h4>
 
 
 
@@ -255,10 +262,10 @@ provided for this area.</p>
 <td align="right">1</td>
 <td align="left">E06000001</td>
 <td align="right">11.68886</td>
-<td align="right">9.357470</td>
-<td align="right">7.515727</td>
-<td align="right">14.30555</td>
-<td align="right">15.88435</td>
+<td align="right">9.319022</td>
+<td align="right">7.606601</td>
+<td align="right">14.14128</td>
+<td align="right">15.67841</td>
 <td align="left">normal</td>
 <td align="right">1</td>
 <td align="left">95%, 99.8%</td>
@@ -268,10 +275,10 @@ provided for this area.</p>
 <td align="right">1</td>
 <td align="left">E06000002</td>
 <td align="right">12.54785</td>
-<td align="right">10.593443</td>
-<td align="right">9.534902</td>
-<td align="right">14.65896</td>
-<td align="right">15.79386</td>
+<td align="right">10.636127</td>
+<td align="right">9.472540</td>
+<td align="right">14.75166</td>
+<td align="right">15.59238</td>
 <td align="left">normal</td>
 <td align="right">1</td>
 <td align="left">95%, 99.8%</td>
@@ -281,10 +288,10 @@ provided for this area.</p>
 <td align="right">1</td>
 <td align="left">E06000003</td>
 <td align="right">10.05084</td>
-<td align="right">7.863128</td>
-<td align="right">6.083585</td>
-<td align="right">12.24109</td>
-<td align="right">12.97810</td>
+<td align="right">7.817127</td>
+<td align="right">6.374063</td>
+<td align="right">12.44193</td>
+<td align="right">13.38303</td>
 <td align="left">normal</td>
 <td align="right">1</td>
 <td align="left">95%, 99.8%</td>
@@ -294,10 +301,10 @@ provided for this area.</p>
 <td align="right">1</td>
 <td align="left">E06000004</td>
 <td align="right">14.85223</td>
-<td align="right">13.098873</td>
-<td align="right">12.405061</td>
-<td align="right">16.60358</td>
-<td align="right">17.30226</td>
+<td align="right">13.097238</td>
+<td align="right">12.054341</td>
+<td align="right">16.65619</td>
+<td align="right">17.75562</td>
 <td align="left">normal</td>
 <td align="right">1</td>
 <td align="left">95%, 99.8%</td>
@@ -307,10 +314,10 @@ provided for this area.</p>
 <td align="right">1</td>
 <td align="left">E06000005</td>
 <td align="right">11.68095</td>
-<td align="right">9.359647</td>
-<td align="right">7.819998</td>
-<td align="right">14.17580</td>
-<td align="right">15.04620</td>
+<td align="right">9.022305</td>
+<td align="right">7.463741</td>
+<td align="right">14.14292</td>
+<td align="right">15.43806</td>
 <td align="left">normal</td>
 <td align="right">1</td>
 <td align="left">95%, 99.8%</td>
@@ -320,10 +327,10 @@ provided for this area.</p>
 <td align="right">1</td>
 <td align="left">E06000006</td>
 <td align="right">12.27526</td>
-<td align="right">10.084372</td>
-<td align="right">8.792492</td>
-<td align="right">14.43717</td>
-<td align="right">15.38920</td>
+<td align="right">9.924686</td>
+<td align="right">8.065392</td>
+<td align="right">14.46422</td>
+<td align="right">15.31795</td>
 <td align="left">normal</td>
 <td align="right">1</td>
 <td align="left">95%, 99.8%</td>
@@ -333,10 +340,10 @@ provided for this area.</p>
 <td align="right">1</td>
 <td align="left">E06000007</td>
 <td align="right">11.59893</td>
-<td align="right">9.964737</td>
-<td align="right">8.797193</td>
-<td align="right">13.02146</td>
-<td align="right">13.94837</td>
+<td align="right">9.970452</td>
+<td align="right">9.122144</td>
+<td align="right">13.05842</td>
+<td align="right">13.74516</td>
 <td align="left">normal</td>
 <td align="right">1</td>
 <td align="left">95%, 99.8%</td>
@@ -346,10 +353,10 @@ provided for this area.</p>
 <td align="right">1</td>
 <td align="left">E06000008</td>
 <td align="right">10.72510</td>
-<td align="right">8.684302</td>
-<td align="right">7.473429</td>
-<td align="right">12.78269</td>
-<td align="right">13.99949</td>
+<td align="right">8.647717</td>
+<td align="right">6.885234</td>
+<td align="right">12.88224</td>
+<td align="right">14.12536</td>
 <td align="left">normal</td>
 <td align="right">1</td>
 <td align="left">95%, 99.8%</td>
@@ -359,10 +366,10 @@ provided for this area.</p>
 <td align="right">1</td>
 <td align="left">E06000009</td>
 <td align="right">13.59387</td>
-<td align="right">11.580191</td>
-<td align="right">10.575276</td>
-<td align="right">15.69956</td>
-<td align="right">16.98929</td>
+<td align="right">11.615475</td>
+<td align="right">10.357128</td>
+<td align="right">15.68058</td>
+<td align="right">16.66323</td>
 <td align="left">normal</td>
 <td align="right">1</td>
 <td align="left">95%, 99.8%</td>
@@ -372,10 +379,10 @@ provided for this area.</p>
 <td align="right">1</td>
 <td align="left">E06000010</td>
 <td align="right">11.20094</td>
-<td align="right">9.542162</td>
-<td align="right">8.523556</td>
-<td align="right">12.70321</td>
-<td align="right">13.29905</td>
+<td align="right">9.651262</td>
+<td align="right">8.207679</td>
+<td align="right">12.63970</td>
+<td align="right">13.08597</td>
 <td align="left">normal</td>
 <td align="right">1</td>
 <td align="left">95%, 99.8%</td>
@@ -456,12 +463,12 @@ guidance on how to use this.</p>
 <td align="right">2010</td>
 <td align="right">-14.848683</td>
 <td align="right">0.8956758</td>
-<td align="right">-18.93222</td>
-<td align="right">-10.745829</td>
-<td align="right">0.8689753</td>
-<td align="right">0.9232955</td>
-<td align="right">0.0279676</td>
-<td align="right">0.0001565</td>
+<td align="right">-18.93299</td>
+<td align="right">-10.741888</td>
+<td align="right">0.8690262</td>
+<td align="right">0.9233193</td>
+<td align="right">0.0226330</td>
+<td align="right">0.0001516</td>
 <td align="left">rate</td>
 <td align="right">1</td>
 <td align="left">95%</td>
@@ -471,12 +478,12 @@ guidance on how to use this.</p>
 <td align="right">2011</td>
 <td align="right">-13.528326</td>
 <td align="right">0.9039924</td>
-<td align="right">-17.62082</td>
-<td align="right">-9.479390</td>
-<td align="right">0.8768695</td>
-<td align="right">0.9316620</td>
-<td align="right">0.0160189</td>
-<td align="right">0.0001372</td>
+<td align="right">-17.61466</td>
+<td align="right">-9.483643</td>
+<td align="right">0.8769424</td>
+<td align="right">0.9316460</td>
+<td align="right">0.0146801</td>
+<td align="right">0.0000978</td>
 <td align="left">rate</td>
 <td align="right">1</td>
 <td align="left">95%</td>
@@ -486,12 +493,12 @@ guidance on how to use this.</p>
 <td align="right">2012</td>
 <td align="right">-11.680045</td>
 <td align="right">0.9159389</td>
-<td align="right">-15.71852</td>
-<td align="right">-7.666307</td>
-<td align="right">0.8886199</td>
-<td align="right">0.9439328</td>
-<td align="right">0.0151905</td>
-<td align="right">0.0001136</td>
+<td align="right">-15.73048</td>
+<td align="right">-7.658699</td>
+<td align="right">0.8885395</td>
+<td align="right">0.9439862</td>
+<td align="right">0.0178539</td>
+<td align="right">0.0001232</td>
 <td align="left">rate</td>
 <td align="right">1</td>
 <td align="left">95%</td>
@@ -501,12 +508,12 @@ guidance on how to use this.</p>
 <td align="right">2013</td>
 <td align="right">-10.544273</td>
 <td align="right">0.9232984</td>
-<td align="right">-14.51938</td>
-<td align="right">-6.575762</td>
-<td align="right">0.8960438</td>
-<td align="right">0.9514078</td>
-<td align="right">0.0221796</td>
-<td align="right">0.0001543</td>
+<td align="right">-14.53110</td>
+<td align="right">-6.554947</td>
+<td align="right">0.8959470</td>
+<td align="right">0.9515444</td>
+<td align="right">0.0161074</td>
+<td align="right">0.0001077</td>
 <td align="left">rate</td>
 <td align="right">1</td>
 <td align="left">95%</td>
@@ -516,12 +523,12 @@ guidance on how to use this.</p>
 <td align="right">2014</td>
 <td align="right">-10.591214</td>
 <td align="right">0.9226440</td>
-<td align="right">-14.54407</td>
-<td align="right">-6.605808</td>
-<td align="right">0.8954460</td>
-<td align="right">0.9509513</td>
-<td align="right">0.0287551</td>
-<td align="right">0.0001945</td>
+<td align="right">-14.54660</td>
+<td align="right">-6.661568</td>
+<td align="right">0.8954057</td>
+<td align="right">0.9505682</td>
+<td align="right">0.0137931</td>
+<td align="right">0.0001019</td>
 <td align="left">rate</td>
 <td align="right">1</td>
 <td align="left">95%</td>
@@ -531,12 +538,12 @@ guidance on how to use this.</p>
 <td align="right">2015</td>
 <td align="right">-9.042367</td>
 <td align="right">0.9332670</td>
-<td align="right">-12.93949</td>
-<td align="right">-5.115865</td>
-<td align="right">0.9060193</td>
-<td align="right">0.9616269</td>
-<td align="right">0.0238989</td>
-<td align="right">0.0001738</td>
+<td align="right">-12.94103</td>
+<td align="right">-5.126921</td>
+<td align="right">0.9059929</td>
+<td align="right">0.9615414</td>
+<td align="right">0.0188668</td>
+<td align="right">0.0001454</td>
 <td align="left">rate</td>
 <td align="right">1</td>
 <td align="left">95%</td>
@@ -616,8 +623,8 @@ figures that are expressed on a scale between 0 and 100.</p>
 <td align="left">6</td>
 <td align="left">E92000001</td>
 <td align="right">10.720032</td>
-<td align="right">10.218388</td>
-<td align="right">11.220999</td>
+<td align="right">10.217942</td>
+<td align="right">11.220821</td>
 <td align="left">proportion</td>
 <td align="right">-100</td>
 <td align="left">95%</td>
@@ -628,8 +635,8 @@ figures that are expressed on a scale between 0 and 100.</p>
 <td align="left">R</td>
 <td align="left">E92000001</td>
 <td align="right">5.818547</td>
-<td align="right">5.416673</td>
-<td align="right">6.215898</td>
+<td align="right">5.416881</td>
+<td align="right">6.216259</td>
 <td align="left">proportion</td>
 <td align="right">-100</td>
 <td align="left">95%</td>
@@ -640,8 +647,8 @@ figures that are expressed on a scale between 0 and 100.</p>
 <td align="left">6</td>
 <td align="left">E92000001</td>
 <td align="right">11.025821</td>
-<td align="right">10.650572</td>
-<td align="right">11.401599</td>
+<td align="right">10.647884</td>
+<td align="right">11.400274</td>
 <td align="left">proportion</td>
 <td align="right">-100</td>
 <td align="left">95%</td>
@@ -652,8 +659,8 @@ figures that are expressed on a scale between 0 and 100.</p>
 <td align="left">R</td>
 <td align="left">E92000001</td>
 <td align="right">6.048249</td>
-<td align="right">5.758679</td>
-<td align="right">6.339480</td>
+<td align="right">5.757032</td>
+<td align="right">6.339076</td>
 <td align="left">proportion</td>
 <td align="right">-100</td>
 <td align="left">95%</td>
@@ -664,8 +671,8 @@ figures that are expressed on a scale between 0 and 100.</p>
 <td align="left">6</td>
 <td align="left">E92000001</td>
 <td align="right">11.528301</td>
-<td align="right">11.164969</td>
-<td align="right">11.894447</td>
+<td align="right">11.163932</td>
+<td align="right">11.893021</td>
 <td align="left">proportion</td>
 <td align="right">-100</td>
 <td align="left">95%</td>
@@ -676,8 +683,8 @@ figures that are expressed on a scale between 0 and 100.</p>
 <td align="left">R</td>
 <td align="left">E92000001</td>
 <td align="right">6.734782</td>
-<td align="right">6.458283</td>
-<td align="right">7.010078</td>
+<td align="right">6.460592</td>
+<td align="right">7.007796</td>
 <td align="left">proportion</td>
 <td align="right">-100</td>
 <td align="left">95%</td>
@@ -688,8 +695,8 @@ figures that are expressed on a scale between 0 and 100.</p>
 <td align="left">6</td>
 <td align="left">E92000001</td>
 <td align="right">12.186004</td>
-<td align="right">11.818941</td>
-<td align="right">12.555142</td>
+<td align="right">11.816259</td>
+<td align="right">12.551402</td>
 <td align="left">proportion</td>
 <td align="right">-100</td>
 <td align="left">95%</td>
@@ -700,8 +707,8 @@ figures that are expressed on a scale between 0 and 100.</p>
 <td align="left">R</td>
 <td align="left">E92000001</td>
 <td align="right">6.959414</td>
-<td align="right">6.689175</td>
-<td align="right">7.232961</td>
+<td align="right">6.686591</td>
+<td align="right">7.231110</td>
 <td align="left">proportion</td>
 <td align="right">-100</td>
 <td align="left">95%</td>
@@ -712,8 +719,8 @@ figures that are expressed on a scale between 0 and 100.</p>
 <td align="left">6</td>
 <td align="left">E92000001</td>
 <td align="right">12.781047</td>
-<td align="right">12.411679</td>
-<td align="right">13.148828</td>
+<td align="right">12.410431</td>
+<td align="right">13.151806</td>
 <td align="left">proportion</td>
 <td align="right">-100</td>
 <td align="left">95%</td>
@@ -724,8 +731,8 @@ figures that are expressed on a scale between 0 and 100.</p>
 <td align="left">R</td>
 <td align="left">E92000001</td>
 <td align="right">6.953482</td>
-<td align="right">6.692094</td>
-<td align="right">7.216067</td>
+<td align="right">6.690639</td>
+<td align="right">7.214123</td>
 <td align="left">proportion</td>
 <td align="right">-100</td>
 <td align="left">95%</td>
