@@ -10,9 +10,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<meta name="author" content="Emma Clegg" />
+<meta name="author" content="Emma Clegg and Georgina Anderson" />
 
-<meta name="date" content="2023-05-05" />
+<meta name="date" content="2024-01-25" />
 
 <title>Worked examples for phe_sii function</title>
 
@@ -159,8 +159,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; }
 
 
 <h1 class="title toc-ignore">Worked examples for phe_sii function</h1>
-<h4 class="author">Emma Clegg</h4>
-<h4 class="date">2023-05-05</h4>
+<h4 class="author">Emma Clegg and Georgina Anderson</h4>
+<h4 class="date">2024-01-25</h4>
 
 
 
@@ -201,7 +201,7 @@ indicator values, so default standard error calculations would be done
 <p>The relevant fields in the input dataset are specified for the
 arguments <code>quantile</code>, <code>population</code> and
 <code>value</code>. <code>value_type</code> is kept equal to 0
-(default), and the number of repetitions set to 100 for faster running
+(default), and the number of repetitions set to 1000 for faster running
 of the function as a demonstration.</p>
 <p>The standard error (<code>se</code>) has been provided here in the
 input dataset, meaning this will be used directly and lower/upper 95%
@@ -231,15 +231,16 @@ provided for this area.</p>
 <colgroup>
 <col width="2%" />
 <col width="6%" />
-<col width="6%" />
+<col width="5%" />
 <col width="10%" />
 <col width="10%" />
 <col width="10%" />
 <col width="10%" />
-<col width="10%" />
-<col width="7%" />
 <col width="9%" />
-<col width="14%" />
+<col width="6%" />
+<col width="6%" />
+<col width="8%" />
+<col width="13%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -247,11 +248,12 @@ provided for this area.</p>
 <th align="left">GeoCode</th>
 <th align="right">sii</th>
 <th align="right">sii_lower95_0cl</th>
-<th align="right">sii_lower99_8cl</th>
 <th align="right">sii_upper95_0cl</th>
+<th align="right">sii_lower99_8cl</th>
 <th align="right">sii_upper99_8cl</th>
 <th align="left">indicator_type</th>
 <th align="right">multiplier</th>
+<th align="left">transform</th>
 <th align="left">CI_confidence</th>
 <th align="left">CI_method</th>
 </tr>
@@ -261,12 +263,13 @@ provided for this area.</p>
 <td align="right">1</td>
 <td align="left">E06000001</td>
 <td align="right">11.68886</td>
-<td align="right">9.312681</td>
-<td align="right">7.844376</td>
-<td align="right">14.01802</td>
-<td align="right">15.27652</td>
+<td align="right">9.163157</td>
+<td align="right">14.03102</td>
+<td align="right">7.636848</td>
+<td align="right">15.91570</td>
 <td align="left">normal</td>
 <td align="right">1</td>
+<td align="left">none</td>
 <td align="left">95%, 99.8%</td>
 <td align="left">simulation 1000 reps</td>
 </tr>
@@ -274,12 +277,13 @@ provided for this area.</p>
 <td align="right">1</td>
 <td align="left">E06000002</td>
 <td align="right">12.54785</td>
-<td align="right">10.405415</td>
-<td align="right">8.972004</td>
-<td align="right">14.57295</td>
-<td align="right">15.69242</td>
+<td align="right">10.530798</td>
+<td align="right">14.63620</td>
+<td align="right">8.998043</td>
+<td align="right">15.55380</td>
 <td align="left">normal</td>
 <td align="right">1</td>
+<td align="left">none</td>
 <td align="left">95%, 99.8%</td>
 <td align="left">simulation 1000 reps</td>
 </tr>
@@ -287,12 +291,13 @@ provided for this area.</p>
 <td align="right">1</td>
 <td align="left">E06000003</td>
 <td align="right">10.05084</td>
-<td align="right">7.967448</td>
-<td align="right">6.378453</td>
-<td align="right">12.42546</td>
-<td align="right">13.07363</td>
+<td align="right">7.832693</td>
+<td align="right">12.24529</td>
+<td align="right">5.777159</td>
+<td align="right">13.73026</td>
 <td align="left">normal</td>
 <td align="right">1</td>
+<td align="left">none</td>
 <td align="left">95%, 99.8%</td>
 <td align="left">simulation 1000 reps</td>
 </tr>
@@ -300,12 +305,13 @@ provided for this area.</p>
 <td align="right">1</td>
 <td align="left">E06000004</td>
 <td align="right">14.85223</td>
-<td align="right">13.153690</td>
-<td align="right">11.476650</td>
-<td align="right">16.59194</td>
-<td align="right">17.46626</td>
+<td align="right">13.131610</td>
+<td align="right">16.64977</td>
+<td align="right">12.179546</td>
+<td align="right">17.84701</td>
 <td align="left">normal</td>
 <td align="right">1</td>
+<td align="left">none</td>
 <td align="left">95%, 99.8%</td>
 <td align="left">simulation 1000 reps</td>
 </tr>
@@ -313,12 +319,13 @@ provided for this area.</p>
 <td align="right">1</td>
 <td align="left">E06000005</td>
 <td align="right">11.68095</td>
-<td align="right">9.242997</td>
-<td align="right">7.561414</td>
-<td align="right">14.26450</td>
-<td align="right">15.62986</td>
+<td align="right">9.153319</td>
+<td align="right">14.20844</td>
+<td align="right">7.675025</td>
+<td align="right">15.08127</td>
 <td align="left">normal</td>
 <td align="right">1</td>
+<td align="left">none</td>
 <td align="left">95%, 99.8%</td>
 <td align="left">simulation 1000 reps</td>
 </tr>
@@ -326,12 +333,13 @@ provided for this area.</p>
 <td align="right">1</td>
 <td align="left">E06000006</td>
 <td align="right">12.27526</td>
-<td align="right">10.050067</td>
-<td align="right">8.713817</td>
-<td align="right">14.51028</td>
-<td align="right">15.67680</td>
+<td align="right">9.860600</td>
+<td align="right">14.36077</td>
+<td align="right">8.721377</td>
+<td align="right">15.15166</td>
 <td align="left">normal</td>
 <td align="right">1</td>
+<td align="left">none</td>
 <td align="left">95%, 99.8%</td>
 <td align="left">simulation 1000 reps</td>
 </tr>
@@ -339,12 +347,13 @@ provided for this area.</p>
 <td align="right">1</td>
 <td align="left">E06000007</td>
 <td align="right">11.59893</td>
-<td align="right">10.175952</td>
-<td align="right">8.930574</td>
-<td align="right">13.08221</td>
-<td align="right">14.12933</td>
+<td align="right">10.002898</td>
+<td align="right">13.01182</td>
+<td align="right">8.521268</td>
+<td align="right">13.67681</td>
 <td align="left">normal</td>
 <td align="right">1</td>
+<td align="left">none</td>
 <td align="left">95%, 99.8%</td>
 <td align="left">simulation 1000 reps</td>
 </tr>
@@ -352,12 +361,13 @@ provided for this area.</p>
 <td align="right">1</td>
 <td align="left">E06000008</td>
 <td align="right">10.72510</td>
-<td align="right">8.547765</td>
-<td align="right">7.360664</td>
-<td align="right">12.99306</td>
-<td align="right">13.81517</td>
+<td align="right">8.760912</td>
+<td align="right">12.73142</td>
+<td align="right">7.588910</td>
+<td align="right">13.83343</td>
 <td align="left">normal</td>
 <td align="right">1</td>
+<td align="left">none</td>
 <td align="left">95%, 99.8%</td>
 <td align="left">simulation 1000 reps</td>
 </tr>
@@ -365,12 +375,13 @@ provided for this area.</p>
 <td align="right">1</td>
 <td align="left">E06000009</td>
 <td align="right">13.59387</td>
-<td align="right">11.391961</td>
-<td align="right">9.843210</td>
-<td align="right">15.65497</td>
-<td align="right">16.46247</td>
+<td align="right">11.503227</td>
+<td align="right">15.83495</td>
+<td align="right">10.200896</td>
+<td align="right">16.66205</td>
 <td align="left">normal</td>
 <td align="right">1</td>
+<td align="left">none</td>
 <td align="left">95%, 99.8%</td>
 <td align="left">simulation 1000 reps</td>
 </tr>
@@ -378,12 +389,13 @@ provided for this area.</p>
 <td align="right">1</td>
 <td align="left">E06000010</td>
 <td align="right">11.20094</td>
-<td align="right">9.689360</td>
-<td align="right">9.271606</td>
-<td align="right">12.64295</td>
-<td align="right">13.55751</td>
+<td align="right">9.738255</td>
+<td align="right">12.75270</td>
+<td align="right">8.739445</td>
+<td align="right">13.68133</td>
 <td align="left">normal</td>
 <td align="right">1</td>
+<td align="left">none</td>
 <td align="left">95%, 99.8%</td>
 <td align="left">simulation 1000 reps</td>
 </tr>
@@ -400,7 +412,11 @@ Standardised Rate (DSR) data. The <code>value_type</code> argument is
 set to 1 to specify this indicator is a rate; this means a log
 transformation will be applied to the <code>value</code>,
 <code>lower_cl</code> and <code>upper_cl</code> fields before
-calculating the standard error.</p>
+calculating the standard error. The <code>transform</code> argument is
+set to TRUE because rates do not show a linear relationship across the
+quantiles so a log transformation will be applied before calculating the
+SII and then reverted once the SII has been calculated to ensure the SII
+is given in the original units.</p>
 <p>As the number of repetitions is not specified, the function will run
 on the default 100,000. To return the RII, the <code>rii</code> argument
 is set to TRUE.</p>
@@ -419,24 +435,26 @@ guidance on how to use this.</p>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>                <span class="at">value_type =</span> <span class="dv">1</span>, <span class="co"># specifies indicator is a rate</span></span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>                <span class="at">lower_cl =</span> lowercl,</span>
 <span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>                <span class="at">upper_cl =</span> uppercl,</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>                <span class="at">rii =</span> <span class="cn">TRUE</span>, <span class="co"># returns RII as well as SII (default is FALSE)</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>                <span class="at">reliability_stat =</span> <span class="cn">TRUE</span>) <span class="co"># returns reliability stats (default is FALSE)</span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="co"># View results</span></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(DSR_data_SII)  </span></code></pre></div>
-<table style="width:100%;">
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>                <span class="at">transform =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>                <span class="at">rii =</span> <span class="cn">TRUE</span>, <span class="co"># returns RII as well as SII (default is FALSE)</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>                <span class="at">reliability_stat =</span> <span class="cn">TRUE</span>) <span class="co"># returns reliability stats (default is FALSE)</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co"># View results</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(DSR_data_SII)  </span></code></pre></div>
+<table>
 <colgroup>
 <col width="3%" />
+<col width="5%" />
+<col width="5%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="6%" />
+<col width="6%" />
+<col width="8%" />
 <col width="6%" />
 <col width="5%" />
-<col width="8%" />
-<col width="8%" />
-<col width="8%" />
-<col width="8%" />
-<col width="6%" />
-<col width="6%" />
-<col width="8%" />
-<col width="6%" />
 <col width="7%" />
 <col width="12%" />
 </colgroup>
@@ -445,14 +463,15 @@ guidance on how to use this.</p>
 <th align="right">Period</th>
 <th align="right">sii</th>
 <th align="right">rii</th>
-<th align="right">sii_lower95_0cl</th>
-<th align="right">sii_upper95_0cl</th>
-<th align="right">rii_lower95_0cl</th>
-<th align="right">rii_upper95_0cl</th>
+<th align="right">sii_lower95_0</th>
+<th align="right">sii_upper95_0</th>
+<th align="right">rii_lower95_0</th>
+<th align="right">rii_upper95_0</th>
 <th align="right">sii_mad95_0</th>
 <th align="right">rii_mad95_0</th>
 <th align="left">indicator_type</th>
 <th align="right">multiplier</th>
+<th align="left">transform</th>
 <th align="left">CI_confidence</th>
 <th align="left">CI_method</th>
 </tr>
@@ -460,91 +479,97 @@ guidance on how to use this.</p>
 <tbody>
 <tr class="odd">
 <td align="right">2010</td>
-<td align="right">-14.848683</td>
-<td align="right">0.8956758</td>
-<td align="right">-18.93485</td>
-<td align="right">-10.719580</td>
-<td align="right">0.8690853</td>
-<td align="right">0.9234896</td>
-<td align="right">0.0338733</td>
-<td align="right">0.0002615</td>
+<td align="right">-14.03684</td>
+<td align="right">0.9010655</td>
+<td align="right">-17.93809</td>
+<td align="right">-10.128497</td>
+<td align="right">0.8753835</td>
+<td align="right">0.9275700</td>
+<td align="right">0.0178387</td>
+<td align="right">0.0001188</td>
 <td align="left">rate</td>
 <td align="right">1</td>
+<td align="left">log</td>
 <td align="left">95%</td>
 <td align="left">simulation 1e+05 reps</td>
 </tr>
 <tr class="even">
 <td align="right">2011</td>
-<td align="right">-13.528326</td>
-<td align="right">0.9039924</td>
-<td align="right">-17.58293</td>
-<td align="right">-9.449840</td>
-<td align="right">0.8771607</td>
-<td align="right">0.9318934</td>
-<td align="right">0.0267527</td>
-<td align="right">0.0001851</td>
+<td align="right">-12.83196</td>
+<td align="right">0.9086641</td>
+<td align="right">-16.72766</td>
+<td align="right">-8.962340</td>
+<td align="right">0.8826517</td>
+<td align="right">0.9352799</td>
+<td align="right">0.0201048</td>
+<td align="right">0.0001370</td>
 <td align="left">rate</td>
 <td align="right">1</td>
+<td align="left">log</td>
 <td align="left">95%</td>
 <td align="left">simulation 1e+05 reps</td>
 </tr>
 <tr class="odd">
 <td align="right">2012</td>
-<td align="right">-11.680045</td>
-<td align="right">0.9159389</td>
-<td align="right">-15.71195</td>
-<td align="right">-7.657437</td>
-<td align="right">0.8886916</td>
-<td align="right">0.9440283</td>
-<td align="right">0.0139582</td>
-<td align="right">0.0000915</td>
+<td align="right">-11.09234</td>
+<td align="right">0.9199455</td>
+<td align="right">-14.94129</td>
+<td align="right">-7.262016</td>
+<td align="right">0.8937156</td>
+<td align="right">0.9468290</td>
+<td align="right">0.0120692</td>
+<td align="right">0.0000837</td>
 <td align="left">rate</td>
 <td align="right">1</td>
+<td align="left">log</td>
 <td align="left">95%</td>
 <td align="left">simulation 1e+05 reps</td>
 </tr>
 <tr class="even">
 <td align="right">2013</td>
-<td align="right">-10.544273</td>
-<td align="right">0.9232984</td>
-<td align="right">-14.52637</td>
-<td align="right">-6.552349</td>
-<td align="right">0.8959423</td>
-<td align="right">0.9515560</td>
-<td align="right">0.0204848</td>
-<td align="right">0.0001213</td>
+<td align="right">-10.06041</td>
+<td align="right">0.9266342</td>
+<td align="right">-13.85162</td>
+<td align="right">-6.268165</td>
+<td align="right">0.9004255</td>
+<td align="right">0.9536282</td>
+<td align="right">0.0103028</td>
+<td align="right">0.0000713</td>
 <td align="left">rate</td>
 <td align="right">1</td>
+<td align="left">log</td>
 <td align="left">95%</td>
 <td align="left">simulation 1e+05 reps</td>
 </tr>
 <tr class="odd">
 <td align="right">2014</td>
-<td align="right">-10.591214</td>
-<td align="right">0.9226440</td>
-<td align="right">-14.55143</td>
-<td align="right">-6.639567</td>
-<td align="right">0.8953772</td>
-<td align="right">0.9507657</td>
-<td align="right">0.0087659</td>
-<td align="right">0.0000751</td>
+<td align="right">-10.06085</td>
+<td align="right">0.9263086</td>
+<td align="right">-13.82532</td>
+<td align="right">-6.288312</td>
+<td align="right">0.9001742</td>
+<td align="right">0.9532752</td>
+<td align="right">0.0141002</td>
+<td align="right">0.0000992</td>
 <td align="left">rate</td>
 <td align="right">1</td>
+<td align="left">log</td>
 <td align="left">95%</td>
 <td align="left">simulation 1e+05 reps</td>
 </tr>
 <tr class="even">
 <td align="right">2015</td>
-<td align="right">-9.042367</td>
-<td align="right">0.9332670</td>
-<td align="right">-12.93933</td>
-<td align="right">-5.158487</td>
-<td align="right">0.9059480</td>
-<td align="right">0.9613589</td>
-<td align="right">0.0204260</td>
-<td align="right">0.0001311</td>
+<td align="right">-8.53077</td>
+<td align="right">0.9368534</td>
+<td align="right">-12.17939</td>
+<td align="right">-4.805368</td>
+<td align="right">0.9110936</td>
+<td align="right">0.9639195</td>
+<td align="right">0.0393208</td>
+<td align="right">0.0002759</td>
 <td align="left">rate</td>
 <td align="right">1</td>
+<td align="left">log</td>
 <td align="left">95%</td>
 <td align="left">simulation 1e+05 reps</td>
 </tr>
@@ -560,7 +585,11 @@ the <code>phe_sii</code> function.</p>
 <p>The <code>value_type</code> argument is set to 2 to specify the
 indicator is a proportion, and a logit transformation is applied to the
 <code>value</code>, <code>lower_cl</code> and <code>upper_cl</code>
-fields.</p>
+fields before calculating the standard error. The <code>transform</code>
+argument is set to TRUE because proportions do not show a linear
+relationship across the quantiles so a logit transformation will be
+applied before calculating the SII and then reverted once the SII has
+been calculated to ensure the SII is given in the original units.</p>
 <p>The function will again run on the default 100,000 reps, and neither
 the RII or MAD values will be returned.</p>
 <p>There is the option to specify a numeric <code>multiplier</code> in
@@ -585,22 +614,24 @@ figures that are expressed on a scale between 0 and 100.</p>
 <span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>                        <span class="at">value_type =</span> <span class="dv">2</span>, <span class="co"># specifies indicator is a proportion</span></span>
 <span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>                        <span class="at">lower_cl =</span> LCL,</span>
 <span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>                        <span class="at">upper_cl =</span> UCL,</span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>                        <span class="at">multiplier =</span> <span class="sc">-</span><span class="dv">100</span>) <span class="co"># negative multiplier to scale SII outputs</span></span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="co"># View first 10 rows of results</span></span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(prevalence_SII,<span class="dv">10</span>)) </span></code></pre></div>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>                        <span class="at">transform =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>                        <span class="at">multiplier =</span> <span class="sc">-</span><span class="dv">100</span>) <span class="co"># negative multiplier to scale SII outputs</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="co"># View first 10 rows of results</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(prevalence_SII,<span class="dv">10</span>)) </span></code></pre></div>
 <table>
 <colgroup>
 <col width="5%" />
-<col width="8%" />
 <col width="7%" />
 <col width="7%" />
-<col width="12%" />
-<col width="12%" />
-<col width="11%" />
-<col width="8%" />
+<col width="7%" />
 <col width="10%" />
-<col width="16%" />
+<col width="10%" />
+<col width="10%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="15%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -608,10 +639,11 @@ figures that are expressed on a scale between 0 and 100.</p>
 <th align="left">SchoolYear</th>
 <th align="left">AreaCode</th>
 <th align="right">sii</th>
-<th align="right">sii_lower95_0cl</th>
-<th align="right">sii_upper95_0cl</th>
+<th align="right">sii_lower95_0</th>
+<th align="right">sii_upper95_0</th>
 <th align="left">indicator_type</th>
 <th align="right">multiplier</th>
+<th align="left">transform</th>
 <th align="left">CI_confidence</th>
 <th align="left">CI_method</th>
 </tr>
@@ -621,11 +653,12 @@ figures that are expressed on a scale between 0 and 100.</p>
 <td align="right">607</td>
 <td align="left">6</td>
 <td align="left">E92000001</td>
-<td align="right">10.720032</td>
-<td align="right">10.219418</td>
-<td align="right">11.218565</td>
+<td align="right">10.964626</td>
+<td align="right">10.440909</td>
+<td align="right">11.493183</td>
 <td align="left">proportion</td>
 <td align="right">-100</td>
+<td align="left">logit</td>
 <td align="left">95%</td>
 <td align="left">simulation 1e+05 reps</td>
 </tr>
@@ -633,11 +666,12 @@ figures that are expressed on a scale between 0 and 100.</p>
 <td align="right">607</td>
 <td align="left">R</td>
 <td align="left">E92000001</td>
-<td align="right">5.818547</td>
-<td align="right">5.418357</td>
-<td align="right">6.219453</td>
+<td align="right">5.970062</td>
+<td align="right">5.548527</td>
+<td align="right">6.392306</td>
 <td align="left">proportion</td>
 <td align="right">-100</td>
+<td align="left">logit</td>
 <td align="left">95%</td>
 <td align="left">simulation 1e+05 reps</td>
 </tr>
@@ -645,11 +679,12 @@ figures that are expressed on a scale between 0 and 100.</p>
 <td align="right">708</td>
 <td align="left">6</td>
 <td align="left">E92000001</td>
-<td align="right">11.025821</td>
-<td align="right">10.652351</td>
-<td align="right">11.399554</td>
+<td align="right">11.271798</td>
+<td align="right">10.881040</td>
+<td align="right">11.661851</td>
 <td align="left">proportion</td>
 <td align="right">-100</td>
+<td align="left">logit</td>
 <td align="left">95%</td>
 <td align="left">simulation 1e+05 reps</td>
 </tr>
@@ -657,11 +692,12 @@ figures that are expressed on a scale between 0 and 100.</p>
 <td align="right">708</td>
 <td align="left">R</td>
 <td align="left">E92000001</td>
-<td align="right">6.048249</td>
-<td align="right">5.759275</td>
-<td align="right">6.338525</td>
+<td align="right">6.200092</td>
+<td align="right">5.893460</td>
+<td align="right">6.508868</td>
 <td align="left">proportion</td>
 <td align="right">-100</td>
+<td align="left">logit</td>
 <td align="left">95%</td>
 <td align="left">simulation 1e+05 reps</td>
 </tr>
@@ -669,11 +705,12 @@ figures that are expressed on a scale between 0 and 100.</p>
 <td align="right">809</td>
 <td align="left">6</td>
 <td align="left">E92000001</td>
-<td align="right">11.528301</td>
-<td align="right">11.161593</td>
-<td align="right">11.894577</td>
+<td align="right">11.804672</td>
+<td align="right">11.421474</td>
+<td align="right">12.187102</td>
 <td align="left">proportion</td>
 <td align="right">-100</td>
+<td align="left">logit</td>
 <td align="left">95%</td>
 <td align="left">simulation 1e+05 reps</td>
 </tr>
@@ -681,11 +718,12 @@ figures that are expressed on a scale between 0 and 100.</p>
 <td align="right">809</td>
 <td align="left">R</td>
 <td align="left">E92000001</td>
-<td align="right">6.734782</td>
-<td align="right">6.459980</td>
-<td align="right">7.008342</td>
+<td align="right">6.911770</td>
+<td align="right">6.618138</td>
+<td align="right">7.209215</td>
 <td align="left">proportion</td>
 <td align="right">-100</td>
+<td align="left">logit</td>
 <td align="left">95%</td>
 <td align="left">simulation 1e+05 reps</td>
 </tr>
@@ -693,11 +731,12 @@ figures that are expressed on a scale between 0 and 100.</p>
 <td align="right">910</td>
 <td align="left">6</td>
 <td align="left">E92000001</td>
-<td align="right">12.186004</td>
-<td align="right">11.819503</td>
-<td align="right">12.553660</td>
+<td align="right">12.459329</td>
+<td align="right">12.076054</td>
+<td align="right">12.841594</td>
 <td align="left">proportion</td>
 <td align="right">-100</td>
+<td align="left">logit</td>
 <td align="left">95%</td>
 <td align="left">simulation 1e+05 reps</td>
 </tr>
@@ -705,11 +744,12 @@ figures that are expressed on a scale between 0 and 100.</p>
 <td align="right">910</td>
 <td align="left">R</td>
 <td align="left">E92000001</td>
-<td align="right">6.959414</td>
-<td align="right">6.685247</td>
-<td align="right">7.230284</td>
+<td align="right">7.141644</td>
+<td align="right">6.846238</td>
+<td align="right">7.433707</td>
 <td align="left">proportion</td>
 <td align="right">-100</td>
+<td align="left">logit</td>
 <td align="left">95%</td>
 <td align="left">simulation 1e+05 reps</td>
 </tr>
@@ -717,11 +757,12 @@ figures that are expressed on a scale between 0 and 100.</p>
 <td align="right">1011</td>
 <td align="left">6</td>
 <td align="left">E92000001</td>
-<td align="right">12.781047</td>
-<td align="right">12.413365</td>
-<td align="right">13.148163</td>
+<td align="right">13.057800</td>
+<td align="right">12.673589</td>
+<td align="right">13.441555</td>
 <td align="left">proportion</td>
 <td align="right">-100</td>
+<td align="left">logit</td>
 <td align="left">95%</td>
 <td align="left">simulation 1e+05 reps</td>
 </tr>
@@ -729,11 +770,12 @@ figures that are expressed on a scale between 0 and 100.</p>
 <td align="right">1011</td>
 <td align="left">R</td>
 <td align="left">E92000001</td>
-<td align="right">6.953482</td>
-<td align="right">6.690062</td>
-<td align="right">7.217513</td>
+<td align="right">7.139306</td>
+<td align="right">6.855987</td>
+<td align="right">7.422353</td>
 <td align="left">proportion</td>
 <td align="right">-100</td>
+<td align="left">logit</td>
 <td align="left">95%</td>
 <td align="left">simulation 1e+05 reps</td>
 </tr>

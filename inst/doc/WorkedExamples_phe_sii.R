@@ -41,6 +41,7 @@ DSR_data_SII <- DSR_data %>%
                 value_type = 1, # specifies indicator is a rate
                 lower_cl = lowercl,
                 upper_cl = uppercl,
+                transform = TRUE,
                 rii = TRUE, # returns RII as well as SII (default is FALSE)
                 reliability_stat = TRUE) # returns reliability stats (default is FALSE)
 
@@ -65,6 +66,7 @@ prevalence_SII <- prevalence_data %>%
                         value_type = 2, # specifies indicator is a proportion
                         lower_cl = LCL,
                         upper_cl = UCL,
+                        transform = TRUE,
                         multiplier = -100) # negative multiplier to scale SII outputs
 
 # View first 10 rows of results
