@@ -1,5 +1,8 @@
 ## ----output, include=FALSE----------------------------------------------------
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
 
 
 ## ----setup, message = FALSE, warning = FALSE----------------------------------
