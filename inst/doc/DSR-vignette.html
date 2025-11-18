@@ -474,12 +474,12 @@ now.</p>
 <span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a>  <span class="at">esp2013   =</span> <span class="fu">rep</span>(esp2013, <span class="at">times =</span> <span class="dv">40</span>))</span>
 <span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="fu">head</span>(pops)</span>
 <span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="co">#&gt;   indicator period region ageband   pop esp2013</span></span>
-<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="co">#&gt; 1      Ind1   2012  Area1       0 12126    5000</span></span>
-<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a><span class="co">#&gt; 2      Ind1   2012  Area1       5 17204    5500</span></span>
-<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a><span class="co">#&gt; 3      Ind1   2012  Area1      10 12583    5500</span></span>
-<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a><span class="co">#&gt; 4      Ind1   2012  Area1      15 14413    5500</span></span>
-<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a><span class="co">#&gt; 5      Ind1   2012  Area1      20 16746    6000</span></span>
-<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a><span class="co">#&gt; 6      Ind1   2012  Area1      25 15915    6000</span></span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="co">#&gt; 1      Ind1   2012  Area1       0 13776    5000</span></span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a><span class="co">#&gt; 2      Ind1   2012  Area1       5 11800    5500</span></span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a><span class="co">#&gt; 3      Ind1   2012  Area1      10 17996    5500</span></span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a><span class="co">#&gt; 4      Ind1   2012  Area1      15 13627    5500</span></span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a><span class="co">#&gt; 5      Ind1   2012  Area1      20 12241    6000</span></span>
+<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a><span class="co">#&gt; 6      Ind1   2012  Area1      25 18259    6000</span></span>
 <span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a></span>
 <span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a></span>
 <span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a>deaths <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
@@ -491,12 +491,12 @@ now.</p>
 <span id="cb2-25"><a href="#cb2-25" tabindex="-1"></a>  <span class="at">dths =</span> <span class="fu">sample</span>(<span class="dv">200</span>, <span class="dv">19</span> <span class="sc">*</span> <span class="dv">2</span> <span class="sc">*</span> <span class="dv">5</span> <span class="sc">*</span> <span class="dv">4</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>))</span>
 <span id="cb2-26"><a href="#cb2-26" tabindex="-1"></a><span class="fu">head</span>(deaths)</span>
 <span id="cb2-27"><a href="#cb2-27" tabindex="-1"></a><span class="co">#&gt;   indicator period region ageband dths</span></span>
-<span id="cb2-28"><a href="#cb2-28" tabindex="-1"></a><span class="co">#&gt; 1      Ind1   2012  Area1       0  129</span></span>
-<span id="cb2-29"><a href="#cb2-29" tabindex="-1"></a><span class="co">#&gt; 2      Ind1   2012  Area1       5   62</span></span>
-<span id="cb2-30"><a href="#cb2-30" tabindex="-1"></a><span class="co">#&gt; 3      Ind1   2012  Area1      10   96</span></span>
-<span id="cb2-31"><a href="#cb2-31" tabindex="-1"></a><span class="co">#&gt; 4      Ind1   2012  Area1      15    6</span></span>
-<span id="cb2-32"><a href="#cb2-32" tabindex="-1"></a><span class="co">#&gt; 5      Ind1   2012  Area1      20   17</span></span>
-<span id="cb2-33"><a href="#cb2-33" tabindex="-1"></a><span class="co">#&gt; 6      Ind1   2012  Area1      25   39</span></span></code></pre></div>
+<span id="cb2-28"><a href="#cb2-28" tabindex="-1"></a><span class="co">#&gt; 1      Ind1   2012  Area1       0  107</span></span>
+<span id="cb2-29"><a href="#cb2-29" tabindex="-1"></a><span class="co">#&gt; 2      Ind1   2012  Area1       5  108</span></span>
+<span id="cb2-30"><a href="#cb2-30" tabindex="-1"></a><span class="co">#&gt; 3      Ind1   2012  Area1      10   10</span></span>
+<span id="cb2-31"><a href="#cb2-31" tabindex="-1"></a><span class="co">#&gt; 4      Ind1   2012  Area1      15  179</span></span>
+<span id="cb2-32"><a href="#cb2-32" tabindex="-1"></a><span class="co">#&gt; 5      Ind1   2012  Area1      20  117</span></span>
+<span id="cb2-33"><a href="#cb2-33" tabindex="-1"></a><span class="co">#&gt; 6      Ind1   2012  Area1      25  109</span></span></code></pre></div>
 <p>Our data contains records for 4 different indicators, 5 time periods
 and 2 geographies so let’s calculate a DSR for each combination - that’s
 40 separate DSRs from a single execution of the calculate_dsr
@@ -538,16 +538,16 @@ argument parameters were passed:</p>
 <span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="co">#&gt; # A tibble: 40 × 11</span></span>
 <span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="co">#&gt;    indicator period region total_count total_pop value lowercl uppercl</span></span>
 <span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt;      &lt;int&gt; &lt;chr&gt;        &lt;int&gt;     &lt;int&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span></span>
-<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a><span class="co">#&gt;  1 Ind1        2012 Area1         1725    284855  663.    630.    697.</span></span>
-<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="co">#&gt;  2 Ind1        2012 Area2         1995    289911  687.    654.    721.</span></span>
-<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="co">#&gt;  3 Ind1        2013 Area1         1668    308543  542.    513.    571.</span></span>
-<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a><span class="co">#&gt;  4 Ind1        2013 Area2         1712    270561  617.    585.    650.</span></span>
-<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a><span class="co">#&gt;  5 Ind1        2014 Area1         1393    297394  512.    485.    541.</span></span>
-<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a><span class="co">#&gt;  6 Ind1        2014 Area2         1713    294787  590.    560.    620.</span></span>
-<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a><span class="co">#&gt;  7 Ind1        2015 Area1         2001    287715  661.    630.    693.</span></span>
-<span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a><span class="co">#&gt;  8 Ind1        2015 Area2         2345    285849  887.    848.    927.</span></span>
-<span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a><span class="co">#&gt;  9 Ind1        2016 Area1         1957    278416  689.    655.    723.</span></span>
-<span id="cb4-19"><a href="#cb4-19" tabindex="-1"></a><span class="co">#&gt; 10 Ind1        2016 Area2         2165    281068  757.    724.    792.</span></span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a><span class="co">#&gt;  1 Ind1        2012 Area1         2370    265420  894.    855.    933.</span></span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="co">#&gt;  2 Ind1        2012 Area2         1710    292128  570.    542.    600.</span></span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="co">#&gt;  3 Ind1        2013 Area1         2118    306304  718.    685.    752.</span></span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a><span class="co">#&gt;  4 Ind1        2013 Area2         1649    284344  563.    533.    593.</span></span>
+<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a><span class="co">#&gt;  5 Ind1        2014 Area1         1895    286767  623.    592.    655.</span></span>
+<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a><span class="co">#&gt;  6 Ind1        2014 Area2         1864    291716  690.    658.    723.</span></span>
+<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a><span class="co">#&gt;  7 Ind1        2015 Area1         2163    313692  677.    646.    709.</span></span>
+<span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a><span class="co">#&gt;  8 Ind1        2015 Area2         1914    289830  678.    646.    712.</span></span>
+<span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a><span class="co">#&gt;  9 Ind1        2016 Area1         1890    283806  671.    638.    704.</span></span>
+<span id="cb4-19"><a href="#cb4-19" tabindex="-1"></a><span class="co">#&gt; 10 Ind1        2016 Area2         1890    273000  756.    721.    793.</span></span>
 <span id="cb4-20"><a href="#cb4-20" tabindex="-1"></a><span class="co">#&gt; # ℹ 30 more rows</span></span>
 <span id="cb4-21"><a href="#cb4-21" tabindex="-1"></a><span class="co">#&gt; # ℹ 3 more variables: confidence &lt;chr&gt;, statistic &lt;chr&gt;, method &lt;chr&gt;</span></span></code></pre></div>
 <p></br> </br></p>
@@ -566,16 +566,16 @@ DSR:</p>
 <span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a><span class="co">#&gt; # A tibble: 40 × 8</span></span>
 <span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a><span class="co">#&gt;    indicator period region total_count total_pop value lowercl uppercl</span></span>
 <span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt;      &lt;int&gt; &lt;chr&gt;        &lt;int&gt;     &lt;int&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span></span>
-<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a><span class="co">#&gt;  1 Ind1        2012 Area1         1725    284855  66.3    61.1    71.7</span></span>
-<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a><span class="co">#&gt;  2 Ind1        2012 Area2         1995    289911  68.7    63.6    74.1</span></span>
-<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a><span class="co">#&gt;  3 Ind1        2013 Area1         1668    308543  54.2    49.8    58.8</span></span>
-<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a><span class="co">#&gt;  4 Ind1        2013 Area2         1712    270561  61.7    56.6    67.0</span></span>
-<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a><span class="co">#&gt;  5 Ind1        2014 Area1         1393    297394  51.2    46.9    55.7</span></span>
-<span id="cb5-18"><a href="#cb5-18" tabindex="-1"></a><span class="co">#&gt;  6 Ind1        2014 Area2         1713    294787  59.0    54.4    63.8</span></span>
-<span id="cb5-19"><a href="#cb5-19" tabindex="-1"></a><span class="co">#&gt;  7 Ind1        2015 Area1         2001    287715  66.1    61.2    71.2</span></span>
-<span id="cb5-20"><a href="#cb5-20" tabindex="-1"></a><span class="co">#&gt;  8 Ind1        2015 Area2         2345    285849  88.7    82.6    95.1</span></span>
-<span id="cb5-21"><a href="#cb5-21" tabindex="-1"></a><span class="co">#&gt;  9 Ind1        2016 Area1         1957    278416  68.9    63.7    74.4</span></span>
-<span id="cb5-22"><a href="#cb5-22" tabindex="-1"></a><span class="co">#&gt; 10 Ind1        2016 Area2         2165    281068  75.7    70.5    81.2</span></span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a><span class="co">#&gt;  1 Ind1        2012 Area1         2370    265420  89.4    83.3    95.7</span></span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a><span class="co">#&gt;  2 Ind1        2012 Area2         1710    292128  57.0    52.5    61.8</span></span>
+<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a><span class="co">#&gt;  3 Ind1        2013 Area1         2118    306304  71.8    66.7    77.2</span></span>
+<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a><span class="co">#&gt;  4 Ind1        2013 Area2         1649    284344  56.3    51.6    61.1</span></span>
+<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a><span class="co">#&gt;  5 Ind1        2014 Area1         1895    286767  62.3    57.5    67.3</span></span>
+<span id="cb5-18"><a href="#cb5-18" tabindex="-1"></a><span class="co">#&gt;  6 Ind1        2014 Area2         1864    291716  69.0    64.0    74.3</span></span>
+<span id="cb5-19"><a href="#cb5-19" tabindex="-1"></a><span class="co">#&gt;  7 Ind1        2015 Area1         2163    313692  67.7    62.8    72.8</span></span>
+<span id="cb5-20"><a href="#cb5-20" tabindex="-1"></a><span class="co">#&gt;  8 Ind1        2015 Area2         1914    289830  67.8    62.8    73.1</span></span>
+<span id="cb5-21"><a href="#cb5-21" tabindex="-1"></a><span class="co">#&gt;  9 Ind1        2016 Area1         1890    283806  67.1    62.0    72.4</span></span>
+<span id="cb5-22"><a href="#cb5-22" tabindex="-1"></a><span class="co">#&gt; 10 Ind1        2016 Area2         1890    273000  75.6    70.1    81.4</span></span>
 <span id="cb5-23"><a href="#cb5-23" tabindex="-1"></a><span class="co">#&gt; # ℹ 30 more rows</span></span></code></pre></div>
 <p></br> </br></p>
 </div>
@@ -628,12 +628,12 @@ being produced.</p>
 <span id="cb6-31"><a href="#cb6-31" tabindex="-1"></a><span class="co">#&gt; # A tibble: 6 × 12</span></span>
 <span id="cb6-32"><a href="#cb6-32" tabindex="-1"></a><span class="co">#&gt;   indicator period region sex   total_count total_pop value lowercl uppercl</span></span>
 <span id="cb6-33"><a href="#cb6-33" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;      &lt;int&gt; &lt;chr&gt;  &lt;chr&gt;       &lt;int&gt;     &lt;int&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span></span>
-<span id="cb6-34"><a href="#cb6-34" tabindex="-1"></a><span class="co">#&gt; 1 Ind1        2012 Area1  F            1725    284855  657.    624.    691.</span></span>
-<span id="cb6-35"><a href="#cb6-35" tabindex="-1"></a><span class="co">#&gt; 2 Ind1        2012 Area1  M            1725    284855  669.    635.    704.</span></span>
-<span id="cb6-36"><a href="#cb6-36" tabindex="-1"></a><span class="co">#&gt; 3 Ind1        2012 Area2  F            1995    289911  693.    660.    726.</span></span>
-<span id="cb6-37"><a href="#cb6-37" tabindex="-1"></a><span class="co">#&gt; 4 Ind1        2012 Area2  M            1995    289911  682.    649.    716.</span></span>
-<span id="cb6-38"><a href="#cb6-38" tabindex="-1"></a><span class="co">#&gt; 5 Ind1        2013 Area1  F            1668    308543  540.    513.    569.</span></span>
-<span id="cb6-39"><a href="#cb6-39" tabindex="-1"></a><span class="co">#&gt; 6 Ind1        2013 Area1  M            1668    308543  543.    514.    573.</span></span>
+<span id="cb6-34"><a href="#cb6-34" tabindex="-1"></a><span class="co">#&gt; 1 Ind1        2012 Area1  F            2370    265420  888.    850.    928.</span></span>
+<span id="cb6-35"><a href="#cb6-35" tabindex="-1"></a><span class="co">#&gt; 2 Ind1        2012 Area1  M            2370    265420  899.    859.    939.</span></span>
+<span id="cb6-36"><a href="#cb6-36" tabindex="-1"></a><span class="co">#&gt; 3 Ind1        2012 Area2  F            1710    292128  575.    546.    605.</span></span>
+<span id="cb6-37"><a href="#cb6-37" tabindex="-1"></a><span class="co">#&gt; 4 Ind1        2012 Area2  M            1710    292128  566.    537.    596.</span></span>
+<span id="cb6-38"><a href="#cb6-38" tabindex="-1"></a><span class="co">#&gt; 5 Ind1        2013 Area1  F            2118    306304  719.    686.    752.</span></span>
+<span id="cb6-39"><a href="#cb6-39" tabindex="-1"></a><span class="co">#&gt; 6 Ind1        2013 Area1  M            2118    306304  718.    685.    752.</span></span>
 <span id="cb6-40"><a href="#cb6-40" tabindex="-1"></a><span class="co">#&gt; # ℹ 3 more variables: confidence &lt;chr&gt;, statistic &lt;chr&gt;, method &lt;chr&gt;</span></span></code></pre></div>
 <p></br> </br></p>
 </div>
@@ -682,16 +682,16 @@ this vignette, but the 95% confidence intervals are wider.</p>
 <span id="cb7-29"><a href="#cb7-29" tabindex="-1"></a><span class="co">#&gt; # A tibble: 40 × 11</span></span>
 <span id="cb7-30"><a href="#cb7-30" tabindex="-1"></a><span class="co">#&gt;    indicator period region total_count total_pop value lowercl uppercl</span></span>
 <span id="cb7-31"><a href="#cb7-31" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt;      &lt;int&gt; &lt;chr&gt;        &lt;dbl&gt;     &lt;int&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span></span>
-<span id="cb7-32"><a href="#cb7-32" tabindex="-1"></a><span class="co">#&gt;  1 Ind1        2012 Area1         1725    284855  663.    624.    703.</span></span>
-<span id="cb7-33"><a href="#cb7-33" tabindex="-1"></a><span class="co">#&gt;  2 Ind1        2012 Area2         1995    289911  687.    649.    727.</span></span>
-<span id="cb7-34"><a href="#cb7-34" tabindex="-1"></a><span class="co">#&gt;  3 Ind1        2013 Area1         1668    308543  542.    509.    576.</span></span>
-<span id="cb7-35"><a href="#cb7-35" tabindex="-1"></a><span class="co">#&gt;  4 Ind1        2013 Area2         1712    270561  617.    579.    655.</span></span>
-<span id="cb7-36"><a href="#cb7-36" tabindex="-1"></a><span class="co">#&gt;  5 Ind1        2014 Area1         1393    297394  512.    480.    545.</span></span>
-<span id="cb7-37"><a href="#cb7-37" tabindex="-1"></a><span class="co">#&gt;  6 Ind1        2014 Area2         1713    294787  590.    555.    625.</span></span>
-<span id="cb7-38"><a href="#cb7-38" tabindex="-1"></a><span class="co">#&gt;  7 Ind1        2015 Area1         2001    287715  661.    624.    698.</span></span>
-<span id="cb7-39"><a href="#cb7-39" tabindex="-1"></a><span class="co">#&gt;  8 Ind1        2015 Area2         2345    285849  887.    842.    934.</span></span>
-<span id="cb7-40"><a href="#cb7-40" tabindex="-1"></a><span class="co">#&gt;  9 Ind1        2016 Area1         1957    278416  689.    650.    729.</span></span>
-<span id="cb7-41"><a href="#cb7-41" tabindex="-1"></a><span class="co">#&gt; 10 Ind1        2016 Area2         2165    281068  757.    718.    798.</span></span>
+<span id="cb7-32"><a href="#cb7-32" tabindex="-1"></a><span class="co">#&gt;  1 Ind1        2012 Area1         2370    265420  894.    848.    940.</span></span>
+<span id="cb7-33"><a href="#cb7-33" tabindex="-1"></a><span class="co">#&gt;  2 Ind1        2012 Area2         1710    292128  570.    537.    605.</span></span>
+<span id="cb7-34"><a href="#cb7-34" tabindex="-1"></a><span class="co">#&gt;  3 Ind1        2013 Area1         2118    306304  718.    680.    758.</span></span>
+<span id="cb7-35"><a href="#cb7-35" tabindex="-1"></a><span class="co">#&gt;  4 Ind1        2013 Area2         1649    284344  563.    528.    599.</span></span>
+<span id="cb7-36"><a href="#cb7-36" tabindex="-1"></a><span class="co">#&gt;  5 Ind1        2014 Area1         1895    286767  623.    587.    660.</span></span>
+<span id="cb7-37"><a href="#cb7-37" tabindex="-1"></a><span class="co">#&gt;  6 Ind1        2014 Area2         1864    291716  690.    653.    729.</span></span>
+<span id="cb7-38"><a href="#cb7-38" tabindex="-1"></a><span class="co">#&gt;  7 Ind1        2015 Area1         2163    313692  677.    641.    715.</span></span>
+<span id="cb7-39"><a href="#cb7-39" tabindex="-1"></a><span class="co">#&gt;  8 Ind1        2015 Area2         1914    289830  678.    640.    717.</span></span>
+<span id="cb7-40"><a href="#cb7-40" tabindex="-1"></a><span class="co">#&gt;  9 Ind1        2016 Area1         1890    283806  671.    633.    710.</span></span>
+<span id="cb7-41"><a href="#cb7-41" tabindex="-1"></a><span class="co">#&gt; 10 Ind1        2016 Area2         1890    273000  756.    715.    799.</span></span>
 <span id="cb7-42"><a href="#cb7-42" tabindex="-1"></a><span class="co">#&gt; # ℹ 30 more rows</span></span>
 <span id="cb7-43"><a href="#cb7-43" tabindex="-1"></a><span class="co">#&gt; # ℹ 3 more variables: confidence &lt;chr&gt;, statistic &lt;chr&gt;, method &lt;chr&gt;</span></span></code></pre></div>
 <p></br> </br></p>

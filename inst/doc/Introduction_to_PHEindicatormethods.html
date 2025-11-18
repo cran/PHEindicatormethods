@@ -441,14 +441,14 @@ package functions:</p>
 <span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>        <span class="at">pop =</span> <span class="fu">sample</span>(<span class="dv">100</span><span class="sc">:</span><span class="dv">200</span>, <span class="dv">2</span> <span class="sc">*</span> <span class="dv">4</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>))</span>
 <span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>df</span>
 <span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="co">#&gt;    area year obs pop</span></span>
-<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="co">#&gt; 1 Area1 2015  27 156</span></span>
-<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="co">#&gt; 2 Area2 2015  36 145</span></span>
-<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="co">#&gt; 3 Area3 2015  29 120</span></span>
-<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="co">#&gt; 4 Area4 2015  79 123</span></span>
-<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a><span class="co">#&gt; 5 Area1 2016  53 101</span></span>
-<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a><span class="co">#&gt; 6 Area2 2016  46 188</span></span>
-<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a><span class="co">#&gt; 7 Area3 2016  91 156</span></span>
-<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a><span class="co">#&gt; 8 Area4 2016  43 190</span></span></code></pre></div>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="co">#&gt; 1 Area1 2015  14 148</span></span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="co">#&gt; 2 Area2 2015  76 174</span></span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="co">#&gt; 3 Area3 2015  98 125</span></span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="co">#&gt; 4 Area4 2015  97 109</span></span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a><span class="co">#&gt; 5 Area1 2016   1 150</span></span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a><span class="co">#&gt; 6 Area2 2016  45 150</span></span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a><span class="co">#&gt; 7 Area3 2016  65 105</span></span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a><span class="co">#&gt; 8 Area4 2016  23 141</span></span></code></pre></div>
 </div>
 <div id="execute-phe_proportion-and-phe_rate" class="section level4">
 <h4>Execute phe_proportion and phe_rate</h4>
@@ -468,114 +468,132 @@ reduced level of detail to be output.</p>
 and the arguments that can optionally be specified</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co"># default proportion</span></span>
 <span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">phe_proportion</span>(df, obs, pop)</span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="co">#&gt;    area year obs pop     value   lowercl   uppercl confidence       statistic</span></span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co">#&gt; 1 Area1 2015  27 156 0.1730769 0.1217616 0.2401061        95% proportion of 1</span></span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="co">#&gt; 2 Area2 2015  36 145 0.2482759 0.1850655 0.3244797        95% proportion of 1</span></span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="co">#&gt; 3 Area3 2015  29 120 0.2416667 0.1738584 0.3255015        95% proportion of 1</span></span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="co">#&gt; 4 Area4 2015  79 123 0.6422764 0.5544397 0.7214953        95% proportion of 1</span></span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="co">#&gt; 5 Area1 2016  53 101 0.5247525 0.4282498 0.6194412        95% proportion of 1</span></span>
-<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="co">#&gt; 6 Area2 2016  46 188 0.2446809 0.1887455 0.3108413        95% proportion of 1</span></span>
-<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="co">#&gt; 7 Area3 2016  91 156 0.5833333 0.5048757 0.6577855        95% proportion of 1</span></span>
-<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a><span class="co">#&gt; 8 Area4 2016  43 190 0.2263158 0.1725838 0.2908953        95% proportion of 1</span></span>
-<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a><span class="co">#&gt;   method</span></span>
-<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a><span class="co">#&gt; 1 Wilson</span></span>
-<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a><span class="co">#&gt; 2 Wilson</span></span>
-<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a><span class="co">#&gt; 3 Wilson</span></span>
-<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a><span class="co">#&gt; 4 Wilson</span></span>
-<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a><span class="co">#&gt; 5 Wilson</span></span>
-<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a><span class="co">#&gt; 6 Wilson</span></span>
-<span id="cb3-19"><a href="#cb3-19" tabindex="-1"></a><span class="co">#&gt; 7 Wilson</span></span>
-<span id="cb3-20"><a href="#cb3-20" tabindex="-1"></a><span class="co">#&gt; 8 Wilson</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="co">#&gt;    area year obs pop       value     lowercl    uppercl confidence</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co">#&gt; 1 Area1 2015  14 148 0.094594595 0.057185755 0.15251625        95%</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="co">#&gt; 2 Area2 2015  76 174 0.436781609 0.365238623 0.51105569        95%</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="co">#&gt; 3 Area3 2015  98 125 0.784000000 0.703972958 0.84709190        95%</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="co">#&gt; 4 Area4 2015  97 109 0.889908257 0.817377280 0.93589196        95%</span></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="co">#&gt; 5 Area1 2016   1 150 0.006666667 0.001177801 0.03679284        95%</span></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="co">#&gt; 6 Area2 2016  45 150 0.300000000 0.232408294 0.37757980        95%</span></span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="co">#&gt; 7 Area3 2016  65 105 0.619047619 0.523517011 0.70617488        95%</span></span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a><span class="co">#&gt; 8 Area4 2016  23 141 0.163120567 0.111224465 0.23288598        95%</span></span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a><span class="co">#&gt;         statistic method</span></span>
+<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a><span class="co">#&gt; 1 proportion of 1 Wilson</span></span>
+<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a><span class="co">#&gt; 2 proportion of 1 Wilson</span></span>
+<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a><span class="co">#&gt; 3 proportion of 1 Wilson</span></span>
+<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a><span class="co">#&gt; 4 proportion of 1 Wilson</span></span>
+<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a><span class="co">#&gt; 5 proportion of 1 Wilson</span></span>
+<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a><span class="co">#&gt; 6 proportion of 1 Wilson</span></span>
+<span id="cb3-19"><a href="#cb3-19" tabindex="-1"></a><span class="co">#&gt; 7 proportion of 1 Wilson</span></span>
+<span id="cb3-20"><a href="#cb3-20" tabindex="-1"></a><span class="co">#&gt; 8 proportion of 1 Wilson</span></span>
 <span id="cb3-21"><a href="#cb3-21" tabindex="-1"></a></span>
 <span id="cb3-22"><a href="#cb3-22" tabindex="-1"></a><span class="co"># specify confidence level for proportion</span></span>
 <span id="cb3-23"><a href="#cb3-23" tabindex="-1"></a><span class="fu">phe_proportion</span>(df, obs, pop, <span class="at">confidence =</span> <span class="fl">99.8</span>)</span>
-<span id="cb3-24"><a href="#cb3-24" tabindex="-1"></a><span class="co">#&gt;    area year obs pop     value    lowercl   uppercl confidence       statistic</span></span>
-<span id="cb3-25"><a href="#cb3-25" tabindex="-1"></a><span class="co">#&gt; 1 Area1 2015  27 156 0.1730769 0.09913737 0.2847328      99.8% proportion of 1</span></span>
-<span id="cb3-26"><a href="#cb3-26" tabindex="-1"></a><span class="co">#&gt; 2 Area2 2015  36 145 0.2482759 0.15532170 0.3723378      99.8% proportion of 1</span></span>
-<span id="cb3-27"><a href="#cb3-27" tabindex="-1"></a><span class="co">#&gt; 3 Area3 2015  29 120 0.2416667 0.14293143 0.3784872      99.8% proportion of 1</span></span>
-<span id="cb3-28"><a href="#cb3-28" tabindex="-1"></a><span class="co">#&gt; 4 Area4 2015  79 123 0.6422764 0.50296043 0.7610918      99.8% proportion of 1</span></span>
-<span id="cb3-29"><a href="#cb3-29" tabindex="-1"></a><span class="co">#&gt; 5 Area1 2016  53 101 0.5247525 0.37582448 0.6694041      99.8% proportion of 1</span></span>
-<span id="cb3-30"><a href="#cb3-30" tabindex="-1"></a><span class="co">#&gt; 6 Area2 2016  46 188 0.2446809 0.16170173 0.3523442      99.8% proportion of 1</span></span>
-<span id="cb3-31"><a href="#cb3-31" tabindex="-1"></a><span class="co">#&gt; 7 Area3 2016  91 156 0.5833333 0.46002112 0.6970316      99.8% proportion of 1</span></span>
-<span id="cb3-32"><a href="#cb3-32" tabindex="-1"></a><span class="co">#&gt; 8 Area4 2016  43 190 0.2263158 0.14694208 0.3318841      99.8% proportion of 1</span></span>
-<span id="cb3-33"><a href="#cb3-33" tabindex="-1"></a><span class="co">#&gt;   method</span></span>
-<span id="cb3-34"><a href="#cb3-34" tabindex="-1"></a><span class="co">#&gt; 1 Wilson</span></span>
-<span id="cb3-35"><a href="#cb3-35" tabindex="-1"></a><span class="co">#&gt; 2 Wilson</span></span>
-<span id="cb3-36"><a href="#cb3-36" tabindex="-1"></a><span class="co">#&gt; 3 Wilson</span></span>
-<span id="cb3-37"><a href="#cb3-37" tabindex="-1"></a><span class="co">#&gt; 4 Wilson</span></span>
-<span id="cb3-38"><a href="#cb3-38" tabindex="-1"></a><span class="co">#&gt; 5 Wilson</span></span>
-<span id="cb3-39"><a href="#cb3-39" tabindex="-1"></a><span class="co">#&gt; 6 Wilson</span></span>
-<span id="cb3-40"><a href="#cb3-40" tabindex="-1"></a><span class="co">#&gt; 7 Wilson</span></span>
-<span id="cb3-41"><a href="#cb3-41" tabindex="-1"></a><span class="co">#&gt; 8 Wilson</span></span>
+<span id="cb3-24"><a href="#cb3-24" tabindex="-1"></a><span class="co">#&gt;    area year obs pop       value      lowercl   uppercl confidence</span></span>
+<span id="cb3-25"><a href="#cb3-25" tabindex="-1"></a><span class="co">#&gt; 1 Area1 2015  14 148 0.094594595 0.0430418185 0.1952930      99.8%</span></span>
+<span id="cb3-26"><a href="#cb3-26" tabindex="-1"></a><span class="co">#&gt; 2 Area2 2015  76 174 0.436781609 0.3268909758 0.5532504      99.8%</span></span>
+<span id="cb3-27"><a href="#cb3-27" tabindex="-1"></a><span class="co">#&gt; 3 Area3 2015  98 125 0.784000000 0.6523743704 0.8753123      99.8%</span></span>
+<span id="cb3-28"><a href="#cb3-28" tabindex="-1"></a><span class="co">#&gt; 4 Area4 2015  97 109 0.889908257 0.7642746772 0.9527252      99.8%</span></span>
+<span id="cb3-29"><a href="#cb3-29" tabindex="-1"></a><span class="co">#&gt; 5 Area1 2016   1 150 0.006666667 0.0005819015 0.0718065      99.8%</span></span>
+<span id="cb3-30"><a href="#cb3-30" tabindex="-1"></a><span class="co">#&gt; 6 Area2 2016  45 150 0.300000000 0.1992211268 0.4247201      99.8%</span></span>
+<span id="cb3-31"><a href="#cb3-31" tabindex="-1"></a><span class="co">#&gt; 7 Area3 2016  65 105 0.619047619 0.4685581525 0.7496880      99.8%</span></span>
+<span id="cb3-32"><a href="#cb3-32" tabindex="-1"></a><span class="co">#&gt; 8 Area4 2016  23 141 0.163120567 0.0890127738 0.2799657      99.8%</span></span>
+<span id="cb3-33"><a href="#cb3-33" tabindex="-1"></a><span class="co">#&gt;         statistic method</span></span>
+<span id="cb3-34"><a href="#cb3-34" tabindex="-1"></a><span class="co">#&gt; 1 proportion of 1 Wilson</span></span>
+<span id="cb3-35"><a href="#cb3-35" tabindex="-1"></a><span class="co">#&gt; 2 proportion of 1 Wilson</span></span>
+<span id="cb3-36"><a href="#cb3-36" tabindex="-1"></a><span class="co">#&gt; 3 proportion of 1 Wilson</span></span>
+<span id="cb3-37"><a href="#cb3-37" tabindex="-1"></a><span class="co">#&gt; 4 proportion of 1 Wilson</span></span>
+<span id="cb3-38"><a href="#cb3-38" tabindex="-1"></a><span class="co">#&gt; 5 proportion of 1 Wilson</span></span>
+<span id="cb3-39"><a href="#cb3-39" tabindex="-1"></a><span class="co">#&gt; 6 proportion of 1 Wilson</span></span>
+<span id="cb3-40"><a href="#cb3-40" tabindex="-1"></a><span class="co">#&gt; 7 proportion of 1 Wilson</span></span>
+<span id="cb3-41"><a href="#cb3-41" tabindex="-1"></a><span class="co">#&gt; 8 proportion of 1 Wilson</span></span>
 <span id="cb3-42"><a href="#cb3-42" tabindex="-1"></a></span>
 <span id="cb3-43"><a href="#cb3-43" tabindex="-1"></a><span class="co"># specify multiplier to output proportions as percentages</span></span>
 <span id="cb3-44"><a href="#cb3-44" tabindex="-1"></a><span class="fu">phe_proportion</span>(df, obs, pop, <span class="at">multiplier =</span> <span class="dv">100</span>)</span>
-<span id="cb3-45"><a href="#cb3-45" tabindex="-1"></a><span class="co">#&gt;    area year obs pop    value  lowercl  uppercl confidence  statistic method</span></span>
-<span id="cb3-46"><a href="#cb3-46" tabindex="-1"></a><span class="co">#&gt; 1 Area1 2015  27 156 17.30769 12.17616 24.01061        95% percentage Wilson</span></span>
-<span id="cb3-47"><a href="#cb3-47" tabindex="-1"></a><span class="co">#&gt; 2 Area2 2015  36 145 24.82759 18.50655 32.44797        95% percentage Wilson</span></span>
-<span id="cb3-48"><a href="#cb3-48" tabindex="-1"></a><span class="co">#&gt; 3 Area3 2015  29 120 24.16667 17.38584 32.55015        95% percentage Wilson</span></span>
-<span id="cb3-49"><a href="#cb3-49" tabindex="-1"></a><span class="co">#&gt; 4 Area4 2015  79 123 64.22764 55.44397 72.14953        95% percentage Wilson</span></span>
-<span id="cb3-50"><a href="#cb3-50" tabindex="-1"></a><span class="co">#&gt; 5 Area1 2016  53 101 52.47525 42.82498 61.94412        95% percentage Wilson</span></span>
-<span id="cb3-51"><a href="#cb3-51" tabindex="-1"></a><span class="co">#&gt; 6 Area2 2016  46 188 24.46809 18.87455 31.08413        95% percentage Wilson</span></span>
-<span id="cb3-52"><a href="#cb3-52" tabindex="-1"></a><span class="co">#&gt; 7 Area3 2016  91 156 58.33333 50.48757 65.77855        95% percentage Wilson</span></span>
-<span id="cb3-53"><a href="#cb3-53" tabindex="-1"></a><span class="co">#&gt; 8 Area4 2016  43 190 22.63158 17.25838 29.08953        95% percentage Wilson</span></span>
-<span id="cb3-54"><a href="#cb3-54" tabindex="-1"></a></span>
-<span id="cb3-55"><a href="#cb3-55" tabindex="-1"></a><span class="co"># specify multiplier for proportion, confidence level and remove metadata columns</span></span>
-<span id="cb3-56"><a href="#cb3-56" tabindex="-1"></a><span class="fu">phe_proportion</span>(df, obs, pop, <span class="at">confidence =</span> <span class="fl">99.8</span>, <span class="at">multiplier =</span> <span class="dv">100</span>, <span class="at">type =</span> <span class="st">&quot;standard&quot;</span>)</span>
-<span id="cb3-57"><a href="#cb3-57" tabindex="-1"></a><span class="co">#&gt;    area year obs pop    value   lowercl  uppercl</span></span>
-<span id="cb3-58"><a href="#cb3-58" tabindex="-1"></a><span class="co">#&gt; 1 Area1 2015  27 156 17.30769  9.913737 28.47328</span></span>
-<span id="cb3-59"><a href="#cb3-59" tabindex="-1"></a><span class="co">#&gt; 2 Area2 2015  36 145 24.82759 15.532170 37.23378</span></span>
-<span id="cb3-60"><a href="#cb3-60" tabindex="-1"></a><span class="co">#&gt; 3 Area3 2015  29 120 24.16667 14.293143 37.84872</span></span>
-<span id="cb3-61"><a href="#cb3-61" tabindex="-1"></a><span class="co">#&gt; 4 Area4 2015  79 123 64.22764 50.296043 76.10918</span></span>
-<span id="cb3-62"><a href="#cb3-62" tabindex="-1"></a><span class="co">#&gt; 5 Area1 2016  53 101 52.47525 37.582448 66.94041</span></span>
-<span id="cb3-63"><a href="#cb3-63" tabindex="-1"></a><span class="co">#&gt; 6 Area2 2016  46 188 24.46809 16.170173 35.23442</span></span>
-<span id="cb3-64"><a href="#cb3-64" tabindex="-1"></a><span class="co">#&gt; 7 Area3 2016  91 156 58.33333 46.002112 69.70316</span></span>
-<span id="cb3-65"><a href="#cb3-65" tabindex="-1"></a><span class="co">#&gt; 8 Area4 2016  43 190 22.63158 14.694208 33.18841</span></span>
-<span id="cb3-66"><a href="#cb3-66" tabindex="-1"></a></span>
-<span id="cb3-67"><a href="#cb3-67" tabindex="-1"></a><span class="co"># default rate</span></span>
-<span id="cb3-68"><a href="#cb3-68" tabindex="-1"></a><span class="fu">phe_rate</span>(df, obs, pop)</span>
-<span id="cb3-69"><a href="#cb3-69" tabindex="-1"></a><span class="co">#&gt;    area year obs pop    value  lowercl  uppercl confidence       statistic</span></span>
-<span id="cb3-70"><a href="#cb3-70" tabindex="-1"></a><span class="co">#&gt; 1 Area1 2015  27 156 17307.69 11403.18 25182.76        95% rate per 100000</span></span>
-<span id="cb3-71"><a href="#cb3-71" tabindex="-1"></a><span class="co">#&gt; 2 Area2 2015  36 145 24827.59 17386.52 34372.86        95% rate per 100000</span></span>
-<span id="cb3-72"><a href="#cb3-72" tabindex="-1"></a><span class="co">#&gt; 3 Area3 2015  29 120 24166.67 16181.45 34708.62        95% rate per 100000</span></span>
-<span id="cb3-73"><a href="#cb3-73" tabindex="-1"></a><span class="co">#&gt; 4 Area4 2015  79 123 64227.64 50847.87 80047.81        95% rate per 100000</span></span>
-<span id="cb3-74"><a href="#cb3-74" tabindex="-1"></a><span class="co">#&gt; 5 Area1 2016  53 101 52475.25 39304.83 68640.27        95% rate per 100000</span></span>
-<span id="cb3-75"><a href="#cb3-75" tabindex="-1"></a><span class="co">#&gt; 6 Area2 2016  46 188 24468.09 17912.11 32637.75        95% rate per 100000</span></span>
-<span id="cb3-76"><a href="#cb3-76" tabindex="-1"></a><span class="co">#&gt; 7 Area3 2016  91 156 58333.33 46965.08 71621.16        95% rate per 100000</span></span>
-<span id="cb3-77"><a href="#cb3-77" tabindex="-1"></a><span class="co">#&gt; 8 Area4 2016  43 190 22631.58 16376.93 30485.34        95% rate per 100000</span></span>
-<span id="cb3-78"><a href="#cb3-78" tabindex="-1"></a><span class="co">#&gt;   method</span></span>
-<span id="cb3-79"><a href="#cb3-79" tabindex="-1"></a><span class="co">#&gt; 1  Byars</span></span>
-<span id="cb3-80"><a href="#cb3-80" tabindex="-1"></a><span class="co">#&gt; 2  Byars</span></span>
-<span id="cb3-81"><a href="#cb3-81" tabindex="-1"></a><span class="co">#&gt; 3  Byars</span></span>
-<span id="cb3-82"><a href="#cb3-82" tabindex="-1"></a><span class="co">#&gt; 4  Byars</span></span>
-<span id="cb3-83"><a href="#cb3-83" tabindex="-1"></a><span class="co">#&gt; 5  Byars</span></span>
-<span id="cb3-84"><a href="#cb3-84" tabindex="-1"></a><span class="co">#&gt; 6  Byars</span></span>
-<span id="cb3-85"><a href="#cb3-85" tabindex="-1"></a><span class="co">#&gt; 7  Byars</span></span>
-<span id="cb3-86"><a href="#cb3-86" tabindex="-1"></a><span class="co">#&gt; 8  Byars</span></span>
-<span id="cb3-87"><a href="#cb3-87" tabindex="-1"></a></span>
-<span id="cb3-88"><a href="#cb3-88" tabindex="-1"></a><span class="co"># specify multiplier for rate and confidence level</span></span>
-<span id="cb3-89"><a href="#cb3-89" tabindex="-1"></a><span class="fu">phe_rate</span>(df, obs, pop, <span class="at">confidence =</span> <span class="fl">99.8</span>, <span class="at">multiplier =</span> <span class="dv">100</span>)</span>
-<span id="cb3-90"><a href="#cb3-90" tabindex="-1"></a><span class="co">#&gt;    area year obs pop    value   lowercl  uppercl confidence    statistic method</span></span>
-<span id="cb3-91"><a href="#cb3-91" tabindex="-1"></a><span class="co">#&gt; 1 Area1 2015  27 156 17.30769  8.783552 30.29970      99.8% rate per 100  Byars</span></span>
-<span id="cb3-92"><a href="#cb3-92" tabindex="-1"></a><span class="co">#&gt; 2 Area2 2015  36 145 24.82759 13.952944 40.48648      99.8% rate per 100  Byars</span></span>
-<span id="cb3-93"><a href="#cb3-93" tabindex="-1"></a><span class="co">#&gt; 3 Area3 2015  29 120 24.16667 12.601525 41.53299      99.8% rate per 100  Byars</span></span>
-<span id="cb3-94"><a href="#cb3-94" tabindex="-1"></a><span class="co">#&gt; 4 Area4 2015  79 123 64.22764 44.173569 89.86280      99.8% rate per 100  Byars</span></span>
-<span id="cb3-95"><a href="#cb3-95" tabindex="-1"></a><span class="co">#&gt; 5 Area1 2016  53 101 52.47525 32.961126 78.81964      99.8% rate per 100  Byars</span></span>
-<span id="cb3-96"><a href="#cb3-96" tabindex="-1"></a><span class="co">#&gt; 6 Area2 2016  46 188 24.46809 14.799981 37.81279      99.8% rate per 100  Byars</span></span>
-<span id="cb3-97"><a href="#cb3-97" tabindex="-1"></a><span class="co">#&gt; 7 Area3 2016  91 156 58.33333 41.233844 79.82645      99.8% rate per 100  Byars</span></span>
-<span id="cb3-98"><a href="#cb3-98" tabindex="-1"></a><span class="co">#&gt; 8 Area4 2016  43 190 22.63158 13.429676 35.47490      99.8% rate per 100  Byars</span></span>
-<span id="cb3-99"><a href="#cb3-99" tabindex="-1"></a></span>
-<span id="cb3-100"><a href="#cb3-100" tabindex="-1"></a><span class="co"># specify multiplier for rate, confidence level and remove metadata columns</span></span>
-<span id="cb3-101"><a href="#cb3-101" tabindex="-1"></a><span class="fu">phe_rate</span>(df, obs, pop, <span class="at">type =</span> <span class="st">&quot;standard&quot;</span>, <span class="at">confidence =</span> <span class="fl">99.8</span>, <span class="at">multiplier =</span> <span class="dv">100</span>)</span>
-<span id="cb3-102"><a href="#cb3-102" tabindex="-1"></a><span class="co">#&gt;    area year obs pop    value   lowercl  uppercl</span></span>
-<span id="cb3-103"><a href="#cb3-103" tabindex="-1"></a><span class="co">#&gt; 1 Area1 2015  27 156 17.30769  8.783552 30.29970</span></span>
-<span id="cb3-104"><a href="#cb3-104" tabindex="-1"></a><span class="co">#&gt; 2 Area2 2015  36 145 24.82759 13.952944 40.48648</span></span>
-<span id="cb3-105"><a href="#cb3-105" tabindex="-1"></a><span class="co">#&gt; 3 Area3 2015  29 120 24.16667 12.601525 41.53299</span></span>
-<span id="cb3-106"><a href="#cb3-106" tabindex="-1"></a><span class="co">#&gt; 4 Area4 2015  79 123 64.22764 44.173569 89.86280</span></span>
-<span id="cb3-107"><a href="#cb3-107" tabindex="-1"></a><span class="co">#&gt; 5 Area1 2016  53 101 52.47525 32.961126 78.81964</span></span>
-<span id="cb3-108"><a href="#cb3-108" tabindex="-1"></a><span class="co">#&gt; 6 Area2 2016  46 188 24.46809 14.799981 37.81279</span></span>
-<span id="cb3-109"><a href="#cb3-109" tabindex="-1"></a><span class="co">#&gt; 7 Area3 2016  91 156 58.33333 41.233844 79.82645</span></span>
-<span id="cb3-110"><a href="#cb3-110" tabindex="-1"></a><span class="co">#&gt; 8 Area4 2016  43 190 22.63158 13.429676 35.47490</span></span></code></pre></div>
+<span id="cb3-45"><a href="#cb3-45" tabindex="-1"></a><span class="co">#&gt;    area year obs pop      value    lowercl   uppercl confidence  statistic</span></span>
+<span id="cb3-46"><a href="#cb3-46" tabindex="-1"></a><span class="co">#&gt; 1 Area1 2015  14 148  9.4594595  5.7185755 15.251625        95% percentage</span></span>
+<span id="cb3-47"><a href="#cb3-47" tabindex="-1"></a><span class="co">#&gt; 2 Area2 2015  76 174 43.6781609 36.5238623 51.105569        95% percentage</span></span>
+<span id="cb3-48"><a href="#cb3-48" tabindex="-1"></a><span class="co">#&gt; 3 Area3 2015  98 125 78.4000000 70.3972958 84.709190        95% percentage</span></span>
+<span id="cb3-49"><a href="#cb3-49" tabindex="-1"></a><span class="co">#&gt; 4 Area4 2015  97 109 88.9908257 81.7377280 93.589196        95% percentage</span></span>
+<span id="cb3-50"><a href="#cb3-50" tabindex="-1"></a><span class="co">#&gt; 5 Area1 2016   1 150  0.6666667  0.1177801  3.679284        95% percentage</span></span>
+<span id="cb3-51"><a href="#cb3-51" tabindex="-1"></a><span class="co">#&gt; 6 Area2 2016  45 150 30.0000000 23.2408294 37.757980        95% percentage</span></span>
+<span id="cb3-52"><a href="#cb3-52" tabindex="-1"></a><span class="co">#&gt; 7 Area3 2016  65 105 61.9047619 52.3517011 70.617488        95% percentage</span></span>
+<span id="cb3-53"><a href="#cb3-53" tabindex="-1"></a><span class="co">#&gt; 8 Area4 2016  23 141 16.3120567 11.1224465 23.288598        95% percentage</span></span>
+<span id="cb3-54"><a href="#cb3-54" tabindex="-1"></a><span class="co">#&gt;   method</span></span>
+<span id="cb3-55"><a href="#cb3-55" tabindex="-1"></a><span class="co">#&gt; 1 Wilson</span></span>
+<span id="cb3-56"><a href="#cb3-56" tabindex="-1"></a><span class="co">#&gt; 2 Wilson</span></span>
+<span id="cb3-57"><a href="#cb3-57" tabindex="-1"></a><span class="co">#&gt; 3 Wilson</span></span>
+<span id="cb3-58"><a href="#cb3-58" tabindex="-1"></a><span class="co">#&gt; 4 Wilson</span></span>
+<span id="cb3-59"><a href="#cb3-59" tabindex="-1"></a><span class="co">#&gt; 5 Wilson</span></span>
+<span id="cb3-60"><a href="#cb3-60" tabindex="-1"></a><span class="co">#&gt; 6 Wilson</span></span>
+<span id="cb3-61"><a href="#cb3-61" tabindex="-1"></a><span class="co">#&gt; 7 Wilson</span></span>
+<span id="cb3-62"><a href="#cb3-62" tabindex="-1"></a><span class="co">#&gt; 8 Wilson</span></span>
+<span id="cb3-63"><a href="#cb3-63" tabindex="-1"></a></span>
+<span id="cb3-64"><a href="#cb3-64" tabindex="-1"></a><span class="co"># specify multiplier for proportion, confidence level and remove metadata columns</span></span>
+<span id="cb3-65"><a href="#cb3-65" tabindex="-1"></a><span class="fu">phe_proportion</span>(df, obs, pop, <span class="at">confidence =</span> <span class="fl">99.8</span>, <span class="at">multiplier =</span> <span class="dv">100</span>, <span class="at">type =</span> <span class="st">&quot;standard&quot;</span>)</span>
+<span id="cb3-66"><a href="#cb3-66" tabindex="-1"></a><span class="co">#&gt;    area year obs pop      value     lowercl  uppercl</span></span>
+<span id="cb3-67"><a href="#cb3-67" tabindex="-1"></a><span class="co">#&gt; 1 Area1 2015  14 148  9.4594595  4.30418185 19.52930</span></span>
+<span id="cb3-68"><a href="#cb3-68" tabindex="-1"></a><span class="co">#&gt; 2 Area2 2015  76 174 43.6781609 32.68909758 55.32504</span></span>
+<span id="cb3-69"><a href="#cb3-69" tabindex="-1"></a><span class="co">#&gt; 3 Area3 2015  98 125 78.4000000 65.23743704 87.53123</span></span>
+<span id="cb3-70"><a href="#cb3-70" tabindex="-1"></a><span class="co">#&gt; 4 Area4 2015  97 109 88.9908257 76.42746772 95.27252</span></span>
+<span id="cb3-71"><a href="#cb3-71" tabindex="-1"></a><span class="co">#&gt; 5 Area1 2016   1 150  0.6666667  0.05819015  7.18065</span></span>
+<span id="cb3-72"><a href="#cb3-72" tabindex="-1"></a><span class="co">#&gt; 6 Area2 2016  45 150 30.0000000 19.92211268 42.47201</span></span>
+<span id="cb3-73"><a href="#cb3-73" tabindex="-1"></a><span class="co">#&gt; 7 Area3 2016  65 105 61.9047619 46.85581525 74.96880</span></span>
+<span id="cb3-74"><a href="#cb3-74" tabindex="-1"></a><span class="co">#&gt; 8 Area4 2016  23 141 16.3120567  8.90127738 27.99657</span></span>
+<span id="cb3-75"><a href="#cb3-75" tabindex="-1"></a></span>
+<span id="cb3-76"><a href="#cb3-76" tabindex="-1"></a><span class="co"># default rate</span></span>
+<span id="cb3-77"><a href="#cb3-77" tabindex="-1"></a><span class="fu">phe_rate</span>(df, obs, pop)</span>
+<span id="cb3-78"><a href="#cb3-78" tabindex="-1"></a><span class="co">#&gt;    area year obs pop      value     lowercl    uppercl confidence</span></span>
+<span id="cb3-79"><a href="#cb3-79" tabindex="-1"></a><span class="co">#&gt; 1 Area1 2015  14 148  9459.4595  5167.25047  15872.296        95%</span></span>
+<span id="cb3-80"><a href="#cb3-80" tabindex="-1"></a><span class="co">#&gt; 2 Area2 2015  76 174 43678.1609 34412.14672  54670.448        95%</span></span>
+<span id="cb3-81"><a href="#cb3-81" tabindex="-1"></a><span class="co">#&gt; 3 Area3 2015  98 125 78400.0000 63647.38292  95545.409        95%</span></span>
+<span id="cb3-82"><a href="#cb3-82" tabindex="-1"></a><span class="co">#&gt; 4 Area4 2015  97 109 88990.8257 72163.80324 108562.320        95%</span></span>
+<span id="cb3-83"><a href="#cb3-83" tabindex="-1"></a><span class="co">#&gt; 5 Area1 2016   1 150   666.6667    16.87854   3714.429        95%</span></span>
+<span id="cb3-84"><a href="#cb3-84" tabindex="-1"></a><span class="co">#&gt; 6 Area2 2016  45 150 30000.0000 21880.16900  40143.308        95%</span></span>
+<span id="cb3-85"><a href="#cb3-85" tabindex="-1"></a><span class="co">#&gt; 7 Area3 2016  65 105 61904.7619 47774.46449  78903.941        95%</span></span>
+<span id="cb3-86"><a href="#cb3-86" tabindex="-1"></a><span class="co">#&gt; 8 Area4 2016  23 141 16312.0567 10337.14233  24477.170        95%</span></span>
+<span id="cb3-87"><a href="#cb3-87" tabindex="-1"></a><span class="co">#&gt;         statistic method</span></span>
+<span id="cb3-88"><a href="#cb3-88" tabindex="-1"></a><span class="co">#&gt; 1 rate per 100000  Byars</span></span>
+<span id="cb3-89"><a href="#cb3-89" tabindex="-1"></a><span class="co">#&gt; 2 rate per 100000  Byars</span></span>
+<span id="cb3-90"><a href="#cb3-90" tabindex="-1"></a><span class="co">#&gt; 3 rate per 100000  Byars</span></span>
+<span id="cb3-91"><a href="#cb3-91" tabindex="-1"></a><span class="co">#&gt; 4 rate per 100000  Byars</span></span>
+<span id="cb3-92"><a href="#cb3-92" tabindex="-1"></a><span class="co">#&gt; 5 rate per 100000  Exact</span></span>
+<span id="cb3-93"><a href="#cb3-93" tabindex="-1"></a><span class="co">#&gt; 6 rate per 100000  Byars</span></span>
+<span id="cb3-94"><a href="#cb3-94" tabindex="-1"></a><span class="co">#&gt; 7 rate per 100000  Byars</span></span>
+<span id="cb3-95"><a href="#cb3-95" tabindex="-1"></a><span class="co">#&gt; 8 rate per 100000  Byars</span></span>
+<span id="cb3-96"><a href="#cb3-96" tabindex="-1"></a></span>
+<span id="cb3-97"><a href="#cb3-97" tabindex="-1"></a><span class="co"># specify multiplier for rate and confidence level</span></span>
+<span id="cb3-98"><a href="#cb3-98" tabindex="-1"></a><span class="fu">phe_rate</span>(df, obs, pop, <span class="at">confidence =</span> <span class="fl">99.8</span>, <span class="at">multiplier =</span> <span class="dv">100</span>)</span>
+<span id="cb3-99"><a href="#cb3-99" tabindex="-1"></a><span class="co">#&gt;    area year obs pop      value      lowercl    uppercl confidence    statistic</span></span>
+<span id="cb3-100"><a href="#cb3-100" tabindex="-1"></a><span class="co">#&gt; 1 Area1 2015  14 148  9.4594595 3.483328e+00  20.204526      99.8% rate per 100</span></span>
+<span id="cb3-101"><a href="#cb3-101" tabindex="-1"></a><span class="co">#&gt; 2 Area2 2015  76 174 43.6781609 2.980402e+01  61.499290      99.8% rate per 100</span></span>
+<span id="cb3-102"><a href="#cb3-102" tabindex="-1"></a><span class="co">#&gt; 3 Area3 2015  98 125 78.4000000 5.617104e+01 106.107951      99.8% rate per 100</span></span>
+<span id="cb3-103"><a href="#cb3-103" tabindex="-1"></a><span class="co">#&gt; 4 Area4 2015  97 109 88.9908257 6.364223e+01 120.623331      99.8% rate per 100</span></span>
+<span id="cb3-104"><a href="#cb3-104" tabindex="-1"></a><span class="co">#&gt; 5 Area1 2016   1 150  0.6666667 6.670002e-04   6.155609      99.8% rate per 100</span></span>
+<span id="cb3-105"><a href="#cb3-105" tabindex="-1"></a><span class="co">#&gt; 6 Area2 2016  45 150 30.0000000 1.803481e+01  46.574638      99.8% rate per 100</span></span>
+<span id="cb3-106"><a href="#cb3-106" tabindex="-1"></a><span class="co">#&gt; 7 Area3 2016  65 105 61.9047619 4.083834e+01  89.524087      99.8% rate per 100</span></span>
+<span id="cb3-107"><a href="#cb3-107" tabindex="-1"></a><span class="co">#&gt; 8 Area4 2016  23 141 16.3120567 7.752330e+00  29.828996      99.8% rate per 100</span></span>
+<span id="cb3-108"><a href="#cb3-108" tabindex="-1"></a><span class="co">#&gt;   method</span></span>
+<span id="cb3-109"><a href="#cb3-109" tabindex="-1"></a><span class="co">#&gt; 1  Byars</span></span>
+<span id="cb3-110"><a href="#cb3-110" tabindex="-1"></a><span class="co">#&gt; 2  Byars</span></span>
+<span id="cb3-111"><a href="#cb3-111" tabindex="-1"></a><span class="co">#&gt; 3  Byars</span></span>
+<span id="cb3-112"><a href="#cb3-112" tabindex="-1"></a><span class="co">#&gt; 4  Byars</span></span>
+<span id="cb3-113"><a href="#cb3-113" tabindex="-1"></a><span class="co">#&gt; 5  Exact</span></span>
+<span id="cb3-114"><a href="#cb3-114" tabindex="-1"></a><span class="co">#&gt; 6  Byars</span></span>
+<span id="cb3-115"><a href="#cb3-115" tabindex="-1"></a><span class="co">#&gt; 7  Byars</span></span>
+<span id="cb3-116"><a href="#cb3-116" tabindex="-1"></a><span class="co">#&gt; 8  Byars</span></span>
+<span id="cb3-117"><a href="#cb3-117" tabindex="-1"></a></span>
+<span id="cb3-118"><a href="#cb3-118" tabindex="-1"></a><span class="co"># specify multiplier for rate, confidence level and remove metadata columns</span></span>
+<span id="cb3-119"><a href="#cb3-119" tabindex="-1"></a><span class="fu">phe_rate</span>(df, obs, pop, <span class="at">type =</span> <span class="st">&quot;standard&quot;</span>, <span class="at">confidence =</span> <span class="fl">99.8</span>, <span class="at">multiplier =</span> <span class="dv">100</span>)</span>
+<span id="cb3-120"><a href="#cb3-120" tabindex="-1"></a><span class="co">#&gt;    area year obs pop      value      lowercl    uppercl</span></span>
+<span id="cb3-121"><a href="#cb3-121" tabindex="-1"></a><span class="co">#&gt; 1 Area1 2015  14 148  9.4594595 3.483328e+00  20.204526</span></span>
+<span id="cb3-122"><a href="#cb3-122" tabindex="-1"></a><span class="co">#&gt; 2 Area2 2015  76 174 43.6781609 2.980402e+01  61.499290</span></span>
+<span id="cb3-123"><a href="#cb3-123" tabindex="-1"></a><span class="co">#&gt; 3 Area3 2015  98 125 78.4000000 5.617104e+01 106.107951</span></span>
+<span id="cb3-124"><a href="#cb3-124" tabindex="-1"></a><span class="co">#&gt; 4 Area4 2015  97 109 88.9908257 6.364223e+01 120.623331</span></span>
+<span id="cb3-125"><a href="#cb3-125" tabindex="-1"></a><span class="co">#&gt; 5 Area1 2016   1 150  0.6666667 6.670002e-04   6.155609</span></span>
+<span id="cb3-126"><a href="#cb3-126" tabindex="-1"></a><span class="co">#&gt; 6 Area2 2016  45 150 30.0000000 1.803481e+01  46.574638</span></span>
+<span id="cb3-127"><a href="#cb3-127" tabindex="-1"></a><span class="co">#&gt; 7 Area3 2016  65 105 61.9047619 4.083834e+01  89.524087</span></span>
+<span id="cb3-128"><a href="#cb3-128" tabindex="-1"></a><span class="co">#&gt; 8 Area4 2016  23 141 16.3120567 7.752330e+00  29.828996</span></span></code></pre></div>
 <p>These functions can also return aggregate data if the input
 dataframes are grouped:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co"># default proportion - grouped</span></span>
@@ -586,8 +604,8 @@ dataframes are grouped:</p>
 <span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="co">#&gt; # Groups:   year [2]</span></span>
 <span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="co">#&gt;    year   obs   pop value lowercl uppercl confidence statistic       method</span></span>
 <span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="co">#&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;           &lt;chr&gt; </span></span>
-<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="co">#&gt; 1  2015   171   544 0.314   0.277   0.355 95%        proportion of 1 Wilson</span></span>
-<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a><span class="co">#&gt; 2  2016   233   635 0.367   0.330   0.405 95%        proportion of 1 Wilson</span></span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="co">#&gt; 1  2015   285   556 0.513   0.471   0.554 95%        proportion of 1 Wilson</span></span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a><span class="co">#&gt; 2  2016   134   546 0.245   0.211   0.283 95%        proportion of 1 Wilson</span></span>
 <span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a></span>
 <span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="co"># default rate - grouped</span></span>
 <span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
@@ -597,8 +615,8 @@ dataframes are grouped:</p>
 <span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a><span class="co">#&gt; # Groups:   year [2]</span></span>
 <span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a><span class="co">#&gt;    year   obs   pop  value lowercl uppercl confidence statistic       method</span></span>
 <span id="cb4-19"><a href="#cb4-19" tabindex="-1"></a><span class="co">#&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt;  &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;           &lt;chr&gt; </span></span>
-<span id="cb4-20"><a href="#cb4-20" tabindex="-1"></a><span class="co">#&gt; 1  2015   171   544 31434.  26899.  36515. 95%        rate per 100000 Byars </span></span>
-<span id="cb4-21"><a href="#cb4-21" tabindex="-1"></a><span class="co">#&gt; 2  2016   233   635 36693.  32132.  41719. 95%        rate per 100000 Byars</span></span></code></pre></div>
+<span id="cb4-20"><a href="#cb4-20" tabindex="-1"></a><span class="co">#&gt; 1  2015   285   556 51259.  45480.  57569. 95%        rate per 100000 Byars </span></span>
+<span id="cb4-21"><a href="#cb4-21" tabindex="-1"></a><span class="co">#&gt; 2  2016   134   546 24542.  20563.  29067. 95%        rate per 100000 Byars</span></span></code></pre></div>
 <p><br /> <br /></p>
 </div>
 </div>
@@ -630,8 +648,8 @@ detail to be output.</p>
 function and the arguments that can optionally be specified</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="co"># default mean</span></span>
 <span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="fu">phe_mean</span>(df,obs)</span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="co">#&gt;   value_sum value_count    stdev value  lowercl  uppercl confidence statistic</span></span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="co">#&gt; 1       404           8 23.17634  50.5 31.12409 69.87591        95%      mean</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="co">#&gt;   value_sum value_count   stdev  value  lowercl  uppercl confidence statistic</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="co">#&gt; 1       419           8 37.4545 52.375 21.06226 83.68774        95%      mean</span></span>
 <span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="co">#&gt;                     method</span></span>
 <span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="co">#&gt; 1 Student&#39;s t-distribution</span></span>
 <span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a></span>
@@ -643,8 +661,8 @@ function and the arguments that can optionally be specified</p>
 <span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a><span class="co">#&gt; # Groups:   year [2]</span></span>
 <span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a><span class="co">#&gt;    year value_sum value_count stdev value lowercl uppercl confidence statistic</span></span>
 <span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a><span class="co">#&gt;   &lt;int&gt;     &lt;int&gt;       &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;    </span></span>
-<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a><span class="co">#&gt; 1  2015       171           4  24.5  42.8   -82.2    168. 99.8%      mean     </span></span>
-<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a><span class="co">#&gt; 2  2016       233           4  22.2  58.2   -55.3    172. 99.8%      mean     </span></span>
+<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a><span class="co">#&gt; 1  2015       285           4  39.5  71.2   -130.    273. 99.8%      mean     </span></span>
+<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a><span class="co">#&gt; 2  2016       134           4  27.6  33.5   -108.    175. 99.8%      mean     </span></span>
 <span id="cb5-18"><a href="#cb5-18" tabindex="-1"></a><span class="co">#&gt; # ℹ 1 more variable: method &lt;chr&gt;</span></span>
 <span id="cb5-19"><a href="#cb5-19" tabindex="-1"></a></span>
 <span id="cb5-20"><a href="#cb5-20" tabindex="-1"></a><span class="co"># multiple means in a single execution with 99.8% confidence and data-only output</span></span>
@@ -655,8 +673,8 @@ function and the arguments that can optionally be specified</p>
 <span id="cb5-25"><a href="#cb5-25" tabindex="-1"></a><span class="co">#&gt; # Groups:   year [2]</span></span>
 <span id="cb5-26"><a href="#cb5-26" tabindex="-1"></a><span class="co">#&gt;    year value_sum value_count stdev value lowercl uppercl</span></span>
 <span id="cb5-27"><a href="#cb5-27" tabindex="-1"></a><span class="co">#&gt;   &lt;int&gt;     &lt;int&gt;       &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span></span>
-<span id="cb5-28"><a href="#cb5-28" tabindex="-1"></a><span class="co">#&gt; 1  2015       171           4  24.5  42.8   -82.2    168.</span></span>
-<span id="cb5-29"><a href="#cb5-29" tabindex="-1"></a><span class="co">#&gt; 2  2016       233           4  22.2  58.2   -55.3    172.</span></span></code></pre></div>
+<span id="cb5-28"><a href="#cb5-28" tabindex="-1"></a><span class="co">#&gt; 1  2015       285           4  39.5  71.2   -130.    273.</span></span>
+<span id="cb5-29"><a href="#cb5-29" tabindex="-1"></a><span class="co">#&gt; 2  2016       134           4  27.6  33.5   -108.    175.</span></span></code></pre></div>
 </div>
 </div>
 <div id="standardised-aggregate-functions" class="section level2">
@@ -676,12 +694,12 @@ and 2 sexes:</p>
 <span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a>            <span class="at">pop =</span> <span class="fu">sample</span>(<span class="dv">10000</span><span class="sc">:</span><span class="dv">20000</span>, <span class="dv">19</span> <span class="sc">*</span> <span class="dv">2</span> <span class="sc">*</span> <span class="dv">5</span> <span class="sc">*</span> <span class="dv">4</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>))</span>
 <span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a><span class="fu">head</span>(df_std)</span>
 <span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a><span class="co">#&gt;    area year  sex ageband obs   pop</span></span>
-<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a><span class="co">#&gt; 1 Area1 2006 Male       0 195 15786</span></span>
-<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a><span class="co">#&gt; 2 Area1 2006 Male       5 159 18310</span></span>
-<span id="cb6-13"><a href="#cb6-13" tabindex="-1"></a><span class="co">#&gt; 3 Area1 2006 Male      10 129 14997</span></span>
-<span id="cb6-14"><a href="#cb6-14" tabindex="-1"></a><span class="co">#&gt; 4 Area1 2006 Male      15 121 18247</span></span>
-<span id="cb6-15"><a href="#cb6-15" tabindex="-1"></a><span class="co">#&gt; 5 Area1 2006 Male      20  77 10446</span></span>
-<span id="cb6-16"><a href="#cb6-16" tabindex="-1"></a><span class="co">#&gt; 6 Area1 2006 Male      25  46 15595</span></span></code></pre></div>
+<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a><span class="co">#&gt; 1 Area1 2006 Male       0  98 19501</span></span>
+<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a><span class="co">#&gt; 2 Area1 2006 Male       5  86 10608</span></span>
+<span id="cb6-13"><a href="#cb6-13" tabindex="-1"></a><span class="co">#&gt; 3 Area1 2006 Male      10 105 19243</span></span>
+<span id="cb6-14"><a href="#cb6-14" tabindex="-1"></a><span class="co">#&gt; 4 Area1 2006 Male      15   9 19771</span></span>
+<span id="cb6-15"><a href="#cb6-15" tabindex="-1"></a><span class="co">#&gt; 5 Area1 2006 Male      20 116 10870</span></span>
+<span id="cb6-16"><a href="#cb6-16" tabindex="-1"></a><span class="co">#&gt; 6 Area1 2006 Male      25 107 14685</span></span></code></pre></div>
 </div>
 <div id="execute-calculate_dsr" class="section level4">
 <h4>Execute calculate_dsr</h4>
@@ -716,16 +734,16 @@ function and the arguments that can optionally be specified</p>
 <span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a><span class="co">#&gt; # A tibble: 40 × 11</span></span>
 <span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a><span class="co">#&gt;    area   year sex    total_count total_pop value lowercl uppercl confidence</span></span>
 <span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt; &lt;int&gt; &lt;chr&gt;        &lt;int&gt;     &lt;int&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;     </span></span>
-<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a><span class="co">#&gt;  1 Area1  2006 Female        1976    285485  712.    679.    746. 95%       </span></span>
-<span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a><span class="co">#&gt;  2 Area1  2006 Male          2067    292506  713.    680.    748. 95%       </span></span>
-<span id="cb7-13"><a href="#cb7-13" tabindex="-1"></a><span class="co">#&gt;  3 Area1  2007 Female        2027    304681  670.    638.    702. 95%       </span></span>
-<span id="cb7-14"><a href="#cb7-14" tabindex="-1"></a><span class="co">#&gt;  4 Area1  2007 Male          2110    292002  761.    726.    796. 95%       </span></span>
-<span id="cb7-15"><a href="#cb7-15" tabindex="-1"></a><span class="co">#&gt;  5 Area1  2008 Female        1872    288328  706.    673.    740. 95%       </span></span>
-<span id="cb7-16"><a href="#cb7-16" tabindex="-1"></a><span class="co">#&gt;  6 Area1  2008 Male          2172    284452  807.    771.    844. 95%       </span></span>
-<span id="cb7-17"><a href="#cb7-17" tabindex="-1"></a><span class="co">#&gt;  7 Area1  2009 Female        1765    272181  651.    619.    684. 95%       </span></span>
-<span id="cb7-18"><a href="#cb7-18" tabindex="-1"></a><span class="co">#&gt;  8 Area1  2009 Male          1935    280477  760.    725.    797. 95%       </span></span>
-<span id="cb7-19"><a href="#cb7-19" tabindex="-1"></a><span class="co">#&gt;  9 Area1  2010 Female        2419    293242  924.    884.    965. 95%       </span></span>
-<span id="cb7-20"><a href="#cb7-20" tabindex="-1"></a><span class="co">#&gt; 10 Area1  2010 Male          2137    266901  878.    839.    918. 95%       </span></span>
+<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a><span class="co">#&gt;  1 Area1  2006 Female        2052    285877  792.    756.    829. 95%       </span></span>
+<span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a><span class="co">#&gt;  2 Area1  2006 Male          1614    289807  663.    629.    699. 95%       </span></span>
+<span id="cb7-13"><a href="#cb7-13" tabindex="-1"></a><span class="co">#&gt;  3 Area1  2007 Female        2118    291239  746.    713.    780. 95%       </span></span>
+<span id="cb7-14"><a href="#cb7-14" tabindex="-1"></a><span class="co">#&gt;  4 Area1  2007 Male          1963    281201  719.    686.    754. 95%       </span></span>
+<span id="cb7-15"><a href="#cb7-15" tabindex="-1"></a><span class="co">#&gt;  5 Area1  2008 Female        1880    273984  716.    682.    751. 95%       </span></span>
+<span id="cb7-16"><a href="#cb7-16" tabindex="-1"></a><span class="co">#&gt;  6 Area1  2008 Male          2127    300111  706.    674.    738. 95%       </span></span>
+<span id="cb7-17"><a href="#cb7-17" tabindex="-1"></a><span class="co">#&gt;  7 Area1  2009 Female        1747    283821  580.    550.    610. 95%       </span></span>
+<span id="cb7-18"><a href="#cb7-18" tabindex="-1"></a><span class="co">#&gt;  8 Area1  2009 Male          2159    281163  811.    774.    849. 95%       </span></span>
+<span id="cb7-19"><a href="#cb7-19" tabindex="-1"></a><span class="co">#&gt;  9 Area1  2010 Female        1877    278715  732.    697.    768. 95%       </span></span>
+<span id="cb7-20"><a href="#cb7-20" tabindex="-1"></a><span class="co">#&gt; 10 Area1  2010 Male          1810    286097  668.    635.    702. 95%       </span></span>
 <span id="cb7-21"><a href="#cb7-21" tabindex="-1"></a><span class="co">#&gt; # ℹ 30 more rows</span></span>
 <span id="cb7-22"><a href="#cb7-22" tabindex="-1"></a><span class="co">#&gt; # ℹ 2 more variables: statistic &lt;chr&gt;, method &lt;chr&gt;</span></span>
 <span id="cb7-23"><a href="#cb7-23" tabindex="-1"></a></span>
@@ -739,16 +757,16 @@ function and the arguments that can optionally be specified</p>
 <span id="cb7-31"><a href="#cb7-31" tabindex="-1"></a><span class="co">#&gt; # A tibble: 40 × 8</span></span>
 <span id="cb7-32"><a href="#cb7-32" tabindex="-1"></a><span class="co">#&gt;    area   year sex    total_count total_pop value lowercl uppercl</span></span>
 <span id="cb7-33"><a href="#cb7-33" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt; &lt;int&gt; &lt;chr&gt;        &lt;int&gt;     &lt;int&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span></span>
-<span id="cb7-34"><a href="#cb7-34" tabindex="-1"></a><span class="co">#&gt;  1 Area1  2006 Female        1976    285485  712.    679.    746.</span></span>
-<span id="cb7-35"><a href="#cb7-35" tabindex="-1"></a><span class="co">#&gt;  2 Area1  2006 Male          2067    292506  713.    680.    748.</span></span>
-<span id="cb7-36"><a href="#cb7-36" tabindex="-1"></a><span class="co">#&gt;  3 Area1  2007 Female        2027    304681  670.    638.    702.</span></span>
-<span id="cb7-37"><a href="#cb7-37" tabindex="-1"></a><span class="co">#&gt;  4 Area1  2007 Male          2110    292002  761.    726.    796.</span></span>
-<span id="cb7-38"><a href="#cb7-38" tabindex="-1"></a><span class="co">#&gt;  5 Area1  2008 Female        1872    288328  706.    673.    740.</span></span>
-<span id="cb7-39"><a href="#cb7-39" tabindex="-1"></a><span class="co">#&gt;  6 Area1  2008 Male          2172    284452  807.    771.    844.</span></span>
-<span id="cb7-40"><a href="#cb7-40" tabindex="-1"></a><span class="co">#&gt;  7 Area1  2009 Female        1765    272181  651.    619.    684.</span></span>
-<span id="cb7-41"><a href="#cb7-41" tabindex="-1"></a><span class="co">#&gt;  8 Area1  2009 Male          1935    280477  760.    725.    797.</span></span>
-<span id="cb7-42"><a href="#cb7-42" tabindex="-1"></a><span class="co">#&gt;  9 Area1  2010 Female        2419    293242  924.    884.    965.</span></span>
-<span id="cb7-43"><a href="#cb7-43" tabindex="-1"></a><span class="co">#&gt; 10 Area1  2010 Male          2137    266901  878.    839.    918.</span></span>
+<span id="cb7-34"><a href="#cb7-34" tabindex="-1"></a><span class="co">#&gt;  1 Area1  2006 Female        2052    285877  792.    756.    829.</span></span>
+<span id="cb7-35"><a href="#cb7-35" tabindex="-1"></a><span class="co">#&gt;  2 Area1  2006 Male          1614    289807  663.    629.    699.</span></span>
+<span id="cb7-36"><a href="#cb7-36" tabindex="-1"></a><span class="co">#&gt;  3 Area1  2007 Female        2118    291239  746.    713.    780.</span></span>
+<span id="cb7-37"><a href="#cb7-37" tabindex="-1"></a><span class="co">#&gt;  4 Area1  2007 Male          1963    281201  719.    686.    754.</span></span>
+<span id="cb7-38"><a href="#cb7-38" tabindex="-1"></a><span class="co">#&gt;  5 Area1  2008 Female        1880    273984  716.    682.    751.</span></span>
+<span id="cb7-39"><a href="#cb7-39" tabindex="-1"></a><span class="co">#&gt;  6 Area1  2008 Male          2127    300111  706.    674.    738.</span></span>
+<span id="cb7-40"><a href="#cb7-40" tabindex="-1"></a><span class="co">#&gt;  7 Area1  2009 Female        1747    283821  580.    550.    610.</span></span>
+<span id="cb7-41"><a href="#cb7-41" tabindex="-1"></a><span class="co">#&gt;  8 Area1  2009 Male          2159    281163  811.    774.    849.</span></span>
+<span id="cb7-42"><a href="#cb7-42" tabindex="-1"></a><span class="co">#&gt;  9 Area1  2010 Female        1877    278715  732.    697.    768.</span></span>
+<span id="cb7-43"><a href="#cb7-43" tabindex="-1"></a><span class="co">#&gt; 10 Area1  2010 Male          1810    286097  668.    635.    702.</span></span>
 <span id="cb7-44"><a href="#cb7-44" tabindex="-1"></a><span class="co">#&gt; # ℹ 30 more rows</span></span>
 <span id="cb7-45"><a href="#cb7-45" tabindex="-1"></a></span>
 <span id="cb7-46"><a href="#cb7-46" tabindex="-1"></a><span class="co"># calculate for under 75s by filtering out records for 75+ from input data frame and standard population</span></span>
@@ -760,16 +778,16 @@ function and the arguments that can optionally be specified</p>
 <span id="cb7-52"><a href="#cb7-52" tabindex="-1"></a><span class="co">#&gt; # A tibble: 40 × 11</span></span>
 <span id="cb7-53"><a href="#cb7-53" tabindex="-1"></a><span class="co">#&gt;    area   year sex    total_count total_pop value lowercl uppercl confidence</span></span>
 <span id="cb7-54"><a href="#cb7-54" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt; &lt;int&gt; &lt;chr&gt;        &lt;int&gt;     &lt;int&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;     </span></span>
-<span id="cb7-55"><a href="#cb7-55" tabindex="-1"></a><span class="co">#&gt;  1 Area1  2006 Female        1613    227232  716.    681.    752. 95%       </span></span>
-<span id="cb7-56"><a href="#cb7-56" tabindex="-1"></a><span class="co">#&gt;  2 Area1  2006 Male          1541    222402  722.    685.    760. 95%       </span></span>
-<span id="cb7-57"><a href="#cb7-57" tabindex="-1"></a><span class="co">#&gt;  3 Area1  2007 Female        1484    235090  667.    632.    702. 95%       </span></span>
-<span id="cb7-58"><a href="#cb7-58" tabindex="-1"></a><span class="co">#&gt;  4 Area1  2007 Male          1688    226660  772.    735.    811. 95%       </span></span>
-<span id="cb7-59"><a href="#cb7-59" tabindex="-1"></a><span class="co">#&gt;  5 Area1  2008 Female        1594    231582  714.    679.    751. 95%       </span></span>
-<span id="cb7-60"><a href="#cb7-60" tabindex="-1"></a><span class="co">#&gt;  6 Area1  2008 Male          1797    227822  825.    786.    865. 95%       </span></span>
-<span id="cb7-61"><a href="#cb7-61" tabindex="-1"></a><span class="co">#&gt;  7 Area1  2009 Female        1361    223702  635.    601.    670. 95%       </span></span>
-<span id="cb7-62"><a href="#cb7-62" tabindex="-1"></a><span class="co">#&gt;  8 Area1  2009 Male          1722    216161  806.    767.    846. 95%       </span></span>
-<span id="cb7-63"><a href="#cb7-63" tabindex="-1"></a><span class="co">#&gt;  9 Area1  2010 Female        2020    215807  978.    935.   1023. 95%       </span></span>
-<span id="cb7-64"><a href="#cb7-64" tabindex="-1"></a><span class="co">#&gt; 10 Area1  2010 Male          1748    201405  891.    849.    934. 95%       </span></span>
+<span id="cb7-55"><a href="#cb7-55" tabindex="-1"></a><span class="co">#&gt;  1 Area1  2006 Female        1858    234685  843.    804.    884. 95%       </span></span>
+<span id="cb7-56"><a href="#cb7-56" tabindex="-1"></a><span class="co">#&gt;  2 Area1  2006 Male          1399    227444  701.    663.    740. 95%       </span></span>
+<span id="cb7-57"><a href="#cb7-57" tabindex="-1"></a><span class="co">#&gt;  3 Area1  2007 Female        1727    227760  758.    722.    795. 95%       </span></span>
+<span id="cb7-58"><a href="#cb7-58" tabindex="-1"></a><span class="co">#&gt;  4 Area1  2007 Male          1508    219439  712.    676.    749. 95%       </span></span>
+<span id="cb7-59"><a href="#cb7-59" tabindex="-1"></a><span class="co">#&gt;  5 Area1  2008 Female        1626    220197  749.    712.    787. 95%       </span></span>
+<span id="cb7-60"><a href="#cb7-60" tabindex="-1"></a><span class="co">#&gt;  6 Area1  2008 Male          1696    235777  717.    682.    752. 95%       </span></span>
+<span id="cb7-61"><a href="#cb7-61" tabindex="-1"></a><span class="co">#&gt;  7 Area1  2009 Female        1204    226379  543.    512.    576. 95%       </span></span>
+<span id="cb7-62"><a href="#cb7-62" tabindex="-1"></a><span class="co">#&gt;  8 Area1  2009 Male          1684    221656  819.    779.    860. 95%       </span></span>
+<span id="cb7-63"><a href="#cb7-63" tabindex="-1"></a><span class="co">#&gt;  9 Area1  2010 Female        1606    218730  752.    714.    791. 95%       </span></span>
+<span id="cb7-64"><a href="#cb7-64" tabindex="-1"></a><span class="co">#&gt; 10 Area1  2010 Male          1430    217660  687.    651.    724. 95%       </span></span>
 <span id="cb7-65"><a href="#cb7-65" tabindex="-1"></a><span class="co">#&gt; # ℹ 30 more rows</span></span>
 <span id="cb7-66"><a href="#cb7-66" tabindex="-1"></a><span class="co">#&gt; # ℹ 2 more variables: statistic &lt;chr&gt;, method &lt;chr&gt;</span></span></code></pre></div>
 </div>
@@ -819,12 +837,12 @@ baseline year:</p>
 <span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a><span class="co">#&gt; # A tibble: 6 × 3</span></span>
 <span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a><span class="co">#&gt;   ageband   obs    pop</span></span>
 <span id="cb8-11"><a href="#cb8-11" tabindex="-1"></a><span class="co">#&gt;     &lt;dbl&gt; &lt;int&gt;  &lt;int&gt;</span></span>
-<span id="cb8-12"><a href="#cb8-12" tabindex="-1"></a><span class="co">#&gt; 1       0   970 113564</span></span>
-<span id="cb8-13"><a href="#cb8-13" tabindex="-1"></a><span class="co">#&gt; 2       5   971 103121</span></span>
-<span id="cb8-14"><a href="#cb8-14" tabindex="-1"></a><span class="co">#&gt; 3      10   831 112802</span></span>
-<span id="cb8-15"><a href="#cb8-15" tabindex="-1"></a><span class="co">#&gt; 4      15   865 128519</span></span>
-<span id="cb8-16"><a href="#cb8-16" tabindex="-1"></a><span class="co">#&gt; 5      20   952 111298</span></span>
-<span id="cb8-17"><a href="#cb8-17" tabindex="-1"></a><span class="co">#&gt; 6      25   400 129930</span></span></code></pre></div>
+<span id="cb8-12"><a href="#cb8-12" tabindex="-1"></a><span class="co">#&gt; 1       0   780 122561</span></span>
+<span id="cb8-13"><a href="#cb8-13" tabindex="-1"></a><span class="co">#&gt; 2       5   877 100412</span></span>
+<span id="cb8-14"><a href="#cb8-14" tabindex="-1"></a><span class="co">#&gt; 3      10   498 124111</span></span>
+<span id="cb8-15"><a href="#cb8-15" tabindex="-1"></a><span class="co">#&gt; 4      15   680 118401</span></span>
+<span id="cb8-16"><a href="#cb8-16" tabindex="-1"></a><span class="co">#&gt; 5      20   938 131301</span></span>
+<span id="cb8-17"><a href="#cb8-17" tabindex="-1"></a><span class="co">#&gt; 6      25   578 111035</span></span></code></pre></div>
 <p>Here are some example code chunks to demonstrate the
 calculate_ISRatio function and the arguments that can optionally be
 specified</p>
@@ -837,16 +855,16 @@ specified</p>
 <span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a><span class="co">#&gt; # Groups:   area, year, sex [40]</span></span>
 <span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a><span class="co">#&gt;    area   year sex    observed expected value lowercl uppercl confidence</span></span>
 <span id="cb9-9"><a href="#cb9-9" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt; &lt;int&gt; &lt;chr&gt;     &lt;int&gt;    &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;     </span></span>
-<span id="cb9-10"><a href="#cb9-10" tabindex="-1"></a><span class="co">#&gt;  1 Area1  2006 Female     1976    1921. 1.03    0.984    1.08 95%       </span></span>
-<span id="cb9-11"><a href="#cb9-11" tabindex="-1"></a><span class="co">#&gt;  2 Area1  2006 Male       2067    1971. 1.05    1.00     1.09 95%       </span></span>
-<span id="cb9-12"><a href="#cb9-12" tabindex="-1"></a><span class="co">#&gt;  3 Area1  2007 Female     2027    2100. 0.965   0.924    1.01 95%       </span></span>
-<span id="cb9-13"><a href="#cb9-13" tabindex="-1"></a><span class="co">#&gt;  4 Area1  2007 Male       2110    1984. 1.06    1.02     1.11 95%       </span></span>
-<span id="cb9-14"><a href="#cb9-14" tabindex="-1"></a><span class="co">#&gt;  5 Area1  2008 Female     1872    1957. 0.957   0.914    1.00 95%       </span></span>
-<span id="cb9-15"><a href="#cb9-15" tabindex="-1"></a><span class="co">#&gt;  6 Area1  2008 Male       2172    1958. 1.11    1.06     1.16 95%       </span></span>
-<span id="cb9-16"><a href="#cb9-16" tabindex="-1"></a><span class="co">#&gt;  7 Area1  2009 Female     1765    1848. 0.955   0.911    1.00 95%       </span></span>
-<span id="cb9-17"><a href="#cb9-17" tabindex="-1"></a><span class="co">#&gt;  8 Area1  2009 Male       1935    1869. 1.04    0.990    1.08 95%       </span></span>
-<span id="cb9-18"><a href="#cb9-18" tabindex="-1"></a><span class="co">#&gt;  9 Area1  2010 Female     2419    2013. 1.20    1.15     1.25 95%       </span></span>
-<span id="cb9-19"><a href="#cb9-19" tabindex="-1"></a><span class="co">#&gt; 10 Area1  2010 Male       2137    1799. 1.19    1.14     1.24 95%       </span></span>
+<span id="cb9-10"><a href="#cb9-10" tabindex="-1"></a><span class="co">#&gt;  1 Area1  2006 Female     2052    1890. 1.09    1.04    1.13  95%       </span></span>
+<span id="cb9-11"><a href="#cb9-11" tabindex="-1"></a><span class="co">#&gt;  2 Area1  2006 Male       1614    1904. 0.848   0.807   0.890 95%       </span></span>
+<span id="cb9-12"><a href="#cb9-12" tabindex="-1"></a><span class="co">#&gt;  3 Area1  2007 Female     2118    1981. 1.07    1.02    1.12  95%       </span></span>
+<span id="cb9-13"><a href="#cb9-13" tabindex="-1"></a><span class="co">#&gt;  4 Area1  2007 Male       1963    1856. 1.06    1.01    1.11  95%       </span></span>
+<span id="cb9-14"><a href="#cb9-14" tabindex="-1"></a><span class="co">#&gt;  5 Area1  2008 Female     1880    1822. 1.03    0.986   1.08  95%       </span></span>
+<span id="cb9-15"><a href="#cb9-15" tabindex="-1"></a><span class="co">#&gt;  6 Area1  2008 Male       2127    2041. 1.04    0.998   1.09  95%       </span></span>
+<span id="cb9-16"><a href="#cb9-16" tabindex="-1"></a><span class="co">#&gt;  7 Area1  2009 Female     1747    1906. 0.917   0.874   0.961 95%       </span></span>
+<span id="cb9-17"><a href="#cb9-17" tabindex="-1"></a><span class="co">#&gt;  8 Area1  2009 Male       2159    1869. 1.15    1.11    1.20  95%       </span></span>
+<span id="cb9-18"><a href="#cb9-18" tabindex="-1"></a><span class="co">#&gt;  9 Area1  2010 Female     1877    1859. 1.01    0.964   1.06  95%       </span></span>
+<span id="cb9-19"><a href="#cb9-19" tabindex="-1"></a><span class="co">#&gt; 10 Area1  2010 Male       1810    1932. 0.937   0.894   0.981 95%       </span></span>
 <span id="cb9-20"><a href="#cb9-20" tabindex="-1"></a><span class="co">#&gt; # ℹ 30 more rows</span></span>
 <span id="cb9-21"><a href="#cb9-21" tabindex="-1"></a><span class="co">#&gt; # ℹ 2 more variables: statistic &lt;chr&gt;, method &lt;chr&gt;</span></span>
 <span id="cb9-22"><a href="#cb9-22" tabindex="-1"></a></span>
@@ -862,16 +880,16 @@ specified</p>
 <span id="cb9-32"><a href="#cb9-32" tabindex="-1"></a><span class="co">#&gt; # Groups:   area, year, sex [40]</span></span>
 <span id="cb9-33"><a href="#cb9-33" tabindex="-1"></a><span class="co">#&gt;    area   year sex    observed expected value lowercl uppercl</span></span>
 <span id="cb9-34"><a href="#cb9-34" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt; &lt;int&gt; &lt;chr&gt;     &lt;int&gt;    &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span></span>
-<span id="cb9-35"><a href="#cb9-35" tabindex="-1"></a><span class="co">#&gt;  1 Area1  2006 Female     1976    1921. 1.03    0.984    1.08</span></span>
-<span id="cb9-36"><a href="#cb9-36" tabindex="-1"></a><span class="co">#&gt;  2 Area1  2006 Male       2067    1971. 1.05    1.00     1.09</span></span>
-<span id="cb9-37"><a href="#cb9-37" tabindex="-1"></a><span class="co">#&gt;  3 Area1  2007 Female     2027    2100. 0.965   0.924    1.01</span></span>
-<span id="cb9-38"><a href="#cb9-38" tabindex="-1"></a><span class="co">#&gt;  4 Area1  2007 Male       2110    1984. 1.06    1.02     1.11</span></span>
-<span id="cb9-39"><a href="#cb9-39" tabindex="-1"></a><span class="co">#&gt;  5 Area1  2008 Female     1872    1957. 0.957   0.914    1.00</span></span>
-<span id="cb9-40"><a href="#cb9-40" tabindex="-1"></a><span class="co">#&gt;  6 Area1  2008 Male       2172    1958. 1.11    1.06     1.16</span></span>
-<span id="cb9-41"><a href="#cb9-41" tabindex="-1"></a><span class="co">#&gt;  7 Area1  2009 Female     1765    1848. 0.955   0.911    1.00</span></span>
-<span id="cb9-42"><a href="#cb9-42" tabindex="-1"></a><span class="co">#&gt;  8 Area1  2009 Male       1935    1869. 1.04    0.990    1.08</span></span>
-<span id="cb9-43"><a href="#cb9-43" tabindex="-1"></a><span class="co">#&gt;  9 Area1  2010 Female     2419    2013. 1.20    1.15     1.25</span></span>
-<span id="cb9-44"><a href="#cb9-44" tabindex="-1"></a><span class="co">#&gt; 10 Area1  2010 Male       2137    1799. 1.19    1.14     1.24</span></span>
+<span id="cb9-35"><a href="#cb9-35" tabindex="-1"></a><span class="co">#&gt;  1 Area1  2006 Female     2052    1890. 1.09    1.04    1.13 </span></span>
+<span id="cb9-36"><a href="#cb9-36" tabindex="-1"></a><span class="co">#&gt;  2 Area1  2006 Male       1614    1904. 0.848   0.807   0.890</span></span>
+<span id="cb9-37"><a href="#cb9-37" tabindex="-1"></a><span class="co">#&gt;  3 Area1  2007 Female     2118    1981. 1.07    1.02    1.12 </span></span>
+<span id="cb9-38"><a href="#cb9-38" tabindex="-1"></a><span class="co">#&gt;  4 Area1  2007 Male       1963    1856. 1.06    1.01    1.11 </span></span>
+<span id="cb9-39"><a href="#cb9-39" tabindex="-1"></a><span class="co">#&gt;  5 Area1  2008 Female     1880    1822. 1.03    0.986   1.08 </span></span>
+<span id="cb9-40"><a href="#cb9-40" tabindex="-1"></a><span class="co">#&gt;  6 Area1  2008 Male       2127    2041. 1.04    0.998   1.09 </span></span>
+<span id="cb9-41"><a href="#cb9-41" tabindex="-1"></a><span class="co">#&gt;  7 Area1  2009 Female     1747    1906. 0.917   0.874   0.961</span></span>
+<span id="cb9-42"><a href="#cb9-42" tabindex="-1"></a><span class="co">#&gt;  8 Area1  2009 Male       2159    1869. 1.15    1.11    1.20 </span></span>
+<span id="cb9-43"><a href="#cb9-43" tabindex="-1"></a><span class="co">#&gt;  9 Area1  2010 Female     1877    1859. 1.01    0.964   1.06 </span></span>
+<span id="cb9-44"><a href="#cb9-44" tabindex="-1"></a><span class="co">#&gt; 10 Area1  2010 Male       1810    1932. 0.937   0.894   0.981</span></span>
 <span id="cb9-45"><a href="#cb9-45" tabindex="-1"></a><span class="co">#&gt; # ℹ 30 more rows</span></span></code></pre></div>
 <p>The calculate_ISRate function works exactly the same way but instead
 of expressing the result as a ratio of the observed and expected rates
@@ -886,16 +904,16 @@ provided. Here are some examples:</p>
 <span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a><span class="co">#&gt; # Groups:   area, year, sex [40]</span></span>
 <span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a><span class="co">#&gt;    area   year sex   observed expected ref_rate value lowercl uppercl confidence</span></span>
 <span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt; &lt;int&gt; &lt;chr&gt;    &lt;int&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;     </span></span>
-<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a><span class="co">#&gt;  1 Area1  2006 Fema…     1976    1921.     671.  690.    660.    721. 95%       </span></span>
-<span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a><span class="co">#&gt;  2 Area1  2006 Male      2067    1971.     671.  703.    673.    734. 95%       </span></span>
-<span id="cb10-12"><a href="#cb10-12" tabindex="-1"></a><span class="co">#&gt;  3 Area1  2007 Fema…     2027    2100.     671.  647.    619.    676. 95%       </span></span>
-<span id="cb10-13"><a href="#cb10-13" tabindex="-1"></a><span class="co">#&gt;  4 Area1  2007 Male      2110    1984.     671.  713.    683.    744. 95%       </span></span>
-<span id="cb10-14"><a href="#cb10-14" tabindex="-1"></a><span class="co">#&gt;  5 Area1  2008 Fema…     1872    1957.     671.  641.    613.    671. 95%       </span></span>
-<span id="cb10-15"><a href="#cb10-15" tabindex="-1"></a><span class="co">#&gt;  6 Area1  2008 Male      2172    1958.     671.  744.    713.    776. 95%       </span></span>
-<span id="cb10-16"><a href="#cb10-16" tabindex="-1"></a><span class="co">#&gt;  7 Area1  2009 Fema…     1765    1848.     671.  640.    611.    671. 95%       </span></span>
-<span id="cb10-17"><a href="#cb10-17" tabindex="-1"></a><span class="co">#&gt;  8 Area1  2009 Male      1935    1869.     671.  694.    664.    726. 95%       </span></span>
-<span id="cb10-18"><a href="#cb10-18" tabindex="-1"></a><span class="co">#&gt;  9 Area1  2010 Fema…     2419    2013.     671.  806.    774.    839. 95%       </span></span>
-<span id="cb10-19"><a href="#cb10-19" tabindex="-1"></a><span class="co">#&gt; 10 Area1  2010 Male      2137    1799.     671.  797.    763.    831. 95%       </span></span>
+<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a><span class="co">#&gt;  1 Area1  2006 Fema…     2052    1890.     666.  723.    692.    755. 95%       </span></span>
+<span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a><span class="co">#&gt;  2 Area1  2006 Male      1614    1904.     666.  565.    537.    593. 95%       </span></span>
+<span id="cb10-12"><a href="#cb10-12" tabindex="-1"></a><span class="co">#&gt;  3 Area1  2007 Fema…     2118    1981.     666.  712.    682.    743. 95%       </span></span>
+<span id="cb10-13"><a href="#cb10-13" tabindex="-1"></a><span class="co">#&gt;  4 Area1  2007 Male      1963    1856.     666.  704.    674.    736. 95%       </span></span>
+<span id="cb10-14"><a href="#cb10-14" tabindex="-1"></a><span class="co">#&gt;  5 Area1  2008 Fema…     1880    1822.     666.  687.    656.    719. 95%       </span></span>
+<span id="cb10-15"><a href="#cb10-15" tabindex="-1"></a><span class="co">#&gt;  6 Area1  2008 Male      2127    2041.     666.  694.    665.    724. 95%       </span></span>
+<span id="cb10-16"><a href="#cb10-16" tabindex="-1"></a><span class="co">#&gt;  7 Area1  2009 Fema…     1747    1906.     666.  611.    582.    640. 95%       </span></span>
+<span id="cb10-17"><a href="#cb10-17" tabindex="-1"></a><span class="co">#&gt;  8 Area1  2009 Male      2159    1869.     666.  769.    737.    802. 95%       </span></span>
+<span id="cb10-18"><a href="#cb10-18" tabindex="-1"></a><span class="co">#&gt;  9 Area1  2010 Fema…     1877    1859.     666.  672.    642.    703. 95%       </span></span>
+<span id="cb10-19"><a href="#cb10-19" tabindex="-1"></a><span class="co">#&gt; 10 Area1  2010 Male      1810    1932.     666.  624.    596.    653. 95%       </span></span>
 <span id="cb10-20"><a href="#cb10-20" tabindex="-1"></a><span class="co">#&gt; # ℹ 30 more rows</span></span>
 <span id="cb10-21"><a href="#cb10-21" tabindex="-1"></a><span class="co">#&gt; # ℹ 2 more variables: statistic &lt;chr&gt;, method &lt;chr&gt;</span></span>
 <span id="cb10-22"><a href="#cb10-22" tabindex="-1"></a></span>
@@ -911,16 +929,16 @@ provided. Here are some examples:</p>
 <span id="cb10-32"><a href="#cb10-32" tabindex="-1"></a><span class="co">#&gt; # Groups:   area, year, sex [40]</span></span>
 <span id="cb10-33"><a href="#cb10-33" tabindex="-1"></a><span class="co">#&gt;    area   year sex    observed expected ref_rate value lowercl uppercl</span></span>
 <span id="cb10-34"><a href="#cb10-34" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt; &lt;int&gt; &lt;chr&gt;     &lt;int&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span></span>
-<span id="cb10-35"><a href="#cb10-35" tabindex="-1"></a><span class="co">#&gt;  1 Area1  2006 Female     1976    1921.     671.  690.    660.    721.</span></span>
-<span id="cb10-36"><a href="#cb10-36" tabindex="-1"></a><span class="co">#&gt;  2 Area1  2006 Male       2067    1971.     671.  703.    673.    734.</span></span>
-<span id="cb10-37"><a href="#cb10-37" tabindex="-1"></a><span class="co">#&gt;  3 Area1  2007 Female     2027    2100.     671.  647.    619.    676.</span></span>
-<span id="cb10-38"><a href="#cb10-38" tabindex="-1"></a><span class="co">#&gt;  4 Area1  2007 Male       2110    1984.     671.  713.    683.    744.</span></span>
-<span id="cb10-39"><a href="#cb10-39" tabindex="-1"></a><span class="co">#&gt;  5 Area1  2008 Female     1872    1957.     671.  641.    613.    671.</span></span>
-<span id="cb10-40"><a href="#cb10-40" tabindex="-1"></a><span class="co">#&gt;  6 Area1  2008 Male       2172    1958.     671.  744.    713.    776.</span></span>
-<span id="cb10-41"><a href="#cb10-41" tabindex="-1"></a><span class="co">#&gt;  7 Area1  2009 Female     1765    1848.     671.  640.    611.    671.</span></span>
-<span id="cb10-42"><a href="#cb10-42" tabindex="-1"></a><span class="co">#&gt;  8 Area1  2009 Male       1935    1869.     671.  694.    664.    726.</span></span>
-<span id="cb10-43"><a href="#cb10-43" tabindex="-1"></a><span class="co">#&gt;  9 Area1  2010 Female     2419    2013.     671.  806.    774.    839.</span></span>
-<span id="cb10-44"><a href="#cb10-44" tabindex="-1"></a><span class="co">#&gt; 10 Area1  2010 Male       2137    1799.     671.  797.    763.    831.</span></span>
+<span id="cb10-35"><a href="#cb10-35" tabindex="-1"></a><span class="co">#&gt;  1 Area1  2006 Female     2052    1890.     666.  723.    692.    755.</span></span>
+<span id="cb10-36"><a href="#cb10-36" tabindex="-1"></a><span class="co">#&gt;  2 Area1  2006 Male       1614    1904.     666.  565.    537.    593.</span></span>
+<span id="cb10-37"><a href="#cb10-37" tabindex="-1"></a><span class="co">#&gt;  3 Area1  2007 Female     2118    1981.     666.  712.    682.    743.</span></span>
+<span id="cb10-38"><a href="#cb10-38" tabindex="-1"></a><span class="co">#&gt;  4 Area1  2007 Male       1963    1856.     666.  704.    674.    736.</span></span>
+<span id="cb10-39"><a href="#cb10-39" tabindex="-1"></a><span class="co">#&gt;  5 Area1  2008 Female     1880    1822.     666.  687.    656.    719.</span></span>
+<span id="cb10-40"><a href="#cb10-40" tabindex="-1"></a><span class="co">#&gt;  6 Area1  2008 Male       2127    2041.     666.  694.    665.    724.</span></span>
+<span id="cb10-41"><a href="#cb10-41" tabindex="-1"></a><span class="co">#&gt;  7 Area1  2009 Female     1747    1906.     666.  611.    582.    640.</span></span>
+<span id="cb10-42"><a href="#cb10-42" tabindex="-1"></a><span class="co">#&gt;  8 Area1  2009 Male       2159    1869.     666.  769.    737.    802.</span></span>
+<span id="cb10-43"><a href="#cb10-43" tabindex="-1"></a><span class="co">#&gt;  9 Area1  2010 Female     1877    1859.     666.  672.    642.    703.</span></span>
+<span id="cb10-44"><a href="#cb10-44" tabindex="-1"></a><span class="co">#&gt; 10 Area1  2010 Male       1810    1932.     666.  624.    596.    653.</span></span>
 <span id="cb10-45"><a href="#cb10-45" tabindex="-1"></a><span class="co">#&gt; # ℹ 30 more rows</span></span></code></pre></div>
 </div>
 </div>
